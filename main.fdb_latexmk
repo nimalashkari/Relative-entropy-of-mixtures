@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1772732817.191 "/Users/lashkari/Research papers/2026/Relative entropy of mixture/latex files/Relative-entropy-of-mixtures/main.tex" "main.pdf" "main" 1772732817.83577 0
-  "/Users/lashkari/Research papers/2026/Relative entropy of mixture/latex files/Relative-entropy-of-mixtures/main.tex" 1772732816.99324 52853 5d02236192d04e4484f1b1c2435cad0f ""
+["pdflatex"] 1772738132.99334 "/Users/lashkari/Library/CloudStorage/OneDrive-purdue.edu/Physics/Research/2026/Relative-entropy-of-mixtures/main.tex" "main.pdf" "main" 1772738133.73457 0
+  "/Users/lashkari/Library/CloudStorage/OneDrive-purdue.edu/Physics/Research/2026/Relative-entropy-of-mixtures/main.tex" 1772738132.84468 52860 f8ea6a0b35339c19797907c47c791898 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvbc7t.tfm" 1136768653 2672 88159036c64e674fcd9515bc9c7052d4 ""
@@ -128,9 +128,9 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1733921409 8221434 84f288bc02ac5cda03150c5b3189fcf2 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "jheppub.sty" 1772732066.6072 11794 6d17a977bbb994fa9e704befb431a7fa ""
-  "main.aux" 1772732817.7516 5504 e71afa5c070f2cb3e14f7b76969576c2 "pdflatex"
-  "main.out" 1772732817.75357 1267 9edf85b77090b8c2a82d32d9066fb507 "pdflatex"
-  "main.tex" 1772732816.99324 52853 5d02236192d04e4484f1b1c2435cad0f ""
+  "main.aux" 1772738133.65686 5504 e71afa5c070f2cb3e14f7b76969576c2 "pdflatex"
+  "main.out" 1772738133.65781 1267 9edf85b77090b8c2a82d32d9066fb507 "pdflatex"
+  "main.tex" 1772738132.84468 52860 f8ea6a0b35339c19797907c47c791898 ""
   (generated)
   "main.aux"
   "main.log"
