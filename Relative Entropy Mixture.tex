@@ -24,23 +24,33 @@
 
 \newcommand{\JM}[1]{\textcolor{orange}{#1}}
 \title{Relative entropy of mixtures of excited states in CFT}
-\author{Nima Lashkari, Jignesh Mohanty to UIUC colleagues}
+\author{Nima Lashkari, Jignesh Mohanty, Bowen Shi, Yuntai Song, Zhencheng Wang}
 \affiliation{Department of Physics, Purdue University, West Lafayette, IN 47907, USA}
 \emailAdd{nlashkari@purdue.edu}
-%\abstract{We study the relative entropy of mixtures of excited states in conformal field theories in $1+1$ dimensions. We consider two energy eigenstates of a CFT $\ket{\mO_\alpha}$ and $\ket{\mO_\beta}$ corresponding to Virasoro primaries $\mO_{\alpha}$ and $\mO_{\beta}$. }
+\abstract{We compute the universal terms in the relative entropy of mixtures of energy eigenstates in 2d Conformal Field Theory (CFT), in both the small and large interval limits. We confirm the results numerically in massless free bosons and Ising CFT. We illustrate the application of the results to quantum error correction codes.}
 
 
 \begin{document}
 
 \maketitle
 \flushbottom
-  \section{Introduction and Motivation}
+  \section{Introduction}
+
+The study of entanglement entropy in conformal field theory (CFT) has shed light on many aspects of universal strongly coupled phases and dynamics of many-body quantum systems. However, entanglement entropy of relativistic theories suffers from ultraviolet divergences, which is 
+
+Quantum relative entropy is a measure of distinguishability of quantum states, with an asymptotic interpretation in terms of hypothesis testing. 
+
+
+
 
   Consider a 2d CFT, and two energy eigenstates of $\ket{\Psi}$ and
   $\ket{\Phi}$ corresponding to Virasoro primaries $\Phi$ and
   $\Psi$. Denote by $\rho_\Phi$ and $\rho_\Psi$, the reduced density matrices of these states to a region $A$, and consider the mixture state $\rho_y=y\rho_\Phi+(1-y)\rho_\Psi$ for some $0\leq y\leq 1$. Motivated by connections to quantum error correction codes \cite{song2026approximatequantumerrorcorrection}, in this note, we study the relative entropies $S(\rho_\Phi\|\rho_y)$ in the small and large $|A|$ limits. We first review and extend the pure-state calculation because it fixes the replica conventions and the two- and three-point building blocks used throughout the analysis of mixtures.
   
-  
+  \paragraph{Universal terms in classical relative entropy}
+  To argue for $\log y$ term in the mixture.
+
+
   % that for the mixture $(\rho_{\alpha}+\rho_{\beta})/2$ we
   % have the following asymptotic behavior of relative entropy
   % \begin{eqnarray}
@@ -3610,14 +3620,16 @@ We want to know if the four point function contribution of $\braket{\mO_{L'}\mO_
 
 \begin{align}
     \mathcal{F}_n^{\Psi|\Phi} &\equiv \frac{\text{tr}\rho_\Psi^n}{\text{tr}\lb\rho_\Psi \lb y\rho_\Psi + (1-y)\rho_\Phi\rb^{n-1}\rb}  \\
-    &=  \frac{\text{tr}\rho_\Psi^n}{y^{n-1}\text{tr} \Bigg[ \rho_\Psi^n+ \displaystyle\sum_{p=1}^{n-1}\lb\frac{1-y}{y}D_n^{\Psi|\Phi}(\ep)\rb^p \rho_\Psi^{n-p}\rho_\Phi^p \Bigg]} \\
-    &= \frac{1+ \zeta_n^{2\Delta_{L'}}f(n)}{y^{n-1}\lb\rb}\\
-    \mathcal{F}_n^{\Phi|\Psi} &\equiv \frac{\text{tr}\rho_\Phi^n}{\text{tr}\lb\rho_\Phi \lb y\rho_\Phi + (1-y)\rho_\Psi\rb^{n-1}\rb}\\
-    &=  \frac{\text{tr}\rho_\Phi^n}{y^{n-1}\text{tr} \Bigg[ \rho_\Phi^n+ \displaystyle\sum_{p=1}^{n-1}\lb\frac{1-y}{y}D_n^{\Phi|\Psi}(\ep)\rb^p \rho_\Phi^{n-p}\rho_\Psi^p \Bigg]} 
+    % &=  \frac{\text{tr}\rho_\Psi^n}{y^{n-1}\text{tr} \Bigg[ \rho_\Psi^n+ \displaystyle\sum_{p=1}^{n-1}\lb\frac{1-y}{y}D_n^{\Psi|\Phi}(\ep)\rb^p \rho_\Psi^{n-p}\rho_\Phi^p \Bigg]} \\
+    &= \frac{1+ \zeta_n^{2\Delta_{L}}f(n)+ \cdots}{y^{n-1}\Bigg[ 1+ \zeta_n^{2\Delta_L}f(n) + \displaystyle C_{\Psi\Phi}^2\zeta_n^{2\Delta_{L'}}\sum_{p=0}^{n-1}\frac{\lb\frac{1-y}{y}D_n^{\Psi|\Phi}(\ep)\rb^p}{\lb 2\sin(\pi p/n)\rb^{2\Delta_{L'}}} + C_{\Psi\Phi}^4\zeta_n^{4\Delta_{L'}}\mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'})+ \cdots\Bigg]}
+    % \\
+    % \mathcal{F}_n^{\Phi|\Psi} &\equiv \frac{\text{tr}\rho_\Phi^n}{\text{tr}\lb\rho_\Phi \lb y\rho_\Phi + (1-y)\rho_\Psi\rb^{n-1}\rb}
+    % \\
+    % &=  \frac{\text{tr}\rho_\Phi^n}{y^{n-1}\text{tr} \Bigg[ \rho_\Phi^n+ \displaystyle\sum_{p=1}^{n-1}\lb\frac{1-y}{y}D_n^{\Phi|\Psi}(\ep)\rb^p \rho_\Phi^{n-p}\rho_\Psi^p \Bigg]} 
 \end{align}
 Notice, the uniform word contribution ($p=0$) in the denominator gets cancelled exactly from the numerator. So, we are left with the four point function contribution from $p>1$ cases. 
 
-Note that, the denominator looks like, 
+Consider the case, when $\Delta_L >2\Delta_{L'}$. This corresponds to the case where the four-point function $\braket{\mO_{L'}\mO_{L'}\mO_{L'}\mO_{L'}}$ is of lower order than the three point function $\braket{\mO_L \mO_{L'}\mO_{L'}}$. Then, expanding the denominator, we obtain the leading and sub-leading contributions as,
 \begin{align}
 \text{tr}\lb
 \rho_\Psi
@@ -3638,7 +3650,7 @@ y^{n-1}\text{tr}\Bigg[
 \mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'})
 &=
 \sum_{\substack{
-a+b+c+d\geq 1\\
+a,b,c,d\in \mathbb{Z}_{>0}\\
 a+b+c+d=n
 }}
 a
@@ -3656,7 +3668,7 @@ a
 \mO_{L'}(u_{b+c+d})
 }.
 \end{align}
-Similarly, one can write,
+Similarly, for the swapped case, one can write its denominator as
 \begin{align}
 \text{tr}\lb
 \rho_\Phi
@@ -3677,7 +3689,7 @@ y^{n-1}\text{tr}\Bigg[
 \mu_4^{\Phi|\Psi}(n,x,y;\Delta_{L'})
 &=
 \sum_{\substack{
-a+b+c+d\geq1\\
+a,b,c,d\in \mathbb{Z}_{>0}\\
 a+b+c+d=n
 }}
 a
@@ -3696,9 +3708,38 @@ a
 % \mO_{L'}(u_{b+c+d})
 % }.
 \end{align}
-Here we used $D_n^{\Psi |\Phi}(\ep) = {D_n^{\Phi |\Psi}(\ep)}^{-1}$. 
+Here we used $D_n^{\Psi |\Phi}(\ep) = {D_n^{\Phi |\Psi}(\ep)}^{-1}$. Let us define the following quantities,
+\begin{align}
+    &q\equiv \frac{1-y}{y}, \qquad \lambda \equiv q D^{\Psi|\Phi}_n(\ep).
+\\
+&\mathcal{M}_4(n,\lambda)\equiv \mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'}) = \sum_{\substack{
+a+b+c+d\geq 1\\
+a+b+c+d=n
+}}
+a
+\lambda^{b+d}
+\mathcal{G}_{4,n}^{L'}(b,c,d)
+\end{align}
+Then, consider,
+\begin{align}
+    \p_n \mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'}) &= \p_n\mathcal{M}_4(n,\lambda) + q{D^{\Psi|\Phi}_n(\ep)}'\p_\lambda \mathcal{M}_4(n,\lambda),\\
+    \implies \p_n \mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'})\big|_{n=1} &= \p_n\mathcal{M}_4(1,q) + q {D^{\Psi|\Phi}_n(\ep)}'\Big|_{n=1}\p_\lambda \mathcal{M}_4(1,\lambda).
+\end{align}
+However, we have
+\begin{align}
+    \mathcal{M}_4(1,\lambda) &= 0, \qquad \forall \lambda,
+    \\
+    \implies \p_\lambda \mathcal{M}_4(1,\lambda)&=0.
+\end{align}
+Then, we finally obtain,
+\begin{align}
+    \p_n \mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'}) &= \p_n\mathcal{M}_4(n,\lambda) .
+\end{align}
+The above equation says that the two point and the four point function contribution to the relative entropy remain invariant under swapping $\Psi \leftrightarrow\Phi$. In other words, 
+\begin{align}
+    \p_n \mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'}) &= \p_n \mu_4^{\Phi|\Psi}(n,x,y;\Delta_{L'})
+\end{align}
 
-This shows that the four point function contribution are the same. 
 
 
 
@@ -3715,13 +3756,6 @@ Similarly, we can compute it for the other mixture with $\ket{\varepsilon}$. Fin
          3.289 \ep^2 & \ket{I}-\ket{\varepsilon}
      \end{cases}
  \end{align}
-\subsection{Current operators}
-The OPEs we need,
-\begin{align}
-    J(z_1)\times J(z_2) &= \frac{1}{|z_{12}|^2}\lb 1 +2|z_{12}|^2 T(z_2) + O(|z_{12}|^4) \rb \\
-    J(z_1) \times V_\beta (z_2) &= 
-\end{align}
-
 \subsection{Numerics mismatch?}
 Define,
 \begin{align}
@@ -4648,19 +4682,18 @@ using the fitting parameters from the short-interval analysis.}
   % Appendix-style writeup: pole-matching analytic continuation
   %------------------------------------------------------------
 
-  \section{Universal terms in relative entropy}
 
-\subsection{Universal terms in classical relative entropy}
-  To argue for $\log y$ term in the mixture.
 
-\subsection{Divergences in relative entropy of the free boson theory}
+
+\section{An application to Quantum Error Correction Codes}
+
+\section{Discussions}
+
+\paragraph{Divergences in relative entropy of the free boson theory}
 To argue for a universal $1/\ep$ term in the $\ep\to 1^-$ limit.
 
 The basic idea is that for a mixture of states, the divergences in the $x\to 1^-$ is controlled by the worst divergence among any pair of pure states. In the free boson theory, we consider the pure states (coherent states) created by $V_\alpha$, the state $J=i\p\phi$. The relative entropy of $S(\rho_\alpha\|\rho_0)$ diverges as $1/\ep$ because $\braket{\alpha|\hat{K}_\Omega\alpha}\sim 1/\ep$. Similarly, since $S(\rho_\alpha\|\rho_\beta)=S(\rho_{\alpha-\beta}\|\rho_0)$, the divergences are again $1/\ep$. Finally, the divergences of $S(\rho_{J}\|\rho_\beta)$ are controlled by the divergences in $\hat{K}_\beta$ which should be connected to $\hat{K}_\Omega$ by unitaries. But another formula that makes this explicit is 
 $S(\rho_J\|\rho_\beta)=S(\rho_J\|\rho_0)+S(\rho_0\|\rho_\beta)$, therefore the divergences in this relative entropy is also $1/\ep$.
-
-\section{Relative entropy of mixtures and QECC}
-
 
 
 
