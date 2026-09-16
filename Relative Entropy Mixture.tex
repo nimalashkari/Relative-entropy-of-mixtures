@@ -266,7 +266,7 @@ Label by $\mO_L$, $\mO_{L''}$, and $\mO_{L'}$ the lightest Virasoro primaries th
   term would come from stress tensor.}. 
   To simplify our notation, we define
    % \JM{(
-   $C_{\Psi} = C^{L}_{\Psi\Psi^*}$, $C_{\Phi} = C^{L''}_{\Phi\Phi^*}$ and $C_{\Psi \Phi} = C^{L'}_{\Psi \Phi^*}=C^{L'}_{\Psi^*\Phi}$\footnote{Note that $C^{L'}_{\Psi\Phi^*}=(C^{L'}_{\Psi^*\Phi})^*$, but in a unitary CFT, the OPE coefficients are real.}.
+   $C_{\Psi}^L = C^{L}_{\Psi\Psi^*}$, $C_{\Phi}^{L''} = C^{L''}_{\Phi\Phi^*}$ and $C_{\Psi \Phi}^{L'} = C^{L'}_{\Psi \Phi^*}=C^{L'}_{\Psi^*\Phi}$\footnote{Note that $C^{L'}_{\Psi\Phi^*}=(C^{L'}_{\Psi^*\Phi})^*$, but in a unitary CFT, the OPE coefficients are real.}.
    % )
    % } 
    % $C_{\omega}=C^{L}_{\omega(-\omega)}$ for $\omega=\alpha,\beta$ and $C_{\alpha\beta}=C^L_{\alpha\beta}$ 
@@ -280,18 +280,18 @@ Label by $\mO_L$, $\mO_{L''}$, and $\mO_{L'}$ the lightest Virasoro primaries th
   \begin{align}
     \frac{\Psi(z_{k}^{+})\Psi^*(z_{k}^{-})}{\braket{\Psi(z^+)\Psi^*(z^-)}}&=e^{-4\pi i k s_{\Psi}/n}\lb
     \frac{\sin(\pi x)}{\sin(\pi x/n)}\rb^{2\Delta_{\Psi}}\times\nn \\
-    &\quad\lb  1+ C_{\Psi}(2\sin(\pi x/n))^{\Delta_L}e^{\pi i s_L(2k/n+1/2)}\mO_L(e^{2\pi i k/n})+\cdots\rb  \\
+    &\quad\lb  1+ C_{\Psi}^L(2\sin(\pi x/n))^{\Delta_L}e^{\pi i s_L(2k/n+1/2)}\mO_L(e^{2\pi i k/n})+\cdots\rb  \\
     \frac{\Phi(z_{k}^{+})\Phi^*(z_{k}^{-})}{\braket{\Phi(z^+)\Phi^*(z^-)}}&=e^{-4\pi i k s_{\Phi}/n}\lb
     \frac{\sin(\pi x)}{\sin(\pi x/n)}\rb^{2\Delta_{\Phi}}\times\nn\\
-    &\quad\lb  1+ C_{\Phi}(2\sin(\pi x/n))^{\Delta_{L''}}e^{\pi i s_{L''}(2k/n+1/2)}\mO_{L''}(e^{2\pi i k/n})+\cdots\rb 
+    &\quad\lb  1+ C_{\Phi}^{L''}(2\sin(\pi x/n))^{\Delta_{L''}}e^{\pi i s_{L''}(2k/n+1/2)}\mO_{L''}(e^{2\pi i k/n})+\cdots\rb 
   \end{align}
   % \begin{align*}
   %   \JM{\frac{V_{w_k}(z_{k,n}^{+},\bar z_{k,n}^+)V_{-w_k}(z_{k,n}^{-},\bar z_{k,n}^-)}{\braket{V_{w_k}(z^+)V_{-w_k}(z^-)}}}&=e^{-4\pi i k s_{w_k}/n}\lb
   %   \frac{\sin(\pi x)}{\sin(\pi x/n)}\rb^{2\Delta_{w_k}}\times\nn\\
   %   &\quad\lb 1+ C_{w_k}(2\sin(\pi x/n))^{\Delta_L}e^{\pi i s_L(2k/n+1/2)}\mO_L(e^{2\pi i k/n})+\cdots\rb
   % \end{align*}
-  In our notation, the Virasoro primary $\mO_{L}$ has
-  dimensions $(h_{L},\bar{h}_{L})$, weight $\Delta_{L}=h_{L}+\bar{h}_{L}<2$ and spin $s_{L}=h_{L}-\bar{h}_{L}$. Depending on the theory, there might be several operators contributing at the lowest order. In this case, we will have to sum over all possible operators.
+  In our notation, the Virasoro primary $\mO_{L}$ and $\mO_{L''}$ have
+  dimensions $(h_{L},\bar{h}_{L})$ and $(h_{L''},\bar{h}_{L''})$, weights $\Delta_{L}=h_{L}+\bar{h}_{L}<2$ and $\Delta_{L''}=h_{L''}+\bar{h}_{L''}<2$, and spins $s_{L}=h_{L}-\bar{h}_{L}$ and $s_{L''}=h_{L''}-\bar{h}_{L''}$ respectively. Depending on the theory, there might be several operators contributing at the lowest order. In this case, we will have to sum over all possible operators.
 We simplify our notation by keeping the sum over all possible operators implicit. Note that the factors coming from spins of $\Psi$ and $\Phi$ becomes
 % \begin{align}
 %  \prod_{k=1}^{n-1} e^{-4\pi i k (s_\alpha-s_\beta)/n}=e^{-2\pi i (n-1)(s_\alpha-s_\beta)}
@@ -325,9 +325,9 @@ where
   %        & =\frac{C_{\alpha}^{2}}{2}\sum_{k\neq k'=0}^{n-1}\frac{1}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}}\ .
   % \end{align}
   \begin{align}\label{fnexpression1}
-    f(n) & =e^{i\pi s_L} \frac{C_{\Psi}^{2}}{2}\sum_{k\neq k'=0}^{n-1}e^{2\pi i s_L (k+k')/n}\langle \mO_{L}(e^{2\pi i k/n})\mO_{L}(e^{2\pi i k'/n})\rangle \nn    \\
-    &=\frac{e^{i\pi s_L} C_{\Psi}^2}{2}\sum_{k\neq k'=0}^{n-1}e^{-i\pi s_L}(2i\sin(\pi(k-k')/n))^{-2h_L}(-2i\sin(\pi(k-k')/n))^{-2\bar{h}_L}\nn\\
-         & =\frac{C_{\Psi}^2}{2}\sum_{k\neq k'=0}^{n-1}\frac{1}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}}\ .
+    f(n) & =e^{i\pi s_L} \frac{{(C_{\Psi}^L)}^{2}}{2}\sum_{k\neq k'=0}^{n-1}e^{2\pi i s_L (k+k')/n}\langle \mO_{L}(e^{2\pi i k/n})\mO_{L}(e^{2\pi i k'/n})\rangle \nn    \\
+    &=\frac{e^{i\pi s_L} {(C_{\Psi}^L)}^{2}}{2}\sum_{k\neq k'=0}^{n-1}e^{-i\pi s_L}(2i\sin(\pi(k-k')/n))^{-2h_L}(-2i\sin(\pi(k-k')/n))^{-2\bar{h}_L}\nn\\
+         & =\frac{{(C_{\Psi}^L)}^{2}}{2}\sum_{k\neq k'=0}^{n-1}\frac{1}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}}\ .
   \end{align}
   % Rewrite the sum above by fixing the separation $m:=k-k' \ (\mathrm{mod}\ n)$. For
   % each $m\in\{1,2,\dots,n-1\}$, set $k'=k-m$ (mod $n$). Then
@@ -366,14 +366,14 @@ where
   \end{align}
   Therefore,
   \begin{align}
-    f'(1)=C^2_\Psi \frac{2^{-2\Delta}\sqrt{\pi}\Gamma(\Delta+1)}{4\Gamma(\Delta+3/2)}
+    f'(1)={(C_{\Psi}^L)}^{2} \frac{2^{-2\Delta}\sqrt{\pi}\Gamma(\Delta+1)}{4\Gamma(\Delta+3/2)}
   \end{align}
   In a general CFT, there could be several inequivalent choices of the lightest primary
   operator $\mO_{L}$ that contribute at the same order. In this case, the leading
   correction $f(n)$ would be given by the sum over all such operators, that
   following \cite{calabrese2011entanglement} we denote by
   \begin{align}
-    f(n) & = C_\Psi^2 S_{2}(n,\Delta) 
+    f(n) & = {(C_{\Psi}^L)}^{2} S_{2}(n,\Delta) 
   \end{align}
   % \begin{align*}
   %     \JM{f(n) = C_\alpha^2 S_2(n)}
@@ -386,8 +386,8 @@ The denominator in $\mathcal{F}_n$ depends on how $\Delta_L$ and $\Delta_{L''}$ 
   %   % \frac{C_{w_k}C_{w_{k'}}}{(2\sin(\pi |k-k'|/n))^{4h_L}}
   % \end{align}
   \begin{align}\label{gnw1}
-    g(n)= & C_{\Psi}C_\Phi\sum_{k=1}^{n-1}\frac{1}{(2\sin(\pi k/n))^{2\Delta_L}}+\frac{C_\Phi^2}{2}\sum_{k\neq k'=1}^{n-1}\frac{1}{(2\sin(\pi |k-k'|/n))^{2\Delta_{L}}}, \nn\\% \nn\\
-    =&(C_\Psi -C_\Phi)C_\Phi\sum_{k=1}^{n-1}\frac{1}{(2\sin(\pi k/n))^{2\Delta_L}}+C_\Phi^2 S_2(n,\Delta_{L})
+    g(n)= & C_{\Psi}^LC_\Phi^L\sum_{k=1}^{n-1}\frac{1}{(2\sin(\pi k/n))^{2\Delta_L}}+\frac{{(C_\Phi^L)}^2}{2}\sum_{k\neq k'=1}^{n-1}\frac{1}{(2\sin(\pi |k-k'|/n))^{2\Delta_{L}}}, \nn\\% \nn\\
+    =&(C_\Psi^L -C_\Phi^L)C_\Phi^L\sum_{k=1}^{n-1}\frac{1}{(2\sin(\pi k/n))^{2\Delta_L}}+{(C_\Phi^L)}^2 S_2(n,\Delta_{L})
     % &=C_\alpha C_\omega \frac{2 S_2(n)}{n}+\sum_{k\neq k'=1}^{n-1}
     % \frac{C_{w_k}C_{w_{k'}}}{(2\sin(\pi |k-k'|/n))^{4h_L}}
   \end{align}
@@ -396,7 +396,7 @@ Therefore, expanding in small $x$ we find
 %   &\log\mathcal{F}_n(x)=(2\pi x/n)^{2\Delta_L}\lb(C_\alpha^2-C_\beta^2)S_2(n)-(C_\alpha-C_\beta)C_\beta \frac{2S_2(n)}{n}\rb+\cdot
 % \end{align}
 \begin{align}
-  &\log\mathcal{F}_n(x)=(2\pi x/n)^{2\Delta_L}\lb(C_\Psi^2-C_\Phi^2)S_2(n)-(C_\Psi-C_\Phi)C_\Phi \frac{2S_2(n,\Delta_L)}{n}\rb+\cdots
+  &\log\mathcal{F}_n(x)=(2\pi x/n)^{2\Delta_L}\lb\lb{(C_\Psi^L)}^2-{(C_\Phi^L)}^2\rb S_2(n)-(C_\Psi^L-C_\Phi^L)C_\Phi^L \frac{2S_2(n,\Delta_L)}{n}\rb+\cdots
 \end{align}
 Since $S_2(1,\Delta)=0$ we find
 % \begin{align}
@@ -409,27 +409,27 @@ S(\rho_\Psi\|\rho_\Phi)
 % }
 =&
 % \JM{
-(C_\Psi-C_\Phi)^2 S'_2(1,\Delta_L)(2\pi x)^{2\Delta_L}+\cdots \nn\\
-&=(C_\Psi-C_\Phi)^2\frac{\sqrt{\pi}\Gamma(\Delta_{L}+1)}{4\Gamma(\Delta_{L}+3/2)}(\pi x)^{2\Delta_L}+\cdots
+(C_\Psi^L-C_\Phi^L)^2 S'_2(1,\Delta_L)(2\pi x)^{2\Delta_L}+\cdots \nn\\
+&=(C_\Psi^L-C_\Phi^L)^2\frac{\sqrt{\pi}\Gamma(\Delta_{L}+1)}{4\Gamma(\Delta_{L}+3/2)}(\pi x)^{2\Delta_L}+\cdots
 \end{align}
 
 Next, consider the case $\Delta_{L''}<\Delta_L$. In this case, only the denominator of $\mathcal{F}_n$ contributes to the lowest order, and we have
   \begin{align}\label{gnw1p}
-    g(n)= & \frac{C_\Phi^2}{2}\sum_{k\neq k'=1}^{n-1}\frac{1}{(2\sin(\pi |k-k'|/n))^{2\Delta_{L''}}}, \nn\\% \nn\\
-    =&-C_\Phi^2\sum_{k=1}^{n-1}\frac{1}{(2\sin(\pi k/n))^{2\Delta_{L''}}}+C_\Phi^2 S_2(n,\Delta_{L''})
+    g(n)= & \frac{{(C_\Phi^{L''})}^{2}}{2}\sum_{k\neq k'=1}^{n-1}\frac{1}{(2\sin(\pi |k-k'|/n))^{2\Delta_{L''}}}, \nn\\% \nn\\
+    =&-{(C_\Phi^{L''})}^{2}\sum_{k=1}^{n-1}\frac{1}{(2\sin(\pi k/n))^{2\Delta_{L''}}}+{(C_\Phi^{L''})}^{2} S_2(n,\Delta_{L''})
     % &=C_\alpha C_\omega \frac{2 S_2(n)}{n}+\sum_{k\neq k'=1}^{n-1}
     % \frac{C_{w_k}C_{w_{k'}}}{(2\sin(\pi |k-k'|/n))^{4h_L}}
   \end{align}
 and since we assumed $\Delta_{L''}$
 \begin{align}
-  \log\mathcal{F}_n(x)&=(2\pi x/n)^{2\Delta_{L''}}\lb -C_\Phi^2 S_2(n,\Delta_{L''})+C_\Phi^2 \frac{2S_2(n,\Delta_{L''})}{n}\rb+\cdot\nn\\
+  \log\mathcal{F}_n(x)&=(2\pi x/n)^{2\Delta_{L''}}\lb -{(C_\Phi^{L''})}^{2} S_2(n,\Delta_{L''})+{(C_\Phi^{L''})}^{2} \frac{2S_2(n,\Delta_{L''})}{n}\rb+\cdot\nn\\
 % \JM{
-S(\rho_\Psi\|\rho_\Phi)
+\implies S(\rho_\Psi\|\rho_\Phi)
 % }
-=&
+&=
 % \JM{
-C_\Phi^2 S'_2(1,\Delta_{L''})(2\pi x)^{2\Delta_{L''}}+\cdots \nn\\
-&=C_\Phi^2\frac{\sqrt{\pi}\Gamma(\Delta_{L''}+1)}{4\Gamma(\Delta_{L''}+3/2)}(\pi x)^{2\Delta_{L''}}+\cdots
+{(C_\Phi^{L''})}^{2} S'_2(1,\Delta_{L''})(2\pi x)^{2\Delta_{L''}}+\cdots \nn\\
+&={(C_\Phi^{L''})}^{2}\frac{\sqrt{\pi}\Gamma(\Delta_{L''}+1)}{4\Gamma(\Delta_{L''}+3/2)}(\pi x)^{2\Delta_{L''}}+\cdots
 \end{align}
 
 Finally, consider the case $\Delta_{L''}>\Delta_L$, then only the numerator contributes to the lowest order to $\mathcal{F}_n$, and we have
@@ -439,8 +439,8 @@ S(\rho_\Psi\|\rho_\Phi)
 % }
 =&
 % \JM{
-C_\Psi^2 S'_2(1,\Delta_{L})(2\pi x)^{2\Delta_{L}}+\cdots \nn\\
-&=C_\Psi^2\frac{\sqrt{\pi}\Gamma(\Delta_{L}+1)}{4\Gamma(\Delta_{L}+3/2)}(\pi x)^{2\Delta_{L}}+\cdots
+{(C_\Psi^L)}^2 S'_2(1,\Delta_{L})(2\pi x)^{2\Delta_{L}}+\cdots \nn\\
+&={(C_\Psi^L)}^2 \frac{\sqrt{\pi}\Gamma(\Delta_{L}+1)}{4\Gamma(\Delta_{L}+3/2)}(\pi x)^{2\Delta_{L}}+\cdots
 \end{align}
 The lesson to learn here is that when $\Delta_{L''}<\Delta_{L}$, to the lowest order the calculation is the same as $S(\rho_0\|\rho_\Phi)$, and when $\Delta_{L''}>\Delta_L$, to the lowest order, it is the same as $S(\rho_\Psi\|\rho_0)$, with $\rho_0$ the vacuum reduced state. As a result, in the remainder of this draft, with no loss of generality, we focus on the case $\Delta_L=\Delta_{L''}$ to simplify our notation. 
 
@@ -467,7 +467,7 @@ Stress tensors $T$ and $\bar{T}$ contribute to the OPE expansion with weights $(
   % \NL{Look into the second line of the result above}
   where $\Delta_L$ is the scaling dimension of the lightest spinless primary in the spectrum that appears in the OPE.
 
-If we consider case $\Delta_L>2$, then we will have the contribution of $T$ and $\bar T$ in the OPE that has scaling dimension 2. So we need the following OPEs,
+If we consider the case where $\Delta_L>2$, then to the lowest order we will have the contribution of $T$ and $\bar T$ in the OPE that has scaling dimension 2. So we need the following OPEs,
 \begin{align}
 \frac{\Psi(z_{k}^{+})\Psi^*(z_{k}^{-})}
      {\braket{\Psi(z^+)\Psi^*(z^-)}}
@@ -511,14 +511,15 @@ e^{-4\pi i k s_{\Phi}/n}
  e^{-2\pi i(2k/n+1/2)}
  \bar T(e^{2\pi i k/n})
 +\cdots
-\Bigg).
+\Bigg),
 \end{align}
+where the $\cdots$ refer to the descendants of $T,\bar T$, the primary $\mO_L$ and its descendants. 
 The two point function of stress tensor is given by,
 \begin{align}
     \langle T (z_{k'})T(z_k) \rangle &= e^{-4\pi i ((k'+k)/n + 1/2)}\frac{c}{2(2\sin(\pi (k'-k)/n))^4} \\
     \langle \bar T (\bar z_{k'})\bar T(\bar z_k) \rangle &= e^{4\pi i ((k'+k)/n + 1/2)}\frac{c}{2(2\sin(\pi (k'-k)/n))^4} 
 \end{align}
-It is clear that the phase term from the OPE gets cancelled from the phase in the two point function. Thus, we can now just substitute $C_\Psi = \frac{2h_\Psi}{c}$ and $C_\Phi = \frac{2h_\Phi}{c}$ in the final answer, with a factor of $c/2$ coming from the two point function of stress tensor. By adding the contribution from both the holomorphic and anti-holomorphic part, we get,
+It is clear that the phase term from the OPE gets cancelled from the phase in the two point function. We can now just substitute $C_\Psi = \frac{2h_\Psi}{c}$ and $C_\Phi = \frac{2h_\Phi}{c}$ in the final answer, with a factor of $c/2$ coming from the two point function of stress tensor. By adding the contribution from both the holomorphic and anti-holomorphic part, we get,
 \begin{align}
     S(\rho_\Psi \| \rho_\Phi) &= (\pi x)^4 \frac{c\sqrt{\pi}\Gamma(3)}{8\Gamma(7/2)}\left[\lb \frac{2h_\Psi}{c}- \frac{2h_\Phi}{c} \rb ^2 + \lb \frac{2\bar h_\Psi}{c}- \frac{2\bar h_\Phi}{c} \rb ^2  \right]+\cdots \nn\\
     &= (\pi x)^4\frac{8}{15c}\lb (h_\Psi - h_\Phi)^2 + (\bar h_\Psi - \bar h_\Phi)^2 \rb + \cdots
@@ -541,7 +542,7 @@ S(\rho_\Psi\|\rho_\Phi)
 \begin{aligned}
 &\sum_L\frac{\sqrt{\pi}\Gamma(\Delta_L+1)}
 {4\Gamma(\Delta_L+\frac32)}
-(C^L_{\Psi\Psi^*}-C^L_{\Phi\Phi^*})^2 
+(C^L_{\Psi}-C^L_{\Phi})^2 
 % &\qquad\qquad\qquad \qquad
 (\pi x)^{2\Delta_L}
 +\cdots
@@ -566,35 +567,33 @@ S(\rho_\Psi\|\rho_\Phi)
 \end{align}
 Note that we have included a sum over $L$ because there can be multiple scalar primaries of the same lowest dimension $\Delta_L$. 
 
-\paragraph{Additivity of relative entropy:} Assume we have a theory that is the tensor product of left and right movers, so that any $\Psi$can be decomposed into $\Psi_L\otimes \Psi_R$ with dimensions, respectively, $(h_\Psi,0)$ and $(0,\bar{h}_\Psi)$. Then, for the second case $\Delta_L>2$, the relative entropy is additive, meaning that at least to the lowest order, we have $\rho_\Psi\simeq\rho_{\Psi_L}\otimes \rho_{\Psi_R}$, and similarly for $\Phi$. In the case $\Delta_L<2$, we continue to have the symmetry if the chiral and anti-chiral copies of the theory are isomorphic.
+\paragraph{Additivity of relative entropy:} Assume we have a theory that is the tensor product of left and right movers, so that any $\Psi$ can be decomposed into $\Psi_L\otimes \Psi_R$ with dimensions, respectively, $(h_\Psi,0)$ and $(0,\bar{h}_\Psi)$. Then, for the second case $\Delta_L>2$, the relative entropy is additive, meaning that at least to the lowest order, we have $\rho_\Psi\simeq\rho_{\Psi_L}\otimes \rho_{\Psi_R}$, and similarly for $\Phi$. In the case $\Delta_L<2$, we continue to have the symmetry if the chiral and anti-chiral copies of the theory are isomorphic.
 
-If we include the three-point function of the same primary $\mO_L$, it turns out that it is also independent of spin.
+\textbf{Light Primaries:} We consider light primaries, such that the leading order contribution comes from the two and three point function of the primaries. In other words, we focus on $\Delta_L<4/3$ so that the three point function of the primary contributes at a smaller order than the two point function of stress tensor. 
+
+It turns out that that the three point function $\braket{\mO_L\mO_L\mO_L}$ it is also independent of spin.
 The three-point function contribution from the numerator is given by,
 \begin{align}
-   \frac{(\pi x)^{3\Delta_L}}{6}\sum_{k_1\neq k_2\neq k_3 =0}^{n-1} \frac{C_{LLL}(C^L_{\Psi\Psi^*})^3}{\lb \sin(\pi (k_3 - k_2)/n) \sin (\pi (k_2 - k_1)/n) \sin(\pi (k_3-k_1)/n)\rb^{\Delta_L}}
+    (C^L_{\Psi})^3C_{LLL}(\pi x)^{3\Delta_L}\mathcal{T}_{n,LLL},
 \end{align}
-where $C_{LLL}$ is the three point OPE coefficient.
-Define 
+where
 \begin{align}
      \mathcal{T}_{n,LLL} &\equiv \frac{1}{6}\sum_{k_1\neq k_2\neq k_3 =0}^{n-1} \frac{1}{\lb \sin(\pi (k_3 - k_2)/n) \sin (\pi (k_2 - k_1)/n) \sin(\pi (k_3-k_1)/n)\rb^{\Delta_L}}.
 \end{align}
-Then, the three point function contributes,
-\begin{align}
-    (C^L_{\Psi\Psi^*})^3(\pi x)^{3\Delta_L}\mathcal{T}_{n,LLL}.
-\end{align}
-The contribution of it to the relative entropy is given by $\p_n \mathcal{T}_n|_{n=1}$. The analytic continuation of the three point function has already been computed in \cite{S_rosi_2018} using modular flow, and is given by,
+The contribution of it to the relative entropy is given by $\p_n \mathcal{T}_{n,LLL}|_{n=1}$. The analytic continuation of the three point function has already been computed in \cite{S_rosi_2018} using modular flow, and is given by,
 \begin{align}
     \p_n\mathcal{T}_{n,LLL}|_{n=1} &= -\frac{2^{3\Delta_L}\Gamma \lb\frac{1+\Delta_L}{2}\rb^3}{12\pi \Gamma\lb\frac{3+3\Delta_L}{2}\rb}
 \end{align}
+This analytic continuation is the special case of the three point function of three different primaries. We have performed its analytic continuation in appendix \ref{Analytic continuation of T_n,LMN}. 
 The total contribution from the denominator consists of two classes of three-point functions. The first arises from inserting the lightest primary in each of the three $\Phi \Phi^*$ OPEs, and therefore is proportional to $C_\Phi^3$. 
   \begin{align}
-     \sum_{k_1 \neq k_2 \neq k_3 = 1}^{n-1} &C_{LLL}(C^L_{\Phi\Phi^*})^3(\pi x)^{3\Delta_L} e^{i\pi s_L(2(k_1 + k_2+k_3)/n + 3/2) }\braket{ \mO_L(z_{k_3})\mO_L(z_{k_2})\mO_L(z_{k_1})} \\
-            & = C_{LLL}(C^L_{\Phi\Phi^*})^3\frac{(\pi x)^{3\Delta_L}}{6}\sum_{k_1 \neq k_2 \neq k_3= 1}^{n-1}\frac{1}{\lb \sin(\pi (k_3 - k_2)/n) \sin (\pi (k_2 - k_1)/n) \sin(\pi (k_3-k_1)/n)\rb^{\Delta_L}}
+     \sum_{k_1 \neq k_2 \neq k_3 = 1}^{n-1} &C_{LLL}(C^L_{\Phi})^3(\pi x)^{3\Delta_L} e^{i\pi s_L(2(k_1 + k_2+k_3)/n + 3/2) }\braket{ \mO_L(z_{k_3})\mO_L(z_{k_2})\mO_L(z_{k_1})} \\
+            & = C_{LLL}(C^L_{\Phi})^3\frac{(\pi x)^{3\Delta_L}}{6}\sum_{k_1 \neq k_2 \neq k_3= 1}^{n-1}\frac{1}{\lb \sin(\pi (k_3 - k_2)/n) \sin (\pi (k_2 - k_1)/n) \sin(\pi (k_3-k_1)/n)\rb^{\Delta_L}}
   \end{align}
   Another contribution  arises from inserting the lightest primary in two $\Phi \Phi^*$ OPEs and one from $\Psi \Psi^*$ OPE, which is proportional to $C_\Psi C_\Phi^2$. 
     \begin{align}
-       \sum_{k_1 \neq k_2 = 1}^{n-1}C_{LLL}C_{\Psi\Psi^*}^L (C^L_{\Phi\Phi^*})^2&(\pi x)^{3\Delta_L} e^{i\pi s_L(2(k_1 + k_2)/n + 3/2) }\braket{ \mO_L(z_{k_2})\mO_L(z_{k_1})\mO_L(z_{0})} \nn \\ 
-       & = C_{LLL}C_{\Psi\Psi^*}^L (C^L_{\Phi\Phi^*})^2\frac{(\pi x)^{3\Delta_L}}{2}\sum_{k_1 \neq k_2 = 1}^{n-1}\frac{1}{\lb \sin(\pi (k_2 - k_1)/n) \sin (\pi k_2/n) \sin(\pi k_1/n)\rb^{\Delta_L}}
+       \sum_{k_1 \neq k_2 = 1}^{n-1}&C_{LLL}C_{\Psi}^L (C^L_{\Phi})^2(\pi x)^{3\Delta_L} e^{i\pi s_L(2(k_1 + k_2)/n + 3/2) }\braket{ \mO_L(z_{k_2})\mO_L(z_{k_1})\mO_L(z_{0})} \nn \\ 
+       & = C_{LLL}C_{\Psi}^L (C^L_{\Phi})^2\frac{(\pi x)^{3\Delta_L}}{2}\sum_{k_1 \neq k_2 = 1}^{n-1}\frac{1}{\lb \sin(\pi (k_2 - k_1)/n) \sin (\pi k_2/n) \sin(\pi k_1/n)\rb^{\Delta_L}}
   \end{align}
 Using translation invariance, this sum can be written in terms of $\mathcal{T}_n$,
 \begin{align}
@@ -602,7 +601,7 @@ Using translation invariance, this sum can be written in terms of $\mathcal{T}_n
 \end{align}
 Then the contributions to the denominator would be of the form,
 \begin{align}
-    C_{LLL}\lb  (3/n) C_{\Psi\Psi^*}^L (C^L_{\Phi\Phi^*})^2 + \lb 1-\frac{3}{n} \rb  (C^L_{\Phi\Phi^*})^3 \rb \mathcal{T}_{n,LLL} (\pi x)^{3\Delta_L}
+    C_{LLL}\lb  (3/n) C_{\Psi}^L (C^L_{\Phi})^2 + \lb 1-\frac{3}{n} \rb  (C^L_{\Phi})^3 \rb \mathcal{T}_{n,LLL} (\pi x)^{3\Delta_L}
 \end{align}
 % These contributions can be combined in the following form,
 % \begin{align}
@@ -615,14 +614,14 @@ The net contribution to relative entropy from the three-point function would be,
 %     \mathcal{T}_n &= \frac{1}{6}\sum_{k_1\neq k_2 \neq k_3 = 0}^{n-1} \frac{C_\Psi^3 - C_\Phi^3 - \delta_{k_1k_2k_3,0}(C_\Psi C_\Phi^2 - C_\Phi^3)}{\lb \sin(\pi (k_3 - k_2)/n) \sin (\pi (k_2 - k_1)/n) \sin(\pi (k_3-k_1)/n)\rb^{\Delta_L}}
 % \end{align}
 \begin{align}
-    S(\rho_\Psi \| \rho_\Phi) &=\sum_L \frac{\sqrt{\pi}\Gamma(\Delta_L+1)}{4\Gamma(\Delta_L+3/2)}(C^L_{\Psi\Psi^*}-C^L_{\Phi\Phi^*})^2 (\pi x)^{2\Delta_L} \nn \\
-    &\qquad + \sum_LC_{LLL}\p_n \lb \lb (C^L_{\Psi\Psi^*})^3 -(C^L_{\Phi\Phi^*})^3 - 3/n(C^L_{\Psi\Psi^*} (C^L_{\Phi\Phi^*})^2 - (C^L_{\Phi\Phi^*})^3) \rb\mathcal{T}_{n,LLL} \rb|_{n=1}(\pi x)^{3\Delta_L} +\cdots  \\
-     &= \sum_L\frac{\sqrt{\pi}\Gamma(\Delta_L+1)}{4\Gamma(\Delta_L+3/2)}(C^L_{\Psi\Psi^*}-C^L_{\Phi\Phi^*})^2 (\pi x)^{2\Delta_L} \nn \\
-     & + \sum_L C_{LLL}(C^L_{\Psi\Psi^*} - C^L_{\Phi\Phi^*})^2 (C^L_{\Psi\Psi^*} + 2C^L_{\Phi\Phi^*}) \p_n \mathcal{T}_{n,LLL}|_{n=1} (\pi x)^{3\Delta_L} + \cdots \\
-     &= \sum_L\frac{\sqrt{\pi}\Gamma(\Delta_L+1)}{4\Gamma(\Delta_L+3/2)}(C^L_{\Psi\Psi^*}-C^L_{\Phi\Phi^*})^2 (\pi x)^{2\Delta_L} \nn \\
-     & + \sum_L \frac{2^{3\Delta_L}\Gamma \lb\frac{1+\Delta_L}{2}\rb^3}{12\pi \Gamma\lb\frac{3+3\Delta_L}{2}\rb}C_{LLL}(C^L_{\Psi\Psi^*} - C^L_{\Phi\Phi^*})^2 (C^L_{\Psi\Psi^*} + 2C^L_{\Phi\Phi^*})  (\pi x)^{3\Delta_L} + \cdots
+    S(\rho_\Psi \| \rho_\Phi) &=\sum_L \frac{\sqrt{\pi}\Gamma(\Delta_L+1)}{4\Gamma(\Delta_L+3/2)}(C^L_{\Psi}-C^L_{\Phi})^2 (\pi x)^{2\Delta_L} \nn \\
+    & + \sum_LC_{LLL}\p_n \Big[ \Big( (C^L_{\Psi})^3 -(C^L_{\Phi})^3 - 3/n\lb C^L_{\Psi} (C^L_{\Phi})^2 - (C^L_{\Phi})^3\rb \Big)\mathcal{T}_{n,LLL} \Big]\Bigg|_{n=1}(\pi x)^{3\Delta_L} +\cdots  \\
+     &= \sum_L\frac{\sqrt{\pi}\Gamma(\Delta_L+1)}{4\Gamma(\Delta_L+3/2)}(C^L_{\Psi}-C^L_{\Phi})^2 (\pi x)^{2\Delta_L} \nn \\
+     & + \sum_L C_{LLL}(C^L_{\Psi} - C^L_{\Phi})^2 (C^L_{\Psi} + 2C^L_{\Phi}) \p_n \mathcal{T}_{n,LLL}|_{n=1} (\pi x)^{3\Delta_L} + \cdots \\
+     &= \sum_L\frac{\sqrt{\pi}\Gamma(\Delta_L+1)}{4\Gamma(\Delta_L+3/2)}(C^L_{\Psi}-C^L_{\Phi})^2 (\pi x)^{2\Delta_L} \nn \\
+     & + \sum_L \frac{2^{3\Delta_L}\Gamma \lb\frac{1+\Delta_L}{2}\rb^3}{12\pi \Gamma\lb\frac{3+3\Delta_L}{2}\rb}C_{LLL}(C^L_{\Psi} - C^L_{\Phi})^2 (C^L_{\Psi} + 2C^L_{\Phi})  (\pi x)^{3\Delta_L} + \cdots
 \end{align} 
-where in the last step, we analytic continued $\p_n\mathcal{T}_{n,LLL}|_{n=1}$ (see appendix \ref{Analytic continuation of T_n,LMN} for details). 
+where in the last step, we analytic continued $\p_n\mathcal{T}_{n,LLL}|_{n=1}$ (see \cite{S_rosi_2018} and appendix \ref{Analytic continuation of T_n,LMN} for details). 
 % However, if we have multiple operators with the same scaling dimensions ($\Delta_L = \Delta_M= \Delta_N$), this result gets modified with the three point OPE coefficient $C_{LMN}$. We have the following contribution from three point function,
 % \begin{align}
 %     \log \mathcal{F}_n|_{\text{3 pt.}} &= \mathcal{T}_n \sum_{LMN}(\pi x)^{3\Delta_L} C_{LMN} \Big( C_{\Psi\Psi^*}^LC_{\Psi\Psi^*}^MC_{\Psi\Psi^*}^N - \frac{3}{n} C_{\Psi\Psi^*}^LC_{\Phi\Phi^*}^MC_{\Phi\Phi^*}^N \nn \\
@@ -630,16 +629,16 @@ where in the last step, we analytic continued $\p_n\mathcal{T}_{n,LLL}|_{n=1}$ (
 %     \implies  \p_n \log \mathcal{F}_n |_{n=1; \text{3 pt.}} &= \p_n \mathcal{T}_n|_{n=1} \sum_{LMN}(\pi x)^{3\Delta_L} C_{LMN} \Big(C_{\Psi\Psi^*}^LC_{\Psi\Psi^*}^MC_{\Psi\Psi^*}^N - 3 C_{\Psi\Psi^*}^LC_{\Phi\Phi^*}^MC_{\Phi\Phi^*}^N \nn \\
 %     &\qquad \qquad \qquad \qquad \qquad  +2C_{\Phi\Phi^*}^LC_{\Phi\Phi^*}^MC_{\Phi\Phi^*}^N \Big)
 % \end{align}
-We can generalize this further for unequal dimensions, i.e., $\Delta_L \neq \Delta_M \neq \Delta_N$,
+We can generalize this further for unequal dimensions of the primaries, i.e., $\Delta_L \neq \Delta_M \neq \Delta_N$. Again, we focus on light primaries, i.e., $\Delta_L<2$ and $\Delta_L+ \Delta_M+\Delta_N<4$, thus ignoring the contribution from Stress tensor. We obtain,  
 \begin{align}
-    \log \mathcal{F}|_n &= \sum_L (C^L_{\Psi\Psi^*}-C^L_{\Phi\Phi^*})^2S_2(n,\Delta_L) (2\pi x)^{2\Delta_L} \nn \\&\quad+  \sum_{LMN}\mathcal{T}_{n,LMN}(\pi x)^{\Delta_L+ \Delta_M + \Delta_N} C_{LMN} \Big( C_{\Psi\Psi^*}^LC_{\Psi\Psi^*}^MC_{\Psi\Psi^*}^N \nn \\&- \frac{1}{n} \lb C_{\Psi\Psi^*}^LC_{\Phi\Phi^*}^MC_{\Phi\Phi^*}^N + C_{\Phi\Phi^*}^LC_{\Psi\Psi^*}^MC_{\Phi\Phi^*}^N+C_{\Phi\Phi^*}^LC_{\Phi\Phi^*}^MC_{\Psi\Psi^*}^N\rb\nn \\
+    \log \mathcal{F}|_n &= \sum_L (C^L_{\Psi}-C^L_{\Phi})^2S_2(n,\Delta_L) (2\pi x)^{2\Delta_L} \nn \\&\quad+  \sum_{LMN}\mathcal{T}_{n,LMN}(\pi x)^{\Delta_L+ \Delta_M + \Delta_N} C_{LMN} \Big( C_{\Psi}^LC_{\Psi}^MC_{\Psi}^N \nn \\&- \frac{1}{n} \lb C_{\Psi}^LC_{\Phi}^MC_{\Phi}^N + C_{\Phi}^LC_{\Psi}^MC_{\Phi}^N+C_{\Phi}^LC_{\Phi}^MC_{\Psi}^N\rb\nn \\
     &
     % \qquad \qquad \qquad \qquad
-    - \lb1-\frac{3}{n}\Big) C_{\Phi\Phi^*}^LC_{\Phi\Phi^*}^MC_{\Phi\Phi^*}^N \rb\\
-    \implies \p_n \log \mathcal{F}_n|_{n=1} &= \sum_L\frac{\sqrt{\pi}\Gamma(\Delta_L+1)}{4\Gamma(\Delta_L+3/2)}(C^L_{\Psi\Psi^*}-C^L_{\Phi\Phi^*})^2 (\pi x)^{2\Delta_L} \nn \\&+\p_n |_{n=1} \sum_{LMN}\mathcal{T}_{n,LMN}(\pi x)^{\Delta_L+ \Delta_M + \Delta_N} C_{LMN} \Big[ C_{\Psi\Psi^*}^LC_{\Psi\Psi^*}^MC_{\Psi\Psi^*}^N \nn \\&- \lb C_{\Psi\Psi^*}^LC_{\Phi\Phi^*}^MC_{\Phi\Phi^*}^N + C_{\Phi\Phi^*}^LC_{\Psi\Psi^*}^MC_{\Phi\Phi^*}^N+C_{\Phi\Phi^*}^LC_{\Phi\Phi^*}^MC_{\Psi\Psi^*}^N\rb\nn \\
+    - \lb1-\frac{3}{n}\Big) C_{\Phi}^LC_{\Phi}^MC_{\Phi}^N \rb+ \cdots \\
+    \implies S(\rho_\Psi\|\rho_\Phi) &= \sum_L\frac{\sqrt{\pi}\Gamma(\Delta_L+1)}{4\Gamma(\Delta_L+3/2)}(C^L_{\Psi}-C^L_{\Phi})^2 (\pi x)^{2\Delta_L} \nn \\&+ \sum_{LMN}\p_n \mathcal{T}_{n,LMN}|_{n=1}(\pi x)^{\Delta_L+ \Delta_M + \Delta_N} C_{LMN} \Big[ C_{\Psi}^LC_{\Psi}^MC_{\Psi}^N \nn \\&- \lb C_{\Psi}^LC_{\Phi}^MC_{\Phi}^N + C_{\Phi}^LC_{\Psi}^MC_{\Phi}^N+C_{\Phi}^LC_{\Phi}^MC_{\Psi}^N\rb\nn \\
     &
     % \qquad \qquad \qquad \qquad
-    +2 C_{\Phi\Phi^*}^LC_{\Phi\Phi^*}^MC_{\Phi\Phi^*}^N \Big]
+    +2 C_{\Phi}^LC_{\Phi}^MC_{\Phi}^N \Big] + \cdots
 \end{align}
 where $C_{LMN}$ is the three point OPE coefficient. We have performed the analytic continuation of the three point function of three different primaries in appendix \ref{Analytic continuation of T_n,LMN}. For simplicity of notation, we define the following,
 \begin{align}
@@ -669,14 +668,13 @@ C_\Psi^LC_\Psi^MC_\Psi^N
 C_\Phi^LC_\Phi^MC_\Psi^N
 +2C_\Phi^LC_\Phi^MC_\Phi^N .
 \end{align}
-Then, we have,
+In terms of the newly defined variables, we obtain,
 \begin{align}
-    \p_n \log \mathcal{F}_n|_{n=1}&=\sum_Lf_{LL}(C_{\Psi \Psi^*}^L-C_{\Phi\Phi^*}^L)^2(\pi x)^{2\Delta_L} + \sum_{LMN}f_{LMN}C_{LMN}\mathcal B_{LMN}^{\Psi|\Phi}(\pi x)^{\Delta_L+\Delta_M+\Delta_N} + \cdots
+    S(\rho_\Psi\|\rho_\Phi)&=\sum_Lf_{LL}(C_{\Psi }^L-C_{\Phi}^L)^2(\pi x)^{2\Delta_L} + \sum_{LMN}f_{LMN}C_{LMN}\mathcal B_{LMN}^{\Psi|\Phi}(\pi x)^{\Delta_L+\Delta_M+\Delta_N} + \cdots
 \end{align}
 
-\textbf{Heavy primaries}
-
-Consider the case where $\Delta_L>3$, or primaries whose two point function will contribute at a higher order than the three point function of stress tensor. Then the leading contribution only from the two point, three point and descendants of stress tensors. We thus need to consider the following OPE (we drop the phases coming from spin for simplicity, as they don't contribute to the relative entropy),
+\textbf{Heavy primaries:}
+Consider the case where $\Delta_L>3$, which would correspond to primaries whose two point function will contribute at a higher order than the three point function or two point function of descendants of stress tensor. Then the leading contribution only from the two point, three point and descendants of stress tensors. We thus need to consider the following OPE (we drop the phases coming from spin for simplicity, as they don't contribute to the relative entropy),
 \begin{align}
     \frac{\Psi(z_k^+) \Psi(z_k^-)}{\braket{\Psi(z^+) \Psi(z^-)}} &= \lb\frac{\sin(\pi x)}{\sin(\pi x/n)}\rb^{2\Delta_\Psi} \Bigg(1+ \frac{2h_\Psi}{c} \lb 2\sin (\pi x/n)\rb^2 T(z_k) \nn\\
     &\qquad\qquad  + \lb 2\sin (\pi x/n)\rb^4\Bigg[\frac{h_\Psi}{20c}\p^2T(z_k) + \frac{2h_\Psi(5h_\Psi+1)}{c(5c+22)}\lb :TT:(z_k) - \frac{3}{10}\p^2T(z_k)\rb\Bigg] + \cdots \Bigg)
@@ -1043,7 +1041,7 @@ are implicit.
 }
 \label{tab:small-x-contributions}
 \end{table}
-\textit{Comments on Table 1:} Note that, we did not include the contribution from the first level descendant, since they vanish explicitly in our mid-point OPEs. Also, if we consider the case $\Delta_L=1$, for example coherent states, one has to include the four-point function $\braket{\mO_L\mO_L\mO_L\mO_L}$ into account if one wants to go beyond three point-function. In other words, one has to include $TT$, $T\mO_L\mO_L$, $[\mO_L\mO_L]_{\text{level 2}}$ and $\braket{\mO_L\mO_L\mO_L\mO_L}$, all of which have the same dimension. The level 2 descendant include terms like $\braket{L_{-1}^2\mO_L\mO_L}$ and $\braket{L_{-2}\mO_L\mO_L}$, where $L_{-n}$ are Virasoro generators. Note that, there is no contribution from level 3 descendant since it vanishes from the midpoint OPEs. Similarly, it has been shown in the appendix \ref{Descendant contribution to Relative entropy} that all the odd level descendants vanish. If we consider level 4 descendant, for example, $\braket{L_{-4}\mO_L\mO_L}$, which has dimension $2\Delta_L+4$. That will contribute only if $2\Delta_L+4 <4\Delta_L$, which says $\Delta_L>2$. However, the four point function of stress tensor is already of dimension 8. Comparing it with the four point function of stress tensor, $2\Delta_L+4<8$, gives $\Delta_L<2$. But then, it will have dimension larger than $\mO_L\mO_L\mO_L\mO_L$. Then, we can again ignore the contribution of level 4 descendant, since, we are restricting our computation till the 4-point function of primaries or the stress tensor. Same argument holds for operators of higher dimensions, such as $L_{-2}\mO_L\mO_L\mO_L$, etc. 
+\textit{Comments on Table 1:} Note that, we did not include the contribution from the first level descendant, since they vanish explicitly in our mid-point OPEs. Also, if we consider the case $\Delta_L=1$, for example coherent states, one has to include the four-point function $\braket{\mO_L\mO_L\mO_L\mO_L}$ into account if one wants to go beyond three point-function. In other words, one has to include $\braket{TT}$, $\braket{T\mO_L\mO_L}$, $[\mO_L\mO_L]_{\text{level 2}}$ and $\braket{\mO_L\mO_L\mO_L\mO_L}$, all of which have the same dimension. The level 2 descendants ($[\mO_L\mO_L]_{\text{level 2}}$) include terms like $\braket{L_{-1}^2\mO_L\mO_L}$ and $\braket{L_{-2}\mO_L\mO_L}$, where $L_{-n}$ are Virasoro generators. Note that, there is no contribution from level 3 descendant since it vanishes from the midpoint OPEs. Similarly, it has been shown in the appendix \ref{Descendant contribution to Relative entropy} that all the odd level descendants vanish. If we consider level 4 descendant, for example, $\braket{L_{-4}\mO_L\mO_L}$, which has dimension $2\Delta_L+4$. That will contribute only if $2\Delta_L+4 <4\Delta_L$, which says $\Delta_L>2$. However, the four point function of stress tensor is already of dimension 8. Comparing it with the four point function of stress tensor, $2\Delta_L+4<8$, gives $\Delta_L<2$. But then, it will have dimension larger than $\braket{\mO_L\mO_L\mO_L\mO_L}$. Then, we can again ignore the contribution of level 4 descendant, since, we are restricting our computation till the 4-point function of primaries or the stress tensor. Same argument holds for operators of higher dimensions, such as $\braket{L_{-2}\mO_L\mO_L\mO_L}$, etc. 
 We thus now have the following contributions, 
 
 
@@ -1051,7 +1049,7 @@ We thus now have the following contributions,
 \begin{align}
     \mathcal S_{LL}^{[2\Delta_L]}
     &\equiv
-    f_{LL}(C^L_{\Psi\Psi^*}-C^L_{\Phi\Phi^*})^2(\pi x)^{2\Delta_L},
+    f_{LL}(C^L_{\Psi}-C^L_{\Phi})^2(\pi x)^{2\Delta_L},
 \end{align}
 
 \textbf{3-point function}
@@ -1081,8 +1079,8 @@ We thus now have the following contributions,
     \mathcal S_{LL,{\rm sub}}^{[2\Delta_L+2]}
     &\equiv
     -\frac{\Delta_L}{3}
-    f_{LL}(C^L_{\Psi\Psi^*}-C^L_{\Phi\Phi^*})^2
-    (\pi x)^{2\Delta_L+2} = \Delta_L f_{LL0}(C^L_{\Psi\Psi^*}-C^L_{\Phi\Phi^*})^2
+    f_{LL}(C^L_{\Psi}-C^L_{\Phi})^2
+    (\pi x)^{2\Delta_L+2} = \Delta_L f_{LL0}(C^L_{\Psi}-C^L_{\Phi})^2
     (\pi x)^{2\Delta_L+2}.
 \end{align}
 
@@ -1092,7 +1090,7 @@ We thus now have the following contributions,
     &\equiv
     \frac{\Delta_L(\Delta_L+1)}
     {2\Delta_L+3}
-    f_{LL}(C^L_{\Psi\Psi^*}-C^L_{\Phi\Phi^*})^2
+    f_{LL}(C^L_{\Psi}-C^L_{\Phi})^2
     (\pi x)^{2\Delta_L+2}.
 \end{align}
 
@@ -1106,7 +1104,7 @@ We thus now have the following contributions,
     &=
     \frac{\Delta_L^2}
     {3(2\Delta_L+3)}
-    f_{LL}(C^L_{\Psi\Psi^*}-C^L_{\Phi\Phi^*})^2
+    f_{LL}(C^L_{\Psi}-C^L_{\Phi})^2
     (\pi x)^{2\Delta_L+2}.
 \end{align}
 
@@ -1154,9 +1152,9 @@ The above equation simplifies to,
 ={}&
 \frac{\Delta_L f_{LL}}
 {2\Delta_L+3}
-\,(C^L_{\Psi\Psi^*}-C^L_{\Phi\Phi^*})
+\,(C^L_{\Psi}-C^L_{\Phi})
 \Bigg[
-\frac{\Delta_L}{3}(C^L_{\Psi\Psi^*}-C^L_{\Phi\Phi^*})
+\frac{\Delta_L}{3}(C^L_{\Psi}-C^L_{\Phi})
 -\frac{8h_L}{c}
 \left(
 h_\Psi(C_\Psi^L+C_\Phi^L)
@@ -1240,7 +1238,7 @@ O(x^\gamma).\\
 
 \begin{align}
     S(\rho_\Psi \|\rho_\Phi) -S(\rho_\Phi \|\rho_\Psi)   
-    &=\sum_L \frac{2^{3\Delta_L}\Gamma \lb\frac{1+\Delta_L}{2}\rb^3}{12\pi \Gamma\lb\frac{3+3\Delta_L}{2}\rb}C_{LLL}(C^L_{\Psi\Psi^*} - C^L_{\Phi\Phi^*})^3(\pi x)^{3\Delta_L} +\cdots \\
+    &=\sum_L \frac{2^{3\Delta_L}\Gamma \lb\frac{1+\Delta_L}{2}\rb^3}{12\pi \Gamma\lb\frac{3+3\Delta_L}{2}\rb}C_{LLL}(C^L_{\Psi} - C^L_{\Phi})^3(\pi x)^{3\Delta_L} +\cdots \\
     &=\lb \Delta K_\Psi - (S_\Psi - S_\Phi) \rb - \lb \Delta K_\Phi - (S_\Phi - S_\Psi) \rb
     \\
     &= \lb \Delta K_\Psi - \Delta K_\Phi \rb -2 \lb S_\Psi - S_\Phi\rb
@@ -1413,7 +1411,10 @@ For the $n$-dependent correlators, at small $1-x$ the OPE expansion of the numer
       \frac{\Phi(z_{n-1}^{+})\Psi^*(z_0^{-})}{\sqrt{\braket{\Psi(z^+)\Psi^*(z^-)}\braket{\Phi(z^+)\Phi^*(z^-)}}}&= \lb\frac{\zeta_1}{\zeta_n}\rb^{\Delta_\Psi + \Delta_\Phi}C^{(0)}_{\Phi\Psi}  \big(e^{-2\pi i s_{\Phi}(-1/n +2)}1 + \nn\\
       &\qquad \sum_j C^j_{\Psi\Phi}\zeta_n^{\Delta'_j}e^{i\pi(s'_j -s_\Psi - s_\Phi)(-1/n + 5/2)}e^{i \pi (s_\Psi + s_\Phi)/2}\mO_j(e^{i(2n-1)\pi/n}) + \cdots\big)
   \end{align}
-  where $\mO_j$ is the $j^{th}$ lowest dimension operator in the OPE $\Psi\Psi^*$ and  $\Phi\Phi^*$,\footnote{As before, we continue to assume, without loss of generality, that the primaries in the OPEs of $\Psi \Psi^*$ and $\Phi \Phi^*$ have the same dimension.} and $\mO'_j$ is the $j^{th}$ lowest dimension primary in the OPE $\Psi\Phi^*$ (and similarly $(\mO'_j)^*$ is the $j^{th}$ lowest dimension primary in the OPE of $\Psi^*\Phi$) which need not be the same as $\mO_L$ which is the lowest dimension operator in the OPE of $\Phi$ and $\Phi^*$. To match the notation from previous section, we use $\Delta_L\equiv \Delta_1$, $C_\Phi=C_\Phi^{(1)}$, $C_{\Psi\Phi}=C^{(1)}_{\Psi\Phi}$, and $C=C_{\Psi\Phi^*}^{(0)}$
+  where $\mO_j$ is the $j^{th}$ lowest dimension operator in the OPE $\Psi\Psi^*$ and  $\Phi\Phi^*$,\footnote{As before, we continue to assume, without loss of generality, that the primaries in the OPEs of $\Psi \Psi^*$ and $\Phi \Phi^*$ have the same dimension.} and $\mO'_j$ is the $j^{th}$ lowest dimension primary in the OPE $\Psi\Phi^*$ (and similarly $(\mO'_j)^*$ is the $j^{th}$ lowest dimension primary in the OPE of $\Psi^*\Phi$) which need not be the same as $\mO_L$ which is the lowest dimension operator in the OPE of $\Phi$ and $\Phi^*$. 
+  To match the notation from previous section, we use 
+  $\Delta_L\equiv \Delta_1$, $C_\Phi=C_\Phi^{(1)}$, $C_{\Psi\Phi}=C^{(1)}_{\Psi\Phi}$, and 
+  $C_{\Psi \Phi^*}\equiv C_{\Psi\Phi^*}^{L'}$.
 
 During computation of the contribution to $\mathcal{F}_n$, we want to keep only those terms which are invariant under a rotation of $\pi$ about its midpoint. The numerator would contribute only if $s_\Psi \in \mathbb{Z}$. This implies that the denominator will contribute only if $s_\Phi \in \mathbb{Z}$, since we would require $s_\Psi + s_\Phi \in \mathbb{Z}$, and hence $s_\Phi \in \mathbb{Z}$.
 
@@ -1433,9 +1434,9 @@ and to the lowest order $\zeta_n^{2\Delta_L}$ we have
 %   &=\lb \frac{\zeta_1}{\zeta_n}\rb^{2n\Delta_\alpha}\lb 1+\zeta_n^{2\Delta_L}C_\alpha^2 S_2(n)+\cdots \rb
 % \end{align}
 \begin{align}
-  &\lb \frac{\zeta_1}{\zeta_n}\rb^{2n\Delta_\Psi}\lb 1+\zeta_n^{2\Delta_L}\frac{C_\Psi^2}{2}\sum_{k\neq k'}e^{i\pi s_L(\theta_k+\theta_{k'}+1)}\braket{\mO_L(e^{i\pi\theta_k})\mO_L(e^{i\pi\theta_{k'}})}+\cdots \rb\nn\\
-  &=\lb \frac{\zeta_1}{\zeta_n}\rb^{2n{\Delta_\Psi}}\lb 1+\zeta_n^{2\Delta_L}\frac{C^2_{\Psi}}{2}\sum_{k\neq k'}\frac{1}{(2\sin(\pi|k-k'|/n))^{2\Delta_L}}+\cdots \rb\nn\\
-  &=\lb \frac{\zeta_1}{\zeta_n}\rb^{2n{\Delta_\Psi}}\lb 1+\zeta_n^{2\Delta_L}C^2_{{\Psi}} S_2(n)+\cdots \rb
+  &\lb \frac{\zeta_1}{\zeta_n}\rb^{2n\Delta_\Psi}\lb 1+\zeta_n^{2\Delta_L}\frac{{(C_\Psi^L)}^2 }{2}\sum_{k\neq k'}e^{i\pi s_L(\theta_k+\theta_{k'}+1)}\braket{\mO_L(e^{i\pi\theta_k})\mO_L(e^{i\pi\theta_{k'}})}+\cdots \rb\nn\\
+  &=\lb \frac{\zeta_1}{\zeta_n}\rb^{2n{\Delta_\Psi}}\lb 1+\zeta_n^{2\Delta_L}\frac{{(C_\Psi^L)}^2 }{2}\sum_{k\neq k'}\frac{1}{(2\sin(\pi|k-k'|/n))^{2\Delta_L}}+\cdots \rb\nn\\
+  &=\lb \frac{\zeta_1}{\zeta_n}\rb^{2n{\Delta_\Psi}}\lb 1+\zeta_n^{2\Delta_L}{(C_\Psi^L)}^2 S_2(n)+\cdots \rb
 \end{align}
 
 To the lowest order, in the denominator, we have $n-2$ copies of the OPE of $\Phi$ and $\Phi^*$ and the OPEs of $\Psi\Phi^*$ and $\Psi^*\Phi$. 
@@ -1454,8 +1455,8 @@ and to the lowest order we have
 %   &=\lb \frac{\zeta_1}{\zeta_n}\rb^{2((n-1)\Delta_\beta+\Delta_\alpha)}\zeta_n^{2\Delta_{L'}}C_{\alpha\beta}^2(2\sin(\pi/n))^{-2\Delta_{L'}}
 % \end{align}
 \begin{align}
-  &\lb \frac{\zeta_1}{\zeta_n}\rb^{2((n-1)\Delta_\Phi+\Delta_\Psi)}\zeta_n^{2\Delta_{L'}}C_{\Psi\Phi}^2 e^{-2\pi i (n-2)s_\Phi} e^{i\pi s_{L'}}e^{2 \pi i (s_{L'} - s_\Psi - s_\Phi)}\braket{\mO_{L'}(1)\mO_{L'}(e^{\pi/n})}\nn\\
-  &=\lb \frac{\zeta_1}{\zeta_n}\rb^{2((n-1)\Delta_\Phi+\Delta_\Psi)}C_{\Psi\Phi}^2e^{-2\pi i s_\Phi(n-2)}e^{-2 \pi i( s_\Psi + s_\Phi)}\xi_n^{2\Delta_{L'}}\nn\\
+  &\lb \frac{\zeta_1}{\zeta_n}\rb^{2((n-1)\Delta_\Phi+\Delta_\Psi)}\zeta_n^{2\Delta_{L'}}{(C_{\Psi\Phi^*}^{L'})}^2 e^{-2\pi i (n-2)s_\Phi} e^{i\pi s_{L'}}e^{2 \pi i (s_{L'} - s_\Psi - s_\Phi)}\braket{\mO_{L'}(1)\mO_{L'}(e^{\pi/n})}\nn\\
+  &=\lb \frac{\zeta_1}{\zeta_n}\rb^{2((n-1)\Delta_\Phi+\Delta_\Psi)}{(C_{\Psi\Phi^*}^{L'})}^2e^{-2\pi i s_\Phi(n-2)}e^{-2 \pi i( s_\Psi + s_\Phi)}\xi_n^{2\Delta_{L'}}\nn\\
   \xi_n&=\frac{\sin(\pi \ep/n)}{\sin(\pi/n)}
 \end{align}
 The $e^{2\pi i s_{L'}}$ gets cancelled from the phase of the two-point function.
@@ -1474,7 +1475,7 @@ C^2\Bigg[
 1
 &+ \zeta_n^{2\Delta_L}
 \Bigg(
-\left(C_{\Phi\Phi^*}^{L}\right)^2
+\left(C_{\Phi}^{L}\right)^2
 \sum_{\substack{1\le k,k'\le n-2\\ k\neq k'}}
 \left[
 \frac{1}{2\sin\!\left(\frac{\pi(k-k')}{n}\right)}
@@ -1487,7 +1488,7 @@ C^2\Bigg[
 \right]^{2\Delta_{L}}
 \nonumber\\
 &\qquad
-+ 2C_{\Psi\Phi^*}^{L}C_{\Phi\Phi^*}^{L}
++ 2C_{\Psi\Phi^*}^{L}C_{\Phi}^{L}
 \left[
 \frac{2S_2(n,\Delta_L)}{n}
 -
@@ -1509,7 +1510,7 @@ S_2(n,\Delta_L)
 \end{align}
 we can simplify the contribution coming from the two point functions to the following,
 \begin{align}
-\left(C_{\Phi\Phi^*}^{L}\right)^2 \lb S_2(n,\Delta_L) - \frac{4S_2(n,\Delta_L)}{n}\rb + 2C_{\Psi\Phi^*}^{L}C_{\Phi\Phi^*}^{L} \lb\frac{2S_2(n,\Delta_L)}{n}\rb + \lb  C_{\Phi\Phi^*}^{L} - C_{\Psi\Phi^*}^{L} \rb^2\left(\frac{1}{2\sin(\pi/n)}\right)^{2\Delta_L}.
+\left(C_{\Phi}^{L}\right)^2 \lb S_2(n,\Delta_L) - \frac{4S_2(n,\Delta_L)}{n}\rb + 2C_{\Psi\Phi^*}^{L}C_{\Phi}^{L} \lb\frac{2S_2(n,\Delta_L)}{n}\rb + \lb  C_{\Phi}^{L} - C_{\Psi\Phi^*}^{L} \rb^2\left(\frac{1}{2\sin(\pi/n)}\right)^{2\Delta_L}.
 \end{align}
 Notice, we have a divergent piece $\lb 1/(2\sin(\pi/n))\rb^{2\Delta_L}$ which clearly blows up. Our aim was to use the OPE Coefficient $C$ in the mixing channel as a regulator, to control the divergence of relative entropy between two non-orthogonal states. However, the result still blows up. 
 We will consider the relative entropy of mixtures in the following section, where we will that the classical probability of the mixture will regulate the divergence in the small $1-x$ limit. 
@@ -1603,10 +1604,10 @@ The replica trick for this relative entropy in the $x\to 1^-$ limit is
 %   \mathcal{F}_n=\frac{1+C_\beta^2(\sin(\pi \ep/n))^{2\Delta_L}f(n)+\cdots }{D_n(\ep)^{(n-1)}(2\sin(\pi \ep/n))^{4h_\beta}\braket{V_\beta(z_{n-1,n}^+)V_{-\beta}(z_{1,n}^-)}}
 % \end{align}
 \begin{align}
-  \mathcal{F}_n&=\frac{1+C_\Phi^2(2\sin(\pi \ep/n))^{2\Delta_L}f(n)+\cdots }{\lb \frac{n \sin (\pi \ep /n)}{\sin \pi \ep} \rb^{2\Delta_\Phi (n-1)}\lb \frac{e^{2\pi i ns_\Phi}e^{i\pi s_\Phi}}{e^{2\pi i (n-1)s_\Phi}}
+  \mathcal{F}_n&=\frac{1+{(C_\Phi^L)}^2(2\sin(\pi \ep/n))^{2\Delta_L}f(n)+\cdots }{\lb \frac{n \sin (\pi \ep /n)}{\sin \pi \ep} \rb^{2\Delta_\Phi (n-1)}\lb \frac{e^{2\pi i ns_\Phi}e^{i\pi s_\Phi}}{e^{2\pi i (n-1)s_\Phi}}
   % D_n(\ep)^{(n-1)}
   \lb2\sin(\pi \ep/n)\rb^{2\Delta_\Phi}\braket{\Phi(z_{0,n}^+)\Phi^*(z_{0,n}^-)}+\cdots\rb } \nn \\
-  &= \frac{1+C_\Phi^2(2\sin(\pi \ep/n))^{2\Delta_L}f(n)+\cdots }{D_n(\ep)^{n-1}\lb  \lb \frac{\sin(\pi \ep/n)}{\sin(\pi (1-\ep)/n)}\rb^{2\Delta_\Phi}+\cdots\rb 
+  &= \frac{1+{(C_\Phi^L)}^2(2\sin(\pi \ep/n))^{2\Delta_L}f(n)+\cdots }{D_n(\ep)^{n-1}\lb  \lb \frac{\sin(\pi \ep/n)}{\sin(\pi (1-\ep)/n)}\rb^{2\Delta_\Phi}+\cdots\rb 
   % D_n(\ep)^{(n-1)}
   }
 \end{align}
@@ -1615,8 +1616,8 @@ Therefore,
 %   \log\mathcal{F}_n=&(\pi \ep/n)^{2\Delta_L}C_\beta^2 f(n)-(n-1)\log D_n(\ep)-4h_\beta\log\lb\frac{2\sin(\pi \ep/n)}{2\sin(\pi (1+\ep)/n)}\rb+\cdots
 % \end{align}
 \begin{align}
-  \log\mathcal{F}_n=&(2\pi \ep/n)^{2\Delta_L}C_\Phi^2 f(n)-(n-1) 2\Delta_\Phi \log \lb \frac{n \sin (\pi \ep/n )}{\sin (\pi \ep)} \rb -2\Delta_\Phi\log\lb\frac{\sin(\pi \ep/n)}{\sin(\pi (1-\ep)/n)}\rb+\cdots\nn\\
-  &=(2\pi \ep/n)^{2\Delta_L}C_\Phi^2 f(n)- 2n\Delta_\Phi \log \lb \frac{n \sin (\pi \ep/n )}{\sin (\pi \ep)} \rb -2\Delta_\Phi\log\lb\frac{\sin(\pi \ep)}{n\sin(\pi (1-\ep)/n)}\rb+\cdots
+  \log\mathcal{F}_n=&(2\pi \ep/n)^{2\Delta_L}{(C_\Phi^L)}^2 f(n)-(n-1) 2\Delta_\Phi \log \lb \frac{n \sin (\pi \ep/n )}{\sin (\pi \ep)} \rb -2\Delta_\Phi\log\lb\frac{\sin(\pi \ep/n)}{\sin(\pi (1-\ep)/n)}\rb+\cdots\nn\\
+  &=(2\pi \ep/n)^{2\Delta_L}{(C_\Phi^L)}^2 f(n)- 2n\Delta_\Phi \log \lb \frac{n \sin (\pi \ep/n )}{\sin (\pi \ep)} \rb -2\Delta_\Phi\log\lb\frac{\sin(\pi \ep)}{n\sin(\pi (1-\ep)/n)}\rb+\cdots
     \end{align}
 We have
 % \begin{align}
@@ -1625,8 +1626,8 @@ We have
 % &=(C_\alpha-C_{\alpha\beta})^2 \frac{\sqrt{\pi}\Gamma(\Delta_{L}+1)}{4\Gamma(\Delta_{L}+3/2)}(\pi (1-x))^{2\Delta_L}+\cdots
 % \end{align}
 \begin{align}
-  S(\rho_\Phi\|\rho_0)&=(\pi \ep)^{2\Delta_L}C_{\Phi}^2\frac{\sqrt{\pi}\Gamma(\Delta_L+1)}{4\Gamma(\Delta_L+3/2)} + 2\Delta_\Phi \pi \cot(\pi \ep) + \cdots \nn \\ 
-&\simeq (\pi \ep)^{2\Delta_L}C_{\Phi}^2\frac{\sqrt{\pi}\Gamma(\Delta_L+1)}{4\Gamma(\Delta_L+3/2)}  +2\Delta_\Phi\lb \frac{1}{\ep} - \frac{\pi^2 \ep}{3} - \frac{\pi^4 \ep^3}{45} - \frac{2\pi^6 \ep^5}{945} + \cdots\rb 
+  S(\rho_\Phi\|\rho_0)&=\sum_L(\pi \ep)^{2\Delta_L}{(C_\Phi^L)}^2\frac{\sqrt{\pi}\Gamma(\Delta_L+1)}{4\Gamma(\Delta_L+3/2)} + 2\Delta_\Phi \pi \cot(\pi \ep) + \cdots \nn \\ 
+&\simeq \sum_L(\pi \ep)^{2\Delta_L}{(C_\Phi^L)}^2\frac{\sqrt{\pi}\Gamma(\Delta_L+1)}{4\Gamma(\Delta_L+3/2)}  +2\Delta_\Phi\lb \frac{1}{\ep} - \frac{\pi^2 \ep}{3} - \frac{\pi^4 \ep^3}{45} - \frac{2\pi^6 \ep^5}{945} + \cdots\rb 
 % (C_\alpha-C_{\alpha\beta})^2 \frac{\sqrt{\pi}\Gamma(\Delta_{L}+1)}{4\Gamma(\Delta_{L}+3/2)}(\pi (1-x))^{2\Delta_L}+\cdots
 \end{align}
 We would like to highlight the appearance of the term $2\Delta_\Phi\pi \cot(\pi \ep)$. This is the expectation value of the full modular Hamiltonian of the vacuum in the state created by $\mO_{L}$:
@@ -1695,7 +1696,7 @@ We would like to study the $x\to 1^-$ limit of relative entropy $S(\rho_0\|\rho_
 % &\braket{\tilde{\mO}_{\beta}^{(n-1)}}=\lb \frac{n \sin(\pi\ep/n)}{\sin(\pi\ep)}\rb^{-4(n-1)h_\beta}(2\sin(\pi\ep/n))^{4h_\beta}\times\nn\\
 % &\lb\braket{V_\beta(z^+_{n-1,n})V_{-\beta}(z^-_{1,n})}+C_\beta\sum_{k=1}^{n-2} \lb 2\sin\lb\frac{\pi\epsilon}{n}\rb\rb^{\Delta_L}\braket{V_\beta(z^+_{n-1,n})V_{-\beta}(z^-_{1,n})\mO_L(e^{2\pi i k/n})}+\cdots\rb \nn \\
 &\braket{\tilde{\mO}_{\Phi}^{(n-1)}}=\lb \frac{n \sin(\pi\ep/n)}{\sin(\pi\ep)}\rb^{-4(n-1)h_\Phi}(2\sin(\pi\ep/n))^{4h_\Phi}e^{2\pi i(n-1)s_\Phi  }e^{-2\pi i(n-2) s_\Phi}e^{i\pi s_\Phi}\times \nn\\
-&\lb\braket{\Phi(z^+_{n-1,n})\Phi^*(z^-_{1,n})}+C_\Phi^2 \sum_{k=1}^{n-2} \lb 2\sin\lb\frac{\pi\epsilon}{n}\rb\rb^{\Delta_L}e^{i\pi s_L((2k+1)/n + 1/2)}\braket{\Phi(z^+_{n-1,n})\Phi^*(z^-_{1,n}) \mO_L(e^{i\pi (2k+1)/n})})+\cdots\rb
+&\lb\braket{\Phi(z^+_{n-1,n})\Phi^*(z^-_{1,n})}+{(C_\Phi^L)}^2 \sum_{k=1}^{n-2} \lb 2\sin\lb\frac{\pi\epsilon}{n}\rb\rb^{\Delta_L}e^{i\pi s_L((2k+1)/n + 1/2)}\braket{\Phi(z^+_{n-1,n})\Phi^*(z^-_{1,n}) \mO_L(e^{i\pi (2k+1)/n})})+\cdots\rb
 % &\JM{\braket{\tilde{\mO}_{\beta}^{(n-1)}}=\lb \frac{n \sin(\pi\ep/n)}{\sin(\pi\ep)}\rb^{-4(n-1)h_\beta}\lb\frac{\sin(\pi\ep/n)}{\sin (\pi \ep)}\rb^{4h_\beta}\times}\nn\\
 % &\lb\braket{V_\beta(z^+_{n-1,n})V_{-\beta}(z^-_{1,n})}+C_\beta\sum_{k=1}^{n-2} \lb 2\sin\lb\frac{\pi\epsilon}{n}\rb\rb^{\Delta_L}\braket{V_\beta(z^+_{n-1,n})V_{-\beta}(z^-_{1,n})\mO_L(e^{2\pi i k/n})}+\cdots\rb \nn .
 %&=\lb 2\sin\lb\frac{\pi+\epsilon}{2 n}\rb\rb^{-4h_\beta}\lb 1+C_\beta \lb 4\sin\lb \frac{\pi(2k+1)+\epsilon/2}{2n}\rb\sin\lb\frac{\pi(2k-1)-\epsilon/2}{2n}\rb\rb^{-\Delta_L}+\cdots \rb\nn\\
@@ -1706,7 +1707,9 @@ If we naively truncate the denominator at the lowest order, and analytically con
 
 \subsubsection{Some examples}
 
-For the massless free boson theory, we consider two types of conformal primaries, the chiral vertex operator $V_{\alpha,\alpha}$, and the primary $i(\p\varphi+\bar{\p}\bar{\varphi})=i\p_t\phi$. The relative entropies in these cases are computed in \cite{Ruggiero_2017}. They diverge in large subsystem limit $\ep=(1-x)\to 0^+$ as
+For the massless free boson theory, we consider two types of conformal primaries, the chiral vertex operator $V_{\alpha,\alpha}$, and the primaries $i\p \phi$ with $(h,\bar h) =  (1,0)$ and $i\bar \p \bar \phi$ with $(h,\bar h) = (0,1)$.  
+% $i(\p\varphi+\bar{\p}\bar{\varphi})=i\p_t\phi$. 
+The relative entropies in these cases are computed in \cite{Ruggiero_2017}. They diverge in large subsystem limit $\ep=(1-x)\to 0^+$ as
 \begin{align}\label{eq: free massless boson result large x limit}
 S(\rho_\alpha\|\rho_\beta)=(\alpha-\beta)^2 (1-\pi x \cot(\pi x))&\simeq_{x\to 1^-} (\alpha-\beta)^2\Bigg( \frac{1}{\ep}-\frac{\pi^2\ep}{3}+\frac{\pi^2\ep^2}{3}-\frac{\pi^4\ep^3}{45}+\frac{\pi^4\ep^4}{45}-\frac{2\pi^6}{945}\ep^5
 \nn\\&\qquad\qquad\qquad\qquad\qquad+ \frac{2\pi^6}{945}\ep^6 + O(\ep^7)\Bigg)
@@ -1967,7 +1970,7 @@ The replica representation is given by,
     D_{n}(x)&=\left(\frac{n\sin(\pi x/n)}{\sin(\pi x)}\right)^{2(\Delta_\Psi-\Delta_\Phi)}\simeq 1+\frac{(\Delta_\Psi-\Delta_\Phi)(\pi x)^2}{3}\lb 1-\frac{1}{n^2}\rb+\cdots 
     ,\qquad D_{1}(x)=1,
   \end{align}
-  where the leading correction $f(n)$ and $g_w(n)$ are given by the sums in (\ref{fnexpression}) and (\ref{gnw}), respectively, over OPE coefficients and light operator correlators on the replica manifold. It can be shown that the phase terms also get cancelled exactly, one from the conformal factor and the other from $\zeta_n$ from each OPE. So, there is no dependency on spin, which showed up from these phases. First observation is that if $\Delta_L> 1$, the dominant contibution to $\mathcal{F}_n$ comes from the $D_n(x)$ term and the denominator becomes 
+  where the leading correction $f(n)$ and $g_w(n)$ are given by the sums in (\ref{fnexpression}) and (\ref{gnw}), respectively, over OPE coefficients and light operator correlators on the replica manifold. It can be shown that the phase terms also get cancelled exactly, one from the conformal factor and the other from the OPE. First observation is that if $\Delta_L> 1$, the dominant contibution to $\mathcal{F}_n$ comes from the $D_n(x)$ term and the denominator becomes 
   % \begin{align}
   %   &\sum_{p=0}^{n-1} y^{n-1-p}(1-y)^p\binom{n-1}{p}\lb 1+\frac{2p(1-1/n)}{3}(h_\alpha-h_\beta)(\pi x)^2+\cdots\rb\nn\\
   %   &=1+\frac{2(n-1)^2(h_\alpha-h_\beta)(\pi x)^2(1-y)}{3n}+\cdots 
@@ -2000,8 +2003,8 @@ The expression for $f(n)$ is
   %        & =C_{\alpha}^{2}\sum_{k\neq k'=1}^{n-1}\frac{e^{-2\pi i s_L(k+k')/n}}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}}\ .
   % \end{align}
   \begin{align}\label{fnexpression}
-    f(n) & =\frac{C_{\Psi}^{2}}{2}\sum_{k\neq k'=0}^{n}\langle \mO_{L}(e^{2\pi i k/n})\mO_{L}(e^{2\pi i k'/n})\rangle \nn    \\
-         & =\frac{C_{\Psi}^{2}}{2}\sum_{k\neq k'=0}^{n-1}\frac{e^{-2\pi i s_L(k+k')/n}}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}}\ .
+    f(n) & =\frac{{(C_{\Psi}^L)}^{2}}{2}\sum_{k\neq k'=0}^{n}\langle \mO_{L}(e^{2\pi i k/n})\mO_{L}(e^{2\pi i k'/n})\rangle \nn    \\
+         & =\frac{{(C_{\Psi}^L)}^{2}}{2}\sum_{k\neq k'=0}^{n-1}\frac{e^{-2\pi i s_L(k+k')/n}}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}}\ .
   \end{align}
   Rewrite the sum above by fixing the separation $m:=k-k' \ (\mathrm{mod}\ n)$. For
   each $m\in\{1,2,\dots,n-1\}$, set $k'=k-m$ (mod $n$). Then
@@ -2042,7 +2045,7 @@ The expression for $f(n)$ is
   correction $f(n)$ would be given by the sum over all such operators, that
   following \cite{calabrese2011entanglement} we denote by
   \begin{align}
-    f(n) & =S_{2}(n)
+    f(n) &= {(C_{\Psi}^L)}^{2}S_{2}(n,\Delta)
   \end{align}
   Similarly, we have
   % \begin{align}\label{gnw}
@@ -2051,7 +2054,7 @@ The expression for $f(n)$ is
   %   % \frac{C_{w_k}C_{w_{k'}}}{(2\sin(\pi |k-k'|/n))^{4h_L}}
   % \end{align}
   \begin{align}\label{gnw}
-    g_{w}(n)= & C_{\Psi}\sum_{k=1}^{n-1}\frac{C_{w_k}}{(2\sin(\pi k/n))^{2\Delta_L}}+\frac{1}{2}\sum_{k\neq k'=1}^{n-1}\frac{C_{w_k}C_{w_{k'}}}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}}, % \nn\\
+    g_{w}(n)= & C_{\Psi}^L\sum_{k=1}^{n-1}\frac{C_{w_k}^L}{(2\sin(\pi k/n))^{2\Delta_L}}+\frac{1}{2}\sum_{k\neq k'=1}^{n-1}\frac{C_{w_k}^LC_{w_{k'}}^L}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}}, % \nn\\
     % &=C_\alpha C_\omega \frac{2 S_2(n)}{n}+\sum_{k\neq k'=1}^{n-1}
     % \frac{C_{w_k}C_{w_{k'}}}{(2\sin(\pi |k-k'|/n))^{4h_L}}
   \end{align}
@@ -2062,7 +2065,7 @@ The expression for $f(n)$ is
     %                        N_\beta(w)=p}} 1=\binom{n-1}{p},\nn\\
      & \sum_{\substack{w\in\{\alpha,\beta\}^{\,n-1}\\ N_\beta(w)=p}}\left[\,1+(2\sin(\pi x/n))^{2\Delta_L}g_{w}(n)+\cdots\,\right]=\binom{n-1}{p}+(2\sin(\pi x/n))^{2\Delta_L}\bar{g}_{p}(n)+\cdots\,\nn                                   \\
      % & \bar{g}_{p}(n) =\sum_{\substack{w\in\{\alpha,\beta\}^{\,n-1}\\ N_\beta(w)=p}}g_{w}(n)=C_{\alpha}\sum_{k=1}^{n-1}\frac{A_{k}}{(2\sin(\pi k/n))^{2\Delta_L}}+\sum_{k\neq k'=1}^{n-1}\frac{B_{kk'}}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}},
-    &\bar{g}_{p}(n) =\sum_{\substack{w\in\{\Psi,\Phi\}^{\,n-1}\\ N_\Phi(w)=p}}g_{w}(n)=C_{\Psi}\sum_{k=1}^{n-1}\frac{A_{k}}{(2\sin(\pi k/n))^{2\Delta_L}}+\frac{1}{2}\sum_{k\neq k'=1}^{n-1}\frac{B_{kk'}}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}},
+    &\bar{g}_{p}(n) =\sum_{\substack{w\in\{\Psi,\Phi\}^{\,n-1}\\ N_\Phi(w)=p}}g_{w}(n)=C_{\Psi}^L\sum_{k=1}^{n-1}\frac{A_{k}}{(2\sin(\pi k/n))^{2\Delta_L}}+\frac{1}{2}\sum_{k\neq k'=1}^{n-1}\frac{B_{kk'}}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}},
   \end{align}
   % \begin{align*}
   %   \bar{g}_{p}(n) =\sum_{\substack{w\in\{\Psi,\Phi\}^{\,n-1}\\ N_\Phi(w)=p}}g_{w}(n)=C_{\Psi}\sum_{k=1}^{n-1}\frac{A_{k}}{(2\sin(\pi k/n))^{2\Delta_L}}+\frac{1}{2}\sum_{k\neq k'=1}^{n-1}\frac{B_{kk'}}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}},
@@ -2072,9 +2075,9 @@ The expression for $f(n)$ is
   \begin{align}
      % & A_{k}(p,n)=\sum_{\substack{w\in\{\alpha,\beta\}^{\,n-1}\\ N_\beta(w)=p}}C_{w_k}=\binom{n-2}{p}C_{\alpha}+\binom{n-2}{p-1}C_{\beta}\equiv A(p,n)\nn    
      % \\
-      & A_{k}(p,n)=\sum_{\substack{w\in\{\Psi,\Phi\}^{\,n-1}\\ N_\Phi(w)=p}}C_{w_k}=\binom{n-2}{p}C_{\Psi}+\binom{n-2}{p-1}C_{\Phi}\equiv A(p,n)\nn  \\
+      & A_{k}(p,n)=\sum_{\substack{w\in\{\Psi,\Phi\}^{\,n-1}\\ N_\Phi(w)=p}}C_{w_k}^L=\binom{n-2}{p}C_{\Psi}^L+\binom{n-2}{p-1}C_{\Phi}^L\equiv A(p,n)\nn  \\
      % & B_{kk'}(p,n)=\sum_{\substack{w\in\{\alpha,\beta\}^{\,n-1}\\ N_\beta(w)=p}}C_{w_k}C_{w_{k'}}=\binom{n-3}{p}C_{\alpha}^{2}+2\binom{n-3}{p-1}C_{\alpha}C_{\beta}+\binom{n-3}{p-2}C_{\beta}^{2}\equiv B(p,n),  \nn\\
-     & B_{kk'}(p,n)=\sum_{\substack{w\in\{\Psi,\Phi\}^{\,n-1}\\ N_\Phi(w)=p}}C_{w_k}C_{w_{k'}}=\binom{n-3}{p}C_{\Psi}^{2}+2\binom{n-3}{p-1}C_{\Psi}C_{\Phi}+\binom{n-3}{p-2}C_{\Phi}^{2}\equiv B(p,n),
+     & B_{kk'}(p,n)=\sum_{\substack{w\in\{\Psi,\Phi\}^{\,n-1}\\ N_\Phi(w)=p}}C_{w_k}^LC_{w_{k'}}^L=\binom{n-3}{p}{(C_{\Psi}^L)}^{2}+2\binom{n-3}{p-1}C_{\Psi}^LC_{\Phi}^L+\binom{n-3}{p-2}{(C_{\Phi}^L)}^{2}\equiv B(p,n),
     % &=\frac{(n-1-p)(n-2-p)}{(n-1)(n-2)}C_{\alpha}^2+\frac{2p(n-1-p)}{(n-1)(n-2)}C_{\alpha}C_{\beta}+\frac{p(p-1)}{(n-1)(n-2)}C_{\beta}^2\nn
   \end{align}
   where we performed the sums over words for fixed $k\neq k'$ and found that the
@@ -2086,9 +2089,9 @@ The expression for $f(n)$ is
   %   %& =A(p,n)\frac{2S_{2}(n)}{n}+B(p,n)S_{2}(n)
   % \end{align}
   \begin{align}
-    g_{p}(n) & =C_{\Psi}A(p,n)\sum_{k=1}^{n-1}\frac{1}{(2\sin(\pi k/n))^{2\Delta_L}}+\frac{B(p,n)}{2}\sum_{k\neq k'=1}^{n-1}\frac{1}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}}\nn      \\
-             & =(C_{\Psi}A(p,n)-B(p,n))\sum_{k=1}^{n-1}\frac{1}{(2\sin(\pi k/n))^{2\Delta_L}}+\frac{B(p,n)}{2}\sum_{k\neq k'=0}^{n-1}\frac{1}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}}\nn \\
-             & =\frac{2S_{2}(n)}{n}(C_{\Psi}A(p,n)-B(p,n))+B(p,n)S_{2}(n)                                                                                         % \\
+    g_{p}(n) & =C_{\Psi}^LA(p,n)\sum_{k=1}^{n-1}\frac{1}{(2\sin(\pi k/n))^{2\Delta_L}}+\frac{B(p,n)}{2}\sum_{k\neq k'=1}^{n-1}\frac{1}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}}\nn      \\
+             & =(C_{\Psi}^LA(p,n)-B(p,n))\sum_{k=1}^{n-1}\frac{1}{(2\sin(\pi k/n))^{2\Delta_L}}+\frac{B(p,n)}{2}\sum_{k\neq k'=0}^{n-1}\frac{1}{(2\sin(\pi |k-k'|/n))^{2\Delta_L}}\nn \\
+             & =\frac{2S_{2}(n)}{n}(C_{\Psi}^LA(p,n)-B(p,n))+B(p,n)S_{2}(n)                                                                                         % \\
     %& =A(p,n)\frac{2S_{2}(n)}{n}+B(p,n)S_{2}(n)
   \end{align}
   and as a result we can write
@@ -2114,7 +2117,7 @@ We note the following identities
   \begin{align}
      & X(n)=(y+(1-y)D_{n}), \qquad X(1)=1\nn                 \\
      % & Y_{\alpha\beta}(n)=(y C_{\alpha}+(1-y)D_{n}C_{\beta}) \\
-     & Y_{\Psi\Phi}(n)=(y C_{\Psi}+(1-y)D_{n}C_{\Phi}) 
+     & Y_{\Psi\Phi}(n)=(y C_{\Psi}^L+(1-y)D_{n}C_{\Phi}^L) 
   \end{align}
   so that
   % \begin{align}
@@ -2123,9 +2126,9 @@ We note the following identities
   %   A(p,n) & = C_{\alpha}A_{\alpha}(n)+C_{\beta}A_{\beta}(n)=Y_{\alpha\beta}(n)X(n)^{n-2}
   % \end{align}
   \begin{align}
-    B(p,n) & = C_{\Psi}^{2}B_{\Psi\Psi}(n)+2C_{\Psi}C_{\Phi}B_{\Psi\Phi}(n)+C_{\Phi}^{2}B_{\Phi\Phi}(n)\nn \\
+    B(p,n) & = {(C_{\Psi}^L)}^{2}B_{\Psi\Psi}(n)+2C_{\Psi}^LC_{\Phi}^LB_{\Psi\Phi}(n)+{(C_{\Phi}^L)}^{2}B_{\Phi\Phi}(n)\nn \\
            & =Y_{\Psi\Phi}(n)^{2}X(n)^{n-3}\nn                 \\
-    A(p,n) & = C_{\Psi}A_{\Psi}(n)+C_{\Phi}A_{\Phi}(n)=Y_{\Psi\Phi}(n)X(n)^{n-2}
+    A(p,n) & = C_{\Psi}^LA_{\Psi}(n)+C_{\Phi}^LA_{\Phi}(n)=Y_{\Psi\Phi}(n)X(n)^{n-2}
   \end{align}
   Then, in the denominator we have
   \begin{align}
@@ -2138,16 +2141,16 @@ We note the following identities
   %             & =S_{2}(n)\lb \frac{Y_{\alpha\beta}(n)}{X(n)}\left(\frac{2C_{\alpha}}{n}\right)+\frac{Y_{\alpha\beta}^{2}(n)}{X(n)^{2}}\lb 1-\frac{2}{n}\rb\rb                        %& g_{1}(n)=\frac{2(y C_{\alpha}+(1-y)D_{n}C_{\beta})}{n(y+(1-y) D_{n})}+\frac{(yC_{\alpha}+(1-y)D_{n}C_{\beta})^{2}}{(y+(1-y) D_{n})^{2}}
   % \end{align}
 \begin{align}
-    \Delta(n) & \equiv \frac{2S_{2}(n)}{n}\frac{(C_{\Psi}A(p,n)-B(p,n))}{X(n)^{n-1}}+\frac{B(p,n)}{X(n)^{n-1}}S_{2}(n)\nn                                                          \\
-              & =\frac{2S_{2}(n)}{n}\lb \frac{C_{\Psi}Y_{\Psi\Phi}(n)}{ X(n)}-\frac{Y_{\Psi\Phi}(n)^{2}}{X(n)^{2}}\rb+S_{2}(n)\lb \frac{Y_{\Psi\Phi}(n)^{2}}{X(n)^{2}}\rb \\
-              & =S_{2}(n)\lb \frac{Y_{\Psi\Phi}(n)}{X(n)}\left(\frac{2C_{\Psi}}{n}\right)+\frac{Y_{\Psi\Phi}^{2}(n)}{X(n)^{2}}\lb 1-\frac{2}{n}\rb\rb                       %& g_{1}(n)=\frac{2(y C_{\alpha}+(1-y)D_{n}C_{\beta})}{n(y+(1-y) D_{n})}+\frac{(yC_{\alpha}+(1-y)D_{n}C_{\beta})^{2}}{(y+(1-y) D_{n})^{2}}
+    \Delta(n) & \equiv \frac{2S_{2}(n)}{n}\frac{(C_{\Psi}^LA(p,n)-B(p,n))}{X(n)^{n-1}}+\frac{B(p,n)}{X(n)^{n-1}}S_{2}(n)\nn                                                          \\
+              & =\frac{2S_{2}(n)}{n}\lb \frac{C_{\Psi}^LY_{\Psi\Phi}(n)}{ X(n)}-\frac{Y_{\Psi\Phi}(n)^{2}}{X(n)^{2}}\rb+S_{2}(n)\lb \frac{Y_{\Psi\Phi}(n)^{2}}{X(n)^{2}}\rb \\
+              & =S_{2}(n)\lb \frac{Y_{\Psi\Phi}(n)}{X(n)}\left(\frac{2C_{\Psi}^L}{n}\right)+\frac{Y_{\Psi\Phi}^{2}(n)}{X(n)^{2}}\lb 1-\frac{2}{n}\rb\rb                       %& g_{1}(n)=\frac{2(y C_{\alpha}+(1-y)D_{n}C_{\beta})}{n(y+(1-y) D_{n})}+\frac{(yC_{\alpha}+(1-y)D_{n}C_{\beta})^{2}}{(y+(1-y) D_{n})^{2}}
 \end{align}
   Putting this back into (\ref{eq:F_n_mixed}) we find
   % \begin{align}
   %   \log\mathcal{F}_{n}=(1-n)\log X(n)+\log\left[\frac{1+\lb \frac{2\pi x}{n}\rb^{2\Delta_L}S_{2}(n)\lb C_{\alpha}^{2}+\cdots\rb}{1+\lb \frac{2\pi x}{n}\rb^{2\Delta_L}\Delta(n)+\cdots}\right]
   % \end{align}
     \begin{align}
-    \log\mathcal{F}_{n}=(1-n)\log X(n)+\log\left[\frac{1+\lb \frac{2\pi x}{n}\rb^{2\Delta_L}S_{2}(n)\lb C_{\Psi}^{2}+\cdots\rb}{1+\lb \frac{2\pi x}{n}\rb^{2\Delta_L}\Delta(n)+\cdots}\right]
+    \log\mathcal{F}_{n}=(1-n)\log X(n)+\log\left[\frac{1+\lb \frac{2\pi x}{n}\rb^{2\Delta_L}S_{2}(n)\lb {(C_{\Psi}^L)}^{2}+\cdots\rb}{1+\lb \frac{2\pi x}{n}\rb^{2\Delta_L}\Delta(n)+\cdots}\right]
   \end{align}
   We first note that taking the $n$-derivative of the first factor in $\mathcal{F}
   _{n}$ and sending $n\to 1$ vanishes
@@ -2159,7 +2162,7 @@ We note the following identities
   %   S(\rho_{\alpha}\|y\rho_{\alpha}+(1-y)\rho_{\beta}) & =\partial_{n}\left[\lb \frac{2\pi x}{n}\rb^{2\Delta_L}(S_{2}(n) C_{\alpha}^{2}-\Delta(n))+\cdots\right]_{n=1}
   % \end{align}
   \begin{align}
-    S(\rho_\Psi\|y\rho_{\Psi}+(1-y)\rho_{\Phi}) & =\partial_{n}\left[\lb \frac{2\pi x}{n}\rb^{2\Delta_L}(S_{2}(n) C_\Psi^{2}-\Delta(n))+\cdots\right]_{n=1}
+    S(\rho_\Psi\|y\rho_{\Psi}+(1-y)\rho_{\Phi}) & =\partial_{n}\left[\lb \frac{2\pi x}{n}\rb^{2\Delta_L}\lb S_{2}(n) {(C_\Psi^L)}^{2}-\Delta(n)\rb+\cdots\right]_{n=1}
   \end{align}
 Note that this is consistent with our previous observation that $D_n(x)$ does not contribute to the relative entropy at order $x^2$. However, the analytic continuation we achieved shows that the higher order terms of $D_n(x)$ do not contribute either.
 
@@ -2170,15 +2173,15 @@ Note that this is consistent with our previous observation that $D_n(x)$ does no
   % \end{align}
 
    \begin{align}
-  S(\rho_{\Psi}\|y\rho_{\Psi}+(1-y)\rho_{\Phi}) & = (2\pi x)^{2\Delta_L}S_{2}'(1)(C_{\Psi}^{2}-2C_{\Psi}Y_{\Psi\Phi}(1)+Y_{\Psi\Phi}(1)^{2})+\cdots\nn                \\
-   & =(\pi x)^{2\Delta_L}\frac{\sqrt{\pi}\Gamma(\Delta_{L}+1)}{4\Gamma(\Delta_{L}+3/2)}(1-y)^{2}(C_{\Psi}-C_{\Phi})^{2}+\cdots
+  S(\rho_{\Psi}\|y\rho_{\Psi}+(1-y)\rho_{\Phi}) & = (2\pi x)^{2\Delta_L}S_{2}'(1)\lb {(C_{\Psi}^L)}^{2}-2C_{\Psi}^LY_{\Psi\Phi}(1)+Y_{\Psi\Phi}(1)^{2}\rb+\cdots\nn                \\
+   & =(\pi x)^{2\Delta_L}\frac{\sqrt{\pi}\Gamma(\Delta_{L}+1)}{4\Gamma(\Delta_{L}+3/2)}(1-y)^{2}(C_{\Psi}^L-C_{\Phi}^L)^{2}+\cdots
   \end{align}
   %where in the second line we have used $S_{2}(1)=0$. 
   In the special case,
   $\Psi =\Phi$ or $y\to 1$ the term vanishes as expected. In the case of vertex
   operators in free massless bosons the equations of motion are $\partial_z\partial_{\bar{z}}\phi(z,\bar{z})=0$, therefore the field splits into a chiral and anti-chiral mode $\phi(z,\bar{z})=\varphi(z)+\bar{\varphi}(\bar{z})$. This matches the result of \cite{Lashkari_2014,S_rosi_2016}. In the case $y\to 0$ we have
  \begin{align}
-  S(\rho_\alpha\|\rho_\beta)=(C_\alpha-C_\beta)^2\frac{\pi^2 x^2}{3}+\cdots 
+  S(\rho_\alpha\|\rho_\beta)=(\alpha-\beta)^2\frac{\pi^2 x^2}{3}+\cdots 
  \end{align}
 
   
@@ -2249,7 +2252,7 @@ S(\rho_\Psi\|y\rho_\Psi+(1-y)\rho_\Phi)
 \begin{aligned}
 &\sum_L\frac{\sqrt{\pi}\Gamma(\Delta_L+1)}
 {4\Gamma(\Delta_L+\frac32)}
-(C^L_{\Psi\Psi^*}-C^L_{\Phi\Phi^*})^2
+(C^L_{\Psi}-C^L_{\Phi})^2
 (1-y)^2(\pi x)^{2\Delta_L}
 +\cdots
 \end{aligned}
@@ -2369,19 +2372,19 @@ We want to compute it using replica trick, by computing the following,
 \end{align}
 For the numerator, the sum over words gives
 \begin{align}
-    B_{kk'}(p,n) = \sum_{\substack{w\in\{\Psi,\Phi\}^{\,n}\\ N_\Phi(w)=p}} C_\Psi^2 \binom{n-2}{p} + 2C_\Psi C_\Phi \binom{n-2}{p-1} +C_\Phi^2\binom{n-2}{p-2}
+    B_{kk'}(p,n) = \sum_{\substack{w\in\{\Psi,\Phi\}^{\,n}\\ N_\Phi(w)=p}} {(C_\Psi^L)}^2 \binom{n-2}{p} + 2C_\Psi^L C_\Phi^L \binom{n-2}{p-1} +{(C_\Phi^L)}^2\binom{n-2}{p-2}
 \end{align}
 The term other than the identity piece in the numerator evaluates to the following,
 \begin{align}
-    & \sum_{p=0}^{n} y_1^{n-p} \lb (1-y_1)D_n\rb^p\lb C_\Psi^2 \binom{n-2}{p} + 2C_\Psi C_\Phi \binom{n-2}{p-1} +C_\Phi^2\binom{n-2}{p-2} \rb \\
-    &= \lb y_1+ (1-y_1 )D_n\rb^{n-2} \lb C_\Psi^2 y_1^2 + 2C_\Psi C_\Phi y_1(1-y_1)D_n + C_\Phi^2 ((1-y_1)D_n)^2  \rb \\
-    &= X_1(n)^{n-2} \lb C_\Psi y_1 + C_\Phi(1-y_1)D_n \rb^2 \\
+    & \sum_{p=0}^{n} y_1^{n-p} \lb (1-y_1)D_n\rb^p\lb {(C_\Psi^L)}^2 \binom{n-2}{p} + 2C_\Psi^L C_\Phi^L \binom{n-2}{p-1} +{(C_\Phi^L)}^2\binom{n-2}{p-2} \rb \\
+    &= \lb y_1+ (1-y_1 )D_n\rb^{n-2} \lb {(C_\Psi^L)}^2 y_1^2 + 2C_\Psi^L C_\Phi^L y_1(1-y_1)D_n + {(C_\Phi^L)}^2 ((1-y_1)D_n)^2  \rb \\
+    &= X_1(n)^{n-2} \lb C_\Psi^L y_1 + C_\Phi^L(1-y_1)D_n \rb^2 \\
     &= X_1(n)^{n-2}Y_1(n)^{2}
 \end{align}
 where we defined
 \begin{align}
     X_1(n) &= y_1 + (1-y_1)D_n \\
-    Y_1(n) &=  C_\Psi y_1 + C_\Phi(1-y_1)D_n 
+    Y_1(n) &=  C_\Psi^L y_1 + C_\Phi^L(1-y_1)D_n 
 \end{align}
 Finally the numerator is given by,
 \begin{align}
@@ -2394,7 +2397,7 @@ Now for the denominator, we want to evaluate the following,
 Again, we can define the following for the denominator,
 \begin{align}
     X_2(n) &= y_2 + (1-y_2)D_n \\
-    Y_2(n) &=  C_\Psi y_2 + C_\Phi(1-y_2)D_n 
+    Y_2(n) &=  C_\Psi^L y_2 + C_\Phi^L(1-y_2)D_n 
 \end{align}
 The identity piece comes from precisely from $X_1 X_2^{n-1}$. The piece coming from the two point function evaluates to (following the same method we used earlier),
 \begin{align}
@@ -2416,7 +2419,7 @@ Combining numerator and denominator gives
 \end{align}
 where we used $X_1(1) = X_2(1)= 1$. Using the definitions of $Y_1,Y_2$, we finally obtain the relative entropy of mixtures of two excited states,
 \begin{align}
-    S(\bar{\rho}_{y_1} \| \bar{\rho}_{y_2} ) &= \frac{\sqrt{\pi} \Gamma(\Delta_L + 1)}{4\Gamma(\Delta_L + 3/2)}\sum_L (C_{\Psi \Psi^*}^L - C_{\Phi \Phi^*}^L)^2(y_1-y_2)^2 (\pi x)^{2\Delta_L} + \cdots \qquad \text{if }\Delta_L \leq 2.
+    S(\bar{\rho}_{y_1} \| \bar{\rho}_{y_2} ) &= \frac{\sqrt{\pi} \Gamma(\Delta_L + 1)}{4\Gamma(\Delta_L + 3/2)}\sum_L (C_{\Psi }^L - C_{\Phi }^L)^2(y_1-y_2)^2 (\pi x)^{2\Delta_L} + \cdots \qquad \text{if }\Delta_L \leq 2.
 \end{align}
 Generalizing our results for $\Delta_L \geq 2$, we thus have,
 \begin{align}\label{smallxMixture_wrt_mixture}
@@ -2427,7 +2430,7 @@ S(\bar{\rho}_{y_1} \| \bar{\rho}_{y_2} )
 \begin{aligned}
 &\sum_L\frac{\sqrt{\pi}\Gamma(\Delta_L+1)}
 {4\Gamma(\Delta_L+\frac32)}
-(C^L_{\Psi\Psi^*}-C^L_{\Phi\Phi^*})^2
+(C^L_{\Psi}-C^L_{\Phi})^2
 (y_1-y_2)^2(\pi x)^{2\Delta_L}
 +\cdots
 \end{aligned}
@@ -2470,13 +2473,13 @@ We further generalize our results by considering two mixtures by a set of $M$ $\
 Again, for simplicity, we assume that the same lightest operator $\mO_L$ with dimension $\Delta_L$ appears in all relevant diagonal OPEs. 
 We can write down the OPE of a diagonal channel now,
 \begin{align}
-    \frac{\Psi_a(z_k^+) \Psi_a^*(z_k^-)} {\braket {\Psi_a(z^+) \Psi_a^*(z^-)}}&= D_{a,n}(x) \lb 1 + \zeta_n^{\Delta_L}C_a\mO_L(z_k) + \cdots\rb,\\
-    \frac{\Phi_b(z_k^+) \Phi_b^*(z_k^-)} {\braket {\Phi_b(z^+) \Phi_b^*(z^-)}}&= \tilde{D}_{b,n}(x) \lb 1 + \zeta_n^{\Delta_L}C_b\mO_L(z_k) + \cdots\rb
+    \frac{\Psi_a(z_k^+) \Psi_a^*(z_k^-)} {\braket {\Psi_a(z^+) \Psi_a^*(z^-)}}&= D_{a,n}(x) \lb 1 + \zeta_n^{\Delta_L}C_a^L\mO_L(z_k) + \cdots\rb,\\
+    \frac{\Phi_b(z_k^+) \Phi_b^*(z_k^-)} {\braket {\Phi_b(z^+) \Phi_b^*(z^-)}}&= \tilde{D}_{b,n}(x) \lb 1 + \zeta_n^{\Delta_L}C_b^L\mO_L(z_k) + \cdots\rb
 \end{align}
-where $D_{a,n}(x), \tilde{D}_{b,n}(x)$ are the  normalization and conformal factors corresponding to the diagonal OPEs. For simplicity, we used the notation $C_a \equiv C_{\Psi_a\Psi_a^*}^L, C_b \equiv C_{\Phi_b\Phi_b^*}^L$. Then we can generalize our previous notation by defining,
+where $D_{a,n}(x), \tilde{D}_{b,n}(x)$ are the  normalization and conformal factors corresponding to the diagonal OPEs. For simplicity, we used the notation $C_a^L \equiv C_{\Psi_a\Psi_a^*}^L, C_b^L \equiv C_{\Phi_b\Phi_b^*}^L$. Then we can generalize our previous notation by defining,
 \begin{align}
-    X_\textbf{p}(n) &= \sum_{a=1}^Mp_a D_{a,n}(x), \qquad Y_\textbf{p} = \sum_{a=1}^M p_a D_{a,n} C_a,\\
-    X_\textbf{q}(n) &= \sum_{b=1}^Nq_b \tilde{D}_{b,n}(x), \qquad Y_\textbf{q} = \sum_{b=1}^N q_b \tilde{D}_{b,n} C_b.
+    X_\textbf{p}(n) &= \sum_{a=1}^Mp_a D_{a,n}(x), \qquad Y_\textbf{p} = \sum_{a=1}^M p_a D_{a,n} C_a^L,\\
+    X_\textbf{q}(n) &= \sum_{b=1}^Nq_b \tilde{D}_{b,n}(x), \qquad Y_\textbf{q} = \sum_{b=1}^N q_b \tilde{D}_{b,n} C_b^L.
 \end{align}
 We consider the numerator now, i.e., $\text{tr}(\rho_p^n)$. 
 We have,
@@ -2489,7 +2492,7 @@ Then the identity contribution will pick a factor of $D_a$ from every diagonal O
 \end{align}
 Next we want to evaluate the contribution from the two point functions, which would take the following form,
 \begin{align}
-    \sum_{\{a_j\}} \lb \prod_{j=0}^{n-1}p_{a_j} D_{a_j,n} \rb C_{a_k} C_{a_{k'}} &= \Big[\prod_{j\neq \{k,k'\}}\sum_{a_j = 1}^M p_{a_j}D_{a_j,n} \Big] \Big[ \sum_{a_k = 1}^M p_{a_k} D_{a_k,n} C_{a_k}  \Big]\Big[ \sum_{a_{k'} = 1}^M p_{a_{k'}} D_{a_{k'},n} C_{a_{k'}}  \Big] \\
+    \sum_{\{a_j\}} \lb \prod_{j=0}^{n-1}p_{a_j} D_{a_j,n} \rb C_{a_k}^L C_{a_{k'}}^L &= \Big[\prod_{j\neq \{k,k'\}}\sum_{a_j = 1}^M p_{a_j}D_{a_j,n} \Big] \Big[ \sum_{a_k = 1}^M p_{a_k} D_{a_k,n} C_{a_k}^L  \Big]\Big[ \sum_{a_{k'} = 1}^M p_{a_{k'}} D_{a_{k'},n} C_{a_{k'}}^L  \Big] \\
     &= X_\textbf{p}^{n-2} Y_\textbf{p}^2
 \end{align}
 Then, we have the following simplification,
@@ -3125,7 +3128,7 @@ Therefore, for fixed $k$ and $k'$ only one word contributes and we find
 %   \sum_{\substack{w\in \{\alpha,\beta\}^{n-1}\\N_\beta(w)=p}}C_{w_k w_{k+1}}C_{w_{k'}w_{k'+1}}\prod_{\substack{i=1\\i\neq k,i\neq k'}}^n  \delta_{w_i w_{i+1}} =C_\alpha^2\delta_{p,0}+C_{\alpha\beta}^2\delta_{p |k-k'|}
 % \end{align}
 \begin{align}
-  \sum_{\substack{w\in \{\Psi,\Phi\}^{n-1}\\N_\Phi}(w)=p}C_{w_k w_{k+1}}C_{w_{k'}w_{k'+1}}\prod_{\substack{i=1\\i\neq k,i\neq k'}}^n  \delta_{w_i w_{i+1}} =C_\Psi^2\delta_{p,0}+C_{\Psi\Phi}^2\delta_{p |k-k'|}
+  \sum_{\substack{w\in \{\Psi,\Phi\}^{n-1}\\N_\Phi}(w)=p}C_{w_k w_{k+1}}C_{w_{k'}w_{k'+1}}\prod_{\substack{i=1\\i\neq k,i\neq k'}}^n  \delta_{w_i w_{i+1}} ={(C_\Psi^L)}^2\delta_{p,0}+{(C_{\Psi\Phi}^{L'})}^2\delta_{p |k-k'|}
 \end{align}
 The $p=0$ in the denominator becomes
 \begin{align}
@@ -3140,7 +3143,7 @@ whereas for non-zero $p$ we get
 and as a result we pick up the contribution
 \begin{align}
   % y^{n-1-p}((1-y) D_n(1-x))^p \frac{2(n-p) C_{\alpha\beta}^2}{(2\sin(\pi p/n))^{2\Delta_L}}(2\pi (1-x)/n)^{2\Delta_L} \\
-  y^{n-1-p}((1-y) D_n(1-x))^p \frac{(n-p) C_{\Psi\Phi}^2}{(2\sin(\pi p/n))^{2\Delta_{L'}}}(2\pi (1-x)/n)^{2\Delta_{L'}}
+  y^{n-1-p}((1-y) D_n(1-x))^p \frac{(n-p) {(C_{\Psi\Phi}^{L'})}^2}{(2\sin(\pi p/n))^{2\Delta_{L'}}}(2\pi (1-x)/n)^{2\Delta_{L'}}
 \end{align}
 Note that the $p=0$ term in the denominator corresponds to the same correlation function as the one appearing in the numerator with an extra factor of $y^{n-1}$, therefore we only need to keep track of $p>0$ terms. Plugging these back in $\mathcal{F}_n$ and expanding in small $1-x$ we find
 % \begin{align}
@@ -3151,14 +3154,14 @@ Note that the $p=0$ term in the denominator corresponds to the same correlation 
 % \end{align}
 \begin{align}
 \mathcal{F}_n
-    &=\frac{\,1+(2\pi (1-x)/n)^{2\Delta_L}f(n)+\cdots\,}{\displaystyle y^{n-1}\lb 1+(2\pi (1-x)/n)^{2\Delta_L} f(n)+\sum_{L'}\lb 2\pi (1-x)/n\rb ^{2\Delta_{L'}} C_{\Psi\Phi}^2\mu(n,x,y;\Delta_{L'})+\cdots\rb}\nn\\
-&=y^{1-n}\lb 1-\sum_{L'}\lb\frac{2\pi (1-x)}{n}\rb^{2\Delta_{L'}}  C_{\Psi\Phi}^2 \:\mu(n,x,y;\Delta_{L'})+\cdots \rb\nn\\
+    &=\frac{\,1+(2\pi (1-x)/n)^{2\Delta_L}f(n)+\cdots\,}{\displaystyle y^{n-1}\lb 1+(2\pi (1-x)/n)^{2\Delta_L} f(n)+\sum_{L'}\lb 2\pi (1-x)/n\rb ^{2\Delta_{L'}} {(C_{\Psi\Phi}^{L'})}^2\mu(n,x,y;\Delta_{L'})+\cdots\rb}\nn\\
+&=y^{1-n}\lb 1-\sum_{L'}\lb\frac{2\pi (1-x)}{n}\rb^{2\Delta_{L'}}  {(C_{\Psi\Phi}^{L'})}^2 \:\mu(n,x,y;\Delta_{L'})+\cdots \rb\nn\\
 \mu(n,x,y;\Delta_{L'})&=\sum_{p=1}^{n-1}\frac{(n-p)((y^{-1}-1)D_n(1-x))^p}{(2\sin(\pi p/n))^{2\Delta_{L'}}} \label{eq: mu (n,x,DeltaL')}
 \end{align}
 where $D_n$ is defined in (\ref{Dn_mixed}). 
 This straightaway gives the relative entropy,
 \begin{align}
-    S(\rho_\Psi \| y\rho_\Psi + (1-y)\rho_\Phi)=-\log y - C_{\Psi\Phi}^2(2\pi (1-x))^{2\Delta_{L'}}\p_n\mu(n,x,y;\Delta_{L'})|_{n=1}+\cdots.
+    S(\rho_\Psi \| y\rho_\Psi + (1-y)\rho_\Phi)=-\log y - {(C_{\Psi\Phi}^{L'})}^2(2\pi (1-x))^{2\Delta_{L'}}\p_n\mu(n,x,y;\Delta_{L'})|_{n=1}+\cdots.
 \end{align}
 
 Note, here we took into account the correction due to the two point functions of the higher order primaries arising from the mixing OPE of $\Psi \Phi^*$ and $\Psi^* \Phi$. They are sub-leading corrections, however, we should keep the contribution from every primary from the mixing OPE which will have the same dimension that of the sub-leading correction of the numerator. For example, in the coherent states, in order to produce the exact result, we should take two operators in the OPE of $V_\alpha$ and $V_{-\beta}$, which are $V_{\alpha - \beta}$ and $C_{\alpha\beta} V_{\alpha-\beta}J$. This will reproduce our previous result of coherent states in (\ref{eq: coherent states rel entr}) for $y\to 0$ limit. 
@@ -3191,11 +3194,11 @@ We find
 %   &=\log 2-(\pi \ep)^{2\Delta_L} 2 C_{\alpha\beta}^2 \frac{\sqrt{\pi}\Gamma(\Delta_L+1)}{4\Gamma(\Delta_L+3/2)} +\cdots
 % \end{align}
 \begin{align}
- S(\rho_\Psi\|(\rho_\Psi+\rho_\Phi)/2))&=\log 2-\sum_{L'}(2\pi \ep)^{2\Delta_{L'}}  C_{\Psi \Phi}^2(\mu'_0(1)+\mu'_1(1)\ep^2+\cdots)
+ S(\rho_\Psi\|(\rho_\Psi+\rho_\Phi)/2))&=\log 2-\sum_{L'}(2\pi \ep)^{2\Delta_{L'}}  {(C_{\Psi\Phi}^{L'})}^2(\mu'_0(1)+\mu'_1(1)\ep^2+\cdots)
 \end{align} 
 Therefore,
 \begin{align}
-    \boxed{S(\rho_\Psi\|(\rho_\Psi+\rho_\Phi)/2))=\log 2-\sum_{L'}(\pi \ep)^{2\Delta_{L'}} C_{\Psi \Phi}^2 \frac{\sqrt{\pi}\Gamma(\Delta_{L'}+1)}{4\Gamma(\Delta_{L'}+3/2)} +\cdots}
+    \boxed{S(\rho_\Psi\|(\rho_\Psi+\rho_\Phi)/2))=\log 2-\sum_{L'}(\pi \ep)^{2\Delta_{L'}} {(C_{\Psi\Phi}^{L'})}^2 \frac{\sqrt{\pi}\Gamma(\Delta_{L'}+1)}{4\Gamma(\Delta_{L'}+3/2)} +\cdots}
 \end{align}
 For the next order term, we find
 \begin{align}
@@ -3217,8 +3220,8 @@ The analytic continuation of the second series is given in the appendix \ref{Ana
 
 As a special case, we consider the following,
 \begin{align}
-    S(\rho_0 \| (\rho_0 + \rho_\Phi)/2) &= \p_n \log \frac{\,2^{n-1}}{\displaystyle \lb 1+\sum_{L'}\lb 2\pi (1-x)/n\rb ^{2\Delta_{L}} C_{\Psi\Phi}^2\mu(n,x,1/2;\Delta_{L})+\cdots\rb}\\
-    S(\rho_\Phi \| (\rho_0 + \rho_\Phi)/2)&= \p_n \log \frac{\,2^{n-1}\lb 1+(2\pi (1-x)/n)^{2\Delta_L}f(n)+\cdots\rb}{\displaystyle \lb 1+(2\pi (1-x)/n)^{2\Delta_L}f(n)+\sum_{L'}\lb 2\pi (1-x)/n\rb ^{2\Delta_{L}} C_{\Psi\Phi}^2\mu(n,x,1/2;\Delta_{L})+\cdots\rb}
+    S(\rho_0 \| (\rho_0 + \rho_\Phi)/2) &= \p_n \log \frac{\,2^{n-1}}{\displaystyle \lb 1+\sum_{L'}\lb 2\pi (1-x)/n\rb ^{2\Delta_{L}} {(C_{\Psi\Phi}^{L'})}^2\mu(n,x,1/2;\Delta_{L})+\cdots\rb}\\
+    S(\rho_\Phi \| (\rho_0 + \rho_\Phi)/2)&= \p_n \log \frac{\,2^{n-1}\lb 1+(2\pi (1-x)/n)^{2\Delta_L}f(n)+\cdots\rb}{\displaystyle \lb 1+(2\pi (1-x)/n)^{2\Delta_L}f(n)+\sum_{L'}\lb 2\pi (1-x)/n\rb ^{2\Delta_{L}} {(C_{\Psi\Phi}^{L'})}^2\mu(n,x,1/2;\Delta_{L})+\cdots\rb}
 \end{align}
 % Notice that, in both the cases we kept only $\mu$ piece in the denominator, which is an approximation.
 In the second line, the numerator gets cancelled exactly from the $p=n-1$ contribution from the denominator, and we will be left with $\mu(n,x,1/2;\Delta_{L})$. Hence, we have, 
@@ -3232,11 +3235,11 @@ Similarly, this can be extended to show,
 \end{align}
 Even further, it can be shown that the relative entropy is symmetric under the exchange of $\Psi \leftrightarrow \Phi$ for general binary mixture,
 \begin{align}
-    S(\rho_\Psi \| y\rho_\Psi + (1-y)\rho_\Phi) \simeq S(\rho_\Phi \| y\rho_\Phi + (1-y)\rho_\Psi) = -\log y - C_{\Psi\Phi}^2(2\pi (1-x))^{2\Delta_{L'}}\p_n\mu(n,x,y;\Delta_{L'})|_{n=1}+\cdots
+    S(\rho_\Psi \| y\rho_\Psi + (1-y)\rho_\Phi) \simeq S(\rho_\Phi \| y\rho_\Phi + (1-y)\rho_\Psi) = -\log y - {(C_{\Psi\Phi}^{L'})}^2(2\pi (1-x))^{2\Delta_{L'}}\p_n\mu(n,x,y;\Delta_{L'})|_{n=1}+\cdots
 \end{align}
 Similarly, we can obtain,
 \begin{align}
-    S(\rho_\Psi \| y\rho_\Phi + (1-y)\rho_\Psi) &\simeq S(\rho_\Phi \| y\rho_\Psi + (1-y)\rho_\Phi)\nn\\& = -\log (1-y) - C_{\Psi\Phi}^2(2\pi (1-x))^{2\Delta_{L'}}\p_n\mu(n,x,1-y;\Delta_{L'})|_{n=1}+\cdots
+    S(\rho_\Psi \| y\rho_\Phi + (1-y)\rho_\Psi) &\simeq S(\rho_\Phi \| y\rho_\Psi + (1-y)\rho_\Phi)\nn\\& = -\log (1-y) - {(C_{\Psi\Phi}^{L'})}^2(2\pi (1-x))^{2\Delta_{L'}}\p_n\mu(n,x,1-y;\Delta_{L'})|_{n=1}+\cdots
 \end{align}
 We have analytically continued the derivative of $\mu(n,x,y;\Delta_{L'})$ as $n\to 1$ (see appendix \ref{analytic continuation of theta or mu(n)} for details). It is given by,
 \begin{align}
@@ -3247,7 +3250,7 @@ We have analytically continued the derivative of $\mu(n,x,y;\Delta_{L'})$ as $n\
 We compute the contribution of three point function which we expect to be suppressed compared to the two point function. 
 For $p=0$, the contribution from both numerator and denominator,
 \begin{align}
-    f_{3pt}(n) = C_\Psi^3 \zeta_n^{3\Delta_L} \mathcal{T}_{n,LLL} 
+    f_{3pt}(n) = {(C_\Psi^L)}^3 \zeta_n^{3\Delta_L} \mathcal{T}_{n,LLL} 
 \end{align}
 which is suppressed by a factor of $\zeta_n^{3\Delta_L}$ coming from the OPEs of $\Psi \Psi^*$.
 Note that, for $p=0$ case, the three point function contribution from the numerator and the denominator of $\mathcal{F}_n$ are identical, so they cancel each other.
@@ -3266,23 +3269,23 @@ The numerator of $\mathcal{F}_n$, including the corrections from the three-point
 \end{align}
 The denominator of $\mathcal{F}_n$ including the corrections from the three point functions for $p> 0$ $\braket{\mO_{L'} \mO_{L'}\mO_L}$ for $p>0$, would be,
 \begin{align}
-y^{n-1}\Bigg( 1+ \zeta_n^{2\Delta_L} f(n)  + + \zeta_n^{3\Delta_L}f_{3pt}(n) + \sum_{L'} \zeta_n^{2\Delta_{L'} } C_{\Psi \Phi}^2 \mu(n,x,y;\Delta_{L'}) \nn\\
-+ \sum_{L,L'}\zeta_n^{2\Delta_{L'} + \Delta_L}C^2_{\Psi\Phi} \mu_G^{\Psi|\Phi}(n,x,y;\Delta_{L'},\Delta_L)+\cdots\Bigg)
+y^{n-1}\Bigg( 1+ \zeta_n^{2\Delta_L} f(n)  + + \zeta_n^{3\Delta_L}f_{3pt}(n) + \sum_{L'} \zeta_n^{2\Delta_{L'} } {(C_{\Psi\Phi}^{L'})}^2 \mu(n,x,y;\Delta_{L'}) \nn\\
++ \sum_{L,L'}\zeta_n^{2\Delta_{L'} + \Delta_L}{(C_{\Psi\Phi}^{L'})}^2\mu_G^{\Psi|\Phi}(n,x,y;\Delta_{L'},\Delta_L)+\cdots\Bigg)
 \end{align}
 where we define
 \begin{align}
     q &= y^{-1}-1 \\
     % \lambda_p &= D_n(\ep)^p \lb \frac{\sin(\pi (1-x)/n)}{\sin (\pi p /n)}\rb^{2\Delta_{L'}}\\
     G_p(n) &= \sum_{m=1}^{p-1} \frac{1}{\lb \sin(\pi m/n) \sin(\pi (p-m)/n)\rb^{\Delta_L}}\\
-    \mu_G^{\Psi|\Phi} (n,x,y;\Delta_{L'},\Delta_L) &= \sum_{p=1}^{n-1}   \frac{q^p (n-p)D_n(\ep)^{p}}{\lb \sin(\pi p/n)\rb^{2\Delta_{L'}-\Delta_L}} \lb C_\Phi G_p(n) + C_\Psi G_{n-p}(n)\rb
+    \mu_G^{\Psi|\Phi} (n,x,y;\Delta_{L'},\Delta_L) &= \sum_{p=1}^{n-1}   \frac{q^p (n-p)D_n(\ep)^{p}}{\lb \sin(\pi p/n)\rb^{2\Delta_{L'}-\Delta_L}} \lb C_\Phi^L G_p(n) + C_\Psi^L G_{n-p}(n)\rb
 \end{align}
 To check whether the three point function breaks the symmetry of $\Psi \leftrightarrow \Phi$, we consider,
 \begin{align}
-    \mu_G^{\Phi|\Psi}(n,x,y;\Delta_{L'},\Delta_L) &= \sum_{p=1}^{n-1}\frac{q^{n-p} p D_n(\ep)^{-(n-p)}}{\lb\sin(\pi p/n)\rb^{2\Delta_{L'}-\Delta_L}}\lb C_\Phi G_{p}(n) + C_\Psi G_{n-p}(n) \rb
+    \mu_G^{\Phi|\Psi}(n,x,y;\Delta_{L'},\Delta_L) &= \sum_{p=1}^{n-1}\frac{q^{n-p} p D_n(\ep)^{-(n-p)}}{\lb\sin(\pi p/n)\rb^{2\Delta_{L'}-\Delta_L}}\lb C_\Phi^L G_{p}(n) + C_\Psi^L G_{n-p}(n) \rb
 \end{align}
 where we performed the swapping of $p \to n-p$. Then the difference between the two is given by,
 \begin{align}
-    \mu_G^{\Psi|\Phi} (n,x,y;\Delta_{L'},\Delta_L) - \mu_G^{\Phi|\Psi} (n,x,y;\Delta_{L'},\Delta_L) &=\sum_{p=1}^{n-1}\frac{C_\Phi G_p(n) + C_\Psi G_{n-p}(n)}{\lb\sin(\pi p/n)\rb^{2\Delta_{L'}-\Delta_L}}\times\nn\\
+    \mu_G^{\Psi|\Phi} (n,x,y;\Delta_{L'},\Delta_L) - \mu_G^{\Phi|\Psi} (n,x,y;\Delta_{L'},\Delta_L) &=\sum_{p=1}^{n-1}\frac{C_\Phi^L G_p(n) + C_\Psi^L G_{n-p}(n)}{\lb\sin(\pi p/n)\rb^{2\Delta_{L'}-\Delta_L}}\times\nn\\
     &\qquad\qquad\qquad\qquad\Bigg[(n-p) \lb qD_n(\ep)\rb^p - p\lb\frac{q}{D_n(\ep)}\rb^{n-p}\Bigg]
 \end{align}
 One can check that, for $n=3$, the above quantity is non-zero. 
@@ -3295,90 +3298,7 @@ However, we want to see if the derivative of the above at $n=1$ vanishes.
 %     \mu_G^{\Psi|\Phi} (n,x,y;\Delta_{L'},\Delta_L) - \mu_G^{\Phi|\Psi} (n,x,y;\Delta_{L'},\Delta_L) &=  \sum_{p=1}^{n-1}\frac{q^p (n-p)}{\sin(\pi p/n)^{2\Delta_{L'}-\Delta_L}}   \Big[ \lb C_\Phi D_n(\ep)^p - C_\Psi D_n(\ep)^{-p}\rb G_p(n) \\&\qquad\qquad\qquad\qquad \qquad  + \lb C_\Psi D_n(\ep)^p - C_\Phi D_n(\ep)^{-p}\rb G_{n-p}(n) \Big]\\
 %     &=
 % \end{align}
-\textbf{Fisher information}
 
-$S(\rho_0 \| y\rho_0 + (1-y)\rho_\Phi)$. 
-
-The denominator starts from 1, coming from $p=0$. For $p=1$, we just have a sum over two-point functions. 
-\begin{align}
-    y^{n-1}\lb 1  + \frac{(n-1) (y^{-1}-1)D_n(\ep)\zeta_n^{2\Delta_\Phi}}{(2\sin(\pi (1-\ep)/n))^{2\Delta_\Phi}}+ \cdots\rb
-\end{align}
-For $p=2$, we can have either have a string of $\Phi \Phi^*$ of length $p=2$, or a pair of $\Phi \Phi^*$ which do not share common site. The contribution from $p=2$ is,
-\begin{align}
-    \lb(y^{-1}-1)D_n(\ep)\rb^2\lb  (n-2)\lb\frac{\sin(\pi \ep/n)}{\sin(\pi (2-\ep)/n)}\rb^{2\Delta_\Phi}  + \mO\lb\sin(\pi \ep/n)^{4\Delta_\Phi}\rb\rb
-\end{align}
-where the higher order terms come from the non-stringy contribution, which is clearly subleading term. 
-Ignoring the non-stringy contribution, we have,
-\begin{align}
-    \mathcal{F}_n = \frac{1}{y^{n-1}\lb 1+ \zeta_n^{2\Delta_\Phi} \sum_{p=1}^{n-1} (n-p)\frac{\lb(y^{-1}-1)(D_n(\ep)\rb^p}{\lb2\sin(\pi (p-\ep)/n)\rb^{2\Delta_\Phi}} + \cdots \rb}
-\end{align}
-If we want to consider $y\to 1$ limit and keep the term up to the order of $(1-y)^2$ to relate it to quantum Fisher information, we thus have the following in the limit $y \to 1$,
-\begin{align}
-    S(\rho_0 \|( \rho_0 + (1-y)(\rho_\Phi - \rho_0))) &= -\log y - \p_n \Bigg(  (n-1)  (y^{-1}-1)D_n(\ep) \lb\frac{\zeta_n}{2\sin(\pi(1-\ep)/n)}\rb^{2\Delta_\Phi}\nn \\
-    &\qquad+ (n-2)\lb(y^{-1}-1)(D_n(\ep)\rb^2\lb\frac{\zeta_n}{2\sin(\pi(2-\ep)/n)}\rb^{2\Delta_\Phi} +\cdots
-    \Bigg)\Bigg|_{n=1}
-\end{align}
-Notice, when the derivative hits $(n-1)$, in the limit $y\to 1$, the contribution from $(y^{-1}-1)\simeq (1-y)$ gets cancelled from $\log y$ expansion. Hence, we are left with terms of order $(1-y)^2$ and higher. Therefore, in the limit $y \to 1$, for coherent states upto the smallest order we have,
-\begin{align}
-    S(\rho_0 \|( \rho_0 + (1-y)(\rho_\beta - \rho_0))) 
-    &\simeq (1-y)^2/2 -\p_n \Bigg[(n-2)\lb(y^{-1}-1)D_n(\ep)\rb^2\lb\frac{\zeta_n}{2\sin(\pi(2-\ep)/n)}\rb^{2\Delta_\Phi}\times \nn\\
-    & \Bigg(1+ 2\beta^2 \lb\frac{\pi \ep}{n}\rb \cot(\pi/n) + \frac{1}{2}\lb 2\beta^2 \lb\frac{\pi \ep}{n}\rb \cot(\pi/n)\rb^2\nn\\&\qquad+ \lb\frac{\pi \ep}{n}\rb^2\beta^2\csc^2(\pi/n)+\cdots\Bigg)
-    \Bigg]\Bigg|_{n=1} \\
-    &\propto (1-y)^2 
-\end{align}
-where in the first line, the first term comes from the expansion of $-\log y$. We also added the corrections due to the three point and four point functions in the first line.
-
-----
-\begin{align}
-S(\rho_0 \|( \rho_0 + (1-y)(\rho_\Phi - \rho_0))) 
-    &= (-1)^{2\Delta_\Phi+1}2^{-2\Delta_\Phi}(1-y)^2 +  (1-y)^2 \p_n\lb D_n(\ep)^2  \lb\frac{\zeta_n}{2\sin(2\pi(1-\ep)/n)}\rb^{2\Delta_\Phi}\rb 
-\end{align}
-where the first term is a result of the derivative hitting $(n-2)$, which gives $(-1)^{2\Delta_\Phi}$ from $\sin(2\pi (1-\ep)/n)^{2\Delta_\Phi}$. We then have,
-\begin{align}
-S(\rho_0 \|( \rho_0 + (1-y)(\rho_\Phi - \rho_0))) 
-    &=  (-1)^{2\Delta_\Phi+1}2^{-2\Delta_\Phi}(1-y)^2 \nn \\ &\qquad\qquad+ (1-y)^2 \p_n\Bigg( \lb\frac{n\sin(\pi \ep/n)}{\sin(\pi \ep)}\rb^{-4\Delta_\Phi}\times 
-\lb\frac{\zeta_n}{2\sin(2\pi(1-\ep)/n)}\rb^{2\Delta_\Phi}\Bigg)  \\ 
-    &= (-1)^{2\Delta_\Phi+1}2^{-2\Delta_\Phi}(1-y)^2 \nn\\
-    & \qquad\qquad+ (1-y)^2 (\sin(\pi \ep))^{4\Delta_\Phi} \times 
-    \p_n\lb\frac{1}{n^2 \sin(\pi \ep/n) \sin(2\pi (1-\ep)/n)}\rb^{2\Delta_\Phi} \\
-    &=(-1)^{2\Delta_\Phi+1}2^{-2\Delta_\Phi}(1-y)^2 + 2\Delta_\Phi (1-y)^2 (\pi \ep)^{4\Delta_\Phi}\Bigg( -2  + \frac{\pi \ep}{n^2} \cot \lb\frac{\pi \ep}{n}\rb   \nn\\
-    &\qquad\qquad +\frac{2\pi (1-\ep)}{n^2} \cot \lb\frac{2\pi (1-\ep)}{n}\rb \Bigg)\Big|_{n=1}\\
-    &= (-1)^{2\Delta_\Phi+1}2^{-2\Delta_\Phi}(1-y)^2 + 2\Delta_\Phi (1-y)^2 (\pi \ep)^{4\Delta_\Phi}\Bigg( -2 + \pi \ep \lb \frac{1}{\pi \ep} - \frac{\pi \ep}{3} + \cdots\rb \nn\\
-    &\qquad \qquad - 2\pi (1-\ep)\lb \frac{1}{2\pi \ep} - \frac{2\pi \ep}{3} + \cdots \rb\Bigg)\\
-    &= (-1)^{2\Delta_\Phi+1}2^{-2\Delta_\Phi}(1-y)^2 + 2\Delta_\Phi (1-y)^2 (\pi \ep)^{4\Delta_\Phi} \lb -\frac{1}{\ep} + \frac{4\pi^2 \ep}{3} - \frac{5\pi^2 \ep^2}{3} + \cdots \rb
-\end{align}
-% \JM{Check the contribution of $\braket{\Phi \mO \Phi^*}$.
-% % It seems, that the contribution has also divergence, but it depends on $\Delta_L,\Delta_\Phi$ which whether it is suppressed or even more divergent.
-% }
-
-% The denominator of $\mathcal{F}_n$ takes the following form when we include the contribution from the three point function,
-% \begin{align}
-%     y^{n-1}\Bigg( 1+ (n-2) \lb (y^{-1}-1)D_n(\ep)\rb^2 \lb\frac{\zeta_n}{\sin(2\pi(1-\ep)/n}\rb^{2\Delta_\Phi}\left[1+ C_\Phi\frac{\lb\zeta_n\sin(2\pi(1-\ep)/n)\rb^{\Delta_L}}{\lb \sin (\pi (1-\ep)/n)\rb^{2\Delta_L}}+\cdots\right]\Bigg)
-% \end{align}
-% where we did not include the $p=1$ case since it has a $(n-1)$ factor sitting infront of it.
-% \begin{align}
-%     &S(\rho_0 \|( \rho_0 + (1-y)(\rho_\Phi - \rho_0)))\big|_{y\to 1} =\nn\\
-%     &\Bigg((-1)^{2\Delta_\Phi +1}2^{-2\Delta_\Phi}(1-y)^2 + 2\Delta_\Phi (1-y)^2  (\pi \ep)^{4\Delta_\Phi}\lb -\frac{1}{\ep} + \frac{4\pi^2 \ep}{3} - \frac{5\pi^2 \ep^2}{3} + \cdots \rb \Bigg) \lb 1 + C_\Phi(-2)^{\Delta_L} (\pi \ep)^{2\Delta_L -2\Delta_\Phi}\rb\nn\\
-%     &+ C_\Phi(1-y)^2 (-1)^{2\Delta_\Phi + \Delta_L + 1 }2^{\Delta_L-2\Delta_\Phi}(\pi \ep)^{4\Delta_\Phi} \Bigg( (\Delta_L - 2\Delta_\Phi)\frac{1}{\ep} + (\Delta_\Phi - 2\Delta_L) \frac{2\pi^2 \ep}{3} \nn \\
-%     & 
-%     -(\Delta_\Phi - 6\Delta_L )\frac{\pi^2 \ep^2}{6} -2( \Delta_\Phi + \Delta_L)\Bigg)
-% \end{align}
-
-If we consider the following,
-\begin{align}
-   & S
-(\rho_\Psi \|( \rho_\Psi + (1-y)(\rho_0 - \rho_\Psi))) \\&\qquad\qquad= \p_n \log \left[\frac{1+\zeta_n^{2\Delta_L}f(n) + \cdots}{y^{n-1}\lb 1+\zeta_n^{2\Delta_L}f(n) + (n-2)\lb (y^{-1}-1)D_n(\ep)\rb^2 \lb\frac{\zeta_n}{2\sin(2\pi(1+\ep)/n}\rb^{2\Delta_\Phi} +\cdots\rb}\right]
-\end{align}
-Here we did not include the contribution from $p=1$ since it does not contribute to the relative entropy, because of the $n-1$ factor sitting in front of it. Also notice that the numerator gets cancelled exactly from the $p=0$ term in the denominator. This gives us,
-\begin{align}
-    S
-(\rho_\Psi \|( \rho_\Psi + (1-y)(\rho_0 - \rho_\Psi))) &=-2^{-2\Delta_\Phi}(1-y)^2 + 2\Delta_\Phi (1-y)^2 (\pi \ep)^{4\Delta_\Phi}\Bigg( -2  + \frac{\pi \ep}{n^2} \cot \lb\frac{\pi \ep}{n}\rb   \nn\\
-    &\qquad\qquad +\frac{2\pi (1+\ep)}{n} \cot \lb\frac{2\pi (1+\ep)}{n}\rb \Bigg)\Big|_{n=1}\\
-    &= -2^{-2\Delta_\Phi}(1-y)^2 + 2\Delta_\Phi (1-y)^2 (\pi \ep)^{4\Delta_\Phi}\Bigg( -2 + \pi \ep \lb \frac{1}{\pi \ep} - \frac{\pi \ep}{3} + \cdots\rb \nn\\
-    &\qquad \qquad + 2\pi (1+\ep)\lb \frac{1}{2\pi \ep} - \frac{2\pi \ep}{3} + \cdots \rb\Bigg)\\
-    &= -2^{-2\Delta_\Phi}(1-y)^2 + 2\Delta_\Phi (1-y)^2 (\pi \ep)^{4\Delta_\Phi}\lb \frac{1}{\ep} - \frac{4\pi^2 \ep}{3} - \frac{5\pi^2 \ep^2}{3} + \cdots \rb
-\end{align}
-Here, we get positive divergence, in contrast to the previous case. 
 
 % ----
 
@@ -3618,37 +3538,13 @@ where the $1/4$ in the third case comes from the square of the OPE coefficient $
 \subsection{Subleading contribution}
 We want to know if the four point function contribution of $\braket{\mO_{L'}\mO_{L'}\mO_{L'}\mO_{L'}}$, in the case of $S(\rho_\Psi \| y\rho_\Psi + (1-y)\rho_\Phi)$ and exchanging $\Psi\leftrightarrow \Phi$, i.e., $S(\rho_\Phi \| y\rho_\Phi + (1-y)\rho_\Psi)$ the same. 
 
+Consider the case, when $\Delta_L >2\Delta_{L'}$. This corresponds to the case where the four-point function $\braket{\mO_{L'}\mO_{L'}\mO_{L'}\mO_{L'}}$ is of lower order than the three point function $\braket{\mO_L \mO_{L'}\mO_{L'}}$. Using Replica trick, we want to evaluate the following,
 \begin{align}
     \mathcal{F}_n^{\Psi|\Phi} &\equiv \frac{\text{tr}\rho_\Psi^n}{\text{tr}\lb\rho_\Psi \lb y\rho_\Psi + (1-y)\rho_\Phi\rb^{n-1}\rb}  \\
     % &=  \frac{\text{tr}\rho_\Psi^n}{y^{n-1}\text{tr} \Bigg[ \rho_\Psi^n+ \displaystyle\sum_{p=1}^{n-1}\lb\frac{1-y}{y}D_n^{\Psi|\Phi}(\ep)\rb^p \rho_\Psi^{n-p}\rho_\Phi^p \Bigg]} \\
-    &= \frac{1+ \zeta_n^{2\Delta_{L}}f(n)+ \cdots}{y^{n-1}\Bigg[ 1+ \zeta_n^{2\Delta_L}f(n) + \displaystyle C_{\Psi\Phi}^2\zeta_n^{2\Delta_{L'}}\sum_{p=0}^{n-1}\frac{\lb\frac{1-y}{y}D_n^{\Psi|\Phi}(\ep)\rb^p}{\lb 2\sin(\pi p/n)\rb^{2\Delta_{L'}}} + C_{\Psi\Phi}^4\zeta_n^{4\Delta_{L'}}\mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'})+ \cdots\Bigg]}
-    % \\
-    % \mathcal{F}_n^{\Phi|\Psi} &\equiv \frac{\text{tr}\rho_\Phi^n}{\text{tr}\lb\rho_\Phi \lb y\rho_\Phi + (1-y)\rho_\Psi\rb^{n-1}\rb}
-    % \\
-    % &=  \frac{\text{tr}\rho_\Phi^n}{y^{n-1}\text{tr} \Bigg[ \rho_\Phi^n+ \displaystyle\sum_{p=1}^{n-1}\lb\frac{1-y}{y}D_n^{\Phi|\Psi}(\ep)\rb^p \rho_\Phi^{n-p}\rho_\Psi^p \Bigg]} 
-\end{align}
-Notice, the uniform word contribution ($p=0$) in the denominator gets cancelled exactly from the numerator. So, we are left with the four point function contribution from $p>1$ cases. 
-
-Consider the case, when $\Delta_L >2\Delta_{L'}$. This corresponds to the case where the four-point function $\braket{\mO_{L'}\mO_{L'}\mO_{L'}\mO_{L'}}$ is of lower order than the three point function $\braket{\mO_L \mO_{L'}\mO_{L'}}$. Then, expanding the denominator, we obtain the leading and sub-leading contributions as,
-\begin{align}
-\text{tr}\lb
-\rho_\Psi
-\lb y\rho_\Psi+(1-y)\rho_\Phi\rb^{n-1}
-\rb
-&=
-y^{n-1}\text{tr}\Bigg[
-1
-+C_{\Psi\Phi}^2\zeta_n^{2\Delta_{L'}}
-\mu(n,x,y;\Delta_{L'})
-% \nn\\
-% &\qquad\qquad
-+C_{\Psi\Phi}^4\zeta_n^{4\Delta_{L'}}
-\mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'})
-+\cdots
-\Bigg],
-\\
-\mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'})
-&=
+    &= \frac{1+ \zeta_n^{2\Delta_{L}}f(n)+ \cdots}{y^{n-1}\Bigg[ 1+ \zeta_n^{2\Delta_L}f(n) + \displaystyle {(C_{\Psi\Phi}^{L'})}^2\zeta_n^{2\Delta_{L'}}\sum_{p=0}^{n-1}\frac{\lb\frac{1-y}{y}D_n^{\Psi|\Phi}(\ep)\rb^p}{\lb 2\sin(\pi p/n)\rb^{2\Delta_{L'}}} + {(C_{\Psi\Phi}^{L'})}^4\zeta_n^{4\Delta_{L'}}\mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'})+ \cdots\Bigg]} \\
+    &\mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'})
+=
 \sum_{\substack{
 a,b,c,d\in \mathbb{Z}_{>0}\\
 a+b+c+d=n
@@ -3659,15 +3555,20 @@ a
 \rb^{b+d}
 \mathcal{G}_{4,n}^{L'}(b,c,d),
 \\
-\mathcal{G}_{4,n}^{L'}(b,c,d)
-&\equiv
+&\mathcal{G}_{4,n}^{L'}(b,c,d)
+\equiv
 \braket{
 \mO_{L'}(u_0)
 \mO_{L'}(u_b)
 \mO_{L'}(u_{b+c})
 \mO_{L'}(u_{b+c+d})
 }.
+    % \\
+    % \mathcal{F}_n^{\Phi|\Psi} &\equiv \frac{\text{tr}\rho_\Phi^n}{\text{tr}\lb\rho_\Phi \lb y\rho_\Phi + (1-y)\rho_\Psi\rb^{n-1}\rb}
+    % \\
+    % &=  \frac{\text{tr}\rho_\Phi^n}{y^{n-1}\text{tr} \Bigg[ \rho_\Phi^n+ \displaystyle\sum_{p=1}^{n-1}\lb\frac{1-y}{y}D_n^{\Phi|\Psi}(\ep)\rb^p \rho_\Phi^{n-p}\rho_\Psi^p \Bigg]} 
 \end{align}
+Notice, the uniform word contribution ($p=0$) in the denominator gets cancelled exactly from the numerator. So, we are left with the four point function contribution from $p>1$ cases. 
 Similarly, for the swapped case, one can write its denominator as
 \begin{align}
 \text{tr}\lb
@@ -3677,11 +3578,11 @@ Similarly, for the swapped case, one can write its denominator as
 &=
 y^{n-1}\text{tr}\Bigg[
 1
-+C_{\Psi\Phi}^2\zeta_n^{2\Delta_{L'}}
++{(C_{\Psi\Phi}^{L'})}^2\zeta_n^{2\Delta_{L'}}
 \mu(n,x,y;\Delta_{L'})
 \nn\\
 &\qquad\qquad
-+C_{\Psi\Phi}^4\zeta_n^{4\Delta_{L'}}
++{(C_{\Psi\Phi}^{L'})}^4\zeta_n^{4\Delta_{L'}}
 \mu_4^{\Phi|\Psi}
 +\cdots
 \Bigg],
@@ -3710,7 +3611,7 @@ a
 \end{align}
 Here we used $D_n^{\Psi |\Phi}(\ep) = {D_n^{\Phi |\Psi}(\ep)}^{-1}$. Let us define the following quantities,
 \begin{align}
-    &q\equiv \frac{1-y}{y}, \qquad \lambda \equiv q D^{\Psi|\Phi}_n(\ep).
+    &q\equiv \frac{1-y}{y}, \qquad \lambda \equiv q D^{\Psi|\Phi}_n(\ep),
 \\
 &\mathcal{M}_4(n,\lambda)\equiv \mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'}) = \sum_{\substack{
 a+b+c+d\geq 1\\
@@ -3718,24 +3619,30 @@ a+b+c+d=n
 }}
 a
 \lambda^{b+d}
-\mathcal{G}_{4,n}^{L'}(b,c,d)
+\mathcal{G}_{4,n}^{L'}(b,c,d).
 \end{align}
-Then, consider,
+Then, we take the derivative of the contribution of the four-point function with respect to $n$,
 \begin{align}
     \p_n \mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'}) &= \p_n\mathcal{M}_4(n,\lambda) + q{D^{\Psi|\Phi}_n(\ep)}'\p_\lambda \mathcal{M}_4(n,\lambda),\\
-    \implies \p_n \mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'})\big|_{n=1} &= \p_n\mathcal{M}_4(1,q) + q {D^{\Psi|\Phi}_n(\ep)}'\Big|_{n=1}\p_\lambda \mathcal{M}_4(1,\lambda).
+    \label{eq: 4 point fn contribution to entropy}\implies \p_n \mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'})\big|_{n=1,\lambda =q} &= \p_n\mathcal{M}_4(n,\lambda)\big|_{n=1} + q {D^{\Psi|\Phi}_n(\ep)}'\p_\lambda \mathcal{M}_4(n,\lambda)\Big|_{n=1,\lambda =q}.
 \end{align}
 However, we have
 \begin{align}
-    \mathcal{M}_4(1,\lambda) &= 0, \qquad \forall \lambda,
+    &\mathcal{M}_4(1,\lambda) = 0, \qquad \forall \lambda>0,
     \\
-    \implies \p_\lambda \mathcal{M}_4(1,\lambda)&=0.
+    \implies &\p_\lambda \mathcal{M}_4(1,\lambda)=0.
 \end{align}
-Then, we finally obtain,
+Thus the second term in (\ref{eq: 4 point fn contribution to entropy}) vanishes. 
+We are left with,
 \begin{align}
-    \p_n \mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'}) &= \p_n\mathcal{M}_4(n,\lambda) .
+    \p_n \mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'})\big|_{n=1} &= \p_n\mathcal{M}_4(n,\lambda)\big|_{n=1,\lambda = q} .
 \end{align}
-The above equation says that the two point and the four point function contribution to the relative entropy remain invariant under swapping $\Psi \leftrightarrow\Phi$. In other words, 
+Similarly, we can evaluate the derivative of the swapped case,
+\begin{align}
+    \p_n \mu_4^{\Phi|\Psi}(n,x,y;\Delta_{L'})\big|_{n=1} &= \p_n\mathcal{M}_4(n,\lambda)\big|_{n=1} - q {D^{\Psi|\Phi}_n(\ep)}'\p_\lambda \mathcal{M}_4(n,\lambda)\Big|_{n=1,\lambda = q}\\
+    &= \p_n\mathcal{M}_4(n,\lambda)\big|_{n=1,\lambda = q}
+\end{align}
+We finally obtain that the four point function contribution to the relative entropy remain invariant under swapping $\Psi \leftrightarrow\Phi$. In other words, 
 \begin{align}
     \p_n \mu_4^{\Psi|\Phi}(n,x,y;\Delta_{L'}) &= \p_n \mu_4^{\Phi|\Psi}(n,x,y;\Delta_{L'})
 \end{align}
@@ -4959,9 +4866,9 @@ where we used the following identities,
 % }
 
 % \section{Analytic continuation of $\mu_1(n)$ using Cardy, Tonni and collaborators}
-\section{\texorpdfstring{Analytic continuation of $\mu_1(n)$ using Cardy, Tonni and collaborators}
-{Analytic continuation of mu1(n) using Cardy, Tonni and collaborators}}\label{Analytic continuation of mu1}
-Cardy, Tonni and collaborators analyticaaly continued the sum $S_2(n)$ and its derivative at $n=1$ using Carlson's theorem. They analytically continued 
+\section{\texorpdfstring{Analytic continuation of $\mu_1(n)$}
+{Analytic continuation of mu1(n)}}\label{Analytic continuation of mu1}
+Cardy, Tonni and collaborators analytically continued the sum $S_2(n)$ and its derivative at $n=1$ using Carlson's theorem. They analytically continued 
 \begin{align*}
     S_2(n) = \frac{1}{2}\sum_{j=1}^{n-1} \frac{1}{\big[\sin^2\lb \frac{2\pi j}{2n} \rb\big]^\alpha} \equiv \frac{1}{2}\sum_{k = -\infty}^{\infty}[ng(nk)-g(k)]
 \end{align*}
@@ -5080,247 +4987,14 @@ to get,
     \p_n \mu_1  \big|_{n=1, \kappa = 0} (\Delta = 1)&= -1
 \end{align}
 Similarly, we can check $\p_n \mu_1 \big|_{n=1, \kappa = 0}(\Delta = 2)  = 0$. 
-\section{\texorpdfstring{$S_2'(2)$}{ S2'(2)}}\label{Analytic continuation of S2' at n =2}
-We want to compute the derivative of $S_2(n)$ at $n=2$. Thus we require,
-\begin{align}
-    \p_n S_n |_{n=2} &= \frac{1}{2}\sum_{m\geq 1} \lb g(2m) + 2m g'(2m) \rb + \frac{1}{2}\sum_{m\geq 0} \lb g(-2m) -2m g'(-2m) \rb \\
-    &= \frac{1}{2}\sum_{m\geq 1} \lb g(2m) + 2m g'(2m) \rb + \frac{1}{2}\sum_{m\geq 0} \lb g(2m) +2m g'(2m) \rb
-\end{align}
-where in the last line, we used the reflection property ($g(-m) = g(m)$) at integer $m$. Then using the integral representation of $g_{\Delta}(m)$ and $g'_\Delta (m)$, we get,
-\begin{align}
-    \p_n S_n |_{n=2} = \frac{A_\Delta}{2}\left[ \int_0^1 dt \, (1-t)^{-2\Delta} \lb \sum_{m\geq 1}t^{2m+\Delta - 1}(1+2m \ln t) + \sum_{m\geq 0} t^{2m+\Delta - 1}(1+2m \ln t)\rb\right]
-\end{align}
-We use the following geometric sums,
-\begin{align}
-    \sum_{m\geq 1} t^{2m} &= \frac{t^2}{1-t^2},\\
-    \sum_{m\geq 1} 2mt^{2m}&= \frac{2t}{(1-t^2)^2}
-\end{align}
-to obtain,
-\begin{align}
-    \p_n S_n |_{n=2} &= \frac{A_\Delta}{2}\Big( \int_0^1 dt \, t^{\Delta +1}\, (1-t)^{-2\Delta - 1}\, (1+t)^{-1} + \int_0^1 dt \, t^{\Delta -1}\, (1-t)^{-2\Delta - 1}\, (1+t)^{-1} \nn \\
-    & \qquad +2\int_0^1 dt \, t^{\Delta }\, (1-t)^{-2\Delta - 1}\, (1+t)^{-1}\ln t \Big)
-\end{align}
-We use the following identities,
-\begin{align}
-    \int_0^1 dt \, t^{a-1} (1-t)^{b-1} (1+t)^{-c} &= B(a,b)\, _2F_1(a,c;a+b;-1)\\
-    \int_0^1 dt \, t^{a-1} (1-t)^{b-1} (1+t)^{-c} \ln t &= \p_z \lb B(z,b)\, _2F_1(z,c;z+b;-1) \rb|_{z=a}
-\end{align}
-Denote 
-\begin{align}
-    I(a,b,c) = B(a,b) \, _2F_1(a,c;a+b;-1) \\
-\end{align}
-we finally obtain,
-\begin{align}
-    \p_nS_2(n)|_{n=2} = \frac{A_\Delta}{2}\lb I(\Delta + 2,-2\Delta,1) + I(\Delta,-2\Delta,1) +2\p_aI(a,-2\Delta,1)|_{a = \Delta +1}\rb.
-\end{align}
-
-\section{\texorpdfstring{Is there an OPE expansion for $S(\rho_0\|\rho_\Phi)?$}{Is there an OPE expansion for S(rho0 || rho Phi}}
-
-where the first factor comes the normalization of the density matrices, and we have used $\sin(\pi x)=\sin(\pi(1-x))$. We also used the following OPE for the $\Phi$ and $\Phi^*$ with identity close to it,
-\begin{align}
-    \Phi(z_{1,n}^-) I(z_{0,n}^+) &\sim \Phi(z_{0,n}^+) + \cdots 
-    % e^{i\pi (1/n-1/2)}(2\zeta_n)\p \Phi(z_{0,n}^+)+\cdots
-    \nn\\
-    \Phi^*(z_{n-1,n}^+)I(z_{0,n}^-) &\sim \Phi^*(z_{0,n}^-)+ \cdots 
-    % +e^{-i\pi (1/n-1/2)}(2\zeta_n)\p \Phi^*(z_{0,n}^-)\cdots
-\end{align}
-We compute the two and three point functions above \
-% JM{(one should then also consider the two point function of the descendant with the identities, but those are higher order)}
-\begin{align}
- % & \braket{V_\beta(z^+_{n-1,n})V_{-\beta}(z^-_{1,n})}=\lb 2\sin\lb\frac{\pi(1+\ep)}{n}\rb\rb^{-4h_\beta}\nn\\
- &\braket{\Phi^*(z^+_{0,n})\Phi(z^-_{0,n})}=\lb 2\sin\lb\frac{\pi(1-\ep)}{n}\rb\rb^{-2\Delta_\Phi}e^{-3\pi i s_\Phi}\\
-  &\braket{\Phi(z^+_{n-1,n})\Phi^*(z^-_{1,n})}=\lb 2\sin\lb\frac{\pi(1+\ep)}{n}\rb\rb^{-2\Delta_\Phi}e^{-3\pi i s_\Phi}
-% &\braket{V_\beta(z^+_{n-1,n})V_{-\beta}(z^-_{1,n})\mO_L(e^{2\pi i k/n})}=\nn\\
-% &C_\beta\lb 2\sin\lb\frac{\pi(1+\ep)}{n}\rb\rb^{-4h_\beta+\Delta_L}\lb 2\sin\lb\frac{\pi(2k+1+\ep)}{2n}\rb\rb^{-\Delta_L}\lb 2\sin\lb\frac{\pi(2k-1-\ep)}{2n}\rb\rb^{-\Delta_L}\nn\\
-% &=C_\beta\lb 2\sin\lb\frac{\pi(1+\ep)}{n}\rb\rb^{-4h_\beta+\Delta_L}\lb2\cos(\pi(1+\ep)/n)-2\cos(2\pi k/n) \rb^{-\Delta_L}
-\end{align}
-\begin{align}
-\braket{\Phi(z^-_{0,n})\Phi^*(z^+_{0,n})\mO_L(e^{i\pi(2k+1) /n})}&=C_\Phi\lb 2\sin\lb\frac{\pi(1-\ep)}{n}\rb\rb^{-2\Delta_\Phi+\Delta_L}\lb 2\sin\lb\frac{\pi(k+1-\ep/2)}{n}\rb\rb^{-\Delta_L}\times\nn\\
-&\qquad \qquad \qquad \qquad\lb 2\sin\lb\frac{\pi(k+\ep/2)}{n}\rb\rb^{-\Delta_L}e^{-3\pi i s_\Phi}e^{-i\pi s_L\lb (2k+1)/n+1/2)\rb}\nn\\
-&=C_\Phi\lb 2\sin\lb\frac{\pi(1-\ep)}{n}\rb\rb^{-2\Delta_\Phi+\Delta_L}\times\nn \\
-&\qquad\lb2\cos(\pi(1-\ep)/n)-2\cos(\pi (2k+1)/n) \rb^{-\Delta_L}e^{-3\pi i s_\Phi}e^{-i\pi s_L\lb (2k+1)/n+1/2)\rb}
-\end{align}
-
-\begin{align}
-\braket{\Phi(z^+_{n-1,n})\Phi^*(z^-_{1,n})\mO_L(e^{i\pi(2k+1) /n})}&=e^{3\pi i s_\Phi/2}e^{-i\pi (s_L+s_\Phi)\lb (2k+1)/(2n)+1/2)\rb} \times \nn\\
-&C_\Phi^2\lb 2\sin\lb\frac{\pi(1+\ep)}{n}\rb\rb^{\Delta_L}\times\lb 2\sin\lb\frac{\pi(2k+ 1))}{2n}\rb\rb^{-2\Delta_L}\nn\\
-% &=C_\Phi\lb 2\sin\lb\frac{\pi(1-\ep)}{n}\rb\rb^{-2\Delta_\Phi+\Delta_L}\times\nn \\
-% &\qquad\lb2\cos(\pi(1-\ep)/n)-2\cos(\pi (2k+1)/n) \rb^{-\Delta_L}e^{-3\pi i s_\Phi}e^{-i\pi s_L\lb (2k+1)/n+1/2)\rb}
-\end{align}
 
 
-Therefore, in the small $\ep$ expansion we have
-% \begin{align}
-% \braket{\tilde{\mO}_{0|\beta}^{(n-1)}}&=D_n(\ep)^{n-1}\lb\frac{\sin(\pi\ep/n)}{\sin(\pi(1+\ep)/n)}\rb^{4h_\beta}\times\nn\\
-% &\lb 1+C_\beta^2\lb\frac{\sin(\pi\epsilon/n)}{\sin(\pi(1+\epsilon)/n)}\rb^{\Delta_L}\sum_{k=0}^{n-2} \lb 2\cos(\pi(1+\ep)/n)-2\cos(2\pi k/n) \rb^{-\Delta_L} +\cdots\rb\ .
-% \end{align}
-\begin{align}
-\braket{\tilde{\mO}_{0|\Phi}^{(n-1)}}=&\lb \frac{n \sin(\pi\ep/n)}{\sin(\pi\ep)}\rb^{-2\Delta_\Phi (n-1)}\lb\frac{\sin(\pi\ep/n)}{\sin(\pi(1-\ep)/n))}\rb^{2\Delta_\Phi}
-% \lb\frac{1}{2\sin(\pi(1+\ep)/n)}\rb^{4h_\beta}
-\times\nn\\
-&\Bigg( 1+C_\Phi\lb\sin(\pi\epsilon/n)\sin(\pi(1-\epsilon)/n)\rb^{\Delta_L}\times \nn \\
-&\sum_{k=1}^{n-2}\lb \frac{1}{\sin(\pi (k+1-\ep/2)/n) \sin (\pi (k+\ep/2) /n)}\rb^{-\Delta_L} +\cdots\Bigg)\ .
-\end{align}
-\begin{align}
-\braket{\tilde{\mO}_{0|\Phi}^{(n-1)}}=&\lb \frac{n \sin(\pi\ep/n)}{\sin(\pi\ep)}\rb^{-2\Delta_\Phi (n-1)}\lb\frac{\sin(\pi\ep/n)}{\sin(\pi(1+\ep)/n))}\rb^{2\Delta_\Phi}
-% \lb\frac{1}{2\sin(\pi(1+\ep)/n)}\rb^{4h_\beta}
-\times\nn\\
-&\Bigg( 1+C_\Phi^2 e^{4\pi i s_\Phi} \frac{\lb \sin \lb \pi (1+\ep)/n\rb \rb^{2\Delta_\Phi + \Delta_L}}{\lb \sin (\pi \ep / n)\rb^{2\Delta_\Phi - \Delta_L}}\times \sum_{k=1}^{n-2} \frac{e^{i \pi (s_L - s_\Phi)((2k+1)/(2n))}}{\lb \sin\lb \frac{ \pi(2k+1)}{2n}\rb\rb^{2\Delta_L } } +\cdots\Bigg) \\
-=& \lb \frac{n \sin(\pi\ep/n)}{\sin(\pi\ep)}\rb^{-2\Delta_\Phi (n-1)}\lb\frac{\sin(\pi\ep/n)}{\sin(\pi(1+\ep)/n))}\rb^{2\Delta_\Phi}
-% \lb\frac{1}{2\sin(\pi(1+\ep)/n)}\rb^{4h_\beta}
-\times\nn\\
-&\Bigg( 1+C_\Phi^2 e^{4\pi i s_\Phi} \lb\frac{ \sin \lb \pi (1+\ep)/n\rb }{ \sin (\pi \ep / n)}\rb^{2\Delta_\Phi}(\sin(\pi(1+\ep)/n)\sin (\pi \ep/n))^{ \Delta_L} \sum_{k=1}^{n-2} \frac{1}{\lb \sin\lb \frac{ \pi(2k+1)}{2n}\rb\rb^{2\Delta_L} } +\cdots\Bigg)
-\end{align}
-If we did not have any phase term in the sum in the last line of the above equation, then we end up with
-\begin{align}
-    \sum_{k=0}^{n-1} \frac{1}{\sin^2 \lb \pi (2k+1) / (2n)\rb^{\Delta}}= \frac{2}{2n}\sum_{k=1}^{2n-1} \frac{1}{\lb \sin^2\lb \frac{\pi j }{2n}\rb \rb^{\Delta}} -\frac{2}{n}S_2(n,\Delta)
-\end{align}
-Here we wrote the sum over the odd sites to be the sum over all $2n-1$ sites, and subtract the sum over even sites, which is $2S_2(n)/n$. Note that we have to subtract the terms for $k=1,n-1$ as well. 
-Thus we can simplify the sum,
-\begin{align}
-    \sum_{k=1}^{n-2} \frac{1}{\lb \sin\lb \frac{ \pi(2k+1)}{2n}\rb\rb^{2\Delta_L } } = 2^{2\Delta_L}\lb \frac{S_2(2n,\Delta_L)}{n} - \frac{2S_2(n,\Delta_L)}{n} - \frac{2}{\lb \sin(\pi/(2n))\rb^{2\Delta_L}}\rb 
-\end{align} 
-The correction to the divergent piece comes when we take the derivative of $\log$ of the things inside parentheses. 
-We have the divergent piece in the denominator as the common factor. When the derivative hits the summation, we get,
-\begin{align}
-    S_2'(2) -S_2(2) - 2S_2'(1) 
-\end{align}
-While the derivative hitting the term outside the sum gives,
-\begin{align}
-  &  \lb \lb\frac{ \sin \lb \pi (1+\ep)/n\rb }{ \sin (\pi \ep / n)}\rb^{2\Delta_\Phi}(\sin (\pi (1+\ep)/n)\sin (\pi \ep/n))^{ \Delta_L}\rb'\Bigg|_{n=1} \\&= (-1)^{2\Delta_\Phi+\Delta_L}(\pi \ep)^{2\Delta_L} \lb (2\Delta_\Phi + \Delta_L) \lb -\frac{1}{\ep} + \frac{\pi^2 \ep}{3} + \cdots \rb  - 2\Delta_L\lb 1-\frac{\pi^2 \ep^2}{3} \cdots\rb\rb
-    % &\simeq  (-1)^{3\Delta_\Phi+1}\lb 3\Delta_\Phi + \ep (\Delta_L + \Delta_\Phi)\rb \lb \pi \ep\rb^{\Delta_L + \Delta_\Phi} \lb \frac{1}{\ep} - \frac{\pi^2 \ep}{3} + \cdots \rb 
-\end{align}
-So this piece is divergent, but is suppressed from the leading divergent piece. Similarly, the other piece gives,
-\begin{align}
-     S_2'(2,\Delta_L) -1 -2\frac{\sqrt{\pi } \Gamma(\Delta_L + 1)}{4\Gamma (\Delta_L + 3/2)} 
-\end{align}
-where we used $2^{2\Delta_L}S_2(2) = 1$
-We compute $S_2'(2)$ in the appendix \ref{Analytic continuation of S2' at n =2},
-\begin{align}
-    &S_2'(2) = \frac{2^{2\Delta}\sin(\pi \Delta)}{\pi} \lb I(\Delta +2,-2\Delta,1) + I(\Delta ,-2\Delta,1) +2\p_aI(a,-2\Delta,1)|_{a=\Delta} \rb\\
-    & I (a,b,c) = \int_0^1 dt \, t^{a-1}(1-t)^{b-1} (1+t)^{-c} = B(a,b) \,_2F_1(a,c;a+b;-1) \\
-    & \p_a I (a,b,c) = \int_0^1 dt \, t^{a-1}(1-t)^{b-1} (1+t)^{-c} \ln t = \p_a \lb B(a,b) \,_2F_1(a,c;a+b;-1)\rb 
-\end{align}
-As long as $S_2'(2)$ is finite, these corrections are suppressed.
-Finally, we obtain the relative entropy,
-\begin{align}
-    S(\rho_0\|\rho_\Phi) &= - 2\Delta_\Phi \lb \frac{1}{\ep} - \frac{\pi^2\ep}{3} +\cdots \rb \nn \\&+ (-1)^{2\Delta_\Phi + \Delta_L}C_\Phi^2 (\pi \ep)^{2\Delta_L } \Bigg( (2\Delta_\Phi + \Delta_L  ) \lb \frac{1}{\ep} - \frac{\pi^2 \ep}{3}+\cdots\rb+2\Delta_L \lb 1-\frac{\pi^2 \ep^2}{3}\rb \nn \\
-    &- \lb  S_2'(2) +1 - 2\frac{\sqrt \pi \Gamma (\Delta +1)}{4\Gamma (\Delta + 3/2)} \rb\Bigg)
-\end{align}
-
-We need to take the logarithm followed by a $\partial_n$ at $n\to 1$. It is straightforward to see
-\begin{align}
-&  \lb \p_n\log \lb D_n(\ep)^{n-1}\rb\rb_{n\to 1}=0\nn\\
-% & \JM{\lb \p_n\log \lb \frac{n \sin(\pi\ep/n)}{\sin(\pi\ep)}\rb^{-2\Delta_\Phi (n-1)}\rb_{n \to 1}}=0 \nn\\
-&\lb \p_n\log \lb \frac{\sin(\pi\epsilon/n)}{\sin(\pi(1+\epsilon)/n)}\rb\rb_{n\to 1}=\pi\cot(\pi\ep)=\frac{1}{\ep}-\frac{\pi^2 \ep}{3}+O(\ep^3)\nn\\
-&\frac{\sin(\pi\epsilon/n)}{\sin(\pi(1+\epsilon)/n)}=\lb\frac{\pi \ep}{n\sin(\pi/n)} \rb
-\lb 1-\frac{\cot(\pi/n)\pi \ep}{n}+O(\ep^2)\rb
-\end{align}
-Therefore,
-\begin{align}
-  &S(\rho_0\|\rho_\beta)=4h_\beta\lb\frac{1}{\ep}-\frac{\pi^2\ep}{3}\rb- C_\beta^2 \p_n\mathcal{T}(n)|_{n\to 1}+O(\ep^3)\nn\\
-  &\mathcal{T}(n)=\lb\frac{\sin(\pi\epsilon/n)}{\sin(\pi(1+\epsilon)/n)}\rb^{\Delta_L}\sum_{k=0}^{n-2} \lb 2\cos(\pi(1+\ep)/n)-2\cos(2\pi k/n) \rb^{-\Delta_L}\nn\\
-  &=\lb\frac{\pi \ep}{4n}\rb^{\Delta_L}T(n)\lb 1-O(\ep)\rb\nn\\
-  &T(n)=\sum_{k=0}^{n-2}\lb \sin\lb\frac{\pi}{n}\rb\sin\lb\frac{(2k+1)}{2n}\rb\sin\lb \frac{(2k-1)}{2n}\rb\rb^{-\Delta_L}
-\end{align}
-\begin{align*}
-  &S(\rho_0\|\rho_\Phi)=\JM{2\Delta_\Phi \lb\frac{1}{\ep}- \sum_{k=1}^{\infty} \frac{2^{2k}|B_{2k}|} {(2k)!}\ep^{2k-1} 
-  % \frac{\pi^2\ep}{3}
-  \rb - C_\Phi \p_n\mathcal{T}(n)|_{n\to 1}}\nn\\
-  &\mathcal{T}(n)=\JM{\lb\sin(\pi\epsilon/n)\sin(\pi(1-\epsilon)/n)\rb}^{\Delta_L}\JM{\sum_{k=1}^{n-2} \lb \frac{1}{\sin(\pi (k+1-\ep/2)/n) \sin (\pi (k+\ep/2) /n)}\rb^{-\Delta_L}}\nn\\
-  &=\JM{\lb\sin(\pi\epsilon/n)\sin(\pi(1-\epsilon)/n)\rb}^{\Delta_L}T(n)\lb 1-O(\ep)\rb\nn\\
-  &T(n)=\JM{\sum_{k=1}^{n-2}\lb \frac{1}{\sin(\pi (k+1-\ep/2)/n) \sin (\pi (k+\ep/2) /n)}\rb^{-\Delta_L}}
-  % {\sin\lb\frac{\pi}{n}\rb}
-  % \rb^{-\Delta_L}}
-\end{align*}
-Therefore,
-\begin{align}
-  S(\rho_0\|\rho_\beta)&=4h_\beta\lb\frac{1}{\ep}-\frac{\pi^2\ep}{3}\rb - C_\beta^2 (\pi \ep)^{\Delta_L} T'(1)+\cdots
-\end{align}
-\begin{align*}
-  S(\rho_0\|\rho_\beta)&=\JM{2\Delta_{\Phi}\lb\frac{1}{\ep}
-  - \sum_{k=1}^{K} \frac{2^{2k}|B_{2k}|} {(2k)!}\pi^{2k}\ep^{2k-1}
-  %\frac{\pi^2\ep}{3}
-  \rb - C_\Phi  \mathcal{T}'(1)}+\cdots
-\end{align*}
-where we have used the fact that at $n=1$ there should be no contribution coming from OPE expansions, so $T(1)=0$.
-
-\JM{Again, with the use of the OPE in eq.~[\ref{eq: general OPE with identity}], we obtain}
-\begin{align}
- S(\rho_0\|\rho_\beta)&=\JM{(1-\delta_{\Psi \Phi})\lb 2\Delta_{\Phi}\lb\frac{1}{\ep}
-  - \frac{\ep}{3}
-  \rb - C_\Phi  \mathcal{T}'(1)+\cdots\rb}
-\end{align}
-
-This makes it clear that the divergence of $S(\rho_0\|\rho_\beta)$ comes from the $1/(1-x)$ term in the first term with residue that is universally fixed to be $4h_\beta$. The comparison with the relative entropy $S(\rho_0\|\rho_\beta)$ of the coherent states suggests that the term $T(n)$ does not contribute to the relative entropy, i.e. its analytic continuation vanishes at this order.
-
-\section{Renyi entropy of Vertex operators}\label{Renyi entropy of vertex operators}
-In \cite{Alcaraz_2011}, they define 
-\begin{align}
-    F_{\Psi}^n(x) = \frac{\text{tr}(\rho_\Psi^n)}{\text{tr}(\rho_0^n)},
-\end{align}
-where $\Psi$ is some excited state. 
-In the $x \to 0 $ limit, they show for any excited state generated by the operator $\Psi$,
-\begin{align}
-    F_\Psi^{(n)}(x) \sim 1+ \frac{h+\bar{h}}{3} \lb\frac{1}{n}-n\rb (\pi x)^2 + O(x^{2\Delta_{L}}).
-\end{align}
-assuming that $\Delta_L>1$.
-This piece comes from the $D_n(x)$, without considering the contribution from any two point function of primaries from OPEs. This can be shown by considering,
-\begin{align}
-    F^{(n)}_\Psi(x) &= \frac{\text{tr}(\rho_\Psi^n)}{\text{tr}(\rho_0^n)} \\
-    &\simeq D_n(x)^{-n} \\
-    &= \lb\frac{\sin(\pi x)}{n\sin(\pi x/n)}\rb^{2n\Delta_\Psi} \\
-    &\simeq \lb\frac{\pi x -\frac{(\pi x)^3}{6} + \cdots } {n \lb \frac{\pi x }{n} - \frac{(\pi x)^3}{6n^3} + \cdots\rb  }\rb^{2n\Delta_\Psi}\\
-    &= \lb \frac{1 - \frac{(\pi x)^2}{6}}{1- \frac{(\pi x)^2}{6n^2}}  \rb^{2n\Delta_\Psi} \\
-    &\simeq 1+ 2n\Delta_\Psi \frac{(\pi x)^2}{6}\lb\frac{1}{n^2} - 1\rb + \cdots \\
-    &= 1+ \frac{h + \bar{h}}{3} \lb\frac{1}{n}-n\rb (\pi x)^2 + \cdots
-\end{align}
-When $\Delta_L = 1$, we have to take the higher order terms into account which will contribute as it is $O(x^2)$. This is the case with massless free bosons. 
-In particular, using the 2n-point function of the coherent states, they show that 
-\begin{align}
-    F^{(n)}_{\Psi[r,s]}(x) = 1, \qquad \forall n,r,s. 
-\end{align} 
-where $\Psi[r,s] = e^{i (\alpha_+ \phi + \alpha_- \phi)}$
-is the vertex operator. This shows that the Renyi entropy of any order $n$ for coherent states is the same as that of the ground state. 
-Now, using the replica trick, we can show that for vertex operators, this contribution coming from current $J = i \p \phi$ exactly cancels the piece coming from $D_n(x)$. The contribution from the two point functions is proportional to $S_2(n,1)$. We compute it below,
-\begin{align}
-    S_2(n,\Delta) &= \frac{n}{2}\sum_{m\in \mathbb{Z}} \left[ng_\Delta(nm) - g_\Delta(m)\right] 
-\end{align}
-We take $\Delta \sim 1+\varepsilon$ in order to deal with singularities of Gamma functions (Note that, this $\varepsilon$ has nothing to do with the primary in Ising CFT). Then we have,
-\begin{align}
-    g_{1+\varepsilon}(m) &= 2^2 \Gamma(-1-2\varepsilon)\frac {\sin(\pi (1+\varepsilon))}{\pi}\frac{\Gamma (m+1)}{\Gamma(m)} 
-    \\
-    &\simeq 4 \lb \frac{1}{2\varepsilon} \rb \lb \frac{-\pi \varepsilon}{\pi}\rb m \\
-    &= -2m .
-\end{align}
-Similarly, we have
-\begin{align}
-    g_{1+\varepsilon}(nm) = -2nm.
-\end{align}
-We can then write the sum of all two point functions to be,
-\begin{align}
-    S_2(n,1) &= 2^{-2}\frac{n}{2}\sum_{m\in \mathbb{Z}} \left[ n(2nm) + 2m \right]\\
-    &= -2^{-2}n(n^2-1) 2\sum_{m\in \mathbb{Z}} m \\
-    &= -2^{-2}n(n^2 - 1) \zeta(-1) \\
-    &= \frac{n(n^2-1)}{24}
-\end{align}
-Now adding the contribution from both holomorphic and anti-holomorphic currents, we get the total contribution to be,
-\begin{align}
-    2C_\Psi^2 \lb\frac{2\pi x}{n}\rb^2 \frac{n(n^2-1)}{24} = C_\Psi^2\frac{(\pi x)^2}{3} \lb n-\frac{1}{n}\rb
-\end{align}
-For coherent states, $C_\Psi = \alpha$. We finally get, 
-\begin{align}
-    F_\Psi^{(n)} &= 1+ \frac{\alpha^2}{3} \lb\frac{1}{n}-n\rb (\pi x)^2 + \frac{\alpha^2}{3}\lb n-\frac{1}{n}\rb(\pi x)^2 +  \cdots\\
-    &= 1 + O(x^3)
-\end{align}
-where the higher order terms are a result from the higher point functions. We essentially showed the cancellation of the terms of the order of $O(x^2)$ explicitly. This could be further extended by computing higher order terms in the 2n-point function. 
 
 
   % \section{Pole-matching analytic continuation of $g(p;x)$ and $h(n-p,p;x)$}
 
 \section{Vertex operators in large interval limit}\label{Vertex operators Replica in large interval limit}
-$\boldsymbol{S(\rho_0 \| \rho_\beta)}$
-
+% $\boldsymbol{S(\rho_0 \| \rho_\beta)}$
 We consider chiral vertex operators, and a simple case for the calculation of relative entropy. We want to calculate $S(\rho_0 \| \rho_\beta)$, where $V_\beta$ is a chiral vertex operator with conformal weights $(h_\beta , \bar h_\beta ) = (\beta^2/2,0)$. In our previous calculation, we had,
 \begin{align}
     \mathcal{F}_n &= \frac{1}{D(n)^{n-1} \zeta_n^{2\Delta_\beta}\braket{V_{\beta}(z_{n-1,n}^+)V_{-\beta}(z_{1,n}^-)}+\cdots}. 
@@ -5397,7 +5071,7 @@ The final result is obtained by multiplying this with the contribution from the 
 \end{align}
 Thus,
 \begin{align}
-    \p_n\mathcal{F}_n|_{n=1} = \beta^2 (1-\pi x)\cot(\pi x).
+    \p_n\mathcal{F}_n|_{n=1} = \beta^2 (1-\pi x\cot(\pi x)).
 \end{align}
 
 
@@ -6089,17 +5763,17 @@ This gives us a check that our results for both the large and small interval lim
 \subsection{\texorpdfstring{$S\lb \lb\frac{\rho_\Psi + \rho_\Phi}{2}\rb\big\| \rho_0\rb$}{S averaged binary mixture wrt vacuum}}
 We want to calculate the relative entropy of the averaged binary mixture with respect to vacuum. We have,
 \begin{align}
-    \mathcal{F}_n &= \frac{2^{-n} \lb  [1+ \sum_LC_{\Psi}^2\zeta_n^2 S_2(n,\Delta_L)] +[1+ \sum_LC_{\Phi}^2\zeta_n^2 S_2(n,\Delta_L)]  + n\sum_{L'}C_{\Psi\Phi}^2\sum_{p=1}^{n-1}\lb\frac{\sin (\pi \ep/n)}{\sin (\pi p/n)}\rb^{2\Delta_{L'}}+  \cdots\rb}{2^{-1}\lb \lb\frac{\sin (\pi \ep/n)}{\sin (\pi (1-\ep)/n)}\rb^{2\Delta_{\Psi}}+\lb\frac{\sin (\pi \ep/n)}{\sin (\pi (1-\ep)/n)}\rb^{2\Delta_{\Phi}} \rb}
+    \mathcal{F}_n &= \frac{2^{-n} \lb  [1+ \sum_L{C_{\Psi}^L)}^2\zeta_n^2 S_2(n,\Delta_L)] +[1+ \sum_L{(C_{\Phi}^L)}^2\zeta_n^2 S_2(n,\Delta_L)]  + n\sum_{L'}{(C_{\Psi\Phi}^{L'})}^2\sum_{p=1}^{n-1}\lb\frac{\sin (\pi \ep/n)}{\sin (\pi p/n)}\rb^{2\Delta_{L'}}+  \cdots\rb}{2^{-1}\lb \lb\frac{\sin (\pi \ep/n)}{\sin (\pi (1-\ep)/n)}\rb^{2\Delta_{\Psi}}+\lb\frac{\sin (\pi \ep/n)}{\sin (\pi (1-\ep)/n)}\rb^{2\Delta_{\Phi}} \rb}
 \end{align}
 We can directly write the relative entropy by taking the log and its derivative at $n=1$,
 \begin{align}
-    S\lb \lb\frac{\rho_\Psi + \rho_\Phi}{2}\rb\Big\| \rho_0\rb &= -\log 2+ \lb\Delta_\Psi + \Delta_\Phi\rb \lb\frac{1}{\ep} - \frac{\pi^2}{3}\ep \rb + \sum_L\lb\frac{C_{\Psi}^2 + C_\Phi^2}{2} \rb \frac{\sqrt{\pi }\Gamma(1+\Delta_{L'})}{4\Gamma(3/2+\Delta_{L'})}(\pi \ep)^{2\Delta_{L'}} \nn\\
-    &\qquad + \sum_{L'}C_{\Psi\Phi}^2\frac{\sqrt{\pi }\Gamma(1+\Delta_{L'})}{4\Gamma(3/2+\Delta_{L'})}(\pi \ep)^{2\Delta_{L'}} +\cdots\\
-    &= -\log 2 + \frac{1}{2}\lb S(\rho_\Psi \| \rho_0) + S(\rho_\Phi \| \rho_0) \rb + \sum_{L'}C_{\Psi\Phi}^2\frac{\sqrt{\pi }\Gamma(1+\Delta_{L'})}{4\Gamma(3/2+\Delta_{L'})}(\pi \ep)^{2\Delta_{L'}}
+    S\lb \lb\frac{\rho_\Psi + \rho_\Phi}{2}\rb\Big\| \rho_0\rb &= -\log 2+ \lb\Delta_\Psi + \Delta_\Phi\rb \lb\frac{1}{\ep} - \frac{\pi^2}{3}\ep \rb + \sum_L\lb\frac{{(C_{\Psi}^L)}^2 + {(C_{\Phi}^L)}^2}{2} \rb \frac{\sqrt{\pi }\Gamma(1+\Delta_{L})}{4\Gamma(3/2+\Delta_{L})}(\pi \ep)^{2\Delta_{L}} \nn\\
+    &\qquad + \sum_{L'}{(C_{\Psi\Phi}^{L'})}^2\frac{\sqrt{\pi }\Gamma(1+\Delta_{L'})}{4\Gamma(3/2+\Delta_{L'})}(\pi \ep)^{2\Delta_{L'}} +\cdots\\
+    &= -\log 2 + \frac{1}{2}\lb S(\rho_\Psi \| \rho_0) + S(\rho_\Phi \| \rho_0) \rb + \sum_{L'}{(C_{\Psi\Phi}^{L'})}^2\frac{\sqrt{\pi }\Gamma(1+\Delta_{L'})}{4\Gamma(3/2+\Delta_{L'})}(\pi \ep)^{2\Delta_{L'}}
 \end{align}
 From the above result, it should be clear that the following relation holds true,
 \begin{align}
-    S\lb \lb\frac{\rho_\Psi + \rho_\Phi}{2}\rb\Big\| \rho_0\rb &+ \log 2 - \sum_{L'}C_{\Psi\Phi}^2\frac{\sqrt{\pi }\Gamma(1+\Delta_L)}{4\Gamma(3/2+\Delta_L)}(\pi \ep)^{2\Delta_{L'}}\\
+    S\lb \lb\frac{\rho_\Psi + \rho_\Phi}{2}\rb\Big\| \rho_0\rb &+ \log 2 - \sum_{L'}{(C_{\Psi\Phi}^{L'})}^2\frac{\sqrt{\pi }\Gamma(1+\Delta_L)}{4\Gamma(3/2+\Delta_L)}(\pi \ep)^{2\Delta_{L'}}\\
     &= S\lb \lb\frac{\rho_\Psi + \rho_\Phi}{2}\rb\Big\| \rho_0\rb + S\lb\rho_\Psi \Big\| \lb\frac{\rho_\Psi + \rho_\Phi}{2}\rb\rb + \cdots\\
      &=S\lb \lb\frac{\rho_\Psi + \rho_\Phi}{2}\rb\Big\| \rho_0\rb + \frac{1}{2}S\lb\rho_\Psi \Big\| \lb\frac{\rho_\Psi + \rho_\Phi}{2}\rb\rb + \frac{1}{2}S\lb\rho_\Phi \Big\| \lb\frac{\rho_\Psi + \rho_\Phi}{2}\rb\rb+\cdots \\ 
      &= 
@@ -6122,7 +5796,7 @@ Now consider a mixed state,
 \end{align}
 The pure states $\rho_i$ have scaling dimensions $\Delta_i$. We consider the following OPEs,
 \begin{align}
-    \mO_i \times \mO_i &\sim 1+ C_i \mO_{L_i} +\cdots \\
+    \mO_i \times \mO_i &\sim 1+ C_i^{L'} \mO_{L_i} +\cdots \\
     \mO_i \times \mO_j &\sim C_{ij}^{L'} \mO_{ij}^{L'} + \cdots
 \end{align}
 upto the normalization factors. Here $\mO_{L_i}$ and $\mO_{ij}^{L'}$ have scaling dimension $\Delta_{L_i}$ and $\Delta_{L'_{ij}}$. We then define,
@@ -6145,8 +5819,8 @@ which carries the normalization, conformal factors and the scaling factors.
 % \end{align}
 Then, the numerator of $\mathcal{F}_n$ evaluates to the following,
 \begin{align}
-    &\sum_i  \lb p_iD_{i,n}(\ep)\rb^n \big[  1+ \sum_{L_i}C_i^2 \zeta_n^{2\Delta_{L_i}}S_2(n,\Delta_{L_i})\big] \nn \\&\qquad + \displaystyle\sum_{\substack{1\leq i<j\leq M}}\sum_{L'_{ij}}n\lb C_{ij}^{L'}\rb^2 \zeta_n^{2\Delta_{L'_{ij}}}\sum_{r=1}^{n-1} \lb p_iD_{i,n}(\ep)\rb ^{n-r}\lb p_j D_{j,n}(\ep)\rb ^r \lb\frac{1}{2\sin (\pi r/n)}\rb^{2\Delta_{L'_{ij}}} + \cdots \\
-    &=\sum_i  \lb p_iD_{i,n}(\ep)\rb^n \big[  1+ \sum_{L_i}C_i^2 \zeta_n^{2\Delta_{L_i}} S_2(n,\Delta_{L_i})\big] + \displaystyle\sum_{\substack{1\leq i<j\leq M}}\sum_{L'_{ij}}\lb C_{ij}^{L'}\rb^2 \zeta_n^{2\Delta_{L'_{ij}}} \mu_{ij,n}^{(\textbf{p})}(\ep) + \cdots 
+    &\sum_i  \lb p_iD_{i,n}(\ep)\rb^n \big[  1+ \sum_{L_i}{(C_i^{L_i})}^2 \zeta_n^{2\Delta_{L_i}}S_2(n,\Delta_{L_i})\big] \nn \\&\qquad + \displaystyle\sum_{\substack{1\leq i<j\leq M}}\sum_{L'_{ij}}n\lb C_{ij}^{L'}\rb^2 \zeta_n^{2\Delta_{L'_{ij}}}\sum_{r=1}^{n-1} \lb p_iD_{i,n}(\ep)\rb ^{n-r}\lb p_j D_{j,n}(\ep)\rb ^r \lb\frac{1}{2\sin (\pi r/n)}\rb^{2\Delta_{L'_{ij}}} + \cdots \\
+    &=\sum_i  \lb p_iD_{i,n}(\ep)\rb^n \big[  1+ \sum_{L_i}{(C_i^{L_i})}^2 \zeta_n^{2\Delta_{L_i}} S_2(n,\Delta_{L_i})\big] + \displaystyle\sum_{\substack{1\leq i<j\leq M}}\sum_{L'_{ij}}\lb C_{ij}^{L'}\rb^2 \zeta_n^{2\Delta_{L'_{ij}}} \mu_{ij,n}^{(\textbf{p})}(\ep) + \cdots 
     % &= \sum_i \lb p_iD_{i,n}(\ep)\rb^n  \Bigg(\big[  1+ \sum_{L_i}C_i^2 \zeta_n^{2\Delta_{L_i}} S_2(n,\Delta_{L_i})\big] \nn \\
     % &\qquad + \sum_{i<j\leq M} \sum_{L'_{ij}} n\lb C_{ij}^{L'}\rb^2 \zeta_n^{2\Delta_{L'_{ij}}}\sum_{r=1}^{n-1}  \lb\frac{p_j D_{j,n}(\ep)}{p_i D_{i,n}(\ep)}\rb^r\lb\frac{1}{2\sin (\pi r/n)}\rb^{2\Delta_{L'_{ij}}} \Bigg) +\cdots \\
     % &= \sum_i \lb p_iD_{i,n}(\ep)\rb^n  \Bigg(\big[  1+ \sum_{L_i}C_i^2 \zeta_n^{2\Delta_{L_i}} S_2(n,\Delta_{L_i})\big] \nn \\
@@ -6199,9 +5873,9 @@ $1+ O(\ep^2) + \cdots$.
 
 As a consistency test, this result also reproduces our result for the relative entropy of averaged binary mixture with respect to vacuum. To see this, we can check the contribution from the mixing OPEs. We have $M=2$ pure states, with $p_1 = p_2 = 1/2$. So the contribution from the mixing OPE, reduces to,
 \begin{align}
-    &\sum_{L'}C_{\Psi \Phi}^2 (\pi \ep)^{2\Delta_{L'}}\p_n \lb n2^{-n}  \sum_{r=1}^{n-1}D_{1,n}(\ep)^{n-r}D_{2,n}(\ep)^r \lb\frac{1}{2\sin (\pi r/n)}\rb^{2\Delta_{L'_{ij}}}\rb\Bigg|_{n=1} \nn\\
-    &\qquad\qquad\qquad\qquad \qquad\simeq\sum_{L'}C_{\Psi\Phi}^2 (2\pi \ep)^{2\Delta_{L'}} S_2'(1,\Delta_{L'}) \\
-    &\qquad\qquad\qquad\qquad \qquad= \sum_{L'}C_{\Psi\Phi}^2\frac{\sqrt{\pi }\Gamma(1+\Delta_{L'})}{4\Gamma(3/2+\Delta_{L'})}(\pi \ep)^{2\Delta_{L'}}
+    &\sum_{L'}{(C_{\Psi \Phi}^{L'})}^2 (\pi \ep)^{2\Delta_{L'}}\p_n \lb n2^{-n}  \sum_{r=1}^{n-1}D_{1,n}(\ep)^{n-r}D_{2,n}(\ep)^r \lb\frac{1}{2\sin (\pi r/n)}\rb^{2\Delta_{L'_{ij}}}\rb\Bigg|_{n=1} \nn\\
+    &\qquad\qquad\qquad\qquad \qquad\simeq\sum_{L'}{(C_{\Psi\Phi}^{L'})}^2 (2\pi \ep)^{2\Delta_{L'}} S_2'(1,\Delta_{L'}) \\
+    &\qquad\qquad\qquad\qquad \qquad= \sum_{L'}{(C_{\Psi\Phi}^{L'})}^2\frac{\sqrt{\pi }\Gamma(1+\Delta_{L'})}{4\Gamma(3/2+\Delta_{L'})}(\pi \ep)^{2\Delta_{L'}}
 \end{align}
 where in the second line we approximated $D_{i,n}(\ep)\simeq 1$. 
 The Shannon term in the general result gives $-\log 2$, and thus we reproduce the result we obtained earlier. 
@@ -6210,11 +5884,11 @@ The Shannon term in the general result gives $-\log 2$, and thus we reproduce th
 Now we consider the case, where the first state is a pure state $\rho_\alpha$ and the reference state is a general mixture, $\bar\rho_\textbf{p} =\displaystyle \sum_{i\neq \alpha} p_i\rho_i + p_\alpha \rho_\alpha$. The mixture contains $\rho_\alpha$ with a probability $p_\alpha$. 
 Then the numerator of $\mathcal{F}_n$ evaluates to,
 \begin{align}
-    D_{\alpha,n}(\ep)^n \displaystyle\lb 1+ \sum_{L_{\alpha}}C_\alpha^2 \zeta_n^{2\Delta_{L_\alpha}}S_2(n,\Delta_{L_{\alpha}})+\cdots\rb
+    D_{\alpha,n}(\ep)^n \displaystyle\lb 1+ \sum_{L_{\alpha}}{(C^{L_\alpha}_\alpha)}^2 \zeta_n^{2\Delta_{L_\alpha}}S_2(n,\Delta_{L_{\alpha}})+\cdots\rb
 \end{align}
 while the denominator is given by,
 \begin{align}
-    D_{\alpha,n}(\ep)^n p_\alpha^{n-1}\displaystyle\Bigg( &1 + \sum_{L_{\alpha}}C_\alpha^2 \zeta_n^{2\Delta_{L_{\alpha}}}S_2(n,\Delta_{L_{\alpha}}) \nn\\
+    D_{\alpha,n}(\ep)^n p_\alpha^{n-1}\displaystyle\Bigg( &1 + \sum_{L_{\alpha}}{(C^{L_\alpha}_\alpha)}^2 \zeta_n^{2\Delta_{L_{\alpha}}}S_2(n,\Delta_{L_{\alpha}}) \nn\\
     &+ \displaystyle\sum_{i\neq \alpha}\sum_{L'_{\alpha i}}\lb C_{\alpha i}^{L'}\rb^2\zeta_n^{2\Delta_{L'_{\alpha i}}} \sum_{r=1}^{n-1} \lb\frac{p_iD_{i,n}(\ep)}{p_\alpha D_{\alpha,n}(\ep)}\rb^{r} \lb\frac{1}{2\sin(\pi r/n)}\rb^{2\Delta_{L'_{\alpha i}}} +\cdots \Bigg)
 \end{align}
 % \begin{align}
@@ -6248,15 +5922,15 @@ Now consider the following,
 Here we consider the first state to be a general mixture, while the reference state is a pure state, that is also a part of the mixture. 
 The numerator of $\mathcal{F}_n$ is given by,
 \begin{align}
-     \sum_i  \lb p_iD_{i,n}(\ep)\rb^n \big[  1+ \sum_{L_i}C_i^2 \zeta_n^2 S_2(n,\Delta_{L_i})\big] + \displaystyle\sum_{\substack{1\leq i<j\leq M}}\sum_{L'_{ij}}n\lb C_{ij}^{L'}\rb^2\zeta_n^{2\Delta_{L'_{ij}}} \mu_{ij,n}^{(\textbf{p})}(\ep)  +\cdots 
+     \sum_i  \lb p_iD_{i,n}(\ep)\rb^n \big[  1+ \sum_{L_i}{(C^{L_i}_i)}^2 \zeta_n^2 S_2(n,\Delta_{L_i})\big] + \displaystyle\sum_{\substack{1\leq i<j\leq M}}\sum_{L'_{ij}}n\lb C_{ij}^{L'}\rb^2\zeta_n^{2\Delta_{L'_{ij}}} \mu_{ij,n}^{(\textbf{p})}(\ep)  +\cdots 
 \end{align}
 while the denominator is given by,
 \begin{align}
-     p_\alpha D_{\alpha,n}(\ep)^n\big[  1+ \sum_{L_i}C_i^2 \zeta_n^2 S_2(n,\Delta_{L_i})\big] + \displaystyle\sum_{i\neq \alpha}\sum_{L_{\alpha i}'}\lb C_{\alpha i}^{L'}\rb^2\zeta_n^{2\Delta_{L'_{\alpha i}}}p_i D_{i,n}(\ep)D_{\alpha,n}(\ep)^{n-1}\lb  \frac{1}{2\sin (\pi/n)} \rb^{2\Delta_{L'_{\alpha i}}}  +\cdots
+     p_\alpha D_{\alpha,n}(\ep)^n\big[  1+ \sum_{L_i}{(C^{L_i}_i)}^2 \zeta_n^2 S_2(n,\Delta_{L_i})\big] + \displaystyle\sum_{i\neq \alpha}\sum_{L_{\alpha i}'}\lb C_{\alpha i}^{L'}\rb^2\zeta_n^{2\Delta_{L'_{\alpha i}}}p_i D_{i,n}(\ep)D_{\alpha,n}(\ep)^{n-1}\lb  \frac{1}{2\sin (\pi/n)} \rb^{2\Delta_{L'_{\alpha i}}}  +\cdots
 \end{align}
 Then, the relative entropy is given by,
 \begin{align}
-    &S(\bar{\rho}_\textbf{p}\| \rho_\alpha) = -H(\textbf{p})+\sum_{i<j}\sum_{L'} \lb C_{ij}^{L'}\rb^2(2\pi \ep)^{2\Delta_{L'_{ij}}} \p_n  \mu_{ij}^{(\textbf{p})}(n,\ep)\Big|_{n=1} - \sum_{i\neq \alpha} 2\Delta_{L_i}p_i \lb \frac{\pi^2 \ep^2}{3}+\cdots \rb \nn \\ &\qquad \underbrace{+\sum_{i\neq \alpha}\sum_{L_i}p_i C_i^2 (\pi\ep)^{2\Delta_{L_i}} \frac{\sqrt\pi \Gamma(\Delta_{L_i}+1)}{4\Gamma(\Delta_{L_i}+ 3/2)} - \sum_{i\neq \alpha}\sum_{L_{\alpha i}'}\lb C_{\alpha i}^{L'}\rb^2\lb\pi\ep\rb^{2\Delta_{L'_{\alpha i}}}p_i \p_n \lb   \frac{D_{i,n}(\ep)/D_{\alpha,n}(\ep)}{\sin (\pi/n)} \rb^{\Delta_{L'_{\alpha i}}}\Bigg|_{n=1}}_{\overset{?}{=}\sum_ip_iS(\rho_i\|\rho_\alpha)}+\cdots
+    &S(\bar{\rho}_\textbf{p}\| \rho_\alpha) = -H(\textbf{p})+\sum_{i<j}\sum_{L'} \lb C_{ij}^{L'}\rb^2(2\pi \ep)^{2\Delta_{L'_{ij}}} \p_n  \mu_{ij}^{(\textbf{p})}(n,\ep)\Big|_{n=1} - \sum_{i\neq \alpha} 2\Delta_{L_i}p_i \lb \frac{\pi^2 \ep^2}{3}+\cdots \rb \nn \\ &\qquad \underbrace{+\sum_{i\neq \alpha}\sum_{L_i}p_i {(C^{L_i}_i)}^2 (\pi\ep)^{2\Delta_{L_i}} \frac{\sqrt\pi \Gamma(\Delta_{L_i}+1)}{4\Gamma(\Delta_{L_i}+ 3/2)} - \sum_{i\neq \alpha}\sum_{L_{\alpha i}'}\lb C_{\alpha i}^{L'}\rb^2\lb\pi\ep\rb^{2\Delta_{L'_{\alpha i}}}p_i \p_n \lb   \frac{D_{i,n}(\ep)/D_{\alpha,n}(\ep)}{\sin (\pi/n)} \rb^{\Delta_{L'_{\alpha i}}}\Bigg|_{n=1}}_{\overset{?}{=}\sum_ip_iS(\rho_i\|\rho_\alpha)}+\cdots
 \end{align}
 However, using the relation between the relative entropy of pure states and mixtures and the general result of relative entropy of pure pure state with respect to mixture, we obtain,
 \begin{align}
@@ -6280,13 +5954,13 @@ Now consider two mixed states,
 \end{align}
 Then the numerator of $\mathcal{F}_n$ is given by,
 \begin{align}
-    &\sum_i  \lb p_iD_{i,n}(\ep)\rb^n \big[  1+ \sum_{L_i}C_i^2 \zeta_n^{2\Delta_{L_i}} S_2(n,\Delta_{L_i})\big] \nn \\
+    &\sum_i  \lb p_iD_{i,n}(\ep)\rb^n \big[  1+ \sum_{L_i}{(C^{L_i}_i)}^2 \zeta_n^{2\Delta_{L_i}} S_2(n,\Delta_{L_i})\big] \nn \\
     &\qquad + \displaystyle\sum_{\substack{1\leq i<j\leq M}}\sum_{L'_{ij}}\sum_{r=1}^{n-1} n\lb C_{ij}^{L'}\rb^2\lb p_iD_{i,n}(\ep)\rb^{n-r}\lb p_jD_{j,n}(\ep)\rb ^r \lb\frac{\sin (\pi \ep/n)}{\sin (\pi p/n)}\rb^{2\Delta_{L'_{ij}}}+  \cdots  \\
-    &=\sum_i  \lb p_iD_{i,n}(\ep)\rb^n \big[  1+ \sum_{L_i}C_i^2 \zeta_n^{2\Delta_{L_i}} S_2(n,\Delta_{L_i})\big] + \displaystyle\sum_{\substack{1\leq i<j\leq M}}\sum_{L'_{ij}} \lb C_{ij}^{L'}\rb^2 \zeta_n^{2\Delta_{L'_{ij}}} \mu_{ij,n}^{(\textbf{p})}(\ep) +\cdots
+    &=\sum_i  \lb p_iD_{i,n}(\ep)\rb^n \big[  1+ \sum_{L_i}{(C^{L_i}_i)}^2 \zeta_n^{2\Delta_{L_i}} S_2(n,\Delta_{L_i})\big] + \displaystyle\sum_{\substack{1\leq i<j\leq M}}\sum_{L'_{ij}} \lb C_{ij}^{L'}\rb^2 \zeta_n^{2\Delta_{L'_{ij}}} \mu_{ij,n}^{(\textbf{p})}(\ep) +\cdots
 \end{align}
 while the denominator is given by,
 \begin{align}
-    \Bigg(  \sum_i p_i q_i^{n-1}D_{i,n}(\ep)^n\big[&1+ \sum_{L_i}C_i^2 \zeta_n^2S_2(n,\Delta_{L_i})\big] + \sum_{i<j}\sum_{L'_{ij}}\lb C_{ij}^{L'}\rb^2 (2\pi\ep)^{2\Delta_{L'_{ij}}}\tilde{\mu}_{ij}^{(\textbf{p,q})}(n,\ep)\Bigg)
+    \Bigg(  \sum_i p_i q_i^{n-1}D_{i,n}(\ep)^n\big[&1+ \sum_{L_i}{(C^{L_i}_i)}^2 \zeta_n^2S_2(n,\Delta_{L_i})\big] + \sum_{i<j}\sum_{L'_{ij}}\lb C_{ij}^{L'}\rb^2 (2\pi\ep)^{2\Delta_{L'_{ij}}}\tilde{\mu}_{ij}^{(\textbf{p,q})}(n,\ep)\Bigg)
 \end{align}
 where we defined,
 \begin{align}
@@ -6362,11 +6036,11 @@ Thus we want to evaluate the following,
 \end{align}
 The numerator evaluates to the following,
 \begin{align}
-    \sum_{a=1}^M \lb p_aD_{a,n}(\ep)\rb^n \lb 1+ \sum_{L_a}C_a^2 \zeta_n^{2\Delta_{L_a}} S_2(n,\Delta_{L_a}) \rb + \sum_{1<a<d\leq M} \sum_{L'_{ad}}\lb C_{ad}^{L'}\rb^2 \zeta_n^{2\Delta_{L'_{ad}}}\mu^{(\textbf{p})}_{ad}(n,\ep)+ \cdots 
+    \sum_{a=1}^M \lb p_aD_{a,n}(\ep)\rb^n \lb 1+ \sum_{L_a}{(C_a^{L_\alpha})}^2 \zeta_n^{2\Delta_{L_a}} S_2(n,\Delta_{L_a}) \rb + \sum_{1<a<d\leq M} \sum_{L'_{ad}}\lb C_{ad}^{L'}\rb^2 \zeta_n^{2\Delta_{L'_{ad}}}\mu^{(\textbf{p})}_{ad}(n,\ep)+ \cdots 
 \end{align}
 Then its contribution to the relative entropy is given by,
 \begin{align}
-    -H(\textbf{p}) + \sum_{i\in (\mathcal{C}\cup \mathcal{A})}p_iC_i^{2} \lb\pi\ep\rb^{2\Delta_{L_i}} \frac{\sqrt \pi \Gamma(1+ \Delta_{L_i})}{4\Gamma(3/2 + \Delta_{L_i})} &+\sum_{1<a<d\leq M} \sum_{L'_{ad}}\lb C_{ad}^{L'}\rb^2 \lb2\pi\ep\rb^{2\Delta_{L'_{ad}}}\p_n\mu^{(\textbf{p})}_{ad}(n,\ep)\Big|_{n=1} \nn \\
+    -H(\textbf{p}) + \sum_{i\in (\mathcal{C}\cup \mathcal{A})}p_i{(C_i^{L_i})}^{2} \lb\pi\ep\rb^{2\Delta_{L_i}} \frac{\sqrt \pi \Gamma(1+ \Delta_{L_i})}{4\Gamma(3/2 + \Delta_{L_i})} &+\sum_{1<a<d\leq M} \sum_{L'_{ad}}\lb C_{ad}^{L'}\rb^2 \lb2\pi\ep\rb^{2\Delta_{L'_{ad}}}\p_n\mu^{(\textbf{p})}_{ad}(n,\ep)\Big|_{n=1} \nn \\
     &-\sum_i2\Delta_{L_i} p_i\lb\frac{\pi^2\ep^2}{3} + \cdots\rb + \cdots 
 \end{align}
 where the $\ep^2$ correction comes from the derivative of $D_{a,n}(\ep)$ at $n=1$.
@@ -6377,8 +6051,8 @@ The denominator is given by
 which can be split into the common and non-common states contributions. 
 For the common states $\rho_c$, we have the following contribution,
 \begin{align}
-    &\sum_{c\in \mathcal{C}} p_cq_c^{n-1}D_{c,n}(\ep)^n \lb 1+ \sum_{L_c}C_c^2\zeta_n^{2\Delta_{L_c}}S_2(n,\Delta_{L_{c}})\rb + \sum_{c\in \mathcal{C}} \sum_{\substack{j\in \mathcal{C}\cup\mathcal{B}\\ j\neq c}}  \sum_{L'_{cj}} p_cq_c^{n-1}D_{c,n}(\ep)^n \lb C_{cj}^{L'}\rb^2 \zeta_n^{2\Delta_{L'_{cj}}}\theta_{j|c}^{(\textbf{q})}(n,\ep) + \cdots \\
-    &=\sum_{c\in \mathcal{C}} p_cq_c^{n-1}D_{c,n}(\ep)^n \lb 1+ \sum_{L_c}C_c^2\zeta_n^{2\Delta_{L_c}}S_2(n,\Delta_{L_{c}})\rb + \sum_{\substack{c<d \\ c,d\in \mathcal{C}}}\sum_{L'_{cd}} \lb C_{cd}^{L'}\rb^2 \zeta_n^{2\Delta_{L'_{cd}}} \tilde \mu_{cd}^{(\textbf{p,q})}(n,\ep) \nn\\
+    &\sum_{c\in \mathcal{C}} p_cq_c^{n-1}D_{c,n}(\ep)^n \lb 1+ \sum_{L_c}{(C_c^{L_c})}^2\zeta_n^{2\Delta_{L_c}}S_2(n,\Delta_{L_{c}})\rb + \sum_{c\in \mathcal{C}} \sum_{\substack{j\in \mathcal{C}\cup\mathcal{B}\\ j\neq c}}  \sum_{L'_{cj}} p_cq_c^{n-1}D_{c,n}(\ep)^n \lb C_{cj}^{L'}\rb^2 \zeta_n^{2\Delta_{L'_{cj}}}\theta_{j|c}^{(\textbf{q})}(n,\ep) + \cdots \\
+    &=\sum_{c\in \mathcal{C}} p_cq_c^{n-1}D_{c,n}(\ep)^n \lb 1+ \sum_{L_c}{(C_c^{L_c})}^2\zeta_n^{2\Delta_{L_c}}S_2(n,\Delta_{L_{c}})\rb + \sum_{\substack{c<d \\ c,d\in \mathcal{C}}}\sum_{L'_{cd}} \lb C_{cd}^{L'}\rb^2 \zeta_n^{2\Delta_{L'_{cd}}} \tilde \mu_{cd}^{(\textbf{p,q})}(n,\ep) \nn\\
     &\qquad\qquad \qquad\qquad\qquad\qquad\qquad\qquad\qquad+ \sum_{\substack{c\in \mathcal{C} \\ b\in \mathcal{B}}} \sum_{L'_{ab}} p_cq_c^{n-1}D_{c,n}(\ep)^n \lb C^{L'}_{cb}\rb^2 \zeta_n^{2\Delta_{L'_{cb}}} \theta_{b|c}^{(\textbf{q})}(n,\ep) + \cdots
 \end{align}
 For the non-common states, $\rho_{\Psi_a}$ which do not occur in $\bar \rho_\textbf{q}$, we will have only one word contribution, which would give the divergence since they have different support. For example, the contribution from the word \footnote{Note that, since the contribution is only from one word, we shifted the primary from the midpoint OPE to $2\sin(\pi(1-\ep)/n)$ apart.}
@@ -6387,7 +6061,7 @@ For the non-common states, $\rho_{\Psi_a}$ which do not occur in $\bar \rho_\tex
 \end{align}
 So, the complete denominator at this leading order contribution is given by,
 \begin{align}
-    &\sum_{c\in \mathcal{C}} p_cq_c^{n-1}D_{c,n}(\ep)^n \lb 1+ \sum_{L_c}C_c^2\zeta_n^{2\Delta_{L_c}}S_2(n,\Delta_{L_{c}})\rb + \sum_{\substack{c<d \\ c,d\in \mathcal{C}}}\sum_{L'_{cd}} \lb C_{cd}^{L'}\rb^2 \zeta_n^{2\Delta_{L'_{cd}}} \tilde \mu_{cd,n}^{(\textbf{p,q})}(\ep) \nn\\
+    &\sum_{c\in \mathcal{C}} p_cq_c^{n-1}D_{c,n}(\ep)^n \lb 1+ \sum_{L_c}{(C_c^{L_c})}^2\zeta_n^{2\Delta_{L_c}}S_2(n,\Delta_{L_{c}})\rb + \sum_{\substack{c<d \\ c,d\in \mathcal{C}}}\sum_{L'_{cd}} \lb C_{cd}^{L'}\rb^2 \zeta_n^{2\Delta_{L'_{cd}}} \tilde \mu_{cd,n}^{(\textbf{p,q})}(\ep) \nn\\
     + &\sum_{\substack{c\in \mathcal{C} \\ b\in \mathcal{B}}} \sum_{L'_{ab}} p_cq_c^{n-1}D_{c,n}(\ep)^n \lb C^{L'}_{cb}\rb^2 \zeta_n^{2\Delta_{L'_{cb}}} \theta_{b|c,n}^{(\textbf{q})}(\ep) + \sum_{a\in \mathcal{A}}\sum_{b=1}^N  \lb p_aD_{a,n}(\ep)\rb\lb q_bD_{b,n}(\ep)\rb^{n-1} \lb \frac{\sin (\pi\ep/n)}{\sin(\pi(1-\ep)/n)} \rb^{2\Delta_{L'_{ab}}}
 \end{align}
 Now we can take the logarithm and the derivative at $n=1$. However, notice that at $n=1$ the denominator evaluates to 
@@ -6397,7 +6071,7 @@ Now we can take the logarithm and the derivative at $n=1$. However, notice that 
 \end{align}
 Then the contribution of the denominator to the  relative entropy is given by,
 \begin{align}
-    &\frac{1}{Z}\Bigg[\sum_{c\in \mathcal{C}} p_c \lb \log q_c + \sum_{L_c} C_c^2 \lb \pi \ep\rb^{2\Delta_{L_c}}\frac{\sqrt \pi \Gamma(1+ \Delta_{L_c})}{4\Gamma(3/2 + \Delta_{L_c})}\rb + \sum_{\substack{c<d \\ c,d\in \mathcal{C}}}\sum_{L'_{cd}} \lb C_{cd}^{L'}\rb^2 (2\pi\ep)^{2\Delta_{L'_{cd}}} \p_n \tilde \mu_{cd}^{(\textbf{p,q})}(n,\ep)\Big|_{n=1} \nn\\ 
+    &\frac{1}{Z}\Bigg[\sum_{c\in \mathcal{C}} p_c \lb \log q_c + \sum_{L_c} {(C_c^{L_c})}^2 \lb \pi \ep\rb^{2\Delta_{L_c}}\frac{\sqrt \pi \Gamma(1+ \Delta_{L_c})}{4\Gamma(3/2 + \Delta_{L_c})}\rb + \sum_{\substack{c<d \\ c,d\in \mathcal{C}}}\sum_{L'_{cd}} \lb C_{cd}^{L'}\rb^2 (2\pi\ep)^{2\Delta_{L'_{cd}}} \p_n \tilde \mu_{cd}^{(\textbf{p,q})}(n,\ep)\Big|_{n=1} \nn\\ 
     &+ \sum_{\substack{c\in \mathcal{C} \\ b\in \mathcal{B}}} \sum_{L'_{ab}} p_c\lb C^{L'}_{cb}\rb^2 (2\pi\ep)^{2\Delta_{L'_{cb}}}\p_n  \theta_{b|c}^{(\textbf{q})}(n,\ep) \Big|_{n=1} + \sum_{a\in\mathcal{A}} p_a \sum_{b=1}^{N} \lb \log q_b - 2\Delta_{L'_{ab}}\pi \cot(\pi \ep)\rb \nn \\
     & + \sum_{c\in \mathcal{C}}(-2\Delta_{L_c})p_c \lb1-\pi\ep\cot(\pi\ep)\rb+N\sum_{a\in \mathcal{A}}(-2\Delta_{L_a})p_a \lb1-\pi\ep\cot(\pi\ep)\rb+ \cdots\Bigg]
 \end{align}
@@ -6412,13 +6086,13 @@ S(\bar\rho_{\textbf{p}} | \bar\rho_{\textbf{q}})
 +P_\mathcal{A}\sum_{b=1}^N\log q_b
 \rb
 +\lb1-\frac{1}{Z}\rb
-\sum_{c\in\mathcal{C}}p_c C_c^2
+\sum_{c\in\mathcal{C}}p_c {(C_c^{L_c})}^2
 (\pi\ep)^{2\Delta_{L_c}}
 % S_2'(1,\Delta_{L_c})
 \frac{\sqrt \pi \Gamma(1+ \Delta_{L_c})}{4\Gamma(3/2 + \Delta_{L_c})} 
 \\
 &\qquad
-+\sum_{a\in\mathcal{A}}p_a C_a^2
++\sum_{a\in\mathcal{A}}p_a {(C_a^{L_a})}^2
 (\pi\ep)^{2\Delta_{L_a}}
 % S_2'(1,\Delta_{L_a})
 \frac{\sqrt \pi \Gamma(1+ \Delta_{L_a})}{4\Gamma(3/2 + \Delta_{L_a})} 
@@ -6450,23 +6124,23 @@ Hence the contribution from the derivative of $D_{i,n}(\ep)$ simplifies to,
 \end{align}
 The divergent piece is simplified in the following way,
 \begin{align}
-    \frac{1}{Z}\sum_{a\in \mathcal{A}}\sum_{b=1}^Np_a\lb2\Delta_{L'_{ab}}\pi \cot(\pi\ep)\rb = \frac{1}{Z}\sum_{a\in \mathcal{A}}\sum_{b=1}^Np_a S(\rho_a \| \rho_b) - \frac{N}{Z}\sum_{a\in \mathcal{A}} p_a C_a^2
+    \frac{1}{Z}\sum_{a\in \mathcal{A}}\sum_{b=1}^Np_a\lb2\Delta_{L'_{ab}}\pi \cot(\pi\ep)\rb = \frac{1}{Z}\sum_{a\in \mathcal{A}}\sum_{b=1}^Np_a S(\rho_a \| \rho_b) - \frac{N}{Z}\sum_{a\in \mathcal{A}} p_a {(C_a^{L_a})}^2
 (\pi\ep)^{2\Delta_{L_a}}
 % S_2'(1,\Delta_{L_a})
 \frac{\sqrt \pi \Gamma(1+ \Delta_{L_a})}{4\Gamma(3/2 + \Delta_{L_a})}
 \end{align}
 Therefore we have,
 \begin{align}
-    \sum_{a\in\mathcal{A}}p_a C_a^2
+    \sum_{a\in\mathcal{A}}p_a {(C_a^{L_a})}^2
 (\pi\ep)^{2\Delta_{L_a}}
 % S_2'(1,\Delta_{L_a})
 \frac{\sqrt \pi \Gamma(1+ \Delta_{L_a})}{4\Gamma(3/2 + \Delta_{L_a})} &+ \frac{1}{Z}\sum_{a\in \mathcal{A}}\sum_{b=1}^Np_a\lb2\Delta_{L'_{ab}}\pi \cot(\pi\ep)\rb  \nn\\&=\frac{1}{Z}  \sum_{a\in \mathcal{A}}\sum_{b=1}^N p_a S(\rho_a\| \rho_b) 
-+ \lb1-\frac{N}{Z}\rb\sum_{a\in\mathcal{A}}p_aC_a^2
++ \lb1-\frac{N}{Z}\rb\sum_{a\in\mathcal{A}}p_a{(C_a^{L_a})}^2
 (\pi\ep)^{2\Delta_{L_a}}
 % S_2'(1,\Delta_{L_a})
 \frac{\sqrt \pi \Gamma(1+ \Delta_{L_a})}{4\Gamma(3/2 + \Delta_{L_a})} \\
 &= \frac{1}{Z}  \sum_{a\in \mathcal{A}}\sum_{b=1}^N p_a S(\rho_a\| \rho_b) 
-- \lb\frac{(N-1)P_\mathcal{C}}{Z}\rb\sum_{a\in\mathcal{A}}p_aC_a^2
+- \lb\frac{(N-1)P_\mathcal{C}}{Z}\rb\sum_{a\in\mathcal{A}}p_a{(C_a^{L_a})}^2
 (\pi\ep)^{2\Delta_{L_a}}
 % S_2'(1,\Delta_{L_a})
 \frac{\sqrt \pi \Gamma(1+ \Delta_{L_a})}{4\Gamma(3/2 + \Delta_{L_a})}
@@ -6474,19 +6148,19 @@ Therefore we have,
 Simplifying the uniform words contribution from the common sector words, we get,
 \begin{align}
     \lb1-\frac{1}{Z}\rb
-\sum_{c\in\mathcal{C}}p_c C_c^2
+\sum_{c\in\mathcal{C}}p_c {(C_c^{L_c})}^2
 (\pi\ep)^{2\Delta_{L_c}}
 % S_2'(1,\Delta_{L_c})
-\frac{\sqrt \pi \Gamma(1+ \Delta_{L_c})}{4\Gamma(3/2 + \Delta_{L_c})}  = \frac{N-1}{Z}P_{\mathcal{A}}\sum_{c\in \mathcal{C}} p_c C_c^2
+\frac{\sqrt \pi \Gamma(1+ \Delta_{L_c})}{4\Gamma(3/2 + \Delta_{L_c})}  = \frac{N-1}{Z}P_{\mathcal{A}}\sum_{c\in \mathcal{C}} p_c {(C_c^{L_c})}^2
 (\pi\ep)^{2\Delta_{L_c}}\frac{\sqrt \pi \Gamma(1+ \Delta_{L_c})}{4\Gamma(3/2 + \Delta_{L_c})}
 \end{align}
 Adding all of the above contributions, we obtain,
 \begin{align}
     &\lb1-\frac{1}{Z}\rb
-\sum_{c\in\mathcal{C}}p_c C_c^2
+\sum_{c\in\mathcal{C}}p_c {(C_c^{L_c})}^2
 (\pi\ep)^{2\Delta_{L_c}}
 % S_2'(1,\Delta_{L_c})
-\frac{\sqrt \pi \Gamma(1+ \Delta_{L_c})}{4\Gamma(3/2 + \Delta_{L_c})} +\sum_{a\in\mathcal{A}}p_a C_a^2
+\frac{\sqrt \pi \Gamma(1+ \Delta_{L_c})}{4\Gamma(3/2 + \Delta_{L_c})} +\sum_{a\in\mathcal{A}}p_a {(C_a^{L_a})}^2
 (\pi\ep)^{2\Delta_{L_a}}
 % S_2'(1,\Delta_{L_a})
 \frac{\sqrt \pi \Gamma(1+ \Delta_{L_a})}{4\Gamma(3/2 + \Delta_{L_a})} 
@@ -6494,7 +6168,7 @@ Adding all of the above contributions, we obtain,
 &+\frac{1}{Z}
 \sum_{a\in\mathcal{A}}\sum_{b=1}^N
 p_a\lb2\Delta_{L'_{ab}}\pi\cot(\pi\ep)\rb -\frac{2(N-1)}{Z} \lb  P_\mathcal{A}\sum_{c\in\mathcal{C}} p_c\Delta_{L_c} - P_\mathcal{C} \sum_{a\in\mathcal{A}} p_a\Delta_{L_a} \rb (1-\pi \ep\cot(\pi\ep)) \\
-&= \frac{1}{Z}\sum_{a\in\mathcal{A}}\sum_{b=1}^N p_a S(\rho_a\|\rho_b) + \frac{(N-1)P_\mathcal{A}P_\mathcal{C}}{Z}\Bigg[ \Big\langle{C^2(\pi\ep)^{2\Delta_L}\frac{\sqrt \pi \Gamma(1+ \Delta_{L})}{4\Gamma(3/2 + \Delta_{L})} } \Big\rangle_\mathcal{C}- \Big\langle{C^2(\pi\ep)^{2\Delta_L}\frac{\sqrt \pi \Gamma(1+ \Delta_{L})}{4\Gamma(3/2 + \Delta_{L})} } \Big\rangle_\mathcal{A} \nn \\&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad -2\lb\braket{\Delta_L}_\mathcal{C}-\braket{\Delta_L}_\mathcal{A}\rb\lb1-\pi\ep\cot(\pi\ep)\rb\Bigg]
+&= \frac{1}{Z}\sum_{a\in\mathcal{A}}\sum_{b=1}^N p_a S(\rho_a\|\rho_b) + \frac{(N-1)P_\mathcal{A}P_\mathcal{C}}{Z}\Bigg[ \Big\langle{{(C^L)}^2(\pi\ep)^{2\Delta_L}\frac{\sqrt \pi \Gamma(1+ \Delta_{L})}{4\Gamma(3/2 + \Delta_{L})} } \Big\rangle_\mathcal{C}- \Big\langle{{(C^L)}^2(\pi\ep)^{2\Delta_L}\frac{\sqrt \pi \Gamma(1+ \Delta_{L})}{4\Gamma(3/2 + \Delta_{L})} } \Big\rangle_\mathcal{A} \nn \\&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad -2\lb\braket{\Delta_L}_\mathcal{C}-\braket{\Delta_L}_\mathcal{A}\rb\lb1-\pi\ep\cot(\pi\ep)\rb\Bigg]
 \end{align}
 Finally, the relative entropy is given by,
 \begin{align}
@@ -6507,7 +6181,7 @@ S(\bar\rho_{\textbf{p}} | \bar\rho_{\textbf{q}})
 +P_\mathcal{A}\sum_{b=1}^N\log q_b
 \rb + \frac{1}{Z}\sum_{a\in\mathcal{A}}\sum_{b=1}^N p_a S(\rho_a\|\rho_b)  
 \\
-&+\frac{(N-1)P_\mathcal{A}P_\mathcal{C}}{Z}\Bigg[ \Big\langle{C^2(\pi\ep)^{2\Delta_L}\frac{\sqrt \pi \Gamma(1+ \Delta_{L})}{4\Gamma(3/2 + \Delta_{L})} } \Big\rangle_\mathcal{C}- \Big\langle{C^2(\pi\ep)^{2\Delta_L}\frac{\sqrt \pi \Gamma(1+ \Delta_{L})}{4\Gamma(3/2 + \Delta_{L})} } \Big\rangle_\mathcal{A}  \\
+&+\frac{(N-1)P_\mathcal{A}P_\mathcal{C}}{Z}\Bigg[ \Big\langle{{(C^L)}^2(\pi\ep)^{2\Delta_L}\frac{\sqrt \pi \Gamma(1+ \Delta_{L})}{4\Gamma(3/2 + \Delta_{L})} } \Big\rangle_\mathcal{C}- \Big\langle{{(C^L)}^2(\pi\ep)^{2\Delta_L}\frac{\sqrt \pi \Gamma(1+ \Delta_{L})}{4\Gamma(3/2 + \Delta_{L})} } \Big\rangle_\mathcal{A}  \\
 &-2\lb\braket{\Delta_L}_\mathcal{C}-\braket{\Delta_L}_\mathcal{A}\rb\lb1-\pi\ep\cot(\pi\ep)\rb\Bigg]+\mathcal{M}_{\textbf{p}}
 -\frac{1}{Z}\lb
 \mathcal{M}_{\mathcal{C}\mathcal{C}}
@@ -6810,7 +6484,7 @@ Note that, if we substitute $\mO_N$ as the vacuum operator $(I \equiv \mO_0)$, t
 \section{\texorpdfstring{Analytic continuation of three point function $\mu_G^{\Psi|\Phi}$}{Analytic continuation of three point function mu large interval}}
 In this section, we follow the method of modular flow used in \cite{S_rosi_2018} to analytically continue the contribution of three point function $\braket{\mO_{L'}\mO_{L'}\mO_L}$ to the relative entropy in $x\to 1^-$ limit of a pure state with respect to binary mixture. Let the dimension of $\mO_{L'}$ be $\Delta_{L'}$ and the dimension of $\mO_L$ be $\Delta_L$. When we compute $S(\rho_\Psi \| \lb y\rho_\Psi + (1-y)\rho_\Phi\rb)$, the three point function that contributes to it from the denominator of $\mathcal{F}_n$ takes the following form,
 \begin{align}
-    \mu_G^{\Psi|\Phi} (n,x,y;\Delta_{L'},\Delta_L) \equiv \mu_G &= \sum_{p=1}^{n-1}   \frac{q^p (n-p)D_n(\ep)^{p}}{\lb \sin(\pi p/n)\rb^{2\Delta_{L'}-\Delta_L}} \lb C_\Phi G_p(n) + C_\Psi G_{n-p}(n)\rb \\
+    \mu_G^{\Psi|\Phi} (n,x,y;\Delta_{L'},\Delta_L) \equiv \mu_G &= \sum_{p=1}^{n-1}   \frac{q^p (n-p)D_n(\ep)^{p}}{\lb \sin(\pi p/n)\rb^{2\Delta_{L'}-\Delta_L}} \lb C_\Phi^L G_p(n) + C_\Psi^L G_{n-p}(n)\rb \\
     q &= y^{-1}-1 \\
     % \lambda_p &= D_n(\ep)^p \lb \frac{\sin(\pi (1-x)/n)}{\sin (\pi p /n)}\rb^{2\Delta_{L'}}\\
     G_p(n) &= \sum_{m=1}^{p-1} \frac{1}{\lb \sin(\pi m/n) \sin(\pi (p-m)/n)\rb^{\Delta_L}}
@@ -6838,8 +6512,8 @@ For the second term, make the change $r = n-p$. Then we obtain,
 \end{align}
 Let $z = \lambda^{-1}$, then we finally have,
 \begin{align}
-    \mu_G &= C_\Phi\lb n-\lambda \p_\lambda\rb A_n(\lambda;\Delta_{L'},\Delta_L) + C_\Psi \lambda^n \lb z\p_z A_n(z)\rb|_{z = \lambda^{-1}} \\
-    \implies \p_n \mu_G |_{n=1}&= C_\Phi(1-\lambda \p_\lambda)\p_nA_n(\lambda;\Delta_{L'},\Delta_L)|_{n=1} + C_\Psi \lambda [z\p_z \lb  \p_nA_n(\lambda;\Delta_{L'},\Delta_L)|_{n=1}\rb]_{z=\lambda^{-1}}
+    \mu_G &= C_\Phi^L\lb n-\lambda \p_\lambda\rb A_n(\lambda;\Delta_{L'},\Delta_L) + C_\Psi^L \lambda^n \lb z\p_z A_n(z)\rb|_{z = \lambda^{-1}} \\
+    \implies \p_n \mu_G |_{n=1}&= C_\Phi^L(1-\lambda \p_\lambda)\p_nA_n(\lambda;\Delta_{L'},\Delta_L)|_{n=1} + C_\Psi^L \lambda [z\p_z \lb  \p_nA_n(\lambda;\Delta_{L'},\Delta_L)|_{n=1}\rb]_{z=\lambda^{-1}}
 \end{align}
 From our previous result of the analytic continuation of the weighted two point function in appendix \ref{analytic continuation of theta or mu(n)}, and that of the three point function \ref{Analytic continuation of T_n,LMN}, we can analogously define, 
 \begin{align}
@@ -6861,7 +6535,7 @@ Similarly, we can introduce the auxiliary weighted integral,
     % \nn\\ &\qquad\qquad\qquad\times
     \frac{ie^{-i\nu s_2} }{\lb\cosh\frac{s_1}{2}\rb^{\Delta_L+1}\lb\cosh\frac{s_2}{2}\rb^{2\Delta_{L'}-\Delta_L+1}\lb\sinh\frac{s_2-s_1}{2}\rb\Big[\lb i\sinh\frac{s_2 - s_1}{2}\rb^2\Big]^{\Delta_L/2}}
 \end{align}
-Note that, for $\lambda = 10$, this reduces to $\mathcal{J}(\Delta_L,2\Delta_{L'}-\Delta_L,\Delta_L)$ specialization of our auxiliary integral defined in the previous appendix \ref{Analytic continuation of T_n,LMN}. Now we can Fourier decouple $u = s_2 - s_1$. Define,
+Note that, for $\lambda = 1$, this reduces to $\mathcal{J}(\Delta_L,2\Delta_{L'}-\Delta_L,\Delta_L)$ specialization of our auxiliary integral defined in the previous appendix \ref{Analytic continuation of T_n,LMN}. Now we can Fourier decouple $u = s_2 - s_1$. Define,
 \begin{align}
     \hat G_\Delta(\omega) &= \int_{-\infty}^\infty ds \frac{e^{iqs}}{\lb\cosh\frac{s}{2}\rb^{\Delta +1}}=\frac{2^{1+\Delta}\Gamma\lb\frac{1+\Delta}{2}+ iq\rb\Gamma\lb\frac{1+\Delta}{2}-iq\rb}{\Gamma\lb\Delta +1\rb}.
 \end{align}
@@ -7013,16 +6687,16 @@ Using the above two, we obtain,
 
 
 
-\section{Descendants contribution to Relative entropy}\label{Descendant contribution to Relative entropy}
+\section{Contribution of descendants to Relative entropy}\label{Descendant contribution to Relative entropy}
 \subsection{Level 2 descendant}
 The two point function can be first taylor expanded, to obtain,
 \begin{align}
-    S(\rho_\Psi \|\rho_\Phi)\Big|_{\braket{\mO_L\mO_L}} &= \sum_L\lb C_\Psi - C_\Phi\rb^2f_{LL}\sin^{2\Delta_L}(\pi x) \\
-    &= \sum_L\lb C_\Psi - C_\Phi\rb^2f_{LL}(\pi x)^{2\Delta_L} \Bigg[1 - \frac{\Delta_L}{3}(\pi x)^2 + \cdots \Bigg].
+    S(\rho_\Psi \|\rho_\Phi)\Big|_{\braket{\mO_L\mO_L}} &= \sum_L\lb C_\Psi^L - C_\Phi^L\rb^2f_{LL}\sin^{2\Delta_L}(\pi x) \\
+    &= \sum_L\lb C_\Psi^L - C_\Phi^L\rb^2f_{LL}(\pi x)^{2\Delta_L} \Bigg[1 - \frac{\Delta_L}{3}(\pi x)^2 + \cdots \Bigg].
 \end{align}
 Next, we consider the standard endpoint OPE \cite{yellowbook},
 \begin{align}
-    \Psi(z,\bar z)  \Psi ^*(0,0) = C_{\Psi \Psi^*}^L z^{h_L - 2h_\Psi}\bar z ^{\bar h_L - 2\bar h_{\Psi}} &\Bigg[ \mO_L + \beta_1 zL_{-1} \mO_L + \bar \beta_1 \bar z \bar L_{-1}\mO_L + z^2 \lb \beta_{11}L_{-1}^2+ \beta_2L_{-2}\rb \mO_L  \nn \\&\qquad + \bar z ^2 \lb \bar \beta_{11}\bar L_{-1}^2 + \bar\beta_2\bar L_{-2}\rb\mO_L + z\bar z \beta_1 \bar \beta_1 L_{-1} \bar L_{-1}\mO_L + \cdots \Bigg]
+    \Psi(z,\bar z)  \Psi ^*(0,0) = C_{\Psi}^L z^{h_L - 2h_\Psi}\bar z ^{\bar h_L - 2\bar h_{\Psi}} &\Bigg[ \mO_L + \beta_1 zL_{-1} \mO_L + \bar \beta_1 \bar z \bar L_{-1}\mO_L + z^2 \lb \beta_{11}L_{-1}^2+ \beta_2L_{-2}\rb \mO_L  \nn \\&\qquad + \bar z ^2 \lb \bar \beta_{11}\bar L_{-1}^2 + \bar\beta_2\bar L_{-2}\rb\mO_L + z\bar z \beta_1 \bar \beta_1 L_{-1} \bar L_{-1}\mO_L + \cdots \Bigg]
 \end{align}
 For our case, where we have non-mixing OPE, we have,
 \begin{align}
@@ -7075,26 +6749,26 @@ Now adding the contributions from the level-two descendants, with their OPE coef
 \end{align}
 The factor of 2 is due to the two different orientation, i.e., $\braket{\mO_L(z)L_{-1}^2\mO)L(w)}$ and $\braket{\mO_L(w)L_{-1}^2\mO)L(z)}$. Thus, the contribution to the relative entropy from the descendants is given by,
 \begin{align}
-    S(\rho_\Psi \|\rho_\Phi) \Big|_{[\mO_L\mO_L]_{\text{level-2}}} &= \sum_L \frac{\Delta_L}{2}(C_\Psi - C_\Phi)^2 \frac{\sqrt \pi \Gamma(\Delta_L + 2)}{4\Gamma(\Delta_L + 5/2)}(\pi x)^{2\Delta_L + 2} + \cdots\\
-    &= \sum_L \frac{\Delta_L (\Delta_L + 1)}{2\Delta_L + 3} f_{\Delta_L,\Delta_L}(C_\Psi - C_\Phi)^2(\pi x)^{2\Delta_L + 2} + \cdots
+    S(\rho_\Psi \|\rho_\Phi) \Big|_{[\mO_L\mO_L]_{\text{level-2}}} &= \sum_L \frac{\Delta_L}{2}(C_\Psi^L - C_\Phi^L)^2 \frac{\sqrt \pi \Gamma(\Delta_L + 2)}{4\Gamma(\Delta_L + 5/2)}(\pi x)^{2\Delta_L + 2} + \cdots\\
+    &= \sum_L \frac{\Delta_L (\Delta_L + 1)}{2\Delta_L + 3} f_{\Delta_L,\Delta_L}(C_\Psi^L - C_\Phi^L)^2(\pi x)^{2\Delta_L + 2} + \cdots
 \end{align}
 Adding the subleading contribution from the taylor expansion of the two point function, we finally obtain the contribution of the terms of the order $(2\Delta_L+ 2)$, 
 \begin{align}
-    S(\rho_\Psi \|\rho_\Phi)\Big|_{[\mO_L\mO_L]_{\text{level-2}}}&= \frac{\Delta_L^2}{3(2\Delta_L +3)}f_{\Delta_L,\Delta_L} (C_\Psi - C_\Phi)^2(\pi x)^{2\Delta_L + 2} + \cdots
+    S(\rho_\Psi \|\rho_\Phi)\Big|_{[\mO_L\mO_L]_{\text{level-2}}}&= \frac{\Delta_L^2}{3(2\Delta_L +3)}f_{\Delta_L,\Delta_L} (C_\Psi^L - C_\Phi^L)^2(\pi x)^{2\Delta_L + 2} + \cdots
 \end{align}
 \subsection{Odd level descendants}
 In this subsection, using the method used in \cite{yellowbook}, we show that the odd level descendants do not contribute to the relative entropy. This is an artefact of using the midpoint OPEs. The idea would be to compare the OPE coefficients $\beta$ ($\tilde\beta$ in our case, which are the coefficients obtained after shifting operators to the midpoint) with the coefficients determined using conformal symmetry. Consider the three point function,
 \begin{align}
-    \braket{\Psi(l/2) \Psi^*(-l/2) \mO_L(w)} &= C_{\Psi\Psi^*L}l^{h_L-2h_\Psi} \lb w^2 - \frac{l^2}{4}\rb^{-h_L}\\
-    &\simeq C_{\Psi\Psi^*L} l^{h_L-2h_\Psi}w^{-2h_L}\Bigg[ 1+ \frac{h_L}{4}\frac{l^2}{w^2} + \frac{h_L (h_L+1)}{32}\frac{l^4}{w^4}  + \cdots \Bigg]\label{eq: 3 point function expansion}
+    \braket{\Psi(l/2) \Psi^*(-l/2) \mO_L(w)} &= C_{\Psi}^Ll^{h_L-2h_\Psi} \lb w^2 - \frac{l^2}{4}\rb^{-h_L}\\
+    &\simeq C_{\Psi}^L l^{h_L-2h_\Psi}w^{-2h_L}\Bigg[ 1+ \frac{h_L}{4}\frac{l^2}{w^2} + \frac{h_L (h_L+1)}{32}\frac{l^4}{w^4}  + \cdots \Bigg]\label{eq: 3 point function expansion}
 \end{align}
 Now compare this the midpoint OPE,
 \begin{align}
-    \Psi(l/2) \Psi^*(-l/2) &= C_{\Psi\Psi^*L}l^{h_L-2h_\Psi} \Big[ \mO_L(0) + + l\tilde\beta_1 L_{-1}\mO_L(0) + l^2 \lb \tilde\beta_2L_{-2}+ \tilde \beta_{11}L_{-1}^2\rb\mO_L(0) \nn \\ &\qquad\qquad\qquad+ l^3\lb \tilde \beta_{111}L_{-1}^3 + \tilde \beta_{21}L_{-2}L_{-1} +  \tilde \beta _{3}L_{-3} \rb\mO_L(0) +\cdots \Big]
+    \Psi(l/2) \Psi^*(-l/2) &= C_{\Psi}^Ll^{h_L-2h_\Psi} \Big[ \mO_L(0) + + l\tilde\beta_1 L_{-1}\mO_L(0) + l^2 \lb \tilde\beta_2L_{-2}+ \tilde \beta_{11}L_{-1}^2\rb\mO_L(0) \nn \\ &\qquad\qquad\qquad+ l^3\lb \tilde \beta_{111}L_{-1}^3 + \tilde \beta_{21}L_{-2}L_{-1} +  \tilde \beta _{3}L_{-3} \rb\mO_L(0) +\cdots \Big]
 \end{align}
 Now, taking the expectation value of the above OPE with $\mO_L(w)$, we obtain,
 \begin{align}
-    \braket{\Psi(l/2) \Psi^*(-l/2) \mO_L(w)} &= C_{\Psi\Psi^*L}l^{h_L-2h_\Psi} \Big[ \braket{\mO_L(0)\mO_L(w)} + l\braket{\tilde \beta_1 L_{-1}\mO_L(0)\mO_L(w)} \nn \\
+    \braket{\Psi(l/2) \Psi^*(-l/2) \mO_L(w)} &= C_{\Psi}^Ll^{h_L-2h_\Psi} \Big[ \braket{\mO_L(0)\mO_L(w)} + l\braket{\tilde \beta_1 L_{-1}\mO_L(0)\mO_L(w)} \nn \\
     &\qquad+ l^2 \braket{\lb \tilde\beta_2L_{-2}+ \tilde \beta_{11}L_{-1}^2\rb\mO_L(0)\mO_L(w)} \nn \\ &\qquad+ l^3\braket{\lb \tilde \beta_{111}L_{-1}^3 + \tilde \beta_{21}L_{-2}L_{-1} +  \tilde \beta _{3}L_{-3} \rb\mO_L(0)\mO_L(w)} + \cdots  \Big]
 \end{align}
 However, from the earlier three point function computation in (\ref{eq: 3 point function expansion}), we only had even powers of $l$. This suggests that the net contribution of every odd level descendant must vanish. 
@@ -7401,158 +7075,124 @@ Now we can compare the contiguous and broken correlators,
 % \end{align}
 Since $\zeta_n = 2\sin(\pi \ep/n) \sim 2\pi \ep/n$, the ratio tends to zero.  
 Similarly, for  $p>1$, it can be shown that the term having the least number of mixing OPEs would be the leading term. Hence, in our calculations the dominant contribution came from the terms which had a contiguous string of $\Psi \Psi^*$ connected to a contiguous string of $\Phi \Phi^*$. These calculations can be extended for any general 2d CFT, since we just require the order of the terms. 
-\section{Symmetry Resolved Relative Entropy}
-We extend our calculation of relative entropy of pure states to the symmetry resolution of relative entropy of the pure states. In the $x\to 0$ limit, we end up using OPE of close-by operators. The exact result of symmetry resolution of relative entropy of pure states for various examples has been carried out in \cite{Chen_2021}.
 
-The symmetry-resolved Renyi Relative entropy is given by,
-\begin{align}
-    S_n(\rho_\alpha(q)\| \rho_\beta(q)) &= -\log\frac{p^\alpha(q)}{p^\beta(q)} + \frac{1}{1-n} \log \frac{p_n^{\alpha|\beta}(q)}{p_n^\alpha(q)} + S_n(\rho_\alpha\|\rho_\beta),
-\end{align}
-where the generalized probabilities are defined as,
-\begin{align}
-    p_n^\alpha(q) &= \frac{\text{tr}(\rho_\alpha^n\Pi_q)}{\text{tr}(\rho_\alpha^n)}, \qquad p_n^{\alpha|\beta}(q) = \frac{\text{tr}(\rho_\alpha\rho_\beta^{n-1}\Pi_q)}{\text{tr}(\rho_\alpha\rho_\beta^{n-1})},\\
-    p^\alpha(q) &= p_1^\alpha(q),\\
-    p^\beta(q) &= p_q^\beta(q).
-\end{align}
-At $n\to 1$, we have the Symmetry Resolved Relative Entropy,
-\begin{align}
-    S(\rho_\alpha(q)\|\rho_\beta(q)) &= -\log \frac{p^\alpha(q)}{p^\beta(q)}- \frac{1}{p^\alpha(q)}\p_n \big[p_n^{\alpha|\beta}(q ) - p_n^\alpha(q)\big]\big|_{n=1} + S(\rho_\alpha \|\rho_\beta). 
-\end{align}
-We want to compute the first two terms of the right hand side. 
-We define the charged moments,
-as the Fourier transformations of the generalized probabilities,
-\begin{align}
-    p_n^\alpha(q)&\equiv \int \frac{d\mu}{2\pi} e^{-i\mu q} p_n^\alpha(q).
-\end{align}
-Then, we have the charged moments of the excited states,
-\begin{align}
-    p_n^\alpha(\mu) &= \frac{\text{tr}(\rho_\alpha^ne^{i\mu Q_A})}{\text{tr}(\rho_\alpha^n)}, \qquad p_n^{\alpha|\beta}(\mu) = \frac{\text{tr}(\rho_\alpha\rho_\beta^{n-1}e^{i\mu Q_A})}{\text{tr}(\rho_\alpha\rho_\beta^{n-1})}.
-\end{align}
-The operator $e^{i\mu Q_A}$ can be represented by two flux fields at the endpoints of the intervals. After uniformization mapping, the interval endpoints are sent to $0,\infty$. 
 
-\subsection{Coherent states}
-For coherent states, the flux insertions are implemented by the vertex operator,
-\begin{align}
-    \mathcal{V} = V_{\frac{\mu}{2\pi}} = e^{\frac{i\mu}{2\pi}\phi}
-\end{align}
-whose conformal weights are given by $(h_\mu,\bar h_\mu) = \lb \frac{1}{2}\lb\frac{\mu}{2\pi}\rb^2, \frac{1}{2}\lb\frac{\mu}{2\pi}\rb^2\rb$. So now we have a $2n+2$ point function,
-\begin{align}
-    \Big\langle V_{\frac{\mu}{2\pi}}(\infty)V_{-\frac{\mu}{2\pi}}(0) \prod_{k=0}^{n-1}V_{\gamma_k}(z_{k,n}^+)V_{-\gamma_k}(z_{k,n}^-)\Big\rangle,
-\end{align}
-where $\gamma_k$ depends on the replica word. For $\rho_\alpha^n$, $\gamma_k = \alpha$ for all values of $k$, while for $\rho_\alpha\rho_\beta^{n-1}$, $\gamma_0 = \alpha$ and $\gamma_k = \beta$ for $k\neq 0$. After we do the OPE of the close by operators, we will end up with three and 4 point functions, such as,
-\begin{align}
-    \frac{\braket{V_{\frac{\mu}{2\pi}}(\infty)V_{-\frac{\mu}{2\pi}}(0)J(z)}}{\braket{V_{\frac{\mu}{2\pi}}(\infty)V_{-\frac{\mu}{2\pi}}(0)}} &= -\frac{\mu}{2\pi z},
-    \\
-    \frac{\braket{V_{\frac{\mu}{2\pi}}(\infty)V_{-\frac{\mu}{2\pi}}(0):J^2:(z)}}{\braket{V_{\frac{\mu}{2\pi}}(\infty)V_{-\frac{\mu}{2\pi}}(0)}} &= \frac{\mu^2}{4\pi^2 z^2},\\
-    \frac{\braket{V_{\frac{\mu}{2\pi}}(\infty)V_{-\frac{\mu}{2\pi}}(0)J(z)J(w)}}{\braket{V_{\frac{\mu}{2\pi}}(\infty)V_{-\frac{\mu}{2\pi}}(0)}} &= \frac{1}{(z-w)^2}+\frac{\mu^2}{4\pi^2 zw}.
-\end{align}
-These are fixed by current Ward identities. 
-Note that the first term in the four point function is the ordinary vacuum current two point function, which gives the old relative entropy answer, while the second term of the four point function gives the flux-background term.
-\subsubsection{Three-point function}
-The three point function contribution is of the first order in $\zeta_n$, and is given by the sum of the $U(1)$ charges of each of the operator insertions on the circle,
-\begin{align}
-    R_n^{(1)} &= \sum_k (-i \gamma_k \zeta_nz_k )\lb -\frac{\mu}{2\pi z_k}\rb \\
-    &= i \frac{\mu}{2\pi}\zeta_n \sum_k\gamma_k.
-\end{align}
-Similarly the $:J^2:$ term gives,
-\begin{align}
-    R_{n,:J^2:}^{(2)} &= -\frac{\mu^2\zeta_n^2} {8\pi^2}\sum_k\gamma_k^2
-\end{align}
-\subsubsection{Four-point function}
-The four point function in the charged background gives,
-\begin{align}
-    R_{n,JJ}^{(2)} &= -\frac{\mu^2\zeta_n^2} {4\pi^2}\sum_{k<j}\gamma_k\gamma_j,\\
-    &= -\frac{\mu^2\zeta_n^2}{8\pi^2}\lb\sum_k \gamma_k\rb^2.
-\end{align}
-Combining the three-point and four-point function, we obtain,
-\begin{align}
-    R_n(\{\gamma_k\};\mu) &= R_n^{(1)}+ R_{n,:J^2:}^{(2)}+  R_{n,JJ}^{(2)} \\&= 1+ i\frac{\mu}{2\pi}\zeta_n \sum_k\gamma_k - \frac{1}{2}\lb \frac{\mu}{2\pi}\rb^2 \zeta_n^2 \lb\sum_k\gamma_k\rb^2.
-\end{align}
-\subsection{Computation of various terms}
-\subsubsection{\texorpdfstring{$\log \frac{p^\alpha(q)}{p^\beta(q)}$}{ log p alpha / p beta}}
-For $\rho_\alpha^n$, we have,
-\begin{align}
-    p_n^\alpha(\mu) = p_n^0(\mu) \Big[ 1+ i\mu \alpha x - \frac{1}{2}\mu^2 \alpha^2 x^2 + O(x^3)\Big]
-\end{align}
-while for $\rho_\alpha\rho_\beta^{n-1}$ we have,
-\begin{align}
-    p_n^{\alpha|\beta}(\mu) &= \p_n^0(\mu) \Big[ 1+ i\mu \frac{\alpha + (n-1)\beta}{n}x - \frac{1}{2}\mu^2\lb\frac{\alpha + (n-1)\beta}{n}\rb^2x^2 + O(x^3)\Big]
-\end{align}
-After Fourier transform, we obtain the generalized probabilities,
-\begin{align}
-    p_n^\alpha(q) &= p_n^0(q) - \alpha x\p_qp_n^0(q)+ \frac{\alpha^2 x^2}{2}\p_q^2p_n^0(q) + O(x^3), \\
-    p_n^{\alpha|\beta}(q) &= p_n^0(q) - \frac{\alpha + (n-1)\beta}{n}\p_qp_n^0(q) + \frac{\lb\frac{\alpha + (n-1)\beta}{n}\rb^2}{2} \p_q^2p_n^0(q) + O(x^3).
-\end{align}
-Similarly, at $n=1$, 
-\begin{align}
-    p^\alpha(q) &= p_1^0(q) - \alpha x p_1^0{'}(q)+ \frac{\alpha^2 x^2}{2}p_1^0{''}(q) + O(x^3),
-    \\
-    p^\beta(q) &= p_1^0(q) - \beta x p_1^0{'}(q)+ \frac{\beta^2 x^2}{2}p_1^0{''}(q) + O(x^3),
-\end{align}
-Hence, by expanding the logarithm in small $x$, we have
-\begin{align}
-    \log p^\alpha(q) &= \log p_n^0(q) - \alpha x \frac{p_n^0{'}}{p_n^0} + \frac{\alpha^2x^2}{2}\lb\frac{p_n^0{''}}{p_n^0} - \lb\frac{p_n^0{'}}{p_n^0}\rb^2 \rb + O(x^3),\\
-    \log p^\beta(q) &= \log p_n^0(q) - \beta x \frac{p_n^0{'}}{p_n^0} + \frac{\beta^2x^2}{2}\lb\frac{p_n^0{''}}{p_n^0} - \lb\frac{p_n^0{'}}{p_n^0}\rb^2 \rb + O(x^3).
-\end{align}
-For simplicity of notations, we introduce,
-\begin{align}
-    \delta &\equiv \alpha - \beta,\qquad a_n \equiv \frac{\alpha + (n-1)\beta}{n},  \\ L_n(q) &\equiv \log p_n^0(q),
-    \\
-    \implies L_n'&= \frac{p_n^0{'}}{p_n^0} , \qquad L_n'' = \frac{p_n^0{''}}{p_n^0} - \lb\frac{p_n^0{'}}{p_n^0}\rb^2 .
-\end{align}
-Then we have,
-\begin{align}
-    -\log \frac{p^\alpha(q)}{p^\beta(q)} &= \delta x L_1' - \frac{\alpha^2-\beta^2}{2}x^2L_1'' + O(x^3).
-\end{align}
-\subsubsection{\texorpdfstring{$\frac{1}{p^\alpha(q)}\p_n \big[p_n^{\alpha|\beta}(q ) - p_n^\alpha(q)\big]\big|_{n=1}$}{second term of Sym resolved rel entropy}}
-We have,
-\begin{align}
-    p_n^{\alpha|\beta}(q ) - p_n^\alpha(q) &=- (a_n - \alpha )x p_n^0{'}+ \frac{a_n^2-\alpha^2}{2}x^2p_n^0{''}+ O(x^3),
-    \\\implies \p_n \big[p_n^{\alpha|\beta}(q ) - p_n^\alpha(q)\big]\big|_{n=1} &= \delta x p_1^0{'} - \alpha \delta x^2 p_1^0{''} + O(x^3).
-\end{align}
-The expansion of the inverse of the generalized probability is given by,
-\begin{align}
-    -\frac{1}{p^\alpha(q)} &= -\frac{1}{p_1^0}\Big[ 1+ \alpha x \frac{p_1^0{'}}{p_1^0} + O(x^2)\Big]
-\end{align}
-Combining the above two expressions, we obtain,
-\begin{align}
-   - \frac{1}{p^\alpha(q)}\p_n \big[p_n^{\alpha|\beta}(q ) - p_n^\alpha(q)\big]\big|_{n=1}  &=  - \delta x L_1' + \alpha\delta x^2 L_1'' + O(x^3).
-\end{align}
-We finally obtain the Symmetry Resolved Relative Entropy,
-\begin{align}
-    S(\rho_\alpha(q)\|\rho_\beta(q)) &= (\alpha-\beta)^2x^2 \Big[ \frac{\pi^2}{3} + \frac{1}{2}\p_q^2\log p_1^0(q)  \Big] + O(x^3).
-\end{align}
-\subsection{Coherent states exact result comparison}
-Since for compact free boson, the vacuum charged moment is Gaussian, 
-\begin{align}
-    p_n^0(\mu) &= \exp \Big[ -\frac{1}{2}\braket {(\Delta q)^2}_n^0\mu^2 + i\mu \bar q\Big],
-\end{align}
-therefore,
-\begin{align}
-    p_n^0(q) &= \frac{1}{\sqrt{2\pi \braket{(\Delta q)^2}_n^0}}\exp \Big[ -\frac{(q-\bar q)^2}{2\braket{(\Delta q)^2}_n^0}\Big].
-\end{align}
-Then, we have,
-\begin{align}
-    \p_q^2 \log p_1^0(q) &= -\frac{1}{\braket{(\Delta q)^2}_1^0}.
-\end{align}
-The Symmetry Resolved Relative Entropy of coherent states is thus given by,
-\begin{align}
-    S(\rho_\alpha(q)\|\rho_\beta(q)) &= \frac{(\alpha-\beta)^2}{3}(\pi x)^2  - \frac{(\alpha - \beta)^2x^2}{2\braket{(\Delta q)^2}_1^0}+ O(x^3),
-\end{align}
-which agrees with the small $x$ expansion given in \cite{Chen_2021}.
-\subsection{Mixtures}
-Check, if the above result can be generalized to the mixture case,
-\begin{align}
-    S(\bar\rho_\textbf{p}(q)\|\bar \rho_\textbf{q}(q)) &\overset{?}{=} \frac{( \braket{\alpha}_\textbf{p} - \braket{\beta}_\textbf{q}  )^2}{3}(\pi x)^2 - \frac{(\braket{\alpha}_\textbf{p} - \braket{\beta}_\textbf{q})^2x^2}{2\braket{(\Delta q)^2}_1^0}+ O(x^3),
-\end{align}
-where 
-\begin{align}
-    \bar{\rho}_\textbf{p} &= \sum_{a=1}^M p_a \rho_{\alpha_a}, \qquad \sum_{a=1}^M p_a = 1 ,\\
-    \bar{\rho}_\textbf{q} &= \sum_{b=1}^M q_b \rho_{\beta_b}, \qquad \sum_{b=1}^N q_b = 1 ,\\
-    \braket{\alpha}_\textbf{p} &= \sum_{a=1}^M p_a\alpha_a, \qquad \braket{\beta}_\textbf{q} = \sum_{b=1}^N q_b\beta_b.
-\end{align}
+ 
 
-\section{\texorpdfstring{$S_2(1/2,\Delta)$ computation for Logarithmic Negativity}{S2 (1/2) for logarithmic negativity}}
+
+% We want to compute the three point function, to look for the contribution of spin of primaries $\mO_L$ and $\mO_{L'}$. We will compute $\braket{\mO_{L'}(z_0^-) \mO_{L'}(z_0^+) \mO_L(z_k^+)}$ and take the sum over $k =1,\cdots , n-2$. The extra phase term we have to take into account would come from the primary of the OPE of $\Phi^*(z_{k+1}^-) \Phi(z_k^+)$, which is $e^{i \pi s_L(\theta_k + 1/2)}$. The common factors and phases that carry spin are given by,
+% \begin{align}
+%     &C_{\Psi\Phi}^2C_\Phi e^{3\pi is_{L'}}e^{i\pi s_L/2}\lb\frac{\zeta_1}{\zeta_n}\rb^{2((n-1)\Delta_\Phi + \Delta_\Psi)}\zeta_n^{2\Delta_{L'} + \Delta_L}\times 
+%     % &\qquad \qquad \qquad 
+%     \sum_{k=1}^{n-2}\braket{\mO_{L'}(z_0^-) \mO_{L'}(z_0^+) \mO_L(z_k^+)} e^{i \pi s_L \theta_k} 
+% \end{align}
+% We can then write the three point function,
+% \begin{align}
+%     \braket{\mO_L(z_k^+) \mO_{L'}(z_0^+)\mO_{L'}(z_0^-) } &= C_{\Psi\Phi}^2C_\Phi\frac{e^{-i3\pi (2s_{L'} -s_L)/2}}{\lb2\sin(\pi(1-\ep)/n)\rb^{2\Delta_{L'}-\Delta_L}}\times\nn \\ 
+%     & \qquad \qquad \qquad \qquad 
+%     \sum_{k=1}^{n-2}\Bigg( \frac{e^{-i\pi s_L(k/n+3/2)}}{\lb2\sin(\pi(k+1-\ep)/n)\rb^{\Delta_L}} \frac{e^{-i\pi s_L((k+1-\ep)/n+1/2)}}{\lb 2\sin(\pi k/n)\rb^{\Delta_L}}\Bigg) \nn \\
+%     &= C_{\Psi\Phi}^2C_\Phi e^{-3\pi is_{L'} } e^{-i\pi s_L/2}\lb 2\sin (\pi (1-\ep)/n)\rb^{\Delta_L-2\Delta_{L'}}\times \nn \\
+%     &\qquad \qquad \qquad \qquad \sum_{k=1}^{n-2}\frac{e^{-i\pi s_L (2k+1-\ep)/n}}{\lb  4\sin(\pi (k+1-\ep)/n)\sin(\pi k /n)\rb^{\Delta_L}} 
+% \end{align}
+% % \JM{where in the last step we multiplied the phase $e^{i \pi s_L(\theta_k + 1/2)}$ sitting outside. 
+% Hence we get,
+% \begin{align}
+%     &\mathcal{F}_n = \frac{1+ \zeta_n^{2\Delta_L}f(n)}{(D_n(\ep))^{n-1}\lb \frac{\sin(\pi \ep/n)}{\sin (\pi(1-\ep)/n)}\rb^{2\Delta_{L'}}C_{\Psi \Phi}^2
+%     \lb 1 + C_\Phi \, \mathcal{T}(n)\rb} \\
+%     &\mathcal{T}(n) = \lb \sin(\pi \ep/n) \sin(\pi (1-\ep)/n) \rb^{\Delta_L}\sum_{k=1}^{n-2} \lb \frac{1}{\sin(\pi (k+1-\ep)/n) \sin (\pi k /n)}\rb^{-\Delta_L}
+% \end{align}
+% We can compute the relative entropy $S(\rho_\Psi \| \rho_\Phi)$,
+% \begin{align}
+%     S(\rho_\Psi \| \rho_\Phi) = \p_n \log \mathcal{F}_n \big|_{n=1} & \simeq  2\Delta_{L'}\lb  \frac{1}{\ep} - \sum_{k=1}^{K} \frac{2^{2k}|B_{2k}|} {(2k)!}\ep^{2k-1}
+%     % - \frac{\pi^2 \ep}{3}
+%     \rb + (\pi \ep)^{2\Delta_L}C_{\Psi}^2\frac{\sqrt{\pi}\Gamma(\Delta_L+1)}{4\Gamma(\Delta_L+3/2)}  \nn \\ &   - C_\Phi  \p_n \mathcal{T}(n)|_{n=1} + \cdots  
+% \end{align}
+% After using the general OPE with the identity piece given in eq.~[\ref{eq: general OPE with identity}], we get
+% \begin{align}
+%     S(\rho_\Psi \| \rho_\Phi) = \p_n \log \mathcal{F}_n \big|_{n=1} & \simeq  
+%     % (1-\delta_{\Psi \Phi}) 
+%     \lb 2\Delta_{L'}\lb  \frac{1}{\ep} - \frac{\ep}{3} + \cdots
+%     % - \frac{\pi^2 \ep}{3}
+%     \rb  - C_\Phi  \p_n \mathcal{T}(n)|_{n=1} + \cdots \rb 
+% \end{align}
+% % ----
+%  In the denominator the first two insertions are $\alpha$ and the rest are $\beta$, therefore the product $\prod_{k=0}^{n-1}\delta_{\omega_k\omega_{k+1}}\sim\delta^2_{\alpha\beta}=0$. Since there is no identity operator in the OPE of $V_\alpha$ and $V_{-\beta}$, the only non-vanishing contribution to the denominator comes from the case where we take the OPE of $V_\alpha$ and $V_{-\beta}$ at $z_0^+$ and $z_1^-$ and $V_\beta$ and $V_{-\alpha}$ at $z_0^-$ and $z_1^+$. Therefore,
+%   \begin{align}
+%     g_2(n)=C_{\alpha\beta}^L \lb 2\sin(\pi \ep/n)\rb^{-(\Delta_\alpha+\Delta_\beta)}e^{-2i\pi (\delta s)}
+% (2\sin(\pi \ep/n))^{2\Delta_L}\braket{O_L(0)\mO_L(e^{2\pi i/n})}+\cdots
+% \nn
+%   \end{align}
+
+% ----
+
+% Here, we establish that in the limit of a large subsystem $x\to 1^-$, relative entropy of excited states is universally given by
+% \begin{align}
+%   S(\rho_\alpha\|\rho_\beta)=
+% \end{align}
+\section{Old text}
+\subsection{Renyi entropy of Vertex operators}\label{Renyi entropy of vertex operators}
+In \cite{Alcaraz_2011}, they define 
+\begin{align}
+    F_{\Psi}^n(x) = \frac{\text{tr}(\rho_\Psi^n)}{\text{tr}(\rho_0^n)},
+\end{align}
+where $\Psi$ is some excited state. 
+In the $x \to 0 $ limit, they show for any excited state generated by the operator $\Psi$,
+\begin{align}
+    F_\Psi^{(n)}(x) \sim 1+ \frac{h+\bar{h}}{3} \lb\frac{1}{n}-n\rb (\pi x)^2 + O(x^{2\Delta_{L}}).
+\end{align}
+assuming that $\Delta_L>1$.
+This piece comes from the $D_n(x)$, without considering the contribution from any two point function of primaries from OPEs. This can be shown by considering,
+\begin{align}
+    F^{(n)}_\Psi(x) &= \frac{\text{tr}(\rho_\Psi^n)}{\text{tr}(\rho_0^n)} \\
+    &\simeq D_n(x)^{-n} \\
+    &= \lb\frac{\sin(\pi x)}{n\sin(\pi x/n)}\rb^{2n\Delta_\Psi} \\
+    &\simeq \lb\frac{\pi x -\frac{(\pi x)^3}{6} + \cdots } {n \lb \frac{\pi x }{n} - \frac{(\pi x)^3}{6n^3} + \cdots\rb  }\rb^{2n\Delta_\Psi}\\
+    &= \lb \frac{1 - \frac{(\pi x)^2}{6}}{1- \frac{(\pi x)^2}{6n^2}}  \rb^{2n\Delta_\Psi} \\
+    &\simeq 1+ 2n\Delta_\Psi \frac{(\pi x)^2}{6}\lb\frac{1}{n^2} - 1\rb + \cdots \\
+    &= 1+ \frac{h + \bar{h}}{3} \lb\frac{1}{n}-n\rb (\pi x)^2 + \cdots
+\end{align}
+When $\Delta_L = 1$, we have to take the higher order terms into account which will contribute as it is $O(x^2)$. This is the case with massless free bosons. 
+In particular, using the 2n-point function of the coherent states, they show that 
+\begin{align}
+    F^{(n)}_{\Psi[r,s]}(x) = 1, \qquad \forall n,r,s. 
+\end{align} 
+where $\Psi[r,s] = e^{i (\alpha_+ \phi + \alpha_- \phi)}$
+is the vertex operator. This shows that the Renyi entropy of any order $n$ for coherent states is the same as that of the ground state. 
+Now, using the replica trick, we can show that for vertex operators, this contribution coming from current $J = i \p \phi$ exactly cancels the piece coming from $D_n(x)$. The contribution from the two point functions is proportional to $S_2(n,1)$. We compute it below,
+\begin{align}
+    S_2(n,\Delta) &= \frac{n}{2}\sum_{m\in \mathbb{Z}} \left[ng_\Delta(nm) - g_\Delta(m)\right] 
+\end{align}
+We take $\Delta \sim 1+\varepsilon$ in order to deal with singularities of Gamma functions (Note that, this $\varepsilon$ has nothing to do with the primary in Ising CFT). Then we have,
+\begin{align}
+    g_{1+\varepsilon}(m) &= 2^2 \Gamma(-1-2\varepsilon)\frac {\sin(\pi (1+\varepsilon))}{\pi}\frac{\Gamma (m+1)}{\Gamma(m)} 
+    \\
+    &\simeq 4 \lb \frac{1}{2\varepsilon} \rb \lb \frac{-\pi \varepsilon}{\pi}\rb m \\
+    &= -2m .
+\end{align}
+Similarly, we have
+\begin{align}
+    g_{1+\varepsilon}(nm) = -2nm.
+\end{align}
+We can then write the sum of all two point functions to be,
+\begin{align}
+    S_2(n,1) &= 2^{-2}\frac{n}{2}\sum_{m\in \mathbb{Z}} \left[ n(2nm) + 2m \right]\\
+    &= -2^{-2}n(n^2-1) 2\sum_{m\in \mathbb{Z}} m \\
+    &= -2^{-2}n(n^2 - 1) \zeta(-1) \\
+    &= \frac{n(n^2-1)}{24}
+\end{align}
+Now adding the contribution from both holomorphic and anti-holomorphic currents, we get the total contribution to be,
+\begin{align}
+    2{(C_\Psi^L)}^2 \lb\frac{2\pi x}{n}\rb^2 \frac{n(n^2-1)}{24} = {(C_\Psi^L)}^2\frac{(\pi x)^2}{3} \lb n-\frac{1}{n}\rb
+\end{align}
+For coherent states, $C_\Psi^L = \alpha$. We finally get, 
+\begin{align}
+    F_\Psi^{(n)} &= 1+ \frac{\alpha^2}{3} \lb\frac{1}{n}-n\rb (\pi x)^2 + \frac{\alpha^2}{3}\lb n-\frac{1}{n}\rb(\pi x)^2 +  \cdots\\
+    &= 1 + O(x^3)
+\end{align}
+where the higher order terms are a result from the higher point functions. We essentially showed the cancellation of the terms of the order of $O(x^2)$ explicitly. This could be further extended by computing higher order terms in the 2n-point function. 
+% \section{\texorpdfstring{$S_2(1/2,\Delta)$ computation for Logarithmic Negativity}{S2 (1/2) for logarithmic negativity}}
+\subsection{\texorpdfstring{$S_2(1/2,\Delta)$ computation for Logarithmic Negativity}{S2 (1/2) for logarithmic negativity}}
+% $\mathbf{S_2(1/2,\Delta)}$ \textbf{computation for Logarithmic Negativity}
 We compute $S_2(1/2,\Delta)$ which is required to measure logarithmic negativity \cite{Vidal_2002},\cite{Calabrese_2012},\cite{Calabrese_2013}. We can see that from the definition of Logarithmic negativity,
 \begin{align}
     \mathcal{E} &= \lim_{n\to 1/2}2\log \text{Tr} \rho_\Psi^n = S_{1/2}(\rho_\Psi)
@@ -7698,11 +7338,421 @@ Adding both the contribution to the identity piece, we finally obtain,
 \begin{align}
     \Delta\mathcal{E}_{i\p\phi} = \Delta\mathcal{E}_{\varepsilon}=(\pi x)^2 -\frac{17}{6}(\pi x)^4 +O(x^6)
 \end{align}
-in accordance with the exact result upto the fourth order. 
+in accordance with the exact result upto the fourth order.
 
-\section{\texorpdfstring{Pole-matching analytic continuation of $g(p;x)$ and $h(n-p,p;x)$}
+
+\subsection{Symmetry Resolved Relative Entropy}
+We extend our calculation of relative entropy of pure states to the symmetry resolution of relative entropy of the pure states. In the $x\to 0$ limit, we end up using OPE of close-by operators. The exact result of symmetry resolution of relative entropy of pure states for various examples has been carried out in \cite{Chen_2021}.
+
+The symmetry-resolved Renyi Relative entropy is given by,
+\begin{align}
+    S_n(\rho_\alpha(q)\| \rho_\beta(q)) &= -\log\frac{p^\alpha(q)}{p^\beta(q)} + \frac{1}{1-n} \log \frac{p_n^{\alpha|\beta}(q)}{p_n^\alpha(q)} + S_n(\rho_\alpha\|\rho_\beta),
+\end{align}
+where the generalized probabilities are defined as,
+\begin{align}
+    p_n^\alpha(q) &= \frac{\text{tr}(\rho_\alpha^n\Pi_q)}{\text{tr}(\rho_\alpha^n)}, \qquad p_n^{\alpha|\beta}(q) = \frac{\text{tr}(\rho_\alpha\rho_\beta^{n-1}\Pi_q)}{\text{tr}(\rho_\alpha\rho_\beta^{n-1})},\\
+    p^\alpha(q) &= p_1^\alpha(q),\\
+    p^\beta(q) &= p_q^\beta(q).
+\end{align}
+At $n\to 1$, we have the Symmetry Resolved Relative Entropy,
+\begin{align}
+    S(\rho_\alpha(q)\|\rho_\beta(q)) &= -\log \frac{p^\alpha(q)}{p^\beta(q)}- \frac{1}{p^\alpha(q)}\p_n \big[p_n^{\alpha|\beta}(q ) - p_n^\alpha(q)\big]\big|_{n=1} + S(\rho_\alpha \|\rho_\beta). 
+\end{align}
+We want to compute the first two terms of the right hand side. 
+We define the charged moments,
+as the Fourier transformations of the generalized probabilities,
+\begin{align}
+    p_n^\alpha(q)&\equiv \int \frac{d\mu}{2\pi} e^{-i\mu q} p_n^\alpha(q).
+\end{align}
+Then, we have the charged moments of the excited states,
+\begin{align}
+    p_n^\alpha(\mu) &= \frac{\text{tr}(\rho_\alpha^ne^{i\mu Q_A})}{\text{tr}(\rho_\alpha^n)}, \qquad p_n^{\alpha|\beta}(\mu) = \frac{\text{tr}(\rho_\alpha\rho_\beta^{n-1}e^{i\mu Q_A})}{\text{tr}(\rho_\alpha\rho_\beta^{n-1})}.
+\end{align}
+The operator $e^{i\mu Q_A}$ can be represented by two flux fields at the endpoints of the intervals. After uniformization mapping, the interval endpoints are sent to $0,\infty$. 
+
+\subsubsection{Coherent states}
+For coherent states, the flux insertions are implemented by the vertex operator,
+\begin{align}
+    \mathcal{V} = V_{\frac{\mu}{2\pi}} = e^{\frac{i\mu}{2\pi}\phi}
+\end{align}
+whose conformal weights are given by $(h_\mu,\bar h_\mu) = \lb \frac{1}{2}\lb\frac{\mu}{2\pi}\rb^2, \frac{1}{2}\lb\frac{\mu}{2\pi}\rb^2\rb$. So now we have a $2n+2$ point function,
+\begin{align}
+    \Big\langle V_{\frac{\mu}{2\pi}}(\infty)V_{-\frac{\mu}{2\pi}}(0) \prod_{k=0}^{n-1}V_{\gamma_k}(z_{k,n}^+)V_{-\gamma_k}(z_{k,n}^-)\Big\rangle,
+\end{align}
+where $\gamma_k$ depends on the replica word. For $\rho_\alpha^n$, $\gamma_k = \alpha$ for all values of $k$, while for $\rho_\alpha\rho_\beta^{n-1}$, $\gamma_0 = \alpha$ and $\gamma_k = \beta$ for $k\neq 0$. After we do the OPE of the close by operators, we will end up with three and 4 point functions, such as,
+\begin{align}
+    \frac{\braket{V_{\frac{\mu}{2\pi}}(\infty)V_{-\frac{\mu}{2\pi}}(0)J(z)}}{\braket{V_{\frac{\mu}{2\pi}}(\infty)V_{-\frac{\mu}{2\pi}}(0)}} &= -\frac{\mu}{2\pi z},
+    \\
+    \frac{\braket{V_{\frac{\mu}{2\pi}}(\infty)V_{-\frac{\mu}{2\pi}}(0):J^2:(z)}}{\braket{V_{\frac{\mu}{2\pi}}(\infty)V_{-\frac{\mu}{2\pi}}(0)}} &= \frac{\mu^2}{4\pi^2 z^2},\\
+    \frac{\braket{V_{\frac{\mu}{2\pi}}(\infty)V_{-\frac{\mu}{2\pi}}(0)J(z)J(w)}}{\braket{V_{\frac{\mu}{2\pi}}(\infty)V_{-\frac{\mu}{2\pi}}(0)}} &= \frac{1}{(z-w)^2}+\frac{\mu^2}{4\pi^2 zw}.
+\end{align}
+These are fixed by current Ward identities. 
+Note that the first term in the four point function is the ordinary vacuum current two point function, which gives the old relative entropy answer, while the second term of the four point function gives the flux-background term.
+\subsubsection{Three-point function}
+The three point function contribution is of the first order in $\zeta_n$, and is given by the sum of the $U(1)$ charges of each of the operator insertions on the circle,
+\begin{align}
+    R_n^{(1)} &= \sum_k (-i \gamma_k \zeta_nz_k )\lb -\frac{\mu}{2\pi z_k}\rb \\
+    &= i \frac{\mu}{2\pi}\zeta_n \sum_k\gamma_k.
+\end{align}
+Similarly the $:J^2:$ term gives,
+\begin{align}
+    R_{n,:J^2:}^{(2)} &= -\frac{\mu^2\zeta_n^2} {8\pi^2}\sum_k\gamma_k^2
+\end{align}
+\subsubsection{Four-point function}
+The four point function in the charged background gives,
+\begin{align}
+    R_{n,JJ}^{(2)} &= -\frac{\mu^2\zeta_n^2} {4\pi^2}\sum_{k<j}\gamma_k\gamma_j,\\
+    &= -\frac{\mu^2\zeta_n^2}{8\pi^2}\lb\sum_k \gamma_k\rb^2.
+\end{align}
+Combining the three-point and four-point function, we obtain,
+\begin{align}
+    R_n(\{\gamma_k\};\mu) &= R_n^{(1)}+ R_{n,:J^2:}^{(2)}+  R_{n,JJ}^{(2)} \\&= 1+ i\frac{\mu}{2\pi}\zeta_n \sum_k\gamma_k - \frac{1}{2}\lb \frac{\mu}{2\pi}\rb^2 \zeta_n^2 \lb\sum_k\gamma_k\rb^2.
+\end{align}
+
+\subsubsection{\texorpdfstring{Computation of $\log \frac{p^\alpha(q)}{p^\beta(q)}$}{ log p alpha / p beta}}
+For $\rho_\alpha^n$, we have,
+\begin{align}
+    p_n^\alpha(\mu) = p_n^0(\mu) \Big[ 1+ i\mu \alpha x - \frac{1}{2}\mu^2 \alpha^2 x^2 + O(x^3)\Big]
+\end{align}
+while for $\rho_\alpha\rho_\beta^{n-1}$ we have,
+\begin{align}
+    p_n^{\alpha|\beta}(\mu) &= \p_n^0(\mu) \Big[ 1+ i\mu \frac{\alpha + (n-1)\beta}{n}x - \frac{1}{2}\mu^2\lb\frac{\alpha + (n-1)\beta}{n}\rb^2x^2 + O(x^3)\Big]
+\end{align}
+After Fourier transform, we obtain the generalized probabilities,
+\begin{align}
+    p_n^\alpha(q) &= p_n^0(q) - \alpha x\p_qp_n^0(q)+ \frac{\alpha^2 x^2}{2}\p_q^2p_n^0(q) + O(x^3), \\
+    p_n^{\alpha|\beta}(q) &= p_n^0(q) - \frac{\alpha + (n-1)\beta}{n}\p_qp_n^0(q) + \frac{\lb\frac{\alpha + (n-1)\beta}{n}\rb^2}{2} \p_q^2p_n^0(q) + O(x^3).
+\end{align}
+Similarly, at $n=1$, 
+\begin{align}
+    p^\alpha(q) &= p_1^0(q) - \alpha x p_1^0{'}(q)+ \frac{\alpha^2 x^2}{2}p_1^0{''}(q) + O(x^3),
+    \\
+    p^\beta(q) &= p_1^0(q) - \beta x p_1^0{'}(q)+ \frac{\beta^2 x^2}{2}p_1^0{''}(q) + O(x^3),
+\end{align}
+Hence, by expanding the logarithm in small $x$, we have
+\begin{align}
+    \log p^\alpha(q) &= \log p_n^0(q) - \alpha x \frac{p_n^0{'}}{p_n^0} + \frac{\alpha^2x^2}{2}\lb\frac{p_n^0{''}}{p_n^0} - \lb\frac{p_n^0{'}}{p_n^0}\rb^2 \rb + O(x^3),\\
+    \log p^\beta(q) &= \log p_n^0(q) - \beta x \frac{p_n^0{'}}{p_n^0} + \frac{\beta^2x^2}{2}\lb\frac{p_n^0{''}}{p_n^0} - \lb\frac{p_n^0{'}}{p_n^0}\rb^2 \rb + O(x^3).
+\end{align}
+For simplicity of notations, we introduce,
+\begin{align}
+    \delta &\equiv \alpha - \beta,\qquad a_n \equiv \frac{\alpha + (n-1)\beta}{n},  \\ L_n(q) &\equiv \log p_n^0(q),
+    \\
+    \implies L_n'&= \frac{p_n^0{'}}{p_n^0} , \qquad L_n'' = \frac{p_n^0{''}}{p_n^0} - \lb\frac{p_n^0{'}}{p_n^0}\rb^2 .
+\end{align}
+Then we have,
+\begin{align}
+    -\log \frac{p^\alpha(q)}{p^\beta(q)} &= \delta x L_1' - \frac{\alpha^2-\beta^2}{2}x^2L_1'' + O(x^3).
+\end{align}
+\subsubsection{\texorpdfstring{Computation of $\frac{1}{p^\alpha(q)}\p_n \big[p_n^{\alpha|\beta}(q ) - p_n^\alpha(q)\big]\big|_{n=1}$}{second term of Sym resolved rel entropy}}
+We have,
+\begin{align}
+    p_n^{\alpha|\beta}(q ) - p_n^\alpha(q) &=- (a_n - \alpha )x p_n^0{'}+ \frac{a_n^2-\alpha^2}{2}x^2p_n^0{''}+ O(x^3),
+    \\\implies \p_n \big[p_n^{\alpha|\beta}(q ) - p_n^\alpha(q)\big]\big|_{n=1} &= \delta x p_1^0{'} - \alpha \delta x^2 p_1^0{''} + O(x^3).
+\end{align}
+The expansion of the inverse of the generalized probability is given by,
+\begin{align}
+    -\frac{1}{p^\alpha(q)} &= -\frac{1}{p_1^0}\Big[ 1+ \alpha x \frac{p_1^0{'}}{p_1^0} + O(x^2)\Big]
+\end{align}
+Combining the above two expressions, we obtain,
+\begin{align}
+   - \frac{1}{p^\alpha(q)}\p_n \big[p_n^{\alpha|\beta}(q ) - p_n^\alpha(q)\big]\big|_{n=1}  &=  - \delta x L_1' + \alpha\delta x^2 L_1'' + O(x^3).
+\end{align}
+We finally obtain the Symmetry Resolved Relative Entropy,
+\begin{align}
+    S(\rho_\alpha(q)\|\rho_\beta(q)) &= (\alpha-\beta)^2x^2 \Big[ \frac{\pi^2}{3} + \frac{1}{2}\p_q^2\log p_1^0(q)  \Big] + O(x^3).
+\end{align}
+\subsubsection{Coherent states exact result comparison}
+Since for compact free boson, the vacuum charged moment is Gaussian, 
+\begin{align}
+    p_n^0(\mu) &= \exp \Big[ -\frac{1}{2}\braket {(\Delta q)^2}_n^0\mu^2 + i\mu \bar q\Big],
+\end{align}
+therefore,
+\begin{align}
+    p_n^0(q) &= \frac{1}{\sqrt{2\pi \braket{(\Delta q)^2}_n^0}}\exp \Big[ -\frac{(q-\bar q)^2}{2\braket{(\Delta q)^2}_n^0}\Big].
+\end{align}
+Then, we have,
+\begin{align}
+    \p_q^2 \log p_1^0(q) &= -\frac{1}{\braket{(\Delta q)^2}_1^0}.
+\end{align}
+The Symmetry Resolved Relative Entropy of coherent states is thus given by,
+\begin{align}
+    S(\rho_\alpha(q)\|\rho_\beta(q)) &= \frac{(\alpha-\beta)^2}{3}(\pi x)^2  - \frac{(\alpha - \beta)^2x^2}{2\braket{(\Delta q)^2}_1^0}+ O(x^3),
+\end{align}
+which agrees with the small $x$ expansion given in \cite{Chen_2021}.
+\subsubsection{Mixtures}
+Check, if the above result can be generalized to the mixture case,
+\begin{align}
+    S(\bar\rho_\textbf{p}(q)\|\bar \rho_\textbf{q}(q)) &\overset{?}{=} \frac{( \braket{\alpha}_\textbf{p} - \braket{\beta}_\textbf{q}  )^2}{3}(\pi x)^2 - \frac{(\braket{\alpha}_\textbf{p} - \braket{\beta}_\textbf{q})^2x^2}{2\braket{(\Delta q)^2}_1^0}+ O(x^3),
+\end{align}
+where 
+\begin{align}
+    \bar{\rho}_\textbf{p} &= \sum_{a=1}^M p_a \rho_{\alpha_a}, \qquad \sum_{a=1}^M p_a = 1 ,\\
+    \bar{\rho}_\textbf{q} &= \sum_{b=1}^M q_b \rho_{\beta_b}, \qquad \sum_{b=1}^N q_b = 1 ,\\
+    \braket{\alpha}_\textbf{p} &= \sum_{a=1}^M p_a\alpha_a, \qquad \braket{\beta}_\textbf{q} = \sum_{b=1}^N q_b\beta_b.
+\end{align}
+
+
+\subsection{\texorpdfstring{Is there an OPE expansion for $S(\rho_0\|\rho_\Phi)?$}{Is there an OPE expansion for S(rho0 || rho Phi}}
+
+where the first factor comes the normalization of the density matrices, and we have used $\sin(\pi x)=\sin(\pi(1-x))$. We also used the following OPE for the $\Phi$ and $\Phi^*$ with identity close to it,
+\begin{align}
+    \Phi(z_{1,n}^-) I(z_{0,n}^+) &\sim \Phi(z_{0,n}^+) + \cdots 
+    % e^{i\pi (1/n-1/2)}(2\zeta_n)\p \Phi(z_{0,n}^+)+\cdots
+    \nn\\
+    \Phi^*(z_{n-1,n}^+)I(z_{0,n}^-) &\sim \Phi^*(z_{0,n}^-)+ \cdots 
+    % +e^{-i\pi (1/n-1/2)}(2\zeta_n)\p \Phi^*(z_{0,n}^-)\cdots
+\end{align}
+We compute the two and three point functions above \
+% JM{(one should then also consider the two point function of the descendant with the identities, but those are higher order)}
+\begin{align}
+ % & \braket{V_\beta(z^+_{n-1,n})V_{-\beta}(z^-_{1,n})}=\lb 2\sin\lb\frac{\pi(1+\ep)}{n}\rb\rb^{-4h_\beta}\nn\\
+ &\braket{\Phi^*(z^+_{0,n})\Phi(z^-_{0,n})}=\lb 2\sin\lb\frac{\pi(1-\ep)}{n}\rb\rb^{-2\Delta_\Phi}e^{-3\pi i s_\Phi}\\
+  &\braket{\Phi(z^+_{n-1,n})\Phi^*(z^-_{1,n})}=\lb 2\sin\lb\frac{\pi(1+\ep)}{n}\rb\rb^{-2\Delta_\Phi}e^{-3\pi i s_\Phi}
+% &\braket{V_\beta(z^+_{n-1,n})V_{-\beta}(z^-_{1,n})\mO_L(e^{2\pi i k/n})}=\nn\\
+% &C_\beta\lb 2\sin\lb\frac{\pi(1+\ep)}{n}\rb\rb^{-4h_\beta+\Delta_L}\lb 2\sin\lb\frac{\pi(2k+1+\ep)}{2n}\rb\rb^{-\Delta_L}\lb 2\sin\lb\frac{\pi(2k-1-\ep)}{2n}\rb\rb^{-\Delta_L}\nn\\
+% &=C_\beta\lb 2\sin\lb\frac{\pi(1+\ep)}{n}\rb\rb^{-4h_\beta+\Delta_L}\lb2\cos(\pi(1+\ep)/n)-2\cos(2\pi k/n) \rb^{-\Delta_L}
+\end{align}
+\begin{align}
+\braket{\Phi(z^-_{0,n})\Phi^*(z^+_{0,n})\mO_L(e^{i\pi(2k+1) /n})}&=C_\Phi^L\lb 2\sin\lb\frac{\pi(1-\ep)}{n}\rb\rb^{-2\Delta_\Phi+\Delta_L}\lb 2\sin\lb\frac{\pi(k+1-\ep/2)}{n}\rb\rb^{-\Delta_L}\times\nn\\
+&\qquad \qquad \qquad \qquad\lb 2\sin\lb\frac{\pi(k+\ep/2)}{n}\rb\rb^{-\Delta_L}e^{-3\pi i s_\Phi}e^{-i\pi s_L\lb (2k+1)/n+1/2)\rb}\nn\\
+&=C_\Phi^L\lb 2\sin\lb\frac{\pi(1-\ep)}{n}\rb\rb^{-2\Delta_\Phi+\Delta_L}\times\nn \\
+&\qquad\lb2\cos(\pi(1-\ep)/n)-2\cos(\pi (2k+1)/n) \rb^{-\Delta_L}e^{-3\pi i s_\Phi}e^{-i\pi s_L\lb (2k+1)/n+1/2)\rb}
+\end{align}
+
+\begin{align}
+\braket{\Phi(z^+_{n-1,n})\Phi^*(z^-_{1,n})\mO_L(e^{i\pi(2k+1) /n})}&=e^{3\pi i s_\Phi/2}e^{-i\pi (s_L+s_\Phi)\lb (2k+1)/(2n)+1/2)\rb} \times \nn\\
+&{(C_\Phi^L)}^2\lb 2\sin\lb\frac{\pi(1+\ep)}{n}\rb\rb^{\Delta_L}\times\lb 2\sin\lb\frac{\pi(2k+ 1))}{2n}\rb\rb^{-2\Delta_L}\nn\\
+% &=C_\Phi\lb 2\sin\lb\frac{\pi(1-\ep)}{n}\rb\rb^{-2\Delta_\Phi+\Delta_L}\times\nn \\
+% &\qquad\lb2\cos(\pi(1-\ep)/n)-2\cos(\pi (2k+1)/n) \rb^{-\Delta_L}e^{-3\pi i s_\Phi}e^{-i\pi s_L\lb (2k+1)/n+1/2)\rb}
+\end{align}
+
+
+Therefore, in the small $\ep$ expansion we have
+% \begin{align}
+% \braket{\tilde{\mO}_{0|\beta}^{(n-1)}}&=D_n(\ep)^{n-1}\lb\frac{\sin(\pi\ep/n)}{\sin(\pi(1+\ep)/n)}\rb^{4h_\beta}\times\nn\\
+% &\lb 1+C_\beta^2\lb\frac{\sin(\pi\epsilon/n)}{\sin(\pi(1+\epsilon)/n)}\rb^{\Delta_L}\sum_{k=0}^{n-2} \lb 2\cos(\pi(1+\ep)/n)-2\cos(2\pi k/n) \rb^{-\Delta_L} +\cdots\rb\ .
+% \end{align}
+\begin{align}
+\braket{\tilde{\mO}_{0|\Phi}^{(n-1)}}=&\lb \frac{n \sin(\pi\ep/n)}{\sin(\pi\ep)}\rb^{-2\Delta_\Phi (n-1)}\lb\frac{\sin(\pi\ep/n)}{\sin(\pi(1-\ep)/n))}\rb^{2\Delta_\Phi}
+% \lb\frac{1}{2\sin(\pi(1+\ep)/n)}\rb^{4h_\beta}
+\times\nn\\
+&\Bigg( 1+C_\Phi^L\lb\sin(\pi\epsilon/n)\sin(\pi(1-\epsilon)/n)\rb^{\Delta_L}\times \nn \\
+&\sum_{k=1}^{n-2}\lb \frac{1}{\sin(\pi (k+1-\ep/2)/n) \sin (\pi (k+\ep/2) /n)}\rb^{-\Delta_L} +\cdots\Bigg)\ .
+\end{align}
+\begin{align}
+\braket{\tilde{\mO}_{0|\Phi}^{(n-1)}}=&\lb \frac{n \sin(\pi\ep/n)}{\sin(\pi\ep)}\rb^{-2\Delta_\Phi (n-1)}\lb\frac{\sin(\pi\ep/n)}{\sin(\pi(1+\ep)/n))}\rb^{2\Delta_\Phi}
+% \lb\frac{1}{2\sin(\pi(1+\ep)/n)}\rb^{4h_\beta}
+\times\nn\\
+&\Bigg( 1+{(C_\Phi^L)}^2 e^{4\pi i s_\Phi} \frac{\lb \sin \lb \pi (1+\ep)/n\rb \rb^{2\Delta_\Phi + \Delta_L}}{\lb \sin (\pi \ep / n)\rb^{2\Delta_\Phi - \Delta_L}}\times \sum_{k=1}^{n-2} \frac{e^{i \pi (s_L - s_\Phi)((2k+1)/(2n))}}{\lb \sin\lb \frac{ \pi(2k+1)}{2n}\rb\rb^{2\Delta_L } } +\cdots\Bigg) \\
+=& \lb \frac{n \sin(\pi\ep/n)}{\sin(\pi\ep)}\rb^{-2\Delta_\Phi (n-1)}\lb\frac{\sin(\pi\ep/n)}{\sin(\pi(1+\ep)/n))}\rb^{2\Delta_\Phi}
+% \lb\frac{1}{2\sin(\pi(1+\ep)/n)}\rb^{4h_\beta}
+\times\nn\\
+&\Bigg( 1+{(C_\Phi^L)}^2 e^{4\pi i s_\Phi} \lb\frac{ \sin \lb \pi (1+\ep)/n\rb }{ \sin (\pi \ep / n)}\rb^{2\Delta_\Phi}(\sin(\pi(1+\ep)/n)\sin (\pi \ep/n))^{ \Delta_L} \sum_{k=1}^{n-2} \frac{1}{\lb \sin\lb \frac{ \pi(2k+1)}{2n}\rb\rb^{2\Delta_L} } +\cdots\Bigg)
+\end{align}
+If we did not have any phase term in the sum in the last line of the above equation, then we end up with
+\begin{align}
+    \sum_{k=0}^{n-1} \frac{1}{\sin^2 \lb \pi (2k+1) / (2n)\rb^{\Delta}}= \frac{2}{2n}\sum_{k=1}^{2n-1} \frac{1}{\lb \sin^2\lb \frac{\pi j }{2n}\rb \rb^{\Delta}} -\frac{2}{n}S_2(n,\Delta)
+\end{align}
+Here we wrote the sum over the odd sites to be the sum over all $2n-1$ sites, and subtract the sum over even sites, which is $2S_2(n)/n$. Note that we have to subtract the terms for $k=1,n-1$ as well. 
+Thus we can simplify the sum,
+\begin{align}
+    \sum_{k=1}^{n-2} \frac{1}{\lb \sin\lb \frac{ \pi(2k+1)}{2n}\rb\rb^{2\Delta_L } } = 2^{2\Delta_L}\lb \frac{S_2(2n,\Delta_L)}{n} - \frac{2S_2(n,\Delta_L)}{n} - \frac{2}{\lb \sin(\pi/(2n))\rb^{2\Delta_L}}\rb 
+\end{align} 
+The correction to the divergent piece comes when we take the derivative of $\log$ of the things inside parentheses. 
+We have the divergent piece in the denominator as the common factor. When the derivative hits the summation, we get,
+\begin{align}
+    S_2'(2) -S_2(2) - 2S_2'(1) 
+\end{align}
+While the derivative hitting the term outside the sum gives,
+\begin{align}
+  &  \lb \lb\frac{ \sin \lb \pi (1+\ep)/n\rb }{ \sin (\pi \ep / n)}\rb^{2\Delta_\Phi}(\sin (\pi (1+\ep)/n)\sin (\pi \ep/n))^{ \Delta_L}\rb'\Bigg|_{n=1} \\&= (-1)^{2\Delta_\Phi+\Delta_L}(\pi \ep)^{2\Delta_L} \lb (2\Delta_\Phi + \Delta_L) \lb -\frac{1}{\ep} + \frac{\pi^2 \ep}{3} + \cdots \rb  - 2\Delta_L\lb 1-\frac{\pi^2 \ep^2}{3} \cdots\rb\rb
+    % &\simeq  (-1)^{3\Delta_\Phi+1}\lb 3\Delta_\Phi + \ep (\Delta_L + \Delta_\Phi)\rb \lb \pi \ep\rb^{\Delta_L + \Delta_\Phi} \lb \frac{1}{\ep} - \frac{\pi^2 \ep}{3} + \cdots \rb 
+\end{align}
+So this piece is divergent, but is suppressed from the leading divergent piece. Similarly, the other piece gives,
+\begin{align}
+     S_2'(2,\Delta_L) -1 -2\frac{\sqrt{\pi } \Gamma(\Delta_L + 1)}{4\Gamma (\Delta_L + 3/2)} 
+\end{align}
+where we used $2^{2\Delta_L}S_2(2) = 1$
+We compute $S_2'(2)$ in the appendix \ref{Analytic continuation of S2' at n =2},
+\begin{align}
+    &S_2'(2) = \frac{2^{2\Delta}\sin(\pi \Delta)}{\pi} \lb I(\Delta +2,-2\Delta,1) + I(\Delta ,-2\Delta,1) +2\p_aI(a,-2\Delta,1)|_{a=\Delta} \rb\\
+    & I (a,b,c) = \int_0^1 dt \, t^{a-1}(1-t)^{b-1} (1+t)^{-c} = B(a,b) \,_2F_1(a,c;a+b;-1) \\
+    & \p_a I (a,b,c) = \int_0^1 dt \, t^{a-1}(1-t)^{b-1} (1+t)^{-c} \ln t = \p_a \lb B(a,b) \,_2F_1(a,c;a+b;-1)\rb 
+\end{align}
+As long as $S_2'(2)$ is finite, these corrections are suppressed.
+Finally, we obtain the relative entropy,
+\begin{align}
+    S(\rho_0\|\rho_\Phi) &= - 2\Delta_\Phi \lb \frac{1}{\ep} - \frac{\pi^2\ep}{3} +\cdots \rb \nn \\&+ (-1)^{2\Delta_\Phi + \Delta_L}{(C_\Phi^L)}^2 (\pi \ep)^{2\Delta_L } \Bigg( (2\Delta_\Phi + \Delta_L  ) \lb \frac{1}{\ep} - \frac{\pi^2 \ep}{3}+\cdots\rb+2\Delta_L \lb 1-\frac{\pi^2 \ep^2}{3}\rb \nn \\
+    &- \lb  S_2'(2) +1 - 2\frac{\sqrt \pi \Gamma (\Delta +1)}{4\Gamma (\Delta + 3/2)} \rb\Bigg)
+\end{align}
+
+We need to take the logarithm followed by a $\partial_n$ at $n\to 1$. It is straightforward to see
+\begin{align}
+&  \lb \p_n\log \lb D_n(\ep)^{n-1}\rb\rb_{n\to 1}=0\nn\\
+% & \JM{\lb \p_n\log \lb \frac{n \sin(\pi\ep/n)}{\sin(\pi\ep)}\rb^{-2\Delta_\Phi (n-1)}\rb_{n \to 1}}=0 \nn\\
+&\lb \p_n\log \lb \frac{\sin(\pi\epsilon/n)}{\sin(\pi(1+\epsilon)/n)}\rb\rb_{n\to 1}=\pi\cot(\pi\ep)=\frac{1}{\ep}-\frac{\pi^2 \ep}{3}+O(\ep^3)\nn\\
+&\frac{\sin(\pi\epsilon/n)}{\sin(\pi(1+\epsilon)/n)}=\lb\frac{\pi \ep}{n\sin(\pi/n)} \rb
+\lb 1-\frac{\cot(\pi/n)\pi \ep}{n}+O(\ep^2)\rb
+\end{align}
+Therefore,
+\begin{align}
+  &S(\rho_0\|\rho_\beta)=4h_\beta\lb\frac{1}{\ep}-\frac{\pi^2\ep}{3}\rb- {(C_\beta^L)}^2 \p_n\mathcal{T}(n)|_{n\to 1}+O(\ep^3)\nn\\
+  &\mathcal{T}(n)=\lb\frac{\sin(\pi\epsilon/n)}{\sin(\pi(1+\epsilon)/n)}\rb^{\Delta_L}\sum_{k=0}^{n-2} \lb 2\cos(\pi(1+\ep)/n)-2\cos(2\pi k/n) \rb^{-\Delta_L}\nn\\
+  &=\lb\frac{\pi \ep}{4n}\rb^{\Delta_L}T(n)\lb 1-O(\ep)\rb\nn\\
+  &T(n)=\sum_{k=0}^{n-2}\lb \sin\lb\frac{\pi}{n}\rb\sin\lb\frac{(2k+1)}{2n}\rb\sin\lb \frac{(2k-1)}{2n}\rb\rb^{-\Delta_L}
+\end{align}
+\begin{align*}
+  &S(\rho_0\|\rho_\Phi)=\JM{2\Delta_\Phi \lb\frac{1}{\ep}- \sum_{k=1}^{\infty} \frac{2^{2k}|B_{2k}|} {(2k)!}\ep^{2k-1} 
+  % \frac{\pi^2\ep}{3}
+  \rb - C_\Phi^L \p_n\mathcal{T}(n)|_{n\to 1}}\nn\\
+  &\mathcal{T}(n)=\JM{\lb\sin(\pi\epsilon/n)\sin(\pi(1-\epsilon)/n)\rb}^{\Delta_L}\JM{\sum_{k=1}^{n-2} \lb \frac{1}{\sin(\pi (k+1-\ep/2)/n) \sin (\pi (k+\ep/2) /n)}\rb^{-\Delta_L}}\nn\\
+  &=\JM{\lb\sin(\pi\epsilon/n)\sin(\pi(1-\epsilon)/n)\rb}^{\Delta_L}T(n)\lb 1-O(\ep)\rb\nn\\
+  &T(n)=\JM{\sum_{k=1}^{n-2}\lb \frac{1}{\sin(\pi (k+1-\ep/2)/n) \sin (\pi (k+\ep/2) /n)}\rb^{-\Delta_L}}
+  % {\sin\lb\frac{\pi}{n}\rb}
+  % \rb^{-\Delta_L}}
+\end{align*}
+Therefore,
+\begin{align}
+  S(\rho_0\|\rho_\beta)&=4h_\beta\lb\frac{1}{\ep}-\frac{\pi^2\ep}{3}\rb - {(C_\beta^L)}^2 (\pi \ep)^{\Delta_L} \mathcal{T}'(1)+\cdots
+\end{align}
+\begin{align*}
+  S(\rho_0\|\rho_\beta)&=\JM{2\Delta_{\Phi}\lb\frac{1}{\ep}
+  - \sum_{k=1}^{K} \frac{2^{2k}|B_{2k}|} {(2k)!}\pi^{2k}\ep^{2k-1}
+  %\frac{\pi^2\ep}{3}
+  \rb - C_\Phi^L  \mathcal{T}'(1)}+\cdots
+\end{align*}
+where we have used the fact that at $n=1$ there should be no contribution coming from OPE expansions, so $T(1)=0$.
+
+\JM{Again, with the use of the OPE in eq.~[\ref{eq: general OPE with identity}], we obtain}
+\begin{align}
+ S(\rho_0\|\rho_\beta)&=\JM{(1-\delta_{\Psi \Phi})\lb 2\Delta_{\Phi}\lb\frac{1}{\ep}
+  - \frac{\ep}{3}
+  \rb - C_\Phi  \mathcal{T}'(1)+\cdots\rb}
+\end{align}
+
+This makes it clear that the divergence of $S(\rho_0\|\rho_\beta)$ comes from the $1/(1-x)$ term in the first term with residue that is universally fixed to be $4h_\beta$. The comparison with the relative entropy $S(\rho_0\|\rho_\beta)$ of the coherent states suggests that the term $T(n)$ does not contribute to the relative entropy, i.e. its analytic continuation vanishes at this order.
+
+\subsection{\texorpdfstring{$S_2'(2)$}{ S2'(2)}}\label{Analytic continuation of S2' at n =2}
+We want to compute the derivative of $S_2(n)$ at $n=2$. Thus we require,
+\begin{align}
+    \p_n S_n |_{n=2} &= \frac{1}{2}\sum_{m\geq 1} \lb g(2m) + 2m g'(2m) \rb + \frac{1}{2}\sum_{m\geq 0} \lb g(-2m) -2m g'(-2m) \rb \\
+    &= \frac{1}{2}\sum_{m\geq 1} \lb g(2m) + 2m g'(2m) \rb + \frac{1}{2}\sum_{m\geq 0} \lb g(2m) +2m g'(2m) \rb
+\end{align}
+where in the last line, we used the reflection property ($g(-m) = g(m)$) at integer $m$. Then using the integral representation of $g_{\Delta}(m)$ and $g'_\Delta (m)$, we get,
+\begin{align}
+    \p_n S_n |_{n=2} = \frac{A_\Delta}{2}\left[ \int_0^1 dt \, (1-t)^{-2\Delta} \lb \sum_{m\geq 1}t^{2m+\Delta - 1}(1+2m \ln t) + \sum_{m\geq 0} t^{2m+\Delta - 1}(1+2m \ln t)\rb\right]
+\end{align}
+We use the following geometric sums,
+\begin{align}
+    \sum_{m\geq 1} t^{2m} &= \frac{t^2}{1-t^2},\\
+    \sum_{m\geq 1} 2mt^{2m}&= \frac{2t}{(1-t^2)^2}
+\end{align}
+to obtain,
+\begin{align}
+    \p_n S_n |_{n=2} &= \frac{A_\Delta}{2}\Big( \int_0^1 dt \, t^{\Delta +1}\, (1-t)^{-2\Delta - 1}\, (1+t)^{-1} + \int_0^1 dt \, t^{\Delta -1}\, (1-t)^{-2\Delta - 1}\, (1+t)^{-1} \nn \\
+    & \qquad +2\int_0^1 dt \, t^{\Delta }\, (1-t)^{-2\Delta - 1}\, (1+t)^{-1}\ln t \Big)
+\end{align}
+We use the following identities,
+\begin{align}
+    \int_0^1 dt \, t^{a-1} (1-t)^{b-1} (1+t)^{-c} &= B(a,b)\, _2F_1(a,c;a+b;-1)\\
+    \int_0^1 dt \, t^{a-1} (1-t)^{b-1} (1+t)^{-c} \ln t &= \p_z \lb B(z,b)\, _2F_1(z,c;z+b;-1) \rb|_{z=a}
+\end{align}
+Denote 
+\begin{align}
+    I(a,b,c) = B(a,b) \, _2F_1(a,c;a+b;-1) \\
+\end{align}
+we finally obtain,
+\begin{align}
+    \p_nS_2(n)|_{n=2} = \frac{A_\Delta}{2}\lb I(\Delta + 2,-2\Delta,1) + I(\Delta,-2\Delta,1) +2\p_aI(a,-2\Delta,1)|_{a = \Delta +1}\rb.
+\end{align}
+\subsection{Fisher Information}
+$S(\rho_0 \| y\rho_0 + (1-y)\rho_\Phi)$. 
+
+The denominator starts from 1, coming from $p=0$. For $p=1$, we just have a sum over two-point functions. 
+\begin{align}
+    y^{n-1}\lb 1  + \frac{(n-1) (y^{-1}-1)D_n(\ep)\zeta_n^{2\Delta_\Phi}}{(2\sin(\pi (1-\ep)/n))^{2\Delta_\Phi}}+ \cdots\rb
+\end{align}
+For $p=2$, we can have either have a string of $\Phi \Phi^*$ of length $p=2$, or a pair of $\Phi \Phi^*$ which do not share common site. The contribution from $p=2$ is,
+\begin{align}
+    \lb(y^{-1}-1)D_n(\ep)\rb^2\lb  (n-2)\lb\frac{\sin(\pi \ep/n)}{\sin(\pi (2-\ep)/n)}\rb^{2\Delta_\Phi}  + O\lb \ep^{4\Delta_\Phi}\rb\rb
+\end{align}
+where the higher order terms come from the non-stringy contribution, which is clearly subleading term. 
+Ignoring the non-stringy contribution, we have,
+\begin{align}
+    \mathcal{F}_n = \frac{1}{y^{n-1}\lb 1+ \zeta_n^{2\Delta_\Phi} \sum_{p=1}^{n-1} (n-p)\frac{\lb(y^{-1}-1)(D_n(\ep)\rb^p}{\lb2\sin(\pi (p-\ep)/n)\rb^{2\Delta_\Phi}} + \cdots \rb}
+\end{align}
+If we want to consider $y\to 1$ limit and keep the term up to the order of $(1-y)^2$ to relate it to quantum Fisher information, we thus have the following in the limit $y \to 1$,
+\begin{align}
+    S(\rho_0 \|( \rho_0 + (1-y)(\rho_\Phi - \rho_0))) &= -\log y - \p_n \Bigg(  (n-1)  (y^{-1}-1)D_n(\ep) \lb\frac{\zeta_n}{2\sin(\pi(1-\ep)/n)}\rb^{2\Delta_\Phi}\nn \\
+    &\qquad+ (n-2)\lb(y^{-1}-1)(D_n(\ep)\rb^2\lb\frac{\zeta_n}{2\sin(\pi(2-\ep)/n)}\rb^{2\Delta_\Phi} +\cdots
+    \Bigg)\Bigg|_{n=1}
+\end{align}
+Notice, when the derivative hits $(n-1)$, in the limit $y\to 1$, the contribution from $(y^{-1}-1)\simeq (1-y)$ gets cancelled from $\log y$ expansion. Hence, we are left with terms of order $(1-y)^2$ and higher. Therefore, in the limit $y \to 1$, for coherent states upto the smallest order we have,
+\begin{align}
+    S(\rho_0 \|( \rho_0 + (1-y)(\rho_\beta - \rho_0))) 
+    &\simeq (1-y)^2/2 -\p_n \Bigg[(n-2)\lb(y^{-1}-1)D_n(\ep)\rb^2\lb\frac{\zeta_n}{2\sin(\pi(2-\ep)/n)}\rb^{2\Delta_\Phi}\times \nn\\
+    & \Bigg(1+ 2\beta^2 \lb\frac{\pi \ep}{n}\rb \cot(\pi/n) + \frac{1}{2}\lb 2\beta^2 \lb\frac{\pi \ep}{n}\rb \cot(\pi/n)\rb^2\nn\\&\qquad+ \lb\frac{\pi \ep}{n}\rb^2\beta^2\csc^2(\pi/n)+\cdots\Bigg)
+    \Bigg]\Bigg|_{n=1} \\
+    &\propto (1-y)^2 
+\end{align}
+where in the first line, the first term comes from the expansion of $-\log y$. We also added the corrections due to the three point and four point functions in the first line.
+
+----
+\begin{align}
+S(\rho_0 \|( \rho_0 + (1-y)(\rho_\Phi - \rho_0))) 
+    &= (-1)^{2\Delta_\Phi+1}2^{-2\Delta_\Phi}(1-y)^2 +  (1-y)^2 \p_n\lb D_n(\ep)^2  \lb\frac{\zeta_n}{2\sin(2\pi(1-\ep)/n)}\rb^{2\Delta_\Phi}\rb 
+\end{align}
+where the first term is a result of the derivative hitting $(n-2)$, which gives $(-1)^{2\Delta_\Phi}$ from $\sin(2\pi (1-\ep)/n)^{2\Delta_\Phi}$. We then have,
+\begin{align}
+S(\rho_0 \|( \rho_0 + (1-y)(\rho_\Phi - \rho_0))) 
+    &=  (-1)^{2\Delta_\Phi+1}2^{-2\Delta_\Phi}(1-y)^2 \nn \\ &\qquad\qquad+ (1-y)^2 \p_n\Bigg( \lb\frac{n\sin(\pi \ep/n)}{\sin(\pi \ep)}\rb^{-4\Delta_\Phi}\times 
+\lb\frac{\zeta_n}{2\sin(2\pi(1-\ep)/n)}\rb^{2\Delta_\Phi}\Bigg)  \\ 
+    &= (-1)^{2\Delta_\Phi+1}2^{-2\Delta_\Phi}(1-y)^2 \nn\\
+    & \qquad\qquad+ (1-y)^2 (\sin(\pi \ep))^{4\Delta_\Phi} \times 
+    \p_n\lb\frac{1}{n^2 \sin(\pi \ep/n) \sin(2\pi (1-\ep)/n)}\rb^{2\Delta_\Phi} \\
+    &=(-1)^{2\Delta_\Phi+1}2^{-2\Delta_\Phi}(1-y)^2 + 2\Delta_\Phi (1-y)^2 (\pi \ep)^{4\Delta_\Phi}\Bigg( -2  + \frac{\pi \ep}{n^2} \cot \lb\frac{\pi \ep}{n}\rb   \nn\\
+    &\qquad\qquad +\frac{2\pi (1-\ep)}{n^2} \cot \lb\frac{2\pi (1-\ep)}{n}\rb \Bigg)\Big|_{n=1}\\
+    &= (-1)^{2\Delta_\Phi+1}2^{-2\Delta_\Phi}(1-y)^2 + 2\Delta_\Phi (1-y)^2 (\pi \ep)^{4\Delta_\Phi}\Bigg( -2 + \pi \ep \lb \frac{1}{\pi \ep} - \frac{\pi \ep}{3} + \cdots\rb \nn\\
+    &\qquad \qquad - 2\pi (1-\ep)\lb \frac{1}{2\pi \ep} - \frac{2\pi \ep}{3} + \cdots \rb\Bigg)\\
+    &= (-1)^{2\Delta_\Phi+1}2^{-2\Delta_\Phi}(1-y)^2 + 2\Delta_\Phi (1-y)^2 (\pi \ep)^{4\Delta_\Phi} \lb -\frac{1}{\ep} + \frac{4\pi^2 \ep}{3} - \frac{5\pi^2 \ep^2}{3} + \cdots \rb
+\end{align}
+% \JM{Check the contribution of $\braket{\Phi \mO \Phi^*}$.
+% % It seems, that the contribution has also divergence, but it depends on $\Delta_L,\Delta_\Phi$ which whether it is suppressed or even more divergent.
+% }
+
+% The denominator of $\mathcal{F}_n$ takes the following form when we include the contribution from the three point function,
+% \begin{align}
+%     y^{n-1}\Bigg( 1+ (n-2) \lb (y^{-1}-1)D_n(\ep)\rb^2 \lb\frac{\zeta_n}{\sin(2\pi(1-\ep)/n}\rb^{2\Delta_\Phi}\left[1+ C_\Phi\frac{\lb\zeta_n\sin(2\pi(1-\ep)/n)\rb^{\Delta_L}}{\lb \sin (\pi (1-\ep)/n)\rb^{2\Delta_L}}+\cdots\right]\Bigg)
+% \end{align}
+% where we did not include the $p=1$ case since it has a $(n-1)$ factor sitting infront of it.
+% \begin{align}
+%     &S(\rho_0 \|( \rho_0 + (1-y)(\rho_\Phi - \rho_0)))\big|_{y\to 1} =\nn\\
+%     &\Bigg((-1)^{2\Delta_\Phi +1}2^{-2\Delta_\Phi}(1-y)^2 + 2\Delta_\Phi (1-y)^2  (\pi \ep)^{4\Delta_\Phi}\lb -\frac{1}{\ep} + \frac{4\pi^2 \ep}{3} - \frac{5\pi^2 \ep^2}{3} + \cdots \rb \Bigg) \lb 1 + C_\Phi(-2)^{\Delta_L} (\pi \ep)^{2\Delta_L -2\Delta_\Phi}\rb\nn\\
+%     &+ C_\Phi(1-y)^2 (-1)^{2\Delta_\Phi + \Delta_L + 1 }2^{\Delta_L-2\Delta_\Phi}(\pi \ep)^{4\Delta_\Phi} \Bigg( (\Delta_L - 2\Delta_\Phi)\frac{1}{\ep} + (\Delta_\Phi - 2\Delta_L) \frac{2\pi^2 \ep}{3} \nn \\
+%     & 
+%     -(\Delta_\Phi - 6\Delta_L )\frac{\pi^2 \ep^2}{6} -2( \Delta_\Phi + \Delta_L)\Bigg)
+% \end{align}
+
+If we consider the following,
+\begin{align}
+   & S
+(\rho_\Psi \|( \rho_\Psi + (1-y)(\rho_0 - \rho_\Psi))) \\&\qquad\qquad= \p_n \log \left[\frac{1+\zeta_n^{2\Delta_L}f(n) + \cdots}{y^{n-1}\lb 1+\zeta_n^{2\Delta_L}f(n) + (n-2)\lb (y^{-1}-1)D_n(\ep)\rb^2 \lb\frac{\zeta_n}{2\sin(2\pi(1+\ep)/n}\rb^{2\Delta_\Phi} +\cdots\rb}\right]
+\end{align}
+Here we did not include the contribution from $p=1$ since it does not contribute to the relative entropy, because of the $n-1$ factor sitting in front of it. Also notice that the numerator gets cancelled exactly from the $p=0$ term in the denominator. This gives us,
+\begin{align}
+    S
+(\rho_\Psi \|( \rho_\Psi + (1-y)(\rho_0 - \rho_\Psi))) &=-2^{-2\Delta_\Phi}(1-y)^2 + 2\Delta_\Phi (1-y)^2 (\pi \ep)^{4\Delta_\Phi}\Bigg( -2  + \frac{\pi \ep}{n^2} \cot \lb\frac{\pi \ep}{n}\rb   \nn\\
+    &\qquad\qquad +\frac{2\pi (1+\ep)}{n} \cot \lb\frac{2\pi (1+\ep)}{n}\rb \Bigg)\Big|_{n=1}\\
+    &= -2^{-2\Delta_\Phi}(1-y)^2 + 2\Delta_\Phi (1-y)^2 (\pi \ep)^{4\Delta_\Phi}\Bigg( -2 + \pi \ep \lb \frac{1}{\pi \ep} - \frac{\pi \ep}{3} + \cdots\rb \nn\\
+    &\qquad \qquad + 2\pi (1+\ep)\lb \frac{1}{2\pi \ep} - \frac{2\pi \ep}{3} + \cdots \rb\Bigg)\\
+    &= -2^{-2\Delta_\Phi}(1-y)^2 + 2\Delta_\Phi (1-y)^2 (\pi \ep)^{4\Delta_\Phi}\lb \frac{1}{\ep} - \frac{4\pi^2 \ep}{3} - \frac{5\pi^2 \ep^2}{3} + \cdots \rb
+\end{align}
+Here, we get positive divergence, in contrast to the previous case. 
+\subsection{\texorpdfstring{Pole-matching analytic continuation of $g(p;x)$ and $h(n-p,p;x)$}
 {Pole-matching analytic continuation of g(p;x) and h(n-p,p;x)}}
 
+% \textbf{Pole-matching analytic continuation of }$\mathbf{g(p;x)}$ \textbf{and} $\mathbf{h(n-p,p;x)}$
 
   Here, we reformulate the analytic continuation of the building blocks $g(p;x)$
   and $h(n-p,p;x)$ using the method used in the appendix of 
@@ -7883,56 +7933,6 @@ in accordance with the exact result upto the fourth order.
   so the analytic continuation of $h$ follows once that of $g$ is fixed by the
   pole-matching method.
 
-\section{Old text}
-We want to compute the three point function, to look for the contribution of spin of primaries $\mO_L$ and $\mO_{L'}$. We will compute $\braket{\mO_{L'}(z_0^-) \mO_{L'}(z_0^+) \mO_L(z_k^+)}$ and take the sum over $k =1,\cdots , n-2$. The extra phase term we have to take into account would come from the primary of the OPE of $\Phi^*(z_{k+1}^-) \Phi(z_k^+)$, which is $e^{i \pi s_L(\theta_k + 1/2)}$. The common factors and phases that carry spin are given by,
-\begin{align}
-    &C_{\Psi\Phi}^2C_\Phi e^{3\pi is_{L'}}e^{i\pi s_L/2}\lb\frac{\zeta_1}{\zeta_n}\rb^{2((n-1)\Delta_\Phi + \Delta_\Psi)}\zeta_n^{2\Delta_{L'} + \Delta_L}\times 
-    % &\qquad \qquad \qquad 
-    \sum_{k=1}^{n-2}\braket{\mO_{L'}(z_0^-) \mO_{L'}(z_0^+) \mO_L(z_k^+)} e^{i \pi s_L \theta_k} 
-\end{align}
-We can then write the three point function,
-\begin{align}
-    \braket{\mO_L(z_k^+) \mO_{L'}(z_0^+)\mO_{L'}(z_0^-) } &= C_{\Psi\Phi}^2C_\Phi\frac{e^{-i3\pi (2s_{L'} -s_L)/2}}{\lb2\sin(\pi(1-\ep)/n)\rb^{2\Delta_{L'}-\Delta_L}}\times\nn \\ 
-    & \qquad \qquad \qquad \qquad 
-    \sum_{k=1}^{n-2}\Bigg( \frac{e^{-i\pi s_L(k/n+3/2)}}{\lb2\sin(\pi(k+1-\ep)/n)\rb^{\Delta_L}} \frac{e^{-i\pi s_L((k+1-\ep)/n+1/2)}}{\lb 2\sin(\pi k/n)\rb^{\Delta_L}}\Bigg) \nn \\
-    &= C_{\Psi\Phi}^2C_\Phi e^{-3\pi is_{L'} } e^{-i\pi s_L/2}\lb 2\sin (\pi (1-\ep)/n)\rb^{\Delta_L-2\Delta_{L'}}\times \nn \\
-    &\qquad \qquad \qquad \qquad \sum_{k=1}^{n-2}\frac{e^{-i\pi s_L (2k+1-\ep)/n}}{\lb  4\sin(\pi (k+1-\ep)/n)\sin(\pi k /n)\rb^{\Delta_L}} 
-\end{align}
-% \JM{where in the last step we multiplied the phase $e^{i \pi s_L(\theta_k + 1/2)}$ sitting outside. 
-Hence we get,
-\begin{align}
-    &\mathcal{F}_n = \frac{1+ \zeta_n^{2\Delta_L}f(n)}{(D_n(\ep))^{n-1}\lb \frac{\sin(\pi \ep/n)}{\sin (\pi(1-\ep)/n)}\rb^{2\Delta_{L'}}C_{\Psi \Phi}^2
-    \lb 1 + C_\Phi \, \mathcal{T}(n)\rb} \\
-    &\mathcal{T}(n) = \lb \sin(\pi \ep/n) \sin(\pi (1-\ep)/n) \rb^{\Delta_L}\sum_{k=1}^{n-2} \lb \frac{1}{\sin(\pi (k+1-\ep)/n) \sin (\pi k /n)}\rb^{-\Delta_L}
-\end{align}
-We can compute the relative entropy $S(\rho_\Psi \| \rho_\Phi)$,
-\begin{align}
-    S(\rho_\Psi \| \rho_\Phi) = \p_n \log \mathcal{F}_n \big|_{n=1} & \simeq  2\Delta_{L'}\lb  \frac{1}{\ep} - \sum_{k=1}^{K} \frac{2^{2k}|B_{2k}|} {(2k)!}\ep^{2k-1}
-    % - \frac{\pi^2 \ep}{3}
-    \rb + (\pi \ep)^{2\Delta_L}C_{\Psi}^2\frac{\sqrt{\pi}\Gamma(\Delta_L+1)}{4\Gamma(\Delta_L+3/2)}  \nn \\ &   - C_\Phi  \p_n \mathcal{T}(n)|_{n=1} + \cdots  
-\end{align}
-After using the general OPE with the identity piece given in eq.~[\ref{eq: general OPE with identity}], we get
-\begin{align}
-    S(\rho_\Psi \| \rho_\Phi) = \p_n \log \mathcal{F}_n \big|_{n=1} & \simeq  
-    % (1-\delta_{\Psi \Phi}) 
-    \lb 2\Delta_{L'}\lb  \frac{1}{\ep} - \frac{\ep}{3} + \cdots
-    % - \frac{\pi^2 \ep}{3}
-    \rb  - C_\Phi  \p_n \mathcal{T}(n)|_{n=1} + \cdots \rb 
-\end{align}
-% ----
-%  In the denominator the first two insertions are $\alpha$ and the rest are $\beta$, therefore the product $\prod_{k=0}^{n-1}\delta_{\omega_k\omega_{k+1}}\sim\delta^2_{\alpha\beta}=0$. Since there is no identity operator in the OPE of $V_\alpha$ and $V_{-\beta}$, the only non-vanishing contribution to the denominator comes from the case where we take the OPE of $V_\alpha$ and $V_{-\beta}$ at $z_0^+$ and $z_1^-$ and $V_\beta$ and $V_{-\alpha}$ at $z_0^-$ and $z_1^+$. Therefore,
-%   \begin{align}
-%     g_2(n)=C_{\alpha\beta}^L \lb 2\sin(\pi \ep/n)\rb^{-(\Delta_\alpha+\Delta_\beta)}e^{-2i\pi (\delta s)}
-% (2\sin(\pi \ep/n))^{2\Delta_L}\braket{O_L(0)\mO_L(e^{2\pi i/n})}+\cdots
-% \nn
-%   \end{align}
-
-% ----
-
-% Here, we establish that in the limit of a large subsystem $x\to 1^-$, relative entropy of excited states is universally given by
-% \begin{align}
-%   S(\rho_\alpha\|\rho_\beta)=
-% \end{align}
 
 
 
