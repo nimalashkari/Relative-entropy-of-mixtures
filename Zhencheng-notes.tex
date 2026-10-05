@@ -1,0 +1,1719 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{braket} 
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[mathscr]{eucal}
+\usepackage{bbold}
+\usepackage{braket}
+\usepackage{cite}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage{dsfont}
+\usepackage{here}
+%\usepackage{fancyref}
+\usepackage{framed}
+
+\usepackage{physics}
+\usepackage[normalem]{ulem}
+%\usepackage{showlabels}
+%\usepackage{showkeys}
+\usepackage{tensor}
+\usepackage{thmtools}
+\usepackage{thm-restate}
+\usepackage{enumitem}
+\usepackage{pifont}
+\usepackage{ulem}
+\usepackage{tikz}
+\usetikzlibrary{math} %needed tikz library for setting variables
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{makecell}
+
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+% Use the custom style for your axiom environment
+\usepackage{amsthm}
+
+\usepackage{hyperref}
+\usepackage{cleveref} 
+
+\newtheorem{axiom}{Axiom}
+
+\theoremstyle{plain} 
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{definition} 
+\newtheorem{definition}[theorem]{Definition}
+ 
+\newtheorem*{remark}{Remark}
+\newtheorem{exmp}{Example}
+\makeatother
+
+
+\theoremstyle{plain} 
+\newtheorem{corollary}{Corollary}[theorem]
+ 
+\newtheorem{lemma}[theorem]{Lemma}
+ 
+\newtheorem{Proposition}[theorem]{Proposition}
+\newtheorem{Conjecture}[theorem]{Conjecture}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\definecolor{BSorange}{RGB}{140,50,0}
+\newcommand{\BS}[1]{{\color{BSorange}\footnotesize{(BS) #1}}}
+
+\definecolor{YSblue}{RGB}{65,105,225}
+\newcommand{\YS}[1]{{\color{YSblue}\footnotesize{(YS) #1}}}
+\def\la{\langle}
+\def\ra{\rangle}
+\def\tr{\operatorname{tr}}
+% ===== Journal name macros (RevTeX-style) used by some .bib entries =====
+\providecommand{\prl}{Phys.\ Rev.\ Lett.}
+\providecommand{\pra}{Phys.\ Rev.\ A}
+\providecommand{\prb}{Phys.\ Rev.\ B}
+\providecommand{\prc}{Phys.\ Rev.\ C}
+\providecommand{\prd}{Phys.\ Rev.\ D}
+\providecommand{\pre}{Phys.\ Rev.\ E}
+\providecommand{\prx}{Phys.\ Rev.\ X}
+\providecommand{\rmp}{Rev.\ Mod.\ Phys.}
+\providecommand{\jhep}{J.\ High Energy Phys.}
+\providecommand{\cmp}{Commun.\ Math.\ Phys.}
+\providecommand{\npb}{Nucl.\ Phys.\ B}
+\providecommand{\annphys}{Ann.\ Phys.}
+
+
+
+\interfootnotelinepenalty=10000
+
+\addtolength{\oddsidemargin}{-0.500in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.500in}
+\addtolength{\textheight}{0.700in}
+
+
+\title{Relative entropy of Probabilistic Combination in CFT}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\section{Replica calculation in the OPE limit}
+The relative entropy $S(\rho||\sigma)$ has the following replica representation, with $\rho$ and $\sigma$ normalized:
+\begin{equation}
+    S(\rho||\sigma)=\lim_{n\to 1}\partial_n \log \frac{\tr \rho^n}{\tr \rho \sigma^{n-1}} 
+\end{equation}
+When computing traces using the path integral, generally the density matrices are not normalized, so we should instead have
+\begin{equation}
+    S(\rho||\sigma)=\lim_{n\to 1}\partial_n \log \frac{\tr \rho^n/(\tr \rho)^{n-1}}{\tr \rho \sigma^{n-1}/(\tr \sigma)^{n-1}}.
+\end{equation}
+Now we are interested in this quantity
+\begin{equation}
+    S(\rho||p \rho +(1-p)\sigma)
+\end{equation}
+and we should do the normalization of $\rho$ and $\sigma$ before taking the linear combination. Therefore its replica representation is
+\begin{equation}
+    S(\rho||p \rho +(1-p)\sigma)=\lim_{n\to 1}\partial_n \log \frac{\tr \rho ^n}{\tr[\rho(p\rho +(1-p)q\sigma )^{n-1}]} 
+\end{equation}
+where $q=\tr \rho/\tr \sigma$.
+
+From Nima's paper, we know that the above traces can be computed from correlation functions on some replica manifold. Upon conformal transformation, they are related to correlation functions on the complex plane. To be more specific, 
+\begin{equation}
+    S(\rho||p\rho+(1-p)\sigma)= \lim_{n\to 1} \log \frac{C}{D}
+\end{equation}
+where, assuming the states $\rho$ and $\sigma$ are created by operators $O_a$ and $O_b$ respectively,
+\begin{equation}
+    C=\la (O_a^\dagger O_{a})^n \ra
+\end{equation} and 
+\begin{equation}
+    D=\la O_a^\dagger O_{a} (p O_a^\dagger O_{a} +(1-p)q O_b^\dagger O_{b})^{n-1} \ra
+\end{equation}
+with $q=\frac{\la O_a^\dagger O_{a} \ra}{\la O_b^\dagger O_{b} \ra}$. In all the above $2n$-point functions (including the case $n=1$ in $q$), it should be always understood that the points are located at $z=\exp \left( \frac{2\pi i k}{n} \pm \frac{\pi i x }{n} \right),k=0,...,n-1$ in order. We have thus omitted the locations of the operator insertions.
+\begin{comment}
+We are interested in studying the small interval limit $x\ll 1$ or the large interval limit $1-x\ll 1$. Note that since CFTs have power law correlation functions, the correlators admit Taylor expansion in $x$ (or $1-x$).
+\begin{equation}
+    C=C_0+C_1 x^{c} +\cdots
+\end{equation}
+\begin{equation}
+    D=D_0+D_1 x^{d} +\cdots
+\end{equation}
+Then
+\begin{equation}
+    S= \lim_{n\to 1} \partial_n \left( \log \frac{C_0}{D_0} + C_1x^c -D_1 x^d +\cdots \right)
+\end{equation}
+\end{comment}
+
+
+\subsection{General 2d CFT}
+For simplcity, we only consider scalar operators. 
+\subsubsection{Small interval}
+In the small interval limit, for any operator, it approaches its conjugate operator that has the same ``$k$'' label. Their distance is $\delta \equiv 2 \sin (\pi x/n)$. We need the following OPEs:
+\begin{equation}
+    O_a^\dagger O_a= \frac{1}{\delta^{2\Delta_a}} \left(1+  C_{a^\dagger at} \delta^{\Delta_t} O_t+\cdots\right)
+\end{equation}
+\begin{equation}
+    O_b^\dagger O_b= \frac{1}{\delta^{2\Delta_b}} \left(1+  C_{b^\dagger bt} \delta^{\Delta_t} O_t+\cdots\right)
+\end{equation}
+where $O_t$ is the lightest primary operator with $C_{a^\dagger at}-C_{b^\dagger bt}\neq 0$ in the spectrum. We first assume $\Delta_t < 2$.
+
+First we compute $C$. For the leading term, we only need the identity operator in the OPE. For the next order term, since any one-point function is zero in CFT, the next order is given by the sum over $\la O_t O_t \ra$ two point functions at different locations. Therefore, we get:
+\begin{equation}
+\begin{aligned}
+    C&=\delta^{-2\Delta_a n} \left(1+ \delta^{2\Delta_t}(C_{a^\dagger at})^2\sum_{i<j} \la O_t(i) O_t(j)\ra\right)\\
+    & = \delta^{-2\Delta_a n} \left(1+ \delta^{2\Delta_t}(C_{a^\dagger at})^2\sum_{(i,j),0\leq i<j\leq n-1} (2\sin\frac{(i-j)\pi}{n})^{-2\Delta_t}\right)\\
+    & = \delta^{-2\Delta_a n} \left(1+ \delta^{2\Delta_t}(C_{a^\dagger at})^2\frac{n}{2}T_{\Delta_t}(n)\right)
+\end{aligned}
+\end{equation}
+where 
+\begin{equation}
+    T_{\Delta_t}(n) = \sum_{j=1}^{n-1} (2\sin\frac{\pi j}{n})^{-2\Delta_t}
+\end{equation}
+does not have a closed form except for some special values of $\Delta_t$. For example, when $\Delta_t=1$, $T_1(n)=\frac{n^2-1}{12}$. However, its behavior near $n=1$ is known:
+\begin{equation}
+    T_{\Delta_t}(n)=(n-1) \frac{\sqrt{\pi} \Gamma(\Delta+1)}{2^{2 \Delta+1} \Gamma\left(\Delta+\frac{3}{2}\right)}+O((n-1)^2).
+\end{equation}
+
+When we evaluate $D=\la O_a^\dagger O_{a} (p O_a^\dagger O_{a} +(1-p)q O_b^\dagger O_{b})^{n-1} \ra$, we need to first use the binomial expansion to write it as a sum over different $n$-letter words made out of $O_a^\dagger O_a$ and $O_b^\dagger O_b$, with the first letter fixed to be $O_a^\dagger O_a$. Then use OPE for each pair of operators that are close together. It is not hard to get $q=(2\sin \pi x)^{-2(\Delta_a-\Delta_b)}$. 
+
+The part of $D$ from all-identity is 
+\begin{equation}
+D_1=\delta^{-2\Delta_a} (p \delta^{-2\Delta_a} + q(1-p) \delta^{-2\Delta_b} )^{n-1} 
+\end{equation}
+The next term $D_2$ is from the sum over two point functions,
+\begin{equation}
+    D_2= \sum_{w\in words} \left[\left( \prod_{k=0}^{n-1} \lambda_{w(k)} \right) \left( \sum_{(i,j),0\leq i<j
+    \leq n-1} (c_{w(i)} c_{w(j)} ) \la O_t(i) O_t(j) \ra\right)\right]
+\end{equation}
+where the first sum is over all $n$-letter words with the first letter fixed to be $1$. Here $w(i)=a,b$ is the letter at the $i$-th location. We have $\lambda_a=p \delta^{-2\Delta_a}$, $\lambda_b=(1-p)q \delta^{-2\Delta_b}$, except for the first letter $i=0$ where $\lambda=\delta^{-2\Delta_a}$. We also have $c_a=C_{a^\dagger a t} \delta^{\Delta_t}$ and $c_b=C_{b^\dagger bt} \delta^{\Delta_t}$.
+
+To compute this, we exchange the order of the two sums. We first sum over all different choices of letters for fixed pair $(i,j)$. Then we sum over all pairs $(i,j)$.
+
+When $i=0$, the letter must be $w(0)=a$, but $j$ can be either letter:
+\begin{equation}
+(\lambda_a+\lambda_b)^{n-2} c_a \delta^{-2\Delta_a} (c_a \lambda_a+c_b \lambda_b)  \sum_{j=1}^{n-1}  (2\sin \frac{\pi j}{n})^{-2\Delta_t}
+\end{equation}
+
+When $i\neq 0,j\neq 0$:
+\begin{equation}
+\begin{aligned}
+    &\sum_{(i,j),1\leq i<j\leq n-1} \delta^{-2\Delta_a} (\lambda_a+\lambda_b)^{n-3}  (c_a \lambda_a+c_b \lambda_b)^2 (2\sin \frac{\pi (i-j)}{n})^{-2\Delta_t} \\
+    =& \lambda_a (\lambda_a+\lambda_b)^{n-3}  (c_a \lambda_a+c_b \lambda_b)^2 \frac{n-2}{2} \sum_{j=1}^{n-1}  (2\sin \frac{\pi j}{n})^{-2\Delta_t}
+\end{aligned}
+\end{equation}
+Adding the above two contributions we find
+\begin{equation}
+\begin{aligned}
+    D_2=\frac{1}{2}\delta^{-2\Delta_a} (\lambda_a+\lambda_b)^{n-3}(c_a \lambda_a+c_b \lambda_b)\left[ n (c_a \lambda_a+c_b \lambda_b) +2\lambda_b (c_a-c_b)\right] T_{\Delta_t}(n) 
+\end{aligned}
+\end{equation}
+and $D=D_1+D_2$.
+
+Combining the above, we get
+\begin{equation}
+  \boxed{S(\rho||p\rho+(1-p)\sigma)=\frac{\sqrt{\pi}\Gamma(\Delta_t+1)}{4\Gamma(\Delta_t+3/2)}(1-p)^2 (C_{a^\dagger at}-C_{b^\dagger bt})^2 (\pi x)^{2\Delta_t}}
+\end{equation}
+where $\Delta_t$ is the lightest non-identity operator in the $O_a O_a^\dagger$ or $O_b O_b^\dagger$ OPE.
+
+From this we can also get
+\begin{equation}
+\boxed{S(\sigma||p\rho+(1-p)\sigma)=\frac{\sqrt{\pi}\Gamma(\Delta_t+1)}{4\Gamma(\Delta_t+3/2)}p^2 (C_{a^\dagger at}-C_{b^\dagger bt})^2 (\pi x)^{2\Delta_t}}
+\end{equation}
+by exchanging $a \leftrightarrow b$ and $p\to 1-p$.
+When $\Delta_t>2$, the stress tensor dominates. We need to modify the above calculation. Now the OPE is
+\begin{equation}
+    O_a^\dagger O_a= \frac{1}{\delta^{2\Delta_a}} \left(1+  \frac{2h_a}{c} z^{2} T+\frac{2\bar h_a}{c} \bar z^{2} \bar T+\cdots\right)
+\end{equation}
+\begin{equation}
+    O_b^\dagger O_b= \frac{1}{\delta^{2\Delta_b}} \left(1+  \frac{2h_b}{c} z^{2} T+\frac{2\bar h_b}{c} \bar z^{2} \bar T+\cdots\right)
+\end{equation}
+Also the stress tensor two point functions
+\begin{equation}
+    \la T(z)T(0) \ra = \frac{c/2}{z^4} ,\quad \la \bar T(z)\bar T(0) \ra = \frac{c/2}{\bar z^4}.
+\end{equation}
+Following the previous calculation, we get
+\begin{equation}
+   \boxed{ S(\rho||p\rho+(1-p)\sigma)=(1-p)^2\frac{4}{15}\frac{1}{c} (\Delta_a-\Delta_b)^2 (\pi x)^{4}}
+\end{equation}
+and
+\begin{equation}
+    \boxed{S(\sigma||p\rho+(1-p)\sigma)=p^2\frac{4}{15}\frac{1}{c} (\Delta_a-\Delta_b)^2 (\pi x)^{4}.}
+\end{equation}
+
+Note: the joint convexity 
+\begin{equation}
+    S(\sum_i \lambda_i \rho_i||\sum_i \lambda_i \sigma_i) \leq \sum_i \lambda_i S(\rho_i||\sigma_i)
+\end{equation}
+applied to the current situation is
+\begin{equation}
+    S(\rho_a||p\rho_a+(1-p)\rho_b) \leq (1-p) S(\rho_a||\rho_b)
+\end{equation}
+From the calculation, we see
+\begin{equation}
+    S(\rho_a||p\rho_a+(1-p)\rho_b)=(1-p)^2 S(\rho_a||\rho_b) \leq (1-p) S(\rho_a||\rho_b) 
+\end{equation}
+which is only saturated when $p=0,1$.
+
+When $p=1/2$, $\frac{1}{2}(S(\rho_a||\bar{\rho})+S(\rho_b||\bar{\rho}))\leq \frac{1}{2}(\frac{1}{2}S(\rho_a\|\rho_b)+\frac{1}{2}S(\rho_b\|\rho_a))=\frac{1}{4}(S(\rho_a\|\rho_b)+S(\rho_b\|\rho_a))$, in which $\bar{\rho}=\frac{1}{2}(\rho_a+\rho_b)$. Through the replica-trick calculation, we could derive the LHS is exactly the half of the RHS (the upper bound). In addition, can we extend this to a general case when $\bar{\rho}=\frac{1}{D}\sum_a \rho_a$?
+
+\begin{lemma}
+Let $\rho_a, a=1, \ldots, D$, be reduced density matrices on a small interval $A$, with $x\ll 1$, coming from primary states created by operators $O_a$. Define the equal mixture $\bar{\rho}=\frac{1}{D} \sum_{b=1}^D \rho_b$ , we have
+\begin{equation}
+    \frac{1}{D} \sum_{a=1}^D S\left(\rho_a \| \bar{\rho}\right)=\frac{1}{2}\left[\frac{1}{D^2} \sum_{a, b=1}^D S\left(\rho_a \| \rho_b\right)\right]+\cdots
+\end{equation}
+which means that the small-interval replica-trick answer is one half of the joint-convexity upper bound at the leading nonzero order.
+\end{lemma}
+\begin{proof}
+First, assume that the leading nontrivial small-interval contribution distinguishing the states comes from a primary operator $O_t$ of scaling dimension $\Delta_t<2$. For normalized density matrices, the replica representation is
+\begin{equation}
+  S\left(\rho_a \| \bar{\rho}\right)=\lim _{n \rightarrow 1} \partial_n \log \frac{\operatorname{tr} \rho_a^n}{\operatorname{tr} \rho_a \bar{\rho}^{n-1}} .  
+\end{equation}
+For the equal mixture, the denominator is
+\begin{equation}
+    D_a(n)=\left\langle O_a^{\dagger} O_a\left[\frac{1}{D} \sum_{b=1}^D q_{a b} O_b^{\dagger} O_b\right]^{n-1}\right\rangle
+\end{equation}
+in which $q_{a b}=\frac{\left\langle O_a^{\dagger} O_a\right\rangle}{\left\langle O_b^{\dagger} O_b\right\rangle}$. Here $q_{a b}$ converts the identity part of every $b$-term into the same identity normalization as the $a$-term. In the small interval OPE limit, we have
+\begin{equation}
+O_b^{\dagger} O_b=\frac{1}{\delta_n^{2 \Delta_b}}\left[1+C_{b^{\dagger} b t} \delta^{\Delta_t} O_t+\cdots\right]
+\end{equation}
+in which $\delta_n=2\sin(\frac{2\pi x}{n})$. Therefore,
+\begin{equation}
+    q_{a b} O_b^{\dagger} O_b=q_{a b} \delta_n^{-2 \Delta_b}\left[1+C_{b^{\dagger} b t} \delta^{\Delta_t} O_t+\cdots\right]
+\end{equation}
+Define the n-dependent weight $W_b^{(a)}(n):=q_{a b} \delta_n^{-2 \Delta_b}$, then the mixture insertion becomes
+\begin{equation}
+\begin{aligned}
+\frac{1}{D} \sum_b q_{a b} O_b^{\dagger} O_b&=\frac{1}{D} \sum_b W_b^{(a)}(n)\left[1+C_{b^{\dagger} b t} \delta_n^{\Delta_t} O_t+\cdots\right]\\
+&= \left[\frac{1}{D} \sum_b W_b^{(a)}(n)\right]\left[1+C_{\text {mix }}^{(a)}(n) \delta_n^{\Delta_t} O_t+\cdots\right]
+\end{aligned}
+\end{equation}
+in which $C_{\mathrm{mix}}^{(a)}(n)=\frac{\sum_b W_b^{(a)}(n) C_{b^{\dagger} b t}}{\sum_b W_b^{(a)}(n)}$. The fixed $a$-sheet has $O_a^{\dagger} O_a=\delta_n^{-2 \Delta_a}\left[1+C_a \delta_n^{\Delta_t} O_t+\cdots\right]$. Therefore, for integer $n$, the denominator
+\begin{equation}
+    D_a(n)=\left\langle O_a^{\dagger} O_a\left[\frac{1}{D} \sum_{b=1}^D q_{a b} O_b^{\dagger} O_b\right]^{n-1}\right\rangle
+\end{equation}
+has one fixed sheet with coefficient $C_a$, and $n-1$ mixture sheets with coefficient $C_{\text {mix }}^{(a)}(n)$.
+
+The all-identity contribution is
+\begin{equation}
+   D_{a, 0}(n)=\delta_n^{-2 \Delta_a} \Lambda_a(n)^{n-1} . 
+\end{equation}
+in which $\Lambda_a(n):=\frac{1}{D} \sum_{b=1}^D W_b^{(a)}(n)$.The first nontrivial correction comes from two $O_t$ insertions, since the one-point function vanishes. The two-point function between sheets $i$ and $j$ is
+\begin{equation}
+    \left\langle O_t(i) O_t(j)\right\rangle=\left(2 \sin \frac{\pi(i-j)}{n}\right)^{-2 \Delta_t} .
+\end{equation}
+Define
+\begin{equation}
+   T_{\Delta_t}(n)=\sum_{j=1}^{n-1}\left(2 \sin \frac{\pi j}{n}\right)^{-2 \Delta_t} . 
+\end{equation}
+The pairs involving the fixed sheet 0 give
+\begin{equation}
+   \sum_{j=1}^{n-1}\left\langle O_t(0) O_t(j)\right\rangle=T_{\Delta_t}(n) . 
+\end{equation}
+Their coefficients is $C_a C_{\operatorname{mix}}^{(a)}(n)$. The pairs among the $n-1$ unfixed mixture sheets give
+\begin{equation}
+    \sum_{1 \leq i<j \leq n-1}\left\langle O_t(i) O_t(j)\right\rangle=\frac{n-2}{2} T_{\Delta_t}(n) .
+\end{equation}
+Their coefficient is $
+\left[C_{\operatorname{mix}}^{(a)}(n)\right]^2$. Hence,
+\begin{equation}
+  D_a(n)=\delta_n^{-2 \Delta_a} \Lambda_a(n)^{n-1}\left[1+\delta_n^{2 \Delta_t} T_{\Delta_t}(n)\left(C_a C_{\text {mix }}^{(a)}(n)+\frac{n-2}{2}\left[C_{\text {mix }}^{(a)}(n)\right]^2\right)+\cdots\right]
+\end{equation}
+The numerator is
+\begin{equation}
+C_a(n)=\left\langle\left(O_a^{\dagger} O_a\right)^n\right\rangle  
+\end{equation}
+All $n$ sheets carry the same coefficient $C_a$. Thus
+\begin{equation}
+  C_a(n)=\delta_n^{-2 n \Delta_a}\left[1+\delta_n^{2 \Delta_t} \frac{n}{2} T_{\Delta_t}(n) C_a^2+\cdots\right]  
+\end{equation}
+Now take the logarithm of the ratio. To order $x^{2 \Delta_t}$,
+\begin{equation}
+  \log \frac{C_a(n)}{D_a(n)}=I_a(n)+\delta_n^{2 \Delta_t} T_{\Delta_t}(n) G_a(n)+\cdots,
+\end{equation}
+where the identity-channel part is
+\begin{equation}
+  I_a(n)=\log \frac{\delta_n^{-2 n \Delta_a}}{\delta_n^{-2 \Delta_a} \Lambda_a(n)^{n-1}}=-(n-1)\left[2 \Delta_a \log \delta_n+\log \Lambda_a(n)\right]  
+\end{equation}
+and
+\begin{equation}
+   G_a(n)=\frac{n}{2} C_a^2-C_a C_{\operatorname{mix}}^{(a)}(n)-\frac{n-2}{2}\left[C_{\operatorname{mix}}^{(a)}(n)\right]^2 . 
+\end{equation}
+Therefore,
+\begin{equation}
+    S\left(\rho_a \| \bar{\rho}\right)=\left.\partial_n I_a(n)\right|_{n=1}+\left.\partial_n\left[\delta_n^{2 \Delta_t} T_{\Delta_t}(n) G_a(n)\right]\right|_{n=1}+\cdots
+\end{equation}
+First, for the identity part,
+\begin{equation}
+  \left.\partial_n I_a(n)\right|_{n=1}=-\left[2 \Delta_a \log \delta_1+\log \Lambda_a(1)\right] .  
+\end{equation}
+Since $q_{a b}=\frac{\left\langle O_a^{\dagger} O_a\right\rangle}{\left\langle O_b^{\dagger} O_b\right\rangle}=\frac{\delta_1^{-2 \Delta_a}}{\delta_1^{-2 \Delta_b}}$, we get $
+W_b^{(a)}(1)=\frac{\delta_1^{-2 \Delta_a}}{\delta_1^{-2 \Delta_b}} \delta_1^{-2 \Delta_b}=\delta_1^{-2 \Delta_a}$. Thus every $b$-term has the same weight at $n=1$, and $
+\Lambda_a(1)=\frac{1}{D} \sum_{b=1}^D W_b^{(a)}(1)=\delta_1^{-2 \Delta_a}$. Therefore, $\log \Lambda_a(1)=-2 \Delta_a \log \delta_1$,
+\begin{equation}
+    \left.\partial_n I_a(n)\right|_{n=1}=0
+\end{equation}
+Next consider the $O_t O_t$ contribution, we use
+\begin{equation}
+    T_{\Delta_t}(n)=(n-1) \frac{\sqrt{\pi} \Gamma\left(\Delta_t+1\right)}{2^{2 \Delta_t+1} \Gamma\left(\Delta_t+\frac{3}{2}\right)}+O\left((n-1)^2\right)
+\end{equation}
+Hence $T_{\Delta_t}(1)=0$, and
+\begin{equation}
+ T_{\Delta_t}^{\prime}(1)=\frac{\sqrt{\pi} \Gamma\left(\Delta_t+1\right)}{2^{2 \Delta_t+1} \Gamma\left(\Delta_t+\frac{3}{2}\right)}    
+\end{equation}
+Right now, we compute
+\begin{equation}
+    \begin{aligned}
+& \left.\partial_n\left[\delta_n^{2 \Delta_t} T_{\Delta_t}(n) G_a(n)\right]\right|_{n=1} \\
+& =\left.\left(\partial_n \delta_n^{2 \Delta_t}\right) T_{\Delta_t}(n) G_a(n)\right|_{n=1}+\left.\delta_n^{2 \Delta_t} T_{\Delta_t}^{\prime}(n) G_a(n)\right|_{n=1}+\left.\delta_n^{2 \Delta_t} T_{\Delta_t}(n) G_a^{\prime}(n)\right|_{n=1}
+\end{aligned}
+\end{equation}
+and take $n=1$ limit. Now, we have $C_{\text {mix }}^{(a)}(1)=\frac{\delta_1^{-2 \Delta_a} \sum_b C_b}{D \delta_1^{-2 \Delta_a}}=\frac{1}{D} \sum_{b=1}^D C_b:=\bar{C}_t$. Then, $G_a(1)=\frac{1}{2}\left(C_a-\bar{C}_t\right)^2$. Therefore,
+\begin{equation}
+\begin{aligned}
+S\left(\rho_a \| \bar{\rho}\right)&=\delta_1^{2 \Delta_t} T_{\Delta_t}^{\prime}(1) \frac{1}{2}\left(C_{a^{\dagger} a t}-\bar{C}_t\right)^2+\cdots\\
+&=\frac{\sqrt{\pi} \Gamma\left(\Delta_t+1\right)}{4 \Gamma\left(\Delta_t+\frac{3}{2}\right)}\left(C_{a^{\dagger} a t}-\bar{C}_t\right)^2(\pi x)^{2 \Delta_t}+\cdots .
+    \end{aligned}
+\end{equation}
+in which we took $\sin(\pi x)\approx \pi x$ when $x\rightarrow 0$. 
+
+Now we compare with the pairwise relative entropy. The same replica calculation with the second argument $\rho_b$, instead of $\bar{\rho}$, gives
+\begin{equation}
+  S\left(\rho_a \| \rho_b\right)=\frac{\sqrt{\pi} \Gamma\left(\Delta_t+1\right)}{4 \Gamma\left(\Delta_t+\frac{3}{2}\right)}\left(C_{a^{\dagger} a t}-C_{b^{\dagger} b t}\right)^2(\pi x)^{2 \Delta_t}+\cdots  
+\end{equation}
+Let $A_{\Delta_t}:=\frac{\sqrt{\pi} \Gamma\left(\Delta_t+1\right)}{4 \Gamma\left(\Delta_t+\frac{3}{2}\right)}
+$, then
+\begin{equation}
+    \frac{1}{D} \sum_{a=1}^D S\left(\rho_a \| \bar{\rho}\right)=A_{\Delta_t}(\pi x)^{2 \Delta_t} \frac{1}{D} \sum_{a=1}^D\left(C_a-\bar{C}_t\right)^2+\cdots
+\end{equation}
+On the other hand,
+\begin{equation}
+    \frac{1}{D^2} \sum_{a, b=1}^D S\left(\rho_a \| \rho_b\right)=A_{\Delta_t}(\pi x)^{2 \Delta_t} \frac{1}{D^2} \sum_{a, b=1}^D\left(C_a-C_b\right)^2+\cdots .
+\end{equation}
+Observe that $\sum_{a, b=1}^D\left(C_a-C_b\right)^2=2 D \sum_{a=1}^D\left(C_a-\bar{C}_t\right)^2$, we have
+\begin{equation}
+    \frac{1}{D} \sum_{a=1}^D S\left(\rho_a \| \bar{\rho}\right)=\frac{1}{2}\left[\frac{1}{D^2} \sum_{a, b=1}^D S\left(\rho_a \| \rho_b\right)\right]+\cdots.
+    \label{eq:half-relation}
+\end{equation}
+
+For the case in which the leading contribution is from stress tensor, we have
+\begin{equation}
+    S\left(\rho_a \| \rho_b\right)=\frac{4}{15 c}\left(\Delta_a-\Delta_b\right)^2(\pi x)^4+\cdots
+\end{equation}
+For the equal mixture, define $
+\bar{\Delta}=\frac{1}{D} \sum_{b=1}^D \Delta_b .$ Then the same replica-sheet calculation gives
+\begin{equation}
+  S\left(\rho_a \| \bar{\rho}\right)=\frac{4}{15 c}\left(\Delta_a-\bar{\Delta}\right)^2(\pi x)^4+\cdots  
+\end{equation}
+which also satisfies Eq.~\eqref{eq:half-relation}.
+
+
+
+
+
+    
+\end{proof}
+
+
+\subsubsection{Large interval $1-x\ll 1$}
+
+In the large interval limit, the operator $O_{a/b}^\dagger$ with label $k$ approaches the operator $O_{a/b}$ with label $k+1$. Here the relevant small distance parameter $\bar \delta = 2\sin \frac{(1-x)\pi}{n}$. It is not hard to compute $q=(2\sin [\pi(1-x)])^{-2(\Delta_a-\Delta_b)} $.
+
+We first look at the calculation of $D$. 
+To compute $D$, we need two different OPEs:
+\begin{equation}
+    O_b O_b^\dagger = \frac{1}{\bar\delta^{2\Delta_b}} \left(1+C_{bb^\dagger t} \bar\delta^{\Delta_t} O_t +\cdots \right)
+\end{equation}
+\begin{equation}
+    O_a O_b^\dagger = \frac{1}{\bar\delta^{\Delta_a+\Delta_b}} \left(C_{ab^\dagger s} \bar\delta^{\Delta_s} O_s +\cdots \right)
+\end{equation}
+where $O_s$ is the lightest primary in the $O_a O_{b^\dagger}$ OPE.
+
+The calculation of $D$ is different from before. It turns out that, to compute the first term with non-trival $(1-x)$ dependence, only the leading term in the OPE is needed. 
+
+We first expand $D$ into words. For a given word with $l$ number of $b$, we have a factor $q^l \sim (1-x)^{-2(\Delta_a-\Delta_b)l}$. When a pair of $O_a^\dagger O_a$ or $O_b^\dagger O_b$ contracts, we get $(1-x)^{-2\Delta_a}$ or $(1-x)^{-2\Delta_b}$. When $O_a$ and $O_b$ (or their conjugates) contracts, we get $(1-x)^{-\Delta_a-\Delta_b+\Delta_s}$. Assuming in this word, there are $2r$ locations where $O_a$ and $O_b$ contracts, this term is of order 
+\begin{equation}
+    q^l (1-x)^{-2\Delta_b(l-r)} (1-x)^{-2\Delta_a(n-l-r)} (1-x)^{(-\Delta_a-\Delta_b+\Delta_s)(2r)} \sim (1-x)^{-2\Delta_a n +2\Delta_s r}
+\end{equation}
+
+
+Therefore, we need to avoid $O_a$ $O_b$ contractions as possible to get the first few terms. The leading order term comes from the word where all letters are $a$.
+\begin{equation}
+    D_1= p^{n-1} \la (O_a O_a^\dagger)^n \ra.
+\end{equation}
+For the orders we care in the current calculation, this will cancel $C=\la (O_a O_a^\dagger)^n \ra$ in the final answer. So we don't need to compute $C$.
+
+The next order term comes from the word where there is one continuous block of $b$. 
+\begin{equation}
+\begin{aligned}
+    &D_2=\sum_{k=1}^{n-1} p^{n-k-1}q^{k}(1-p)^k (n-k) \bar \delta^{-2\Delta_b(k-1)} \bar\delta^{2(-\Delta_a-\Delta_b+\Delta_s)} \bar\delta^{-2\Delta_a(n-k-1)}C_{ab^\dagger s} C_{ba^\dagger s} \la O_s(0)O_s(k) \ra    \\
+    =& C_{ab^\dagger s} C_{ba^\dagger s} p^{n-1} \bar \delta^{2\Delta_s}\sum_{k=1}^{n-1} (n-k) \Lambda^k  (2\sin \frac{k\pi}{n})^{-2\Delta_s}\\
+\end{aligned}
+\end{equation}
+where 
+\begin{equation}
+    \Lambda=\frac{1-p}{p}q\bar \delta^{2\Delta_a-2\Delta_b} =\frac{1-p}{p} \left(\frac{\sin[(1-x)\pi/n]}{\sin(1-x)\pi} \right)^{2\Delta_a-2\Delta_b} = \frac{1-p}{p}n^{-(2\Delta_a-2\Delta_b)} + O((1-x)^2).
+\end{equation}
+The sum
+\begin{equation}
+   W_{\Delta_s}(n,p)= \sum_{k=1}^{n-1} (n-k)\left(\frac{1-p}{p}n^{-(2\Delta_a-2\Delta_b)}\right)^k (2\sin \frac{\pi k}{n})^{-2\Delta_s}
+\end{equation}
+has the following analytic form near $n=1$:
+\begin{equation}
+    W_{\Delta_s} (n,p)=(n-1) A_{\Delta_s}(p) + O((n-1)^2)
+\end{equation}
+   \begin{equation}
+    A_{\Delta_s} (p) =\left(\frac{1-p}{p}\right)^{1 / 2} \frac{\left|\Gamma\left(\Delta_s+1+\frac{i \log [(1-p)/p]}{2 \pi}\right)\right|^2}{\Gamma(2 \Delta_s+2)}\left[\frac{1}{2}+\frac{1}{\pi} \operatorname{Im} \psi\left(\Delta_s+1+\frac{i \log [(1-p)/p]}{2 \pi}\right)\right]
+\end{equation}
+where $\psi$ is the digamma function.
+
+The function $A_{\Delta_s}$ simplifies when $p=1/2$,
+\begin{equation}
+    A_{\Delta_s}(1/2)= \frac{\sqrt{\pi}\Gamma(\Delta_s+1)}{2^{2\Delta_s}4\Gamma(\Delta_s+3/2)}=\frac{\Gamma(\Delta_s+1)^2}{2\Gamma(2\Delta_s+2)}.
+\end{equation}
+
+\begin{comment}
+\begin{equation}
+    W_\Delta (n,\Lambda)=(n-1) A_\Delta(\Lambda) + O((n-1)^2)
+\end{equation}
+   \begin{equation}
+    A_\Delta (\Lambda)=\Lambda^{1 / 2} \frac{\left|\Gamma\left(\Delta+1+\frac{i \log \Lambda}{2 \pi}\right)\right|^2}{\Gamma(2 \Delta+2)}\left[\frac{1}{2}+\frac{1}{\pi} \operatorname{Im} \psi\left(\Delta+1+\frac{i \log \Lambda}{2 \pi}\right)\right]
+\end{equation}
+where $\psi$ is the digamma function.  
+\end{comment}
+
+
+The final answer is
+\begin{equation}
+\begin{aligned}
+ &S(\rho|p\rho+(1-p)\sigma)=\lim_{n\to 1}\partial_n \log\frac{C}{D} \\
+=& -\log p -\lim_{n\to 1}\partial_n (C_{ab}^s C_{ba}^s p^{n-1} \bar \delta^{2\Delta_s} W_{\Delta_s}(n))\\
+=&-\log p - C_{ab^\dagger s} C_{ba^\dagger s} (2\pi (1-x))^{2\Delta_s} A_{\Delta_s} (p)
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+   \boxed{ S(\rho|p\rho+(1-p)\sigma)= -\log p - C_{ab^\dagger s} C_{ba^\dagger s} (2\pi (1-x))^{2\Delta_s} A_{\Delta_s} (p)}
+\end{equation}
+where $\Delta_s$ is the conformal weight of the lightest operator in $O_a O_{b^\dagger}$ OPE. By exchanging $a \leftrightarrow b$ and take $p\to 1-p$, we can get
+\begin{equation}
+   \boxed{ S(\sigma|p\rho+(1-p)\sigma)= -\log (1-p) - C_{ab^\dagger s} C_{ba^\dagger s} (2\pi (1-x))^{2\Delta_s} A_{\Delta_s} (1-p)}
+\end{equation}
+
+
+When $p=1/2$, the answer simplifies
+\begin{equation}
+   \boxed{ S(\rho|(\rho+\sigma)/2)=S(\sigma|(\rho+\sigma)/2)= \log 2 - \frac{\Gamma(\Delta_s+1)^2}{2\Gamma(2\Delta_s+2)}C_{ab^\dagger s} C_{ba^\dagger s} (2\pi (1-x))^{2\Delta_s}  }
+\end{equation}
+
+\begin{comment}
+When the leading contribution is the stress tensor,
+    \begin{equation}
+    S(\rho|p\rho+(1-p)\sigma)= -\log p - C_{ab^\dagger s} C_{ba^\dagger s} (2\pi (1-x))^{2\Delta_s} A_{\Delta_s} \left(\frac{1-p}{p}\right)
+\end{equation}
+\end{comment}
+\subsubsection{Analytic continuation of the sum}
+Here we study analytic behavior of the sum near $n=1$:
+\begin{equation}
+   W(n)= \sum_{k=1}^{n-1}(n-k)\Lambda^k (2\sin \frac{k\pi}{n})^{-2\Delta}.
+\end{equation}
+We first symmetrize the sum. Note that $\sin\frac{k\pi}{n}=\sin \frac{(n-k)\pi}{n}$, so
+\begin{equation}
+    W(n) = \frac{1}{2}\sum_{k=1}^{n-1} [(n-k)\Lambda^k+k\Lambda^{n-k}] (2\sin\frac{k\pi}{n})^{-2\Delta}
+\end{equation}
+
+We first note that the sum can be written as a contour integral in the complex plane:
+\begin{equation}
+   \frac{1}{2\pi i} \oint_C dz \frac{1}{2}\left[(n-\frac{nz}{2\pi})\Lambda^\frac{nz}{2\pi}+\frac{nz}{2\pi}\Lambda^{n-\frac{nz}{2\pi}}\right] (2\sin \frac{z}{2})^{-2\Delta} \frac{n}{2}\cot \frac{n z}{2}
+\end{equation}
+where the contour $C$ encloses the poles at $z=\frac{2\pi k}{n}$, $k=1,...,n-1$, but not the branch points at $z=0,2\pi$. We can check this is the answer by residue theorem.
+
+{\centering
+\includegraphics[width=0.5\linewidth]{contour.png}}
+
+For convenience, let's define
+\begin{equation}
+    B_n(z)=(n-\frac{nz}{2\pi})\Lambda^\frac{nz}{2\pi}+\frac{nz}{2\pi}\Lambda^{n-\frac{nz}{2\pi}}
+\end{equation}
+\begin{equation}
+    K_n(z)=(2\sin \frac{z}{2})^{-2\Delta} \frac{n}{2}\cot \frac{n z}{2}
+\end{equation}
+
+Note that the obstacle to $n\to 1$ is that, the pole at $z=\frac{2\pi}{n}$ will cross the contour and merge with the branch point at $z=2\pi$. Therefore we should first deform to a better contour and then take the limit. 
+
+We can check that the integrand $\to 0$ when $z=x+i y$, $0<x<2\pi$, $y\to \pm \infty$. Therefore, we can deform the contour to be
+\begin{equation}
+    \int_{z=2\pi-\epsilon-i\infty}^{z=2\pi-\epsilon+i\infty} dz - \int_{z=\epsilon-i\infty}^{z=\epsilon+i\infty} dz 
+\end{equation}
+for some fixed $0<\epsilon<2\pi/n$. Note that $B(2\pi-z)=B(z)$, $K(2\pi-z)=-K(z)$. Therefore we can write the integral as 
+\begin{equation}
+   - \frac{1}{2\pi i} \int_{z=\epsilon-i\infty}^{z=\epsilon+i\infty} dz B_n(z) K_n(z).
+\end{equation}
+Now we can expand the integrand, which becomes \BS{Nima commented around here if we can justify the expansion commutes with integral.}
+\begin{equation}
+    B_1(z)K_1(z) + \left(\partial_n B_n(z)|_{n\to 1}K_1(z)+B_1(z)\partial_n K_1(z)|_{n\to 1} \right)(n-1) +\cdots
+\end{equation}
+where
+\begin{equation}
+    B_1(z)= \frac{
+z\,\Lambda^{1-\frac{z}{2\pi}}
++
+(2\pi-z)\Lambda^{\frac{z}{2\pi}}
+}
+{2\pi}
+\end{equation}
+\begin{equation}
+    K_1(z) =  (2\sin\frac{z}{2})^{-2\Delta-2}\sin z
+\end{equation}
+\begin{equation}
+    \partial_n B_n(z)|_{n\to 1} = \frac{1}{4\pi^2}
+\left[
+z\,\Lambda^{1-\frac{z}{2\pi}}
+\left(2\pi+(2\pi-z)\log\Lambda\right)
++
+(2\pi-z)\Lambda^{\frac{z}{2\pi}}
+\left(2\pi+z\log\Lambda\right)
+\right]
+\end{equation}
+\begin{equation}
+    \partial_n K_n(z)|_{n\to 1} =(\sin z -z)(2\sin \frac{z}{2})^{-2(\Delta+1)}.
+\end{equation}
+There are no poles between $0$ and $2\pi$, so for the integral at this order, we can safely and conveniently move the contour to $\pi+is,s\in\mathbb{R}$. 
+
+First of all, we find the leading term vanishes
+\begin{equation}
+  -\frac{1}{2\pi} \int_{-\infty}^\infty ds B_1(\pi+is)K_1(\pi+is)=0.
+\end{equation}
+
+Then at order $O(n-1)$, we use the fact that
+\begin{equation}
+    \partial_n B_n(\pi+is)|_{n\to 1} = \partial_n B_n(\pi-is)|_{n\to 1}, \quad K_1(\pi+is)=-K_1(\pi-is),
+\end{equation}
+to find the first term vanishes under integral. Now we have
+\begin{equation}
+\begin{aligned}
+    &-\frac{1}{2\pi}\int_{-\infty}^\infty ds \frac{\Lambda^{\frac{1}{2}-\frac{i s}{2\pi}}}{2\pi}
+\left[
+s-i\pi-(s+i\pi)\Lambda^{\frac{i s}{\pi}}
+\right]
+\left(2\cosh\frac{s}{2}\right)^{-2(\Delta+1)}
+\left(s+\sinh s-i\pi\right)\\
+=&-\frac{\Lambda^{1 / 2}}{2 \pi} \int_{-\infty}^{\infty} d s\left[(\pi+i s) e^{-i \alpha s}+(\pi-i s) e^{i \alpha s}\right][\pi+i(s+\sinh s)] \left(2\cosh\frac{s}{2}\right)^{-2(\Delta+1)}\\
+=& -\Lambda^{1 / 2} \int_{-\infty}^{\infty} d s(\pi+i s) e^{-i \alpha s} \left(2\cosh\frac{s}{2}\right)^{-2(\Delta+1)}
+\end{aligned}
+\end{equation}
+where $\alpha= \frac{\log \Lambda}{2\pi}$, and we dropped the part odd in $s$ in the final equation.
+
+Evaluating this integral gives
+\begin{equation}
+\Lambda^{1/2}
+\frac{
+\Gamma\!\left(\Delta+1+\frac{i\log\Lambda}{2\pi}\right)
+\Gamma\!\left(\Delta+1-\frac{i\log\Lambda}{2\pi}\right)
+}{
+\Gamma(2\Delta+2)
+}
+\left[
+\frac{1}{2}
++
+\frac{1}{\pi}\operatorname{Im}
+\psi\!\left(\Delta+1+\frac{i\log\Lambda}{2\pi}\right)
+\right].
+\end{equation}
+As a quick check, when $\Lambda=1$, this gives the answer of Cardy-Calabrese-Tonni:
+\begin{equation}
+    \frac{\Gamma(\Delta+1)^2}{2\Gamma(2\Delta+2)} = \frac{\sqrt{\pi}\Gamma(\Delta+1)}{2^{2\Delta}4\Gamma(\Delta+3/2)}
+\end{equation}
+
+\subsection{Free boson CFT}
+Now we go the free boson CFT and study the small and large interval limits.
+
+We are interested in primary states created by vertex operators $V_a = : e^{ia\phi+i\bar a\bar\phi}:$, whose conformal weight is $(h,\bar h) = (\frac{a^2}{2},\frac{\bar a^2}{2})$. Here are the relevant OPEs:
+\begin{equation}
+    V_a(z_1) V_{-a}(z_2) = z_{12}^{-a^2}\left[ 1+a z_{12}J(z_2) + a \bar z_{12}\bar J(z_2)+\cdots \right]
+\end{equation}
+\begin{equation}
+    V_a (z_1)V_b(z_2) = z_{12}^{ab} \left[ V_{a+b}+ a z_{12} \partial V_{a+b}(z_2) +\cdots  \right]
+\end{equation}
+where $J=i\partial \phi$ is the conserved current, with vanishing one point function, and two point function
+\begin{equation}
+    \la J(z_1) J(z_2) \ra = \frac{1}{z_{12}^2}.
+\end{equation}
+
+\subsubsection{Small interval limit $x \ll 1$}
+In the small interval limit, $J$ plays the role of the lightest primary in $V_a V_{-a}$ OPE. Define $\Delta_{ab}=(a-b)^2+(\bar a-\bar b)^2$,
+\begin{equation}
+ S(\rho_a||p\rho_a+(1-p)\rho_b) = \frac{1}{3}\pi^2(1-p)^2\Delta_{ab} x^2+\cdots
+\end{equation}
+
+\begin{equation}
+S(\rho_b||p\rho_a+(1-p)\rho_b) = \frac{1}{3}\pi^2p^2\Delta_{ab} x^2+\cdots
+\end{equation}
+
+\subsubsection{Large interval limit $1-x \ll 1$ }
+Again define $\Delta_{ab}=(a-b)^2+(\bar a-\bar b)^2$,
+\begin{equation}
+    S(\rho_a||p \rho_a +(1-p)\rho_b)= -\log p - A_{\Delta_{ab}/2}(p)[2\pi(1-x)]^{\Delta_{ab}} +\cdots.
+\end{equation}
+\begin{equation}
+    S(\rho_b||p \rho_a +(1-p)\rho_b)= -\log (1-p) - A_{\Delta_{ab}/2}(1-p)[2\pi(1-x)]^{\Delta_{ab}} +\cdots.
+\end{equation}
+When $p=1/2$, this reduces to 
+\begin{equation}
+    S(\rho_a|| (\rho_a +\rho_b)/2)=S(\rho_b|| (\rho_a +\rho_b)/2)=\log 2 - \frac{\Gamma(1+\Delta_{ab}/2)^2}{2\Gamma(2+\Delta_{ab})}[2\pi(1-x)]^{\Delta_{ab}}.
+\end{equation}
+
+\subsection{Ising CFT}
+For Ising CFT, we can study the small and large interval limits similarly. In Ising CFT, $c=1/2$, and there are three primaries, $I,\sigma,\epsilon$ with conformal dimensions $\Delta=0,1/8,1$ respectively.
+
+In Ising CFT, the OPEs are
+\begin{equation}
+    \sigma(z_1)\sigma(z_2) = |z_{12}|^{-1/4}[1+ \frac{1}{2} |z_{12}| \epsilon(z_2)+\cdots]
+\end{equation}
+\begin{equation}
+    \epsilon(z_1)\epsilon(z_2) = |z_{12}|^{-2}[1+ 2 z_{12}^2 T(z_2) +2 \bar z_{12}^2 \bar T(z_2) +\cdots]
+\end{equation}
+\begin{equation}
+   \epsilon(z_1) \sigma(z_2) = \frac{1}{2}|z_{12}|^{-1}[\sigma(z_2)+ 4z_{12} \partial \sigma(z_2) + 4\bar z_{12}\bar \partial \sigma(\bar z_2) +\cdots]
+\end{equation}
+\begin{equation}
+   \sigma(z_1) \epsilon(z_2) = \frac{1}{2}|z_{12}|^{-1}[\sigma(z_2)-3z_{12} \partial \sigma(z_2) -3\bar z_{12}\bar \partial \sigma(\bar z_2) +\cdots]
+\end{equation}
+
+For small interval, the relative entropies are (note that the stress tensor contributes to the $\epsilon \epsilon$ OPE):
+\begin{equation}
+    S(\rho_I|| p\rho_I+(1-p)\rho_\sigma) = \frac{1}{12}\pi^2(1-p)^2 x^2+\cdots
+\end{equation}
+\begin{equation}
+    S(\rho_\sigma|| p\rho_I+(1-p)\rho_\sigma) = \frac{1}{12}\pi^2 p^2 x^2+\cdots
+\end{equation}
+\begin{equation}
+    S(\rho_I|| p\rho_I+(1-p)\rho_\epsilon) =\frac{8}{15}(1-p)^2\pi^4 x^4 
+\end{equation}
+\begin{equation}
+    S(\rho_\epsilon|| p\rho_I+(1-p)\rho_\epsilon) =\frac{8}{15} p^2\pi^4 x^4 
+\end{equation}
+\begin{equation}
+    S(\rho_\sigma|| p\rho_\sigma+(1-p)\rho_\epsilon)  = \frac{1}{12}(1-p)^2\pi^2 x^2 
+\end{equation}
+\begin{equation}
+    S(\rho_\epsilon|| p\rho_\sigma+(1-p)\rho_\epsilon)  = \frac{1}{12}p^2\pi^2 x^2 
+\end{equation}
+
+For large interval,
+\begin{equation}
+    S(\rho_I|| p\rho_I+(1-p)\rho_\sigma) =-\log p -A_{1/8}(p) [2\pi(1-x)]^{1/4} 
+\end{equation}
+\begin{equation}
+   S(\rho_I|| p\rho_I+(1-p)\rho_\epsilon) =-\log p -A_{1}(p)  [2\pi(1-x)]^2
+\end{equation}
+\begin{equation}
+    S(\rho_\sigma|| p\rho_\sigma+(1-p)\rho_\epsilon) =-\log p -\frac{1}{4} A_{1/8}(p) [2\pi(1-x)]^{1/4}
+\end{equation}
+When $p=1/2$, the above formulas simplify:
+\begin{equation}
+    S(\rho_I|| (\rho_I+\rho_\sigma)/2)=S(\rho_\sigma|| (\rho_I+\rho_\sigma)/2) =\log 2 -\frac{\pi^{3/4}}{4}\frac{\Gamma(9/8)}{\Gamma(13/8)}(1-x)^{1/4} 
+\end{equation}
+\begin{equation}
+   S(\rho_I|| (\rho_I+\rho_\epsilon)/2)=S(\rho_\epsilon|| (\rho_I+\rho_\epsilon)/2)  =\log 2 -\frac{\pi^2}{3} (1-x)^2
+\end{equation}
+\begin{equation}
+     S(\rho_\sigma|| (\rho_\sigma+\rho_\epsilon)/2)=S(\rho_\epsilon|| (\rho_\sigma+\rho_\epsilon)/2) =\log 2 -\frac{\pi^{3/4}}{16}\frac{\Gamma(9/8)}{\Gamma(13/8)} (1-x)^{1/4}.
+\end{equation}
+where $\frac{\pi^{3/4}}{4}\frac{\Gamma(9/8)}{\Gamma(13/8)}\approx 0.620$
+
+\section{Numerical test for probabilistic combinations}
+
+Right now, we have analytical wavefunction of the bosonic Laughlin state, which gives us opportunity to test the compact free boson CFT. Meanwhile, we can calculate the mutual information between the small subsystem $A$ (single interval) and reference system $R$ on the maximally entangled state relatively easier than directly calculate the relative entropy on the large complement. Denote the maximally entangled state by $\ket{\psi_{\text{QR}}}=\frac{1}{\sqrt{D}}\overunderset{D}{i=1}{\sum}\ket{\psi_Q^{(i)}}\otimes \ket{i}_R$, we have coherent information loss
+\begin{equation}
+\begin{aligned}
+    \Delta(A) = I(A:R)_{\ket{\psi_{\text{QR}}}}= \log D +\frac{1}{D} \sum_i  \left( S(\rho^i_{A} || \bar{\rho}_{A}) - S(\rho^i_{\bar{A}} || \bar{\rho}_{\bar{A}}) \right),
+\end{aligned}
+\end{equation}
+in which $\bar{\rho}_{A}=\operatorname{Tr}_{\bar{A}}(\ket{\psi_{\text{QR}}}\bra{\psi_{\text{QR}}})=\frac{1}{D}\overunderset{D}{i=1}{\sum}\rho_A^{(i)}$, $D$ is the number of logical states.
+
+Test example: Compact free boson CFT ($R=\sqrt{2}$) on 1D chain (thus, non-chiral, will be discussed later), code subspace: $\{\ket{00},\ket{ss}\}$, in which $\ket{00}$ corresponds to vacuum, $\ket{ss}$ corresponds to two-semion (wiht charge $q=+\frac{1}{2}$) state.
+
+For full free boson theory (after we collapse the $\nu=1/2$ ($\alpha_L=\alpha_R=\frac{1}{\sqrt{2}}$) Laughlin state from cylinder to 1D chain), we have the vertex operator
+\begin{equation}
+    V_{\alpha_L, \alpha_R}(z, \bar{z})=: e^{i \alpha_L \phi(z)+i \alpha_R \phi(\bar{z})}
+\end{equation}
+And conformal weights
+\begin{equation}
+    (h, \bar{h})=\left(\frac{\alpha_L^2}{2}, \frac{\alpha_R^2}{2}\right)
+\end{equation}
+Now we have two U(1) currents (holomorphic and antiholomorphic)
+\begin{equation}
+    J(z)=i \partial \phi(z), \quad \bar{J}(\bar{z})=i \bar{\partial} \bar{\phi}(\bar{z})
+\end{equation}
+They are the lightest primaries that couples with vacuum and primary state created by $V_{\alpha_L, \alpha_R}(z, \bar{z})$ differently, with $\Delta_J=\Delta_{\bar{J}}=1$. Thus, for full free boson, we have
+\begin{equation}
+    S\left(\rho_{V_{\alpha_L,\alpha_R}}^{A} \| \rho_{\mathrm{vac}}^{A}\right)=S\left(\rho_{A}^{\ket{00}} \| \rho_{A}^{\ket{ss}}\right)=\frac{1}{3}(\alpha_L^2+\alpha_R^2)(\pi x)^2=\frac{1}{3}(\pi x)^2
+\end{equation}
+in which $x:=\frac{|A|}{L_x}=\operatorname{Arc}(A)/2\pi\ll 1$.
+
+
+
+Right now, we need to consider when $x$ is no longer restricted to $x\ll 1$. 
+
+Task 1: relative entropy on average state
+\begin{equation}
+    S\left(\rho_{A}^{\ket{00}} \|\frac{1}{2}(\rho_{A}^{\ket{00}}+ \rho_{A}^{\ket{ss}})\right),\quad S\left(\rho_{A}^{\ket{ss}} \|\frac{1}{2}(\rho_{A}^{\ket{00}}+ \rho_{A}^{\ket{ss}})\right)
+\end{equation}
+
+\begin{enumerate}
+    \item For $x\ll 1$, this quantity is easy, we can calculate it directly for $N=16,18,20,22,24$ and $|A|=2,3,4$. Results:~\cref{fig:task1_small}.
+    
+    \item For $x \rightarrow 1$, this is kind of tricky since the direct calculation is hard. Thus, we need to first calculate $I(\bar{A}:R)_{\ket{\psi_{\text{QR}}}}$ and relative entropies one= small $|\bar{A}|=2,3,4$ ($N=16,18,20,22,24$), then we can derive the relative entropy on the large $A$ by
+    \begin{equation}
+    \begin{aligned}
+    &\log 2-\frac{1}{2}\left(S\left(\rho_{A}^{\ket{00}} \|\frac{1}{2}(\rho_{A}^{\ket{00}}+ \rho_{A}^{\ket{ss}})\right)+S\left(\rho_{A}^{\ket{ss}} \|\frac{1}{2}(\rho_{A}^{\ket{00}}+ \rho_{A}^{\ket{ss}})\right)\right)\\
+    &=I(A:R)_{\ket{\psi}_{\text{QR}}}-\frac{1}{2}\left(S\left(\rho_{\bar A}^{\ket{00}} \|\frac{1}{2}(\rho_{\bar A}^{\ket{00}}+ \rho_{\bar A}^{\ket{ss}})\right)+S\left(\rho_{\bar A}^{\ket{ss}} \|\frac{1}{2}(\rho_{\bar A}^{\ket{00}}+ \rho_{\bar A}^{\ket{ss}})\right)\right)
+    \end{aligned}
+    \end{equation}
+\end{enumerate}
+
+Results:~\cref{fig:task1_large_2}.
+
+Task 2: relative entropy on probabilistic combination of states
+
+\begin{equation}
+    S\left(\rho_{A}^{\ket{00}}\|p_0\rho_{A}^{\ket{00}}+p_s\rho_{A}^{\ket{ss}}\right),\quad S\left(\rho_{A}^{\ket{ss}}\|p_0\rho_{A}^{\ket{00}}+p_s\rho_{A}^{\ket{ss}}\right)\quad p_0+p_s=1
+\end{equation}
+
+\begin{enumerate}
+    \item For $x\ll 1$, this quantity is easy, we can calculate it directly for $N=16,18,20,22,24$ and $|A|=2,3,4$. For the probabilities, try $p_0=0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9$. Results:~\cref{fig:task2_small}.
+    \item For $x \rightarrow 1$, this time we are not doing things with the maximally entangled state. We may use the following state instead
+    \begin{equation}
+        \ket{\psi_{\text{QR}}(p)}=\overunderset{D}{i=1}{\sum}\sqrt{p_i}\ket{\psi_Q^{(i)}}\otimes \ket{i}_R,\quad \overunderset{D}{i=1}{\sum}p_i=1
+    \end{equation}
+\end{enumerate}
+\YS{This might make things different.} All the other things remain the same: $N=16,18,20,22,24$ and $|A|=2,3,4$, $p_0=0.1, 0.2, 0.3, 0.4, 0.5,$ $0.6 ,0.7, 0.8, 0.9$. We can still only calculate the summation.
+
+Right now, the mutual information formula is slightly different from the previous one. Denote the weighted average reduced density matrix as $\bar{\rho}_A^{(p)}=\sum_i p_i \rho_A^i, \bar{\rho}_{\bar{A}}^{(p)}=\sum_i p_i \rho_{\bar{A}}^i$, we have
+\begin{equation}
+    I(A:R)_{\ket{\psi_{QR}(p)}}=H(p)+\sum_i p_i\left[ S(\rho_A^i\| \bar{\rho}_A^{(p)})-S(\rho_{\bar{A}}^i\| \bar{\rho}_{\bar{A}}^{(p)})\right]
+\end{equation}
+Thus, for the two logical states we are using, we have
+\begin{equation}
+    \begin{aligned}
+    &H(p_0) -\left(p_0S\left(\rho_{A}^{\ket{00}} \|(p_0\rho_{A}^{\ket{00}}+p_s \rho_{A}^{\ket{ss}})\right)+p_sS\left(\rho_{A}^{\ket{ss}} \|(p_0\rho_{A}^{\ket{00}}+ p_s\rho_{A}^{\ket{ss}})\right)\right)\\
+    &=I(A:R)_{\ket{\psi_{\text{QR}(p)}}}-\left(p_0S\left(\rho_{\bar A}^{\ket{00}} \|(p_0\rho_{\bar A}^{\ket{00}}+p_s \rho_{\bar A}^{\ket{ss}})\right)+p_sS\left(\rho_{\bar A}^{\ket{ss}} \|(p_0\rho_{\bar A}^{\ket{00}}+p_s \rho_{\bar A}^{\ket{ss}})\right)\right)
+    \end{aligned}
+    \end{equation}
+in which $H(p_0)=-p_0\log p_0-p_s\log p_s$ and $p_0+p_s=1$.
+
+Results:~\cref{fig:task2_large_2}.
+
+Task 3: 
+\begin{equation}
+S\left(p_0\rho_{A}^{\ket{00}}+p_s\rho_{A}^{\ket{ss}}\|\rho_{A}^{\ket{00}}\right),\quad S\left(p_0\rho_{A}^{\ket{00}}+p_s\rho_{A}^{\ket{ss}}\|\rho_{A}^{\ket{ss}}\right)\quad p_0+p_s=1
+\end{equation}
+
+No trick available here, just calculate: $N=16,18,20,22,24$ and $|A|=2,3,4$, $p_0=0.1, 0.2, 0.3, 0.4,$ $ 0.5, 0.6, 0.7, 0.8, 0.9$. Results:~\cref{fig:task3}.
+
+\begin{figure}[H]
+       \centering
+    
+    \includegraphics[width=0.85\linewidth]{figs/task1_small_equal_mixture_vs_x.pdf}
+       \includegraphics[width=0.85\linewidth]{figs/task1_small_power_law_fit_curves_vs_x.pdf}
+       \caption{Realtive entropy: $S(\rho_A^{\ket{00}}\|\bar{\rho}_A)$ and $S(\rho_A^{\ket{ss}}\|\bar{\rho}_A)$ against $x=\operatorname{Arc(A)}/2\pi$ ($x\ll 1$), with power law fit $\sim x^{\alpha}$, in which $\alpha=2.2, 2.21$, respectively.}
+       \label{fig:task1_small}
+   \end{figure}
+
+Task4:
+
+Inspect the divergence behavior for relative entropies
+\begin{equation}
+    S(\rho_a\|p\rho_a+(1-p)\rho_b)
+\end{equation}
+in which $p\rightarrow 0$.
+
+
+   % \begin{figure}[H]
+   %     \centering
+   %     \includegraphics[width=0.85\linewidth]{figs/task1_large_equal_mixture_sum_vs_x.pdf}
+   %     % \includegraphics[width=0.85\linewidth]{figs/task1_large_power_law_fit_curves_vs_x.pdf}
+   %     \includegraphics[width=0.85\linewidth]{figs/task1_large_equal_mixture_raw_unweighted_sum_power_law_vs_y.pdf}
+   %     \caption{Realtive entropy: $S(\rho_A^{\ket{00}}\|\bar{\rho}_A)+S(\rho_A^{\ket{ss}}\|\bar{\rho}_A)$ against $x=\operatorname{Arc(A)}/2\pi$ ($x\rightarrow 1$), with power law fit $\sim (1-x)^{\alpha}$, in which $\alpha=-0.337$. \BS{(1) I lack the motivation to consider this. (2) The linear fit does not get even close.}}
+   %     \label{fig:task1_large}
+   % \end{figure}
+
+   \begin{figure}[H]
+       \centering
+       \includegraphics[width=0.85\linewidth]{figs/task1_large_equal_mixture_weighted_deficit_power_law_vs_y.pdf}
+       \caption{Deficit: $\log2-\frac{1}{2}(S(\rho_A^{\ket{00}}\|\bar{\rho}_A)+S(\rho_A^{\ket{ss}}\|\bar{\rho}_A))$ against $x=\operatorname{Arc(A)}/2\pi$ ($x\rightarrow 1$), with power law fit $\sim (1-x)^{\beta}$, in which $\beta=0.948$. \BS{Excellent. Also, should we make an attempt to explain the value $\beta \sim 1$?}}
+       \label{fig:task1_large_2}
+   \end{figure}
+
+
+   \begin{figure}[H]
+       \centering
+       \includegraphics[width=0.85\linewidth]{figs/task2_small_probabilistic_vs_p.pdf}
+       \includegraphics[width=0.85\linewidth]{figs/task2_small_sum_power_law_fit_curves_vs_x.pdf}
+       \caption{Realtive entropy: $S(\rho_A^{\ket{00}}\|p_{00}{\rho}_A^{\ket{00}}+p_{ss}{\rho}_A^{\ket{ss}})$ and $S(\rho_A^{\ket{ss}}\|p_{00}{\rho}_A^{\ket{00}}+p_{ss}{\rho}_A^{\ket{ss}})$ against $x=\operatorname{Arc(A)}/2\pi$ ($x\ll 1$), with power law fit $\sim x^{\alpha}$.}
+       \label{fig:task2_small}
+   \end{figure}
+
+   % \begin{figure}[H]
+   %     \centering
+   %     \includegraphics[width=0.85\linewidth]{figs/task2_large_sum_vs_p.pdf}
+   %     \includegraphics[width=0.85\linewidth]{figs/task2_large_probabilistic_raw_unweighted_sum_power_law_vs_y.pdf}
+      
+   %     \caption{Realtive entropy: $S(\rho_A^{\ket{00}}\|p_{00}{\rho}_A^{\ket{00}}+p_{ss}{\rho}_A^{\ket{ss}})+S(\rho_A^{\ket{ss}}\|p_{00}{\rho}_A^{\ket{00}}+p_{ss}{\rho}_A^{\ket{ss}})$ against $x=\operatorname{Arc(A)}/2\pi$ ($x\rightarrow 1$), with power law fit $\sim (1-x)^{\alpha}$.}
+   %     \label{fig:task2_large}
+   % \end{figure}
+
+   \begin{figure}[H]
+       \centering
+       \includegraphics[width=0.85\linewidth]{figs/task2_large_corrected_weighted_coherent_deficit_power_law_vs_y.pdf}
+       \caption{Deficit: $H(p_0) -\left(p_0S\left(\rho_{A}^{\ket{00}} \|(p_0\rho_{A}^{\ket{00}}+p_s \rho_{A}^{\ket{ss}})\right)+p_sS\left(\rho_{A}^{\ket{ss}} \|(p_0\rho_{A}^{\ket{00}}+ p_s\rho_{A}^{\ket{ss}})\right)\right)$ against $x=\operatorname{Arc(A)}/2\pi$ ($x\rightarrow 1$), with power law fit $\sim (1-x)^{\beta}$.}
+       \label{fig:task2_large_2}
+   \end{figure}
+
+
+   \begin{figure}[H]
+       \centering
+       \includegraphics[width=0.85\linewidth]{figs/task3_mixture_to_sector_vs_p.pdf}
+       \includegraphics[width=0.85\linewidth]{figs/task3_power_law_fit_curves_vs_x.pdf}
+       \caption{Realtive entropy: $S(p_{00}{\rho}_A^{\ket{00}}+p_{ss}{\rho}_A^{\ket{ss}}\|\rho_A^{\ket{00}})$ and $S(p_{00}{\rho}_A^{\ket{00}}+p_{ss}{\rho}_A^{\ket{ss}}\|\rho_A^{\ket{ss}})$ against $x=\operatorname{Arc(A)}/2\pi$ ($x\ll 1$), with power law fit $\sim x^{\alpha}$.}
+       \label{fig:task3}
+   \end{figure}
+
+In conclusion, we may plot the power-law exponents against the probability $p_{00}$.
+
+\begin{figure}[H]
+       \centering
+       \includegraphics[width=0.85\linewidth]{figs/task2_task3_power_law_exponents_vs_p.pdf}
+       \caption{Power-law exponents v.s. $p_{00}$.}
+       \label{fig:exponents_vs_p}
+   \end{figure}
+
+Task 4: fixed-$x$ power-law dependence on the probability $p_{00}$.
+
+In Tasks 2 and 3, we fixed the probability $p_{00}$ and fitted the small-$A$ relative entropies as functions of
+$x=\operatorname{Arc}(A)/2\pi=|A|/N$. Here we perform the complementary test: fix $x$ and study the endpoint
+power laws as functions of the mixing probability $p_{00}$. We write
+\begin{equation}
+    p_{ss}=1-p_{00}, \qquad 
+    \sigma_A(p_{00})=p_{00}\rho_A^{\ket{00}}+p_{ss}\rho_A^{\ket{ss}} .
+\end{equation}
+The four quantities tested are
+\begin{equation}
+\begin{aligned}
+    D_{00\rightarrow \sigma}(p_{00},x)
+    &:= S\!\left(\rho_A^{\ket{00}}\middle\|\sigma_A(p_{00})\right),\\
+    D_{ss\rightarrow \sigma}(p_{00},x)
+    &:= S\!\left(\rho_A^{\ket{ss}}\middle\|\sigma_A(p_{00})\right),\\
+    D_{\sigma\rightarrow 00}(p_{00},x)
+    &:= S\!\left(\sigma_A(p_{00})\middle\|\rho_A^{\ket{00}}\right),\\
+    D_{\sigma\rightarrow ss}(p_{00},x)
+    &:= S\!\left(\sigma_A(p_{00})\middle\|\rho_A^{\ket{ss}}\right).
+\end{aligned}
+\end{equation}
+The fixed-$x$ values are chosen so that $x=|A|/N$ is exact for several system sizes. The subsystem $A$
+is a single contiguous interval.
+
+For further usage, we also define \(J_{0s}(x)=S(\rho_A^{\ket{00}}\|\rho_A^{\ket{ss}})\) and \(J_{s0}(x)=S(\rho_A^{\ket{ss}}\|\rho_A^{\ket{00}})\). 
+
+The finite-size data used here are shown in~\cref{tab:task4_fixed_x_size_setting}
+\begin{table}[H]
+    \centering
+    \setlength{\extrarowheight}{4pt}
+    \begin{tabular}{|c|c|}
+    \hline
+       fixed \(x=|A|/N\) & finite-size pairs \((N,|A|)\) \\
+       \hline
+       \(1/6\) & \((12,2),(18,3),(24,4)\) \\
+       \hline
+       \(1/4\) & \((12,3),(16,4),(20,5),(24,6)\) \\
+       \hline
+       \(1/3\) & \((12,4),(18,6),(24,8)\) \\
+       \hline
+    \end{tabular}
+    \caption{System sizes used in Task 4. The ratio \(x=|A|/N\) is kept fixed exactly. For each fixed \(x\), the scalar relative entropies are computed for all available finite-size pairs and then averaged before performing the main endpoint power-law fit.}
+    \label{tab:task4_fixed_x_size_setting}
+\end{table}
+
+The probability grid is chosen to be denser near the endpoints than in Tasks 2 and 3:
+\begin{equation}
+\begin{aligned}
+p_{00}\in\{&
+0.0025,0.005,0.0075,0.01,0.015,0.02,0.03,0.05,0.075,0.1,\\
+&0.15,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.85,0.9,\\
+&0.925,0.95,0.97,0.98,0.985,0.99,0.9925,0.995,0.9975\}.
+\end{aligned}
+\end{equation}
+To fit an endpoint power law, we define the endpoint variable
+\begin{equation}
+    \epsilon =
+    \begin{cases}
+        p_{00}, & p_{00}\rightarrow 0,\\
+        1-p_{00}, & p_{00}\rightarrow 1.
+    \end{cases}
+\end{equation}
+For each quantity, we fit the endpoint residual
+\begin{equation}
+    r(p_{00};x)\sim C(x)\epsilon^{\eta(x)}.
+\end{equation}
+The residual is the quantity itself when the relative entropy vanishes at the endpoint, and is the
+difference from the appropriate endpoint plateau when the relative entropy approaches a nonzero value.
+% For compactness, define
+% \begin{equation}
+%     D_{00\|ss}(x):=S\!\left(\rho_A^{\ket{00}}\middle\|\rho_A^{\ket{ss}}\right),
+%     \qquad
+%     D_{ss\|00}(x):=S\!\left(\rho_A^{\ket{ss}}\middle\|\rho_A^{\ket{00}}\right).
+% \end{equation}
+% The residuals used in the fits are
+% \begin{equation}
+% \begin{array}{c|c|c}
+% \text{quantity} & p_{00}\rightarrow 0 & p_{00}\rightarrow 1 \\
+% \hline
+% D_{00\rightarrow\sigma} 
+% & D_{00\|ss}-D_{00\rightarrow\sigma} 
+% & D_{00\rightarrow\sigma} \\[2pt]
+% D_{ss\rightarrow\sigma} 
+% & D_{ss\rightarrow\sigma} 
+% & D_{ss\|00}-D_{ss\rightarrow\sigma} \\[2pt]
+% D_{\sigma\rightarrow 00} 
+% & D_{ss\|00}-D_{\sigma\rightarrow 00} 
+% & D_{\sigma\rightarrow 00} \\[2pt]
+% D_{\sigma\rightarrow ss} 
+% & D_{\sigma\rightarrow ss} 
+% & D_{00\|ss}-D_{\sigma\rightarrow ss}
+% \end{array}
+% \end{equation}
+% The main fits use the endpoint window \(\epsilon\leq 0.1\).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figs/task4_fixed_x_relative_entropy_vs_p.pdf}
+    \caption{Task 4 fixed-\(x\) relative entropies as functions of \(p_{00}\). The four panels show
+    \(S(\rho_A^{\ket{00}}\|p_{00}\rho_A^{\ket{00}}+p_{ss}\rho_A^{\ket{ss}})\),
+    \(S(\rho_A^{\ket{ss}}\|p_{00}\rho_A^{\ket{00}}+p_{ss}\rho_A^{\ket{ss}})\),
+    \(S(p_{00}\rho_A^{\ket{00}}+p_{ss}\rho_A^{\ket{ss}}\|\rho_A^{\ket{00}})\), and
+    \(S(p_{00}\rho_A^{\ket{00}}+p_{ss}\rho_A^{\ket{ss}}\|\rho_A^{\ket{ss}})\).
+    The three curves correspond to fixed \(x=1/6,1/4,1/3\). The relative entropies grow with \(x\), while the endpoint shapes are stable across the three fixed ratios.}
+    \label{fig:task4_fixed_x_relative_entropy_vs_p}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figs/task4_p_to_0_endpoint_loglog_fits.pdf}
+    \caption{Task 4 endpoint fits near \(p_{00}\rightarrow 0\). The horizontal axis is
+    \(\epsilon=p_{00}\). Each panel plots the appropriate endpoint residual on a log-log scale.
+    The fitted exponents are approximately
+    \(\eta\simeq 1\) for the residuals approaching a nonzero endpoint plateau, and
+    \(\eta\simeq 2\) for the quantities that vanish at the endpoint. The log-space fit quality is
+    close to \(R^2=1\) in all panels.}
+    \label{fig:task4_p_to_0_endpoint_loglog_fits}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figs/task4_p_to_1_endpoint_loglog_fits.pdf}
+    \caption{Task 4 endpoint fits near \(p_{00}\rightarrow 1\). The horizontal axis is
+    \(\epsilon=1-p_{00}\). The same two exponent families appear as in the \(p_{00}\rightarrow0\)
+    endpoint: endpoint-vanishing quantities scale close to \(\epsilon^2\), while deficits from
+    nonzero endpoint plateaux scale close to \(\epsilon\).}
+    \label{fig:task4_p_to_1_endpoint_loglog_fits}
+\end{figure}
+
+The endpoint fits in Table~\ref{tab:task4_endpoint_eta_corrected} contain two different
+types of fitted objects.  When the raw relative entropy vanishes at the endpoint, we fit the
+raw quantity itself.  These are the four \(\eta\simeq2\) rows:
+\[
+    D_{00\rightarrow\sigma}\quad(p_{00}\rightarrow1),\qquad
+    D_{ss\rightarrow\sigma}\quad(p_{00}\rightarrow0),\qquad
+    D_{\sigma\rightarrow00}\quad(p_{00}\rightarrow1),\qquad
+    D_{\sigma\rightarrow ss}\quad(p_{00}\rightarrow0).
+\]
+When the raw relative entropy approaches a nonzero sector--sector plateau, we instead fit the
+deficit from that plateau:
+\[
+    J_{0s}-D_{00\rightarrow\sigma},\qquad
+    J_{s0}-D_{ss\rightarrow\sigma},\qquad
+    J_{s0}-D_{\sigma\rightarrow00},\qquad
+    J_{0s}-D_{\sigma\rightarrow ss}.
+\]
+These are the four \(\eta\simeq1\) rows.  Thus the \(\eta\simeq1\) branch is not a raw
+relative-entropy endpoint law.  It measures the linear approach to a nonzero endpoint plateau.
+The BKM/Fisher quadratic endpoint law applies to the raw quantities only at the endpoints where
+the two arguments of the relative entropy coincide.
+
+\begin{table}[h]
+    \centering
+    \setlength{\extrarowheight}{4pt}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    endpoint &  fitted object
+       & \(\eta(x=1/6)\) & \(\eta(x=1/4)\) & \(\eta(x=1/3)\) \\
+       \hline
+        \(p_{00}\rightarrow0\)
+       & \(J_{0s}-D_{00\rightarrow\sigma}\)
+       & \(0.979\) & \(0.962\) & \(0.922\) \\
+       \hline
+       \(p_{00}\rightarrow1\)
+       & \(D_{00\rightarrow\sigma}\)
+       & \(1.99\) & \(1.97\) & \(1.93\) \\
+       \hline
+        \(p_{00}\rightarrow0\)
+       & \(D_{ss\rightarrow\sigma}\)
+       & \(1.99\) & \(1.97\) & \(1.91\) \\
+       \hline
+       \(p_{00}\rightarrow1\)
+       & \(J_{s0}-D_{ss\rightarrow\sigma}\)
+       & \(0.980\) & \(0.965\) & \(0.932\) \\
+       \hline
+        \(p_{00}\rightarrow0\)
+       & \(J_{s0}-D_{\sigma\rightarrow 00}\)
+       & \(0.986\) & \(0.984\) & \(0.981\) \\
+       \hline
+        \(p_{00}\rightarrow1\)
+       & \(D_{\sigma\rightarrow 00}\)
+       & \(1.99\) & \(1.98\) & \(1.96\) \\
+       \hline
+       \(p_{00}\rightarrow0\)
+       & \(D_{\sigma\rightarrow ss}\)
+       & \(1.99\) & \(1.98\) & \(1.95\) \\
+       \hline
+        \(p_{00}\rightarrow1\)
+       & \(J_{0s}-D_{\sigma\rightarrow ss}\)
+       & \(0.986\) & \(0.985\) & \(0.982\) \\
+       \hline
+    \end{tabular}
+    \caption{Task 4 endpoint exponents.  The table lists the actual fitted object, not only the
+    relative entropy appearing in the plot. At endpoints where the raw relative
+    entropy vanishes, the fitted object is the raw quantity itself and the exponent is close to
+    \(\eta\simeq2\).  At endpoints where the raw relative entropy approaches a nonzero
+    sector--sector plateau, the fitted object is the plateau deficit and the exponent is close to
+    \(\eta\simeq1\).}
+    \label{tab:task4_endpoint_eta_corrected}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figs/task4_p_power_exponent_eta_vs_x.pdf}
+    \caption{Task 4 fitted \(p\)-power exponent \(\eta\) as a function of the fixed interval ratio
+    \(x=|A|/N\). The endpoint-vanishing quantities form an \(\eta\simeq2\) family, while the
+    endpoint-plateau deficits form an \(\eta\simeq1\) family. The observed \(x\)-dependence is mild
+    compared with the separation between these two families.}
+    \label{fig:task4_p_power_exponent_eta_vs_x}
+\end{figure}
+
+
+
+\subsection{Conjectures for the probability dependence}
+\label{subsec:task4_conjectures}
+
+We now summarize the conjectures for the four probability-dependent relative entropies in
+Task 4.  The discussion below also fixes a point that was implicit in the earlier version of
+this note: the BKM/Fisher expansion is a local expansion near the endpoint where the two density
+matrices in the relative entropy coincide.  It does not, by itself, determine the behavior at the
+opposite endpoint.  The new two-sided Pad\'e ansatz is designed to incorporate both endpoint
+values and the leading endpoint coefficients.
+
+Throughout this subsection we write
+\begin{equation}
+    p:=p_{00},\qquad q:=p_{ss}=1-p,\qquad
+    \sigma_A(p)=p\rho_A^{\ket{00}}+q\rho_A^{\ket{ss}} .
+\end{equation}
+For compact notation define
+\begin{equation}
+\begin{aligned}
+    D_0(p,x)&:=D_{00\rightarrow\sigma}(p,x)
+    =S\!\left(\rho_A^{\ket{00}}\middle\|\sigma_A(p)\right),\\
+    D_s(p,x)&:=D_{ss\rightarrow\sigma}(p,x)
+    =S\!\left(\rho_A^{\ket{ss}}\middle\|\sigma_A(p)\right),\\
+    \widehat D_0(p,x)&:=D_{\sigma\rightarrow00}(p,x)
+    =S\!\left(\sigma_A(p)\middle\|\rho_A^{\ket{00}}\right),\\
+    \widehat D_s(p,x)&:=D_{\sigma\rightarrow ss}(p,x)
+    =S\!\left(\sigma_A(p)\middle\|\rho_A^{\ket{ss}}\right).
+\end{aligned}
+\end{equation}
+The endpoint amplitudes are the sector--sector relative entropies
+\begin{equation}
+    J_{0s}(x):=S\!\left(\rho_A^{\ket{00}}\middle\|\rho_A^{\ket{ss}}\right),
+    \qquad
+    J_{s0}(x):=S\!\left(\rho_A^{\ket{ss}}\middle\|\rho_A^{\ket{00}}\right).
+\end{equation}
+They are forced by the exact endpoint identities
+\begin{equation}
+\begin{aligned}
+    D_0(0,x)&=J_{0s}(x),       & D_0(1,x)&=0,\\
+    D_s(0,x)&=0,              & D_s(1,x)&=J_{s0}(x),\\
+    \widehat D_0(0,x)&=J_{s0}(x), & \widehat D_0(1,x)&=0,\\
+    \widehat D_s(0,x)&=0,        & \widehat D_s(1,x)&=J_{0s}(x).
+\end{aligned}
+\label{eq:task4_endpoint_identities}
+\end{equation}
+
+
+\paragraph{The small-interval amplitude.}
+For the compact free boson, the leading small-interval scale of $J_{0s}$ and $J_{s0}$ is fixed by
+primary-state relative entropy.  The lightest operators distinguishing the vacuum sector from the
+two-semion sector are the holomorphic and antiholomorphic $U(1)$ currents, with total scaling
+contribution controlled by $\Delta=1$.  Therefore
+\begin{equation}
+    J_{0s}(x)\simeq J_{s0}(x)
+    \simeq \frac{1}{3}(\pi x)^2,
+    \qquad x\ll1,
+\end{equation}
+consistent with the CFT replica calculation of relative entropy between primary states
+\cite{Lashkari2014,Lashkari2015}.  At finite $x$ we use the endpoint values extracted from the
+numerical data rather than replacing them by the asymptotic $\frac13(\pi x)^2$ expression.
+
+\paragraph{What the BKM/Fisher metric actually says.}
+The relative entropy
+\begin{equation}
+    S(\rho\|\sigma)=\Tr\rho(\log\rho-\log\sigma)
+\end{equation}
+has a local minimum when $\rho=\sigma$.  Consequently, if
+\begin{equation}
+    \rho(\epsilon)=\rho+\epsilon X,
+    \qquad \Tr X=0,
+\end{equation}
+then the linear term in $\epsilon$ vanishes and the first nonzero term is quadratic:
+\begin{equation}
+    S(\rho\|\rho(\epsilon))
+    =\frac{\epsilon^2}{2}
+    g_{\rho}^{\rm BKM}(X,X)+O(\epsilon^3),
+    \qquad
+    S(\rho(\epsilon)\|\rho)
+    =\frac{\epsilon^2}{2}
+    g_{\rho}^{\rm BKM}(X,X)+O(\epsilon^3).
+\label{eq:bkm_quadratic_expansion}
+\end{equation}
+The positive quadratic form $g_{\rho}^{\rm BKM}$ is the Bogoliubov--Kubo--Mori, or
+relative-entropy Fisher, metric.  One convenient definition is
+\begin{equation}
+    g_{\rho}^{\rm BKM}(X,Y)
+    =\Tr\!\left[X\,\mathcal T_{\rho}(Y)\right],
+    \qquad
+    \mathcal T_{\rho}(Y)
+    =\int_0^\infty (\rho+t)^{-1}Y(\rho+t)^{-1}\,dt .
+\label{eq:bkm_metric_definition}
+\end{equation}
+Equivalently, in an eigenbasis $\rho=\sum_i\lambda_i\ket{i}\bra{i}$,
+\begin{equation}
+    g_{\rho}^{\rm BKM}(X,X)
+    =\sum_{i,j}|X_{ij}|^2
+    \frac{\log\lambda_i-\log\lambda_j}{\lambda_i-\lambda_j},
+\end{equation}
+where the diagonal limit is $1/\lambda_i$.  This is the quantum analogue of the classical
+statement that Fisher information is the Hessian of relative entropy.  In the CFT literature,
+this quadratic structure is the same one underlying the entanglement first law and the relation
+between quantum Fisher information and canonical energy \cite{2013JHEP...08..060B,2016JHEP...04..153L}.
+
+The relation between the sector--sector relative entropy and the BKM/Fisher metric is a
+small-distance expansion, not an exact finite-\(x\) identity.  Let
+\[
+    \rho_0:=\rho_A^{\ket{00}},\qquad
+    \rho_s:=\rho_A^{\ket{ss}},\qquad
+    \Delta:=\rho_s-\rho_0 .
+\]
+For a full-rank density matrix \(\rho\) and a traceless perturbation \(X\), the Umegaki
+relative entropy has the local expansion
+\[
+    S(\rho\|\rho+\epsilon X)
+    =
+    \frac{\epsilon^2}{2}g_\rho^{\rm BKM}(X,X)
+    +O(\epsilon^3),
+\]
+and
+\[
+    S(\rho+\epsilon X\|\rho)
+    =
+    \frac{\epsilon^2}{2}g_\rho^{\rm BKM}(X,X)
+    +O(\epsilon^3).
+\]
+The linear term vanishes because relative entropy is minimized when its two arguments
+coincide. Applying this expansion to
+\[
+    J_{0s}(x)=S(\rho_0\|\rho_s)=S(\rho_0\|\rho_0+\Delta)
+\]
+gives
+\[
+    J_{0s}(x)
+    =
+    \frac12 g_{\rho_0}^{\rm BKM}(\Delta,\Delta)
+    +O(\Delta^3).
+\]
+Similarly,
+\[
+    J_{s0}(x)=S(\rho_s\|\rho_0)=S(\rho_s\|\rho_s-\Delta),
+\]
+so
+\[
+    J_{s0}(x)
+    =
+    \frac12 g_{\rho_s}^{\rm BKM}(\Delta,\Delta)
+    +O(\Delta^3),
+\]
+where the sign of the perturbation drops out because the BKM term is quadratic.  Thus
+the sector--sector relative entropies agree with the Fisher distances only to leading
+order when \(\rho_0\) and \(\rho_s\) are close.  In the small-interval CFT limit this
+closeness follows from the OPE expansion of reduced density matrices, so the omitted
+terms are higher order in \(x\).
+
+% \paragraph{First ansatz: endpoint-normalized BKM.}
+% The local BKM/Fisher expansion fixes the leading behavior only at the endpoint where the
+% two arguments of the relative entropy coincide.  For example, for
+% \(D_0(p,x)=S(\rho_A^{\ket{00}}\|\sigma_A(p))\), the coincident endpoint is
+% \(p\to1\), and the BKM expansion gives
+% \[
+%     D_0(p,x)=A_0^{(1)}(x)(1-p)^2+O((1-p)^3).
+% \]
+% Similarly, \(D_s(p,x)=S(\rho_A^{\ket{ss}}\|\sigma_A(p))\) has a quadratic
+% BKM endpoint at \(p\to0\).  The simplest way to extend this local law to the full
+% probability interval is to normalize the quadratic endpoint behavior by the opposite
+% sector--sector plateau.  This gives
+% \begin{equation}
+% \boxed{
+% \begin{aligned}
+%     D_0^{\rm BKM}(p,x)&=J_{0s}(x)q^2,&
+%     D_s^{\rm BKM}(p,x)&=J_{s0}(x)p^2,\\
+%     \widehat D_0^{\rm BKM}(p,x)&=J_{s0}(x)q^2,&
+%     \widehat D_s^{\rm BKM}(p,x)&=J_{0s}(x)p^2,
+% \end{aligned}}
+% \label{eq:task4_bkm_ansatz}
+% \end{equation}
+% where \(q=1-p\).  This ansatz is useful because it has the correct endpoint values and
+% the correct quadratic power at the vanishing endpoint.  However, it is too rigid at
+% finite \(x\).  To see this, consider a right-vanishing function satisfying
+% \[
+%     D(0,x)=J(x),\qquad D(1,x)=0.
+% \]
+% The endpoint-normalized BKM form is \(D^{\rm BKM}(p,x)=J(x)(1-p)^2\).  Near
+% \(p\to1\),
+% \[
+%     D^{\rm BKM}(p,x)=J(x)q^2,
+% \]
+% so the quadratic vanishing coefficient is forced to be
+% \[
+%     A(x)=J(x).
+% \]
+% Near \(p\to0\),
+% \[
+%     D^{\rm BKM}(p,x)=J(x)(1-2p+p^2),
+% \]
+% and therefore
+% \[
+%     J(x)-D^{\rm BKM}(p,x)=2J(x)p-J(x)p^2.
+% \]
+% Thus the linear plateau-deficit coefficient is forced to be
+% \[
+%     B(x)=2J(x).
+% \]
+% The same conclusion holds for a left-vanishing function \(D^{\rm BKM}(p,x)=J(x)p^2\).
+% Hence the endpoint-normalized BKM ansatz does not independently fit the quadratic
+% vanishing coefficient and the linear plateau-deficit coefficient.  It should therefore
+% be regarded as the leading small-\(x\) approximation, not as a fully flexible finite-\(x\)
+% formula.
+
+% \paragraph{Endpoint coefficients from the data.}
+% For a right-vanishing function, meaning a function with \(D(0)=J\) and \(D(1)=0\), we
+% define
+% \begin{equation}
+%     D(p,x)=J(x)-B^{(0)}(x)p+O(p^2),
+%     \qquad p\rightarrow0,
+% \end{equation}
+% and
+% \begin{equation}
+%     D(p,x)=A^{(1)}(x)q^2+O(q^3),
+%     \qquad q=1-p\rightarrow0.
+% \end{equation}
+% For a left-vanishing function, meaning a function with \(D(0)=0\) and \(D(1)=J\), we
+% define
+% \begin{equation}
+%     D(p,x)=A^{(0)}(x)p^2+O(p^3),
+%     \qquad p\rightarrow0,
+% \end{equation}
+% and
+% \begin{equation}
+%     D(p,x)=J(x)-B^{(1)}(x)q+O(q^2),
+%     \qquad q=1-p\rightarrow0.
+% \end{equation}
+% The coefficient \(A\) is the BKM/Fisher coefficient at the endpoint where the raw
+% relative entropy vanishes.  The coefficient \(B\) is the slope of the plateau deficit at
+% the opposite endpoint.  The numerical data show that \(A=J\) and \(B=2J\) are only
+% approximate at the smallest \(x\), and become less accurate as \(x\) grows.  This is the
+% main empirical reason for introducing a two-sided interpolation.
+
+% \paragraph{Second ansatz: endpoint-power and log-resummed endpoint-power formulas.}
+% The endpoint-power fit allows a finite-$x$ exponent $\eta(x)$:
+% \begin{equation}
+% \boxed{
+% \begin{aligned}
+%     D_0^{\eta}(p,x)&=J_{0s}(x)q^{\eta_0(x)},&
+%     D_s^{\eta}(p,x)&=J_{s0}(x)p^{\eta_s(x)},\\
+%     \widehat D_0^{\eta}(p,x)&=J_{s0}(x)q^{\widehat\eta_0(x)},&
+%     \widehat D_s^{\eta}(p,x)&=J_{0s}(x)p^{\widehat\eta_s(x)}.
+% \end{aligned}}
+% \label{eq:task4_endpoint_eta_ansatz}
+% \end{equation}
+% The corresponding log-resummed version is
+% \begin{equation}
+% \boxed{
+% \begin{aligned}
+%     D_0^{\log\eta}(p,x)
+%     &=-\log\!\left[1-q^{\eta_0(x)}(1-e^{-J_{0s}(x)})\right],\\
+%     D_s^{\log\eta}(p,x)
+%     &=-\log\!\left[1-p^{\eta_s(x)}(1-e^{-J_{s0}(x)})\right],\\
+%     \widehat D_0^{\log\eta}(p,x)
+%     &=-\log\!\left[1-q^{\widehat\eta_0(x)}(1-e^{-J_{s0}(x)})\right],\\
+%     \widehat D_s^{\log\eta}(p,x)
+%     &=-\log\!\left[1-p^{\widehat\eta_s(x)}(1-e^{-J_{0s}(x)})\right].
+% \end{aligned}}
+% \label{eq:task4_log_eta_ansatz}
+% \end{equation}
+% The log-resummed form is positive and exact at the two endpoint values.  It improves the endpoint
+% normalization, but it still uses only one endpoint exponent and does not independently fit the
+% linear coefficient of the plateau deficit and the quadratic coefficient at the vanishing endpoint.
+% This motivates the two-sided ansatz below.
+
+
+% \paragraph{Endpoint coefficients from the data.}
+% For a function that is equal to $J$ at $p=0$ and vanishes at $p=1$, we define
+% \begin{equation}
+%     D(p,x)=J(x)-B^{(0)}(x)p+O(p^2),
+%     \qquad p\rightarrow0,
+% \end{equation}
+% \begin{equation}
+%     D(p,x)=A^{(1)}(x)q^2+O(q^3),
+%     \qquad p\rightarrow1.
+% \end{equation}
+% For a function that vanishes at $p=0$ and is equal to $J$ at $p=1$, we define
+% \begin{equation}
+%     D(p,x)=A^{(0)}(x)p^2+O(p^3),
+%     \qquad p\rightarrow0,
+% \end{equation}
+% \begin{equation}
+%     D(p,x)=J(x)-B^{(1)}(x)q+O(q^2),
+%     \qquad p\rightarrow1.
+% \end{equation}
+% The coefficients $A$ and $B$ are extracted from the endpoint-dense data after adding the exact
+% $p=0,1$ endpoint rows.  In the strict endpoint-normalized BKM ansatz one would have $A=J$ and
+% $B=2J$.  The numerical endpoint coefficients deviate from this as $x$ increases, which is the main
+% empirical reason for introducing a two-sided interpolation.
+
+% \paragraph{New ansatz: two-sided Pad\'e interpolation.}
+% The goal of the two-sided ansatz is to impose four pieces of endpoint information
+% simultaneously:
+% \[
+%     D(0),\qquad D(1),\qquad
+%     \text{the linear plateau-deficit coefficient},\qquad
+%     \text{the quadratic vanishing coefficient}.
+% \]
+% This is naturally a two-point Pad\'e problem: instead of matching only a Taylor series at
+% one endpoint, we use a rational function to match local asymptotic data at both endpoints.
+% Pad\'e and multipoint Pad\'e approximants are designed precisely for this kind of rational
+% interpolation problem \cite{Baker_Graves-Morris_1996}.
+
+% First consider a right-vanishing function with
+% \[
+%     D(0)=J,\qquad D(1)=0,
+% \]
+% and endpoint expansions
+% \[
+%     D(p)=J-Bp+O(p^2),
+%     \qquad p\to0,
+% \]
+% \[
+%     D(p)=Aq^2+O(q^3),
+%     \qquad q=1-p\to0.
+% \]
+% The numerator must contain \(q^2\) in order to enforce the BKM/Fisher quadratic
+% vanishing at \(p\to1\).  The minimal rational form with two adjustable denominator
+% coefficients is
+% \[
+%     D(p)=J\frac{q^2}{q^2+c\,pq+d\,p^2}.
+% \]
+% At \(p=0\), this gives \(D(0)=J\).  Expanding near \(p=0\) gives
+% \[
+%     D(p)=J(1-cp+O(p^2)),
+% \]
+% so
+% \[
+%     J-D(p)=Jc\,p+O(p^2).
+% \]
+% Matching the plateau-deficit coefficient \(B\) gives
+% \[
+%     c=\frac{B}{J}.
+% \]
+% Expanding near \(p=1\), the denominator is \(d+O(q)\), so
+% \[
+%     D(p)=\frac{J}{d}q^2+O(q^3).
+% \]
+% Matching the quadratic coefficient \(A\) gives
+% \[
+%     d=\frac{J}{A}.
+% \]
+% Therefore
+% \begin{equation}
+% \boxed{
+%     \mathcal P_R[J,A,B](p)
+%     :=
+%     J\frac{q^2}{q^2+\frac{B}{J}pq+\frac{J}{A}p^2}.
+% }
+% \label{eq:pade_right}
+% \end{equation}
+% It satisfies
+% \begin{equation}
+%     \mathcal P_R(0)=J,\qquad \mathcal P_R(1)=0,
+% \end{equation}
+% \begin{equation}
+%     J-\mathcal P_R[J,A,B](p)=Bp+O(p^2),
+%     \qquad p\rightarrow0,
+% \end{equation}
+% and
+% \begin{equation}
+%     \mathcal P_R[J,A,B](p)=Aq^2+O(q^3),
+%     \qquad p\rightarrow1.
+% \end{equation}
+
+% For a left-vanishing function with \(D(0)=0\) and \(D(1)=J\), we exchange
+% \(p\leftrightarrow q\) and define
+% \begin{equation}
+% \boxed{
+%     \mathcal P_L[J,A,B](p)
+%     :=
+%     J\frac{p^2}{p^2+\frac{B}{J}pq+\frac{J}{A}q^2}.
+% }
+% \label{eq:pade_left}
+% \end{equation}
+% Then
+% \begin{equation}
+%     \mathcal P_L(0)=0,\qquad \mathcal P_L(1)=J,
+% \end{equation}
+% \begin{equation}
+%     \mathcal P_L[J,A,B](p)=Ap^2+O(p^3),
+%     \qquad p\rightarrow0,
+% \end{equation}
+% and
+% \begin{equation}
+%     J-\mathcal P_L[J,A,B](p)=Bq+O(q^2),
+%     \qquad p\rightarrow1.
+% \end{equation}
+% We therefore conjecture
+% \begin{equation}
+% \boxed{
+% \begin{aligned}
+%     D_0(p,x)&\simeq \mathcal P_R[J_{0s},A_0^{(1)},B_0^{(0)}](p),\\
+%     D_s(p,x)&\simeq \mathcal P_L[J_{s0},A_s^{(0)},B_s^{(1)}](p),\\
+%     \widehat D_0(p,x)&\simeq \mathcal P_R[J_{s0},\widehat A_0^{(1)},\widehat B_0^{(0)}](p),\\
+%     \widehat D_s(p,x)&\simeq \mathcal P_L[J_{0s},\widehat A_s^{(0)},\widehat B_s^{(1)}](p).
+% \end{aligned}}
+% \label{eq:task4_two_sided_pade_ansatz}
+% \end{equation}
+% This is the first ansatz in the note that uses both endpoint mechanisms explicitly:
+% the BKM/Fisher quadratic law at the vanishing endpoint and the measured linear
+% plateau-deficit behavior at the opposite endpoint.  It reduces to the endpoint-normalized
+% BKM form when \(A=J\) and \(B=2J\).
+
+% \paragraph{Logarithmic two-sided Pad\'e interpolation.}
+% The two-sided Pad\'e formula is a rational interpolation for the relative entropy itself.
+% There is also a natural logarithmic version.  The motivation is that relative entropy in
+% CFT replica computations often appears as the logarithm of a ratio of partition functions
+% or correlation functions \cite{Lashkari2014,Lashkari2015}.  In particular, the
+% free-boson skew-divergence-inspired formula has the schematic form
+% \[
+%     D_{0\to\sigma}^{\rm FB}(p)
+%     =
+%     -\log\!\left[p+q e^{-J_{0s}}\right]
+%     =
+%     -\log\!\left[1-q(1-e^{-J_{0s}})\right].
+% \]
+% This formula has the correct endpoint values, but it is linear at the vanishing endpoint.
+% The logarithmic two-sided Pad\'e ansatz keeps the useful logarithmic structure while
+% replacing the simple probability factor by a two-sided rational function.
+
+% Define the normalized exponential variable
+% \[
+%     R(D):=\frac{1-e^{-D}}{1-e^{-J}}.
+% \]
+% Then \(D=0\) corresponds to \(R=0\), and \(D=J\) corresponds to \(R=1\).  Conversely,
+% \[
+%     D=-\log\!\left[1-(1-e^{-J})R\right].
+% \]
+% For a right-vanishing function, take
+% \[
+%     R_R(p)=\frac{q^2}{q^2+c\,pq+d\,p^2}.
+% \]
+% We choose \(c,d\) so that the resulting logarithmic formula has the desired endpoint
+% coefficients.  Near \(p\to0\), if \(R_R(p)=1-cp+O(p^2)\), then
+% \[
+%     -\log\!\left[1-(1-e^{-J})R_R(p)\right]
+%     =
+%     J-(e^J-1)c\,p+O(p^2).
+% \]
+% Thus matching \(J-D(p)=Bp+O(p^2)\) gives
+% \[
+%     c=\frac{B}{e^J-1}.
+% \]
+% Near \(p\to1\), \(R_R(p)=q^2/d+O(q^3)\), and the logarithm gives
+% \[
+%     D(p)=\frac{1-e^{-J}}{d}q^2+O(q^3).
+% \]
+% Matching \(D(p)=Aq^2+O(q^3)\) gives
+% \[
+%     d=\frac{1-e^{-J}}{A}.
+% \]
+% Therefore
+% \begin{equation}
+% \boxed{
+%     \mathcal L_R[J,A,B](p)
+%     :=
+%     -\log\!\left[1-(1-e^{-J})R_R[J,A,B](p)\right],
+% }
+% \end{equation}
+% where
+% \begin{equation}
+%     R_R[J,A,B](p)
+%     :=
+%     \frac{q^2}{q^2+\frac{B}{e^J-1}pq+\frac{1-e^{-J}}{A}p^2}.
+% \end{equation}
+% For a left-vanishing function, define
+% \begin{equation}
+% \boxed{
+%     \mathcal L_L[J,A,B](p)
+%     :=
+%     -\log\!\left[1-(1-e^{-J})R_L[J,A,B](p)\right],
+% }
+% \end{equation}
+% where
+% \begin{equation}
+%     R_L[J,A,B](p)
+%     :=
+%     \frac{p^2}{p^2+\frac{B}{e^J-1}pq+\frac{1-e^{-J}}{A}q^2}.
+% \end{equation}
+% These definitions are chosen so that
+% \begin{equation}
+%     \mathcal L_R(0)=J,\quad
+%     \mathcal L_R(1)=0,\quad
+%     J-\mathcal L_R(p)=Bp+O(p^2),\quad
+%     \mathcal L_R(p)=Aq^2+O(q^3),
+% \end{equation}
+% and similarly
+% \begin{equation}
+%     \mathcal L_L(0)=0,\quad
+%     \mathcal L_L(1)=J,\quad
+%     \mathcal L_L(p)=Ap^2+O(p^3),\quad
+%     J-\mathcal L_L(p)=Bq+O(q^2).
+% \end{equation}
+% The logarithmic two-sided conjecture is therefore
+% \begin{equation}
+% \boxed{
+% \begin{aligned}
+%     D_0(p,x)&\simeq \mathcal L_R[J_{0s},A_0^{(1)},B_0^{(0)}](p),\\
+%     D_s(p,x)&\simeq \mathcal L_L[J_{s0},A_s^{(0)},B_s^{(1)}](p),\\
+%     \widehat D_0(p,x)&\simeq \mathcal L_R[J_{s0},\widehat A_0^{(1)},\widehat B_0^{(0)}](p),\\
+%     \widehat D_s(p,x)&\simeq \mathcal L_L[J_{0s},\widehat A_s^{(0)},\widehat B_s^{(1)}](p).
+% \end{aligned}}
+% \label{eq:task4_two_sided_log_pade_ansatz}
+% \end{equation}
+% For \(J\ll1\), we have \(e^J-1\simeq J\), \(1-e^{-J}\simeq J\), and
+% \(-\log(1-z)\simeq z\), so the logarithmic Pad\'e formula reduces to the ordinary
+% two-sided Pad\'e formula.  At finite \(x\), however, it preserves the logarithmic
+% structure still matching the two
+% endpoint values and the two leading endpoint coefficients.  It is therefore a
+% phenomenological finite-\(x\) refinement, not a rigorous consequence of the BKM expansion.
+
+% \paragraph{Summary of the conjecture hierarchy.}
+% The hierarchy of formulas is therefore:
+% \begin{enumerate}[label=(\roman*)]
+%     \item The local BKM/Fisher expansion rigorously gives the quadratic endpoint law at the
+%     endpoints where the raw relative entropy vanishes.
+%     \item The endpoint-normalized BKM formula, \cref{eq:task4_bkm_ansatz}, extends this local law
+%     using the sector--sector relative entropy as the amplitude.  It is controlled at small $x$ but
+%     too rigid at finite $x$.
+%     \item The endpoint-power and log-resummed formulas, \cref{eq:task4_endpoint_eta_ansatz,eq:task4_log_eta_ansatz},
+%     use the observed finite-$x$ endpoint exponent and enforce the endpoint values, but they do not
+%     independently match both endpoint coefficients.
+%     \item The two-sided Pad\'e and log-Pad\'e formulas,
+%     \cref{eq:task4_two_sided_pade_ansatz,eq:task4_two_sided_log_pade_ansatz}, are designed to match
+%     both endpoint values and both leading endpoint coefficients.  This is the strongest finite-$x$
+%     phenomenological conjecture supported by the present data.
+% \end{enumerate}
+
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.85\textwidth]{figs/task4_conjecture_formula_comparison_grid.pdf}
+%     \caption[Task 4 conjecture formula comparison]{
+%     Fixed-$x$ comparison between the numerical data and the first set of conjecture curves.  The
+%     columns are $x=1/6,1/4,1/3$ and the rows are $D_0$, $D_s$, $\widehat D_0$, and $\widehat D_s$.
+%     The black points are finite-size means at fixed $x$, and the error bars are the standard
+%     deviation over the exact finite-size pairs with the same $x$.  The plotted curves include the
+%     endpoint-normalized BKM formula, the endpoint-power formula, the log-resummed endpoint-power
+%     formula, the free-boson/log-sum comparison for the sector-to-mixture rows, and the convexity
+%     upper bound.  This plot is useful for global comparison but does not by itself test exact
+%     endpoint matching, because the original probability grid did not contain $p=0$ and $p=1$.
+%     }
+%     \label{fig:task4_conjecture_formula_comparison_grid}
+% \end{figure}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.92\textwidth]{figs/task4_conjecture_formula_residuals_grid.pdf}
+%     \caption[Task 4 conjecture formula residuals]{
+%     Formula-comparison residuals for the same curves as in
+%     \cref{fig:task4_conjecture_formula_comparison_grid}.  The residual is
+%     $F(p,x)-\overline D(p,x)$, where $F$ is the conjecture curve and $\overline D$ is the
+%     finite-size mean of the raw numerical relative entropy at fixed $x$.  These are not the
+%     endpoint residuals used in the power-law fits; they are formula-minus-data residuals.
+%     }
+%     \label{fig:task4_conjecture_formula_residuals_grid}
+% \end{figure}
+
+% % \begin{figure}[H]
+% %     \centering
+% %     \includegraphics[width=\textwidth]{figs/task4_conjecture_formula_endpoint_zoom_grid.pdf}
+% %     \caption[Task 4 endpoint zoom with two-sided ansatz]{
+% %     Endpoint zoom after adding exact endpoint markers.  The plot compares the endpoint-normalized
+% %     BKM, endpoint-power, log-resummed endpoint-power, two-sided Pad\'e, and two-sided log-Pad\'e
+% %     formulas near $p=0$ and $p=1$.  The two-sided formulas are constructed to match the exact
+% %     endpoint values and the fitted leading endpoint coefficients $A$ and $B$.  This directly
+% %     addresses the endpoint mismatch visible when the probability grid is interpreted as if it
+% %     contained $p=0$ and $p=1$.
+% %     }
+% %     \label{fig:task4_conjecture_formula_endpoint_zoom_grid}
+% % \end{figure}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{figs/task4_conjecture_formula_percentage_residuals_grid.pdf}
+%     \caption[Task 4 percentage formula residuals]{
+%     Percentage residuals
+%     $100\times(F(p,x)-\overline D(p,x))/\overline D(p,x)$ for the conjecture curves, excluding
+%     zero-denominator endpoint points.  The two-sided Pad\'e and two-sided log-Pad\'e curves are
+%     designed to reduce the endpoint residuals because they incorporate both the vanishing-endpoint
+%     quadratic coefficient and the opposite-endpoint plateau-deficit slope.  The remaining deviations
+%     quantify finite-$x$ corrections not captured by a two-coefficient endpoint interpolation.
+%     }
+%     \label{fig:task4_conjecture_formula_percentage_residuals_grid}
+% \end{figure}
+
+Task 6: an example that verifies the large interval limit of compact free boson.
+
+We have tested the non-chiral compact free boson's (with $R=\sqrt{2}$) relative entropy between vacuum ($\ket{00}$) and the primary state ($\ket{ss}$) which corresponds to the vertex operator $V(z,\bar{z})=e^{\frac{i}{\sqrt{2}}\phi(z)+\frac{i}{\sqrt{2}}\bar{\phi}(\bar{z})}$ and $U(1)$ charge $\frac{1}{2},\frac{1}{2}$. Right now, we test the primary $V(z,\bar{z})=e^{i\frac{3}{\sqrt{2}}\phi(z)+\frac{i}{\sqrt{2}}\bar{\phi}(\bar{z})}$ (with $U(1)$ charge $\frac{3}{2},\frac{1}{2}$) to see if we have $\beta=b_L^2+b^2_R=(\frac{3}{\sqrt{2}})^2+(\frac{1}{\sqrt{2}})^2=5$ for
+\begin{equation}
+    \log 2-\frac{1}{2}\sum_a S(\rho^a_{\bar{A}}\|\bar{\rho}_{\bar{A}})=I(A:R)_{\ket{\psi_{QR}(p)}}-\frac{1}{2}\sum_a S(\rho^a_{A}\|\bar{\rho}_{A})\sim x^{\beta}
+\end{equation}
+in which $x=\operatorname{Arc}(A)/2\pi$ and $\ket{\psi_{QR}(p)}=\sum_i\sqrt{p_i}\ket{\psi_Q^{(i)}}\otimes \ket{i}_R$, $p_i=\frac{1}{2}$, $Q=A\cup \bar{A}$.
+\begin{figure}[H]
+       \centering
+       \includegraphics[width=0.8\linewidth]{figs/task6_chain_alpha_beta_q2_p1_3_p2_1_quantities.pdf}
+       \caption{Power-law exponent fitting for $\alpha$ and $\beta$ in code subspace $\mathbb{V}=\operatorname{span}(\ket{00},\ket{3s,s})$, in which $\ket{3s,s}$ corresponds to the vertext operator $V(z,\bar{z})=e^{i\frac{3}{\sqrt{2}}\phi(z)+\frac{i}{\sqrt{2}}\bar{\phi}(\bar{z})}$ (with $U(1)$ charge $\frac{3}{2},\frac{1}{2}$). Here, we define $\delta_\alpha:=\frac{1}{D} \sum_a S(\rho^a_A||\bar{\rho}_A) \approx c_1 x^\alpha $ and $\delta_\beta :=\log D - \frac{1}{D} \sum_a S(\rho^a_{\bar{A}}||\bar{\rho}_{\bar{A}}) \approx c_2 x^\beta$. }
+       \label{fig:exmp_beta}
+   \end{figure}
+
+\bibliographystyle{ucsd}
+\bibliography{ref} 
+\end{document}

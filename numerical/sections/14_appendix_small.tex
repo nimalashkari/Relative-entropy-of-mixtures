@@ -1,0 +1,126 @@
+\clearpage
+\section{Small-interval fit summaries}
+\label{sec:allfits}
+The active mixture fits compare a free power law with $F_1,F_2$ and
+the supplied analytical CFT series. The models, parameter conversion,
+unweighted objective and residual measures are defined in
+Sec.~\ref{sec:fits}. Every coefficient includes its power of $\pi$.
+The parameter tables group Free, $F_1$, $F_2$, and CFT consecutively
+for each ordered pair and give each fitted model's selection interval.
+They explicitly give the theoretical leading exponent $\alpha_{\rm CFT}$ and the
+analytical coefficients $c_0^{\rm CFT},c_1^{\rm CFT}$ beside the model
+coefficients. Only $I\mid\eps$ and $\eps\mid I$ have a supplied
+next-order coefficient, respectively $-8\pi^6/45$ and $-8\pi^6/21$
+at power six; see Table~\ref{tab:isingcoeff}. A dash in the analytical
+next-order column means not supplied, never an assumed zero.
+Free, $F_1$, and $F_2$ use the same CFT-wide window in
+Eq.~\eqref{eq:common-fit-windows} for every ordered pair.
+Sec.~\ref{sec:window-selection} gives a visual comparison for each pair.
+All parameters retain full precision in \path{data/f2_summary_fits.csv};
+the identical overview-figure fits are in \path{data/scaling_fit_summary.csv}.
+The displayed rounding does not enter predictions or residuals.
+For a model $M$ with window $W_M$, the quality tables use
+\begin{align}
+ G_M[\%]&=100\left[1-
+ \frac{\mathrm{RMSE}(M;W_M)}{\mathrm{RMSE}(F_1^{[W_M]};W_M)}\right],\nonumber\\
+ G_{M,\mathrm{CV}}[\%]&=100\left[1-
+ \frac{\mathrm{CVRMSE}(M;W_M)}{\mathrm{CVRMSE}(F_1^{[W_M]};W_M)}\right].
+ \label{eq:table-window-gains}
+\end{align}
+Here $F_1^{[W_M]}$ means that the one-term model is refitted on the
+same observations as $M$, also within each omitted-size fold.
+For fitted models, its denominator equals the displayed $F_1$ row
+because the current windows coincide. The analytical CFT residual
+uses these same observations. Raw RMSEs from different windows are
+not directly comparable.
+\subsection{Ising}
+\label{sec:ising-fit-tables}
+\begingroup\footnotesize\setlength{\tabcolsep}{3pt}
+\input{tables/ising_small_parameters}
+\input{tables/ising_small_metrics}
+\endgroup
+\subsection{Compact boson}
+\label{sec:boson-fit-tables}
+\begingroup\footnotesize\setlength{\tabcolsep}{3pt}
+\input{tables/boson_small_parameters}
+\input{tables/boson_small_metrics}
+\endgroup
+\input{sections/13_complement_checks}
+
+\section{Files and reproduction of the scaling revision}
+The implementation is in \path{src/conformal_blocks/}. The original
+wavefunction and puMPS comparisons, historical data, and their audits
+are retained. The active mixture results use these new files:
+\begin{itemize}
+\item \path{larger_chain_engine.py}: Fourier Ising covariance, selected
+transition columns, real LU overlap and solve diagnostics.
+\item \path{stable_entropy.py}: the matrix-function identities in
+Eqs.~\eqref{eq:stable-remainder} and \eqref{eq:stable-deficit}.
+\item \path{scaling_production.py}: resumable state contractions and both
+interval observables, written incrementally to
+\path{data/larger_chain_observations.csv}; numerical checks and timings
+are in \path{larger_chain_checks.csv} and \path{larger_chain_timings.csv}.
+\item \path{scaling_checks.py}: independent high-precision endpoint and
+tiny-deficit tests. The checked records are packaged with the report.
+\item \path{frozen_density_production.py}: reproduces the latest 48 added
+sizes per CFT from \path{data/frozen_density_grid_manifest.json}, using
+$\ell=6,\ldots,10$ and the same production engine and precision.
+\item \path{scaling_fits.py}: common-window free, $F_1,F_2$, and CFT fits,
+omitted-size validation and nested fitting windows. The five active
+CSV files begin with \texttt{scaling\_}; their selection flags explicitly
+identify fitting and display data. Only complete new size/model grids
+are included. Historical interval lengths are not silently selected.
+\item \path{report/scaling_artifacts.py}: reads completed CSVs and writes
+vector PDF plots and tables. It performs no numerical fitting.
+\item \path{retained_window_fits.py}: reproduces every recorded
+principal and companion window records, refitting Free 1, $F_1$, and $F_2$ with
+matching-window $F_1$ controls. \path{report/f2_table_artifacts.py} writes the principal
+parameter and quality tables; \path{report/selection_audit.py}
+checks all updated rows, explicit window specifications, and preserved raw data.
+\item \path{dense_windows.py}: the identical-window first- and second-term
+comparisons, exploratory window scans, and shared-interval comparison in
+Appendix~\ref{sec:dense-second-order}.
+\end{itemize}
+The primary-to-primary appendix retains its previously tested $N\leq256$
+grid and $x\leq0.08$ free fits, separately from the common mixture
+windows in Eq.~\eqref{eq:common-fit-windows}, with coefficients converted to the same
+direct-power convention.
+Its physical predictions and residuals are unchanged by that conversion.
+Historical files such as \path{fit_summary.csv} and
+\path{complement_fit_summary.csv} document earlier revisions and are
+not the active mixture fit inputs. The common-window plot inputs are in
+\path{scaling_fit_summary.csv}; the revised summary-table inputs are in
+\path{f2_summary_fits.csv}.
+
+With the approved Python interpreter and \texttt{PYTHONPATH=src}, run
+\begin{verbatim}
+python -m conformal_blocks.scaling_production --sizes 512 1024 2048 4096 8192
+python -m conformal_blocks.scaling_production --models boson --sizes 16384
+python -m conformal_blocks.scaling_production --models ising --sizes \
+  4352 4608 4864 5120 5376 5632 5888 6144 6400 6656 6912 7168 7424 7680 7936
+python -m conformal_blocks.scaling_production --models boson --sizes \
+  9216 10240 11264 12288 14336
+python -m conformal_blocks.scaling_production --models ising --sizes \
+  8000 8016 8032 8048 8064 8080 8096 8112 8128 8144 200 152
+python -m conformal_blocks.scaling_production --models boson --sizes \
+  12800 13312 15360 168 104
+python -m conformal_blocks.dense_production --output-dir new_dense_run
+python -m conformal_blocks.frozen_density_production \
+  --output-dir new_density_run
+python -m conformal_blocks.scaling_checks --size 16384
+python -m conformal_blocks.scaling_checks --size 8192 --ising-only
+python -m conformal_blocks.scaling_baseline_checks
+python report/rebuild_report.py
+python report/selection_audit.py
+cd report
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+\end{verbatim}
+The executable interpreter path and threading settings are in the README.
+Run production and fitting sequentially so the final analysis uses a
+complete frozen grid. Small-size primary construction and historical
+Gram checks remain documented in \texttt{METHOD\_REFERENCES.md}.
+The Overleaf archive contains \texttt{main.tex} at its root and needs
+pdfLaTeX with no BibTeX step. The study archive additionally contains
+the numerical source, current CSVs, and audit records.

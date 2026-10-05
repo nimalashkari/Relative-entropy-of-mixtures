@@ -1,0 +1,57 @@
+\subsubsection{Numerical evidence for the Ising reference}
+\label{sec:method-quality-checks}
+We choose the exact finite-chain Ising states as the primary input to the
+relative-entropy study because their preparation error is independently
+controlled. The conformal-block vectors for $I,\eps$ and the projected
+vector for $\sigma$ verify the state identification; the exact fermion
+covariances provide the interval matrices used in the fits.
+The decision is supported by the following comparison with the original
+periodic uniform matrix product states (puMPS).
+
+\begin{table}[htbp]\centering\small
+\input{tables/ising_method_quality}
+\caption{Accuracy comparison at $N=16$ against the archived puMPS
+checkpoint of bond dimension $D_{\rm bond}=14$, optimization seed $1250$.
+All vectors are normalized and use Eq.~\eqref{eq:Hising} with both
+couplings equal to one and periodic spin boundaries.
+The residual $\eta$ is defined by Eq.~\eqref{eq:eigenresidual};
+$1-F=1-|\langle\psi_{\rm new}|\psi_{\rm puMPS}\rangle|^2$ is the
+infidelity. The new $\sigma$ vector uses block-seeded Lanczos, with
+requested solver tolerance $2\times10^{-12}$, rather than a pure
+conformal-block formula. Entries are from the original whole-vector
+validation CSVs; no puMPS reoptimization is performed.}
+\label{tab:methodquality}
+\end{table}
+
+\begin{enumerate}
+\item \textbf{The tested finite-chain eigenstate errors are smaller.}
+Table~\ref{tab:methodquality} shows residuals near $10^{-12}$ for the
+new vectors, compared with $10^{-4}$--$10^{-2}$ for the archived puMPS
+vectors. Their energy ordering and symmetries also match the exact
+solution, so the small residuals do not merely identify unrelated
+eigenstates. The full $N=10,16$ overlap and energy comparisons are in
+Table~\ref{tab:pumps}.
+\item \textbf{The reduced states have an independent reference.}
+For $I,\eps$, direct partial traces of the conformal-block vectors agree
+with the exact fermion interval matrices to a maximum Frobenius error
+of $1.55\times10^{-13}$ over the original sizes
+$N=16,18,20,22,24$ and $\ell=2,\ldots,6$.
+For $\sigma$, the projected vectors were independently compared with
+the exact fermion reduced states through $N=16$.
+\item \textbf{The same construction covers the full requested size grid.}
+It supplies exact-chain data at $N=22$, where the archived puMPS
+checkpoint did not pass the earlier overlap-quality criterion.
+The new calculation has its own provenance and does not rehabilitate
+that checkpoint.
+\end{enumerate}
+
+The scope of this preference is finite-chain accuracy for this integrable
+Hamiltonian. The archived puMPS vectors are already close in overlap,
+with infidelity below $4\times10^{-7}$ in all tested comparisons.
+Larger bond dimensions or improved optimization could reduce their
+remaining errors; the tests do not establish that conformal blocks are
+universally superior to converged puMPS. The $\sigma$ accuracy relies on
+Hamiltonian projection and the exact fermion solution. Finally, exact
+lattice eigenstates still have finite-size and short-interval lattice
+corrections. Improving their preparation therefore does not, by itself,
+remove the discrepancies with continuum coefficients at $\ell=2,3,4$.

@@ -1,0 +1,56 @@
+Validation tests each link in the calculation, rather than only checking
+the final entropy. The 119 larger-interval records are in
+\texttt{large\_interval\_checks.csv}; the earlier 345 smaller-interval
+checks remain in \texttt{extension\_checks.csv}.
+\begin{center}
+\begin{minipage}{\linewidth}\small
+\captionsetup{type=table}
+\begin{tabular}{p{.58\linewidth}rr}\toprule
+Check & Count & Largest difference\\\midrule
+Boson ten-site matrix versus full wavefunction enumeration,
+$N=20$, all three primaries &3&$3.22\times10^{-15}$\\
+Boson 100 versus 130 working digits, $N=20,128$, $\ell=10$
+&6&$<2\times10^{-14}$\\
+Boson partial traces of ten-site matrices versus direct Pfaffians,
+$N=20,128$, $\ell=4,5,6,7$ &24&$1.12\times10^{-16}$\\
+Ising partial traces versus direct covariance reductions,
+$N=32,82,128$, $\ell=4,5,6,7$ &36&$1.23\times10^{-15}$\\
+Ising energies versus exact finite-chain formulas,
+$N=32,82,128$ &9&$2.85\times10^{-14}$\\
+Ising matrix entries between opposite parity sectors, $\ell=10$
+&9&$0$\\
+Symmetry-block versus full-matrix directed entropy, $\ell=10$
+&2&$1.96\times10^{-14}$\\
+Entropy threshold $10^{-15}$ versus $10^{-16}$, $\ell=10$
+&30&$3.37\times10^{-13}$\\\bottomrule
+\end{tabular}
+\caption{Large-chain contraction and entropy checks. Counts give
+the number of comparisons in each test family; sizes, interval lengths
+and primary-state coverage are specified in the first column. Matrix
+errors are maximum absolute entrywise differences; energy and entropy
+errors are absolute scalar differences. The precision row reports a
+validation-tolerance bound on the final double-precision matrices.}
+\label{tab:large-validation}
+\end{minipage}
+\end{center}
+Matrix differences in Table~\ref{tab:large-validation} mean the largest absolute entrywise
+difference $\max_{u,v}|\rho^{(1)}_{uv}-\rho^{(2)}_{uv}|$; energy and
+entropy differences are absolute scalar differences. Precision comparisons
+refer to the final complex double-precision matrices, and the displayed
+bound is their validation tolerance. The exact zeros refer to the
+implemented parity-block structure, not a general error bound.
+
+The full-matrix entropy checks use boson $ss\mid3s,s$ at $N=20$ and
+Ising $\sigma\mid\eps$ at $N=82$. The threshold comparison covers all
+six directions at $N=20,128$ for the boson and $N=32,82,128$ for Ising.
+No mixture is replaced by a covariance-only approximation. The generation
+stage independently checks trace, Hermiticity, and minimum eigenvalue for
+all 294 state--interval combinations in the requested grid; these records
+are in \texttt{large\_interval\_quality.csv}. The 180 observations shared
+with the preceding grid retain their original stored values.
+
+The exact contractions remove sampling and variational errors from the
+present finite-lattice calculation. They do not remove the physical
+dependence on $N$, $\ell$, or the fixed finite endpoint $W=10^8$.
+The comparison with CFT in Sec.~\ref{sec:extension} keeps these physical
+limitations distinct from numerical contraction accuracy.

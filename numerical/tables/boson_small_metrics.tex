@@ -1,0 +1,41 @@
+\begingroup\setlength{\tabcolsep}{2pt}
+\begin{longtable}{lllrrrrrrr}
+\caption{Compact boson small-interval fit quality for Table~\ref{tab:boson-small-parameters}, in the same ordered-pair blocks. All fitted-row metrics use that row\textquotesingle s $W_x$ and $m$ observations; $k$ is the fitted parameter count. CFT metrics are evaluated on the same displayed window as the fitted rows, although no fitting is performed. RMSE, CV RMSE, and RMSrel follow Eqs.~\eqref{eq:metrics} and \eqref{eq:cv}. For every $F_2$ row, gains $G,G_{\rm CV}$ use $F_1$ refitted on exactly that $F_2$ window, as in Eq.~\eqref{eq:table-window-gains}; its denominator equals the displayed $F_1$ row because the windows now match. Negative gains mean worse prediction. Absolute RMSEs on different windows should not be ranked directly.}
+\label{tab:boson-small-metrics}\\\toprule
+Direction & Model & $W_x$ & $m$ & $k$ & RMSE & CV RMSE & RMSrel [\%] & $G$ [\%] & $G_{\rm CV}$ [\%]\\\midrule
+\endfirsthead
+\toprule
+Direction & Model & $W_x$ & $m$ & $k$ & RMSE & CV RMSE & RMSrel [\%] & $G$ [\%] & $G_{\rm CV}$ [\%]\\\midrule
+\endhead
+\bottomrule\endfoot
+$00\mid ss$ & Free & $(0,0.1]$ & 598 & 2 & $1.742\!\times\!10^{-5}$ & $1.819\!\times\!10^{-5}$ & 1.2305 & 0.094877 & -1.6624\\*
+$00\mid ss$ & $F_1$ & $(0,0.1]$ & 598 & 1 & $1.744\!\times\!10^{-5}$ & $1.790\!\times\!10^{-5}$ & 1.0961 & 0 & 0\\*
+$00\mid ss$ & $F_2$ & $(0,0.1]$ & 598 & 2 & $1.741\!\times\!10^{-5}$ & $1.835\!\times\!10^{-5}$ & 1.0996 & 0.15988 & -2.5678\\*
+$00\mid ss$ & CFT & --- & 598 & 0 & $9.183\!\times\!10^{-5}$ & $9.183\!\times\!10^{-5}$ & 5.6824 & -426.7 & -413.16\\
+\midrule
+$ss\mid 00$ & Free & $(0,0.1]$ & 598 & 2 & $1.737\!\times\!10^{-5}$ & $1.814\!\times\!10^{-5}$ & 1.2171 & 0.084288 & -1.6754\\*
+$ss\mid 00$ & $F_1$ & $(0,0.1]$ & 598 & 1 & $1.739\!\times\!10^{-5}$ & $1.784\!\times\!10^{-5}$ & 1.0955 & 0 & 0\\*
+$ss\mid 00$ & $F_2$ & $(0,0.1]$ & 598 & 2 & $1.736\!\times\!10^{-5}$ & $1.830\!\times\!10^{-5}$ & 1.0992 & 0.14523 & -2.5842\\*
+$ss\mid 00$ & CFT & --- & 598 & 0 & $9.171\!\times\!10^{-5}$ & $9.171\!\times\!10^{-5}$ & 5.6814 & -427.5 & -413.98\\
+\midrule
+$00\mid 3s,s$ & Free & $(0,0.1]$ & 598 & 2 & $6.866\!\times\!10^{-5}$ & $7.172\!\times\!10^{-5}$ & 9.5493 & 31.286 & 30.43\\*
+$00\mid 3s,s$ & $F_1$ & $(0,0.1]$ & 598 & 1 & $9.993\!\times\!10^{-5}$ & $1.031\!\times\!10^{-4}$ & 2.5019 & 0 & 0\\*
+$00\mid 3s,s$ & $F_2$ & $(0,0.1]$ & 598 & 2 & $6.343\!\times\!10^{-5}$ & $6.680\!\times\!10^{-5}$ & 0.81386 & 36.528 & 35.203\\*
+$00\mid 3s,s$ & CFT & --- & 598 & 0 & $5.243\!\times\!10^{-4}$ & $5.243\!\times\!10^{-4}$ & 4.2262 & -424.67 & -408.57\\
+\midrule
+$3s,s\mid 00$ & Free & $(0,0.1]$ & 598 & 2 & $6.562\!\times\!10^{-5}$ & $6.848\!\times\!10^{-5}$ & 9.2257 & 31.748 & 30.941\\*
+$3s,s\mid 00$ & $F_1$ & $(0,0.1]$ & 598 & 1 & $9.614\!\times\!10^{-5}$ & $9.916\!\times\!10^{-5}$ & 2.4246 & 0 & 0\\*
+$3s,s\mid 00$ & $F_2$ & $(0,0.1]$ & 598 & 2 & $6.045\!\times\!10^{-5}$ & $6.360\!\times\!10^{-5}$ & 0.80915 & 37.118 & 35.866\\*
+$3s,s\mid 00$ & CFT & --- & 598 & 0 & $5.166\!\times\!10^{-4}$ & $5.166\!\times\!10^{-4}$ & 4.2085 & -437.29 & -420.93\\
+\midrule
+$ss\mid 3s,s$ & Free & $(0,0.1]$ & 598 & 2 & $1.453\!\times\!10^{-5}$ & $1.519\!\times\!10^{-5}$ & 3.0938 & 17.691 & 16.67\\*
+$ss\mid 3s,s$ & $F_1$ & $(0,0.1]$ & 598 & 1 & $1.765\!\times\!10^{-5}$ & $1.823\!\times\!10^{-5}$ & 0.87666 & 0 & 0\\*
+$ss\mid 3s,s$ & $F_2$ & $(0,0.1]$ & 598 & 2 & $1.400\!\times\!10^{-5}$ & $1.476\!\times\!10^{-5}$ & 0.41654 & 20.66 & 18.998\\*
+$ss\mid 3s,s$ & CFT & --- & 598 & 0 & $6.716\!\times\!10^{-5}$ & $6.716\!\times\!10^{-5}$ & 1.2933 & -280.54 & -268.48\\
+\midrule
+$3s,s\mid ss$ & Free & $(0,0.1]$ & 598 & 2 & $1.241\!\times\!10^{-5}$ & $1.294\!\times\!10^{-5}$ & 2.5931 & 17.149 & 16.297\\*
+$3s,s\mid ss$ & $F_1$ & $(0,0.1]$ & 598 & 1 & $1.498\!\times\!10^{-5}$ & $1.546\!\times\!10^{-5}$ & 0.76126 & 0 & 0\\*
+$3s,s\mid ss$ & $F_2$ & $(0,0.1]$ & 598 & 2 & $1.198\!\times\!10^{-5}$ & $1.258\!\times\!10^{-5}$ & 0.40929 & 20.054 & 18.631\\*
+$3s,s\mid ss$ & CFT & --- & 598 & 0 & $6.191\!\times\!10^{-5}$ & $6.191\!\times\!10^{-5}$ & 1.2671 & -313.26 & -300.6\\
+\end{longtable}
+\endgroup

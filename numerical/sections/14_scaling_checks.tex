@@ -1,0 +1,31 @@
+\subsection{Checks of the larger-chain numerical method}
+\label{sec:scaling-checks}
+The Fourier construction in Eq.~\eqref{eq:fourier-covariance} was
+compared with the original dense Hamiltonian eigensolve at
+$N=8,16,32,128,256$ for all three states. The anchored transition was
+compared with the original full complex covariance and singular-value
+overlap implementation at $\ell=4$ for every pair. The largest covariance
+entry difference was $2.220\!\times\!10^{-15}$ and the largest transition
+entry difference was $3.747\!\times\!10^{-15}$. Energies and Fourier applications
+to independent test columns were checked as well; all 30 records passed.
+At $N=256$, $\ell=4,10$, the new entropy remainder and original
+trace-log/Gram formulas agreed within $1.400\!\times\!10^{-12}$ across both CFTs.
+
+At the largest Ising size, Fourier applications additionally verify
+$\Gamma^2v=-v$ and antisymmetry on four independent test columns for
+each primary; local $XX$ and $Z$ expectations reproduce the analytical
+energy per site. These are included in the independent-check table.
+Tables~\ref{tab:scaling-numerical-checks} and
+\ref{tab:scaling-independent-checks} give the full new production and
+precision checks. The support-cutoff criterion was relative variation
+below one percent, and the absolute comparison tolerance was
+$5\times10^{-12}$. For observables below that absolute scale, independent
+high-precision contractions and the noncommuting tiny-Gram example are
+essential: a cancellation-damaged zero could otherwise pass an absolute
+test. These checks assess numerical accuracy of the finite-chain
+construction, not the separate continuum extrapolation. A reported zero
+entry difference means identical rounded double-precision outputs;
+it does not assert zero error in exact arithmetic or 120-digit accuracy
+of the final returned matrices.
+\input{tables/scaling_numerical_checks}
+\input{tables/scaling_independent_checks}

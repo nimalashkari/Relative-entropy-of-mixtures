@@ -1,0 +1,262 @@
+\section{From conformal fields to explicit lattice states}
+\label{sec:construction}
+\subsection{What is being constructed and measured?}
+A periodic chain contains $N$ two-level sites. A basis configuration is
+$\ket{n_0\cdots n_{N-1}}$, with $n_j=0,1$. A wavefunction is a table of
+complex amplitudes, $\ket{a}=\sum_{\bm n}\psi_a(\bm n)\ket{\bm n}$,
+normalized so that $\sum_{\bm n}|\psi_a(\bm n)|^2=1$.
+An interval $A$ consists of the first $\ell$ consecutive sites; its complement
+is $\bar A$. We trace out $\bar A$ to form
+\begin{equation}
+ (\rho_A^a)_{uv}=\sum_w\psi_a(u,w)\psi_a(v,w)^*,\qquad x=\ell/N.
+ \label{eq:rdm}
+\end{equation}
+Here $u,v$ label interval configurations, $w$ labels the complement, and
+the star denotes complex conjugation. Throughout this report,
+\begin{equation}
+ m_{ab}=\tfrac12(\rho_A^a+\rho_A^b),\qquad
+ \Dab=\Tr\rho_A^a(\log\rho_A^a-\log m_{ab}).
+ \label{eq:observable}
+\end{equation}
+Logarithms are natural, so relative entropy is measured in nats. The
+mixture probability is $p=1/2$ and $0\leq\Dab\leq\log2$. This is an
+incoherent mixture of density matrices, not a coherent sum of state vectors.
+The ordering $a\mid b$ identifies the numerator; reversing it gives a
+different observable unless a specific symmetry proves equality.
+
+Conformal field theory (CFT) describes the long-distance limit of a critical
+chain. A \emph{primary field} creates a basic excitation; its left and right
+scaling weights are $h,\bar h$, its scaling dimension is $h+\bar h$, and its
+conformal spin is $h-\bar h$. Descendants are obtained by acting with modes
+of the symmetry generators. A \emph{conformal block} is a correlation
+amplitude with specified intermediate fusion channels, that is, specified
+outcomes when fields are brought together. We turn these amplitudes into
+wavefunction coefficients by associating the field components or fusion
+channels with the physical basis configurations. This construction chooses
+a lattice representative; it does not guarantee that every arbitrary field
+insertion is an eigenstate of a chosen lattice Hamiltonian.
+
+The production constructions are given in Secs.~\ref{sec:bosonconstruction}
+and \ref{sec:ising-production}. Independent state-quality
+checks and their error definitions are collected in
+Appendix~\ref{sec:method-audit}.
+
+\subsection{What the three supplied papers provide}
+Reference~\cite{Herwerth} constructs the $SU(2)_1$ spin chain using vertex
+fields and current-mode insertions, including fields at zero and infinity.
+Reference~\cite{Montes2016} explains how fusion channels themselves encode
+Ising spins, and tests the critical Ising ground-state block.
+Reference~\cite{Liu} relates $SU(n)_k$ blocks to projected fermion states:
+an auxiliary fermion state is projected onto the allowed on-site spin
+representation, facilitating conversion to a matrix product state (MPS).
+For $SU(2)_1$ this recovers the projected Fermi-sea/Haldane--Shastry
+construction. It does not supply an Ising $\sigma$ eigenstate construction;
+$SU(2)_2$ has central charge $3/2$, whereas Ising has $1/2$.
+
+Reference~\cite{Montes2017} relates the homogeneous Ising block vacuum
+to the exact fermion pairing state. The covariance reduction is described
+in Ref.~\cite{PeschelEisler}. Together these provide the basis for the
+Ising production construction in Sec.~\ref{sec:ising-production}. Endpoint-block and projected-state
+constructions serve as independent validation and are documented in
+Appendix~\ref{sec:ising-independent}.
+
+\subsection{Compact boson: from nonchiral primaries to vertex blocks}
+\label{sec:bosonconstruction}
+The target theory has independent left and right bosons $\phi_L(z)$ and
+$\phi_R(\bar z)$, normalized by logarithmic two-point functions in $z$
+and $\bar z$, respectively; mixed left--right contractions vanish.
+We use the compactification convention $R=\sqrt2$,
+with momentum integer $m$ and winding integer $w$:
+\begin{equation}
+ Q_L=\frac mR+\frac{wR}{2},\qquad
+ Q_R=\frac mR-\frac{wR}{2}.
+ \label{eq:bosoncharges}
+\end{equation}
+Here $R$ fixes the allowed charge lattice. The nonchiral vertex primary is
+\begin{equation}
+ \mathcal V_{a,b}(z,\bar z)
+ ={:}\exp\!\left[\frac{ia}{\sqrt2}\phi_L(z)
+                  +\frac{ib}{\sqrt2}\phi_R(\bar z)\right]{:},
+ \quad a=m+w,\quad b=m-w.
+ \label{eq:fullvertex}
+\end{equation}
+Colons denote normal ordering, which removes contractions of a field
+with itself at the same point. The state created at the origin by this
+field is denoted $\ket{as,bs}$, where $s=1/\sqrt2$:
+$\ket{as,bs}=\mathcal V_{a,b}(0,0)\ket0$.
+This is the state--operator correspondence: a field inserted at the
+origin specifies a state on a circle surrounding it.
+Each chiral charge $Q$ contributes weight $Q^2/2$, hence
+$h=a^2/4$ and $\bar h=b^2/4$. This follows from the stress-tensor
+operator product
+$T(z)V_Q(0)\sim(Q^2/2)z^{-2}V_Q(0)+z^{-1}\partial V_Q(0)$,
+where $T$ generates conformal transformations.
+
+To obtain a finite spin-chain vector we use the auxiliary chiral
+endpoint construction of Ref.~\cite{Herwerth}, with the chosen charge
+labels at zero and infinity. The resulting chain has a nonchiral
+continuum limit; the two endpoint labels specify the target charge
+sectors. The auxiliary chiral correlator is the wavefunction amplitude:
+we do not multiply it by its complex conjugate to construct a different
+state. Its absolute square is taken only when computing probabilities.
+
+The chiral boson is normalized by
+$\langle\phi(z)\phi(w)\rangle=-\log(z-w)$. Its vertex field
+$V_q(z)={:}\exp(iq\phi(z)){:}$ has weight $q^2/2$. Gaussian contraction gives
+\begin{equation}
+ \left\langle\prod_r V_{q_r}(z_r)\right\rangle
+ =\delta_{\sum_rq_r,0}\prod_{r<t}(z_r-z_t)^{q_rq_t}.
+ \label{eq:vertex}
+\end{equation}
+The neutrality symbol sets the amplitude to zero unless the charges sum to
+zero. It fixes the allowed occupation sector, reducing the computation.
+More explicitly, a pair of exponentials contributes
+$\exp[-q_rq_t\langle\phi(z_r)\phi(z_t)\rangle]
+=(z_r-z_t)^{q_rq_t}$, while integration over the spatially constant
+boson mode imposes the neutrality condition. Thus the product in
+Eq.~\eqref{eq:vertex} is determined by the two-point function.
+
+\begin{enumerate}
+\item Put the sites at $z_j=\exp(2\pi i j/N)$, $j=0,\ldots,N-1$.
+Associate occupation $n_j$ with a vertex charge $s_j/\sqrt2$, where
+$s_j=2n_j-1$. The symbol $s_j$ is a site sign; the state-label symbol
+$s=1/\sqrt2$ used below is a continuum charge unit.
+\item Insert charges $a/\sqrt2$ at the origin and $b/\sqrt2$ at infinity.
+The latter is defined by
+$V_q(\infty)=\lim_{W\to\infty}W^{q^2}V_q(W)$.
+Neutrality gives $M=\sum_j n_j=(N-a-b)/2$, leaving
+$\binom NM$ allowed configurations. These specify the state;
+the production contraction in Sec.~\ref{sec:extension} avoids
+enumerating them on large chains.
+\item Multiply Eq.~\eqref{eq:vertex} by the Marshall sign
+$\chi(\bm n)=\exp(i\pi\sum_j jn_j)$, which fixes the spin-basis convention.
+After dropping factors independent of $\bm n$, the amplitude is
+\begin{equation}
+ \psi_{a,b}(\bm n)\propto
+ \chi(\bm n)\prod_{i<j}(z_i-z_j)^{s_is_j/2}
+ \prod_j(-z_j)^{a s_j/2}
+ \prod_j(1-z_j/W)^{b s_j/2}.
+ \label{eq:bosonblock}
+\end{equation}
+Set the last product to one at strict infinity. To reproduce the original
+numerics, use $W=10^8$.
+\item Evaluate logarithms with one consistent principal branch for each
+unordered pair. Subtract the largest real log amplitude before
+exponentiating, then normalize. For the occupied set $O$, the implemented
+configuration-dependent logarithm is
+\begin{align}
+ L(O)={}&2\sum_{i<j\in O}\log(z_i-z_j)
+ -\sum_{i\in O}\sum_{j\ne i}\log(z_{\min(i,j)}-z_{\max(i,j)})\notag\\
+ &+i\pi\sum_{i\in O}i
+ +a\sum_{i\in O}\log(-z_i)
+ +b\sum_{i\in O}\log(1-z_i/W).
+ \label{eq:logblock}
+\end{align}
+\item Use $(a,b)=(0,0),(1,1),(3,1)$ for the three states. Their
+continuum charges and weights are
+\begin{center}
+\begin{tabular}{lccc}\toprule
+State & $(Q_L,Q_R)$ & $(h,\bar h)$ & $M$\\\midrule
+$\ket{00}$ & $(0,0)$ & $(0,0)$ & $N/2$\\
+$\ket{ss}$ & $(1,1)/\sqrt2$ & $(1/4,1/4)$ & $N/2-1$\\
+$\ket{3s,s}$ & $(3,1)/\sqrt2$ & $(9/4,1/4)$ & $N/2-2$\\\bottomrule
+\end{tabular}
+\end{center}
+The different $M$ values ensure exact orthogonality. No orthogonalization
+is applied to these states.
+\end{enumerate}
+
+The charge-three vertex is a primary of the free-boson Virasoro algebra.
+In the extended $SU(2)_1$ current algebra it is a level-two descendant of
+the spin-half field, consistent with Ref.~\cite{Herwerth}. These are
+compatible uses of ``primary'' for different symmetry algebras.
+Algebraically expanding $s_j=2n_j-1$ in Eq.~\eqref{eq:bosonblock} gives the
+same Laughlin/Jastrow amplitude as the original generator. We use bit $j$
+for site $j$ throughout the production calculation. The explicit numerical
+comparison, including conversion of the original basis ordering, is
+reported in Appendices~\ref{sec:boson-sanity} and
+\ref{sec:state-comparisons}.
+
+\input{sections/01_boson_examples}
+
+\subsection{Ising: exact fermion states}
+\label{sec:ising-production}
+The nonchiral states required by Eqs.~(4.13)--(4.18) of the supplied
+manuscript~\cite{theory} are
+$I:(0,0)$, $\sigma:(1/16,1/16)$, and $\eps:(1/2,1/2)$, where each
+pair gives $(h,\bar h)$. The energy primary $\eps$ contains both
+left and right fermions and has scaling dimension one. The production
+calculation uses the exact Jordan--Wigner solution for all three states.
+
+The Hamiltonian that identifies these lattice states is
+\begin{equation}
+ H=-\sum_{j=0}^{N-1}X_jX_{j+1}-\sum_{j=0}^{N-1}Z_j,
+ \qquad X_N=X_0,
+ \label{eq:Hising}
+\end{equation}
+with coupling and transverse field both one. These are periodic
+\emph{spin} boundary conditions. Define $P=\prod_j Z_j$ and let
+$\mathsf T$ translate the spins by one site. The three desired states
+have $\mathsf T=1$, corresponding to zero momentum, and are identified by
+\begin{center}
+\begin{tabular}{lcll}\toprule
+State & $P$ & Energy ordering & Production sector\\\midrule
+$I$ & $+1$ & Ground state & Antiperiodic vacuum\\
+$\eps$ & $+1$ & First excited even state & Two antiperiodic quasiparticles\\
+$\sigma$ & $-1$ & Lowest odd state & Periodic vacuum; odd zero mode\\
+\bottomrule\end{tabular}
+\end{center}
+Here $\mathsf T$ is distinct from the stress tensor $T(z)$.
+
+The exact finite-chain energies of these sectors are
+\begin{equation}
+ E_I=-2\csc\frac\pi{2N},\qquad
+ E_\sigma=-2\cot\frac\pi{2N},\qquad
+ E_\eps=E_I+8\sin\frac\pi{2N}.
+ \label{eq:ising-energies}
+\end{equation}
+For the velocity $v=2$ of Eq.~\eqref{eq:Hising},
+$E_a-E_I\sim(2\pi v/N)(h_a+\bar h_a)$ identifies the spin and energy
+primaries with scaling dimensions $1/8$ and $1$. We construct these
+sectors directly by their fermion occupations.
+
+\input{sections/01_ising_fermions}
+
+Restrict $G$ to the first $2\ell$ indices. An orthogonal transformation
+brings it into $2\times2$ blocks with off-diagonal entries $g_r$. If $b_r$
+are the correspondingly rotated Majoranas, the interval state is
+\begin{equation}
+ \rho_A=\prod_{r=0}^{\ell-1}
+ \frac{\id+g_r i b_{2r}b_{2r+1}}2.
+ \label{eq:gaussian}
+\end{equation}
+We build this $2^\ell\times2^\ell$ matrix explicitly. Each component
+state is Gaussian; their mixture generally is not. We diagonalize the
+actual matrix $m_{ab}$, not an averaged covariance matrix.
+For the compact boson, the production Pfaffian contraction evaluates
+Eq.~\eqref{eq:rdm} for the fixed-occupation Jastrow states without
+explicitly forming the full coefficient matrix. The connected large-chain
+procedures for both CFTs are developed in Sec.~\ref{sec:extension}.
+
+% \subsubsection{Why use exact fermion states for production?}
+% \label{sec:methodchoice}
+% The Ising Hamiltonian is quadratic after the Jordan--Wigner
+% transformation. Its covariance construction therefore supplies the
+% finite-chain eigenstates directly, with no variational bond-dimension
+% truncation or iterative full-vector projection in the production step.
+% Fixing the periodic zero-mode parity selects the spin primary, and
+% restricting the covariance produces its interval matrix without storing
+% $2^N$ amplitudes. This makes the same method applicable across the full
+% system-size grid.
+
+% We use the conformal-block and projected vectors as independent checks
+% of the state identification, and compare with the supplied periodic
+% uniform matrix product states (puMPS). Their construction details are in
+% Appendix~\ref{sec:ising-independent}; the numerical overlap, energy,
+% residual and reduced-state comparisons are in
+% Appendices~\ref{sec:state-comparisons} and
+% \ref{sec:ising-spin-validation}. These checks support the production
+% choice for this integrable Hamiltonian and the supplied checkpoints;
+% they do not establish a general accuracy advantage over fully converged
+% puMPS. Exact lattice states still retain finite-size and interval-cutoff
+% effects when compared with CFT.

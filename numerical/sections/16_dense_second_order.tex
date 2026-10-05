@@ -1,0 +1,125 @@
+\clearpage
+\section{Dense sampling and the second manuscript term}
+\label{sec:dense-second-order}
+The purpose of this scan is to distinguish an improved residual from
+an improved estimate of a CFT coefficient. In particular, adding a
+second basis function always reduces the training sum of squares, but
+need not move the first coefficient towards its theoretical value.
+We therefore compare $F_1$ and $F_2$ on exactly the same observations,
+using the objective in Eq.~\eqref{eq:objective}, and examine both
+coefficients rather than the residual alone.
+
+\subsection{Additional geometries and direct coefficient comparisons}
+Both CFTs first receive the same additional 47 even sizes between 60 and
+6000. Start with $N_j=2\operatorname{round}[30\,100^{j/48}]$ for
+$j=0,\ldots,48$, and omit sizes already present. Every new size uses
+$\ell=6,7,8,9,10$ and computes both interval observables for all six
+ordered pairs. A further 188 Ising sizes complete the progression
+$N=200,204,\ldots,1000$, concentrating observations where the known
+$x^6$ term is measurable. The two sets are defined in
+Eq.~\eqref{eq:dense-grid}. No new size exceeds the existing maxima
+8192 and 16384. The resulting 1175 Ising and 235 boson new geometries per direction fill
+the intermediate fractions without changing any previously computed
+entropy. The exact executed sizes, checks, and timings are retained
+in \path{data/dense_grid_manifest.json} and the production CSVs.
+The subsequent refinement in Appendix~\ref{sec:common-window-results}
+adds 48 further sizes for each CFT while keeping all fitting windows
+fixed. Every current fit, plotted coefficient and window-sensitivity
+comparison below uses the combined data; the two grid manifests
+distinguish the original dense scan from this later refinement.
+
+Let $q=D^A$ with $z=x$ for a small interval, or
+$q=\delta=\log 2-D^B$ with $z=y$ for its large complement. With the
+pair-specific powers $r_0,r_1$ in Eq.~\eqref{eq:fit}, the two models are
+$F_1=c_0z^{r_0}$ and $F_2=c_0z^{r_0}+c_1z^{r_1}$.
+Both coefficients in $F_2$ are estimated; neither is fixed to theory.
+All amplitudes include their powers of $\pi$.
+For the leading discrepancy $\eta_c$ in Eq.~\eqref{eq:metrics}, define
+\begin{equation}
+ \Delta_0=|\eta_c(F_1)|-|\eta_c(F_2)|.
+ \label{eq:dense-coefficient-gain}
+\end{equation}
+A positive $\Delta_0$, measured in percentage points, means that
+including the second term improves the leading coefficient on that
+window. This is distinct from the residual gain $G$ and the omitted-size
+prediction gain $G_{\rm CV}$. All reported fits and omitted-size
+training sets retain at least forty observations.
+
+For the known Ising coefficients, the supplied manuscript gives
+\begin{align}
+ D^A_{I\mid\eps}&=\frac{2\pi^4}{15}x^4-\frac{8\pi^6}{45}x^6+O(x^8),\nonumber\\
+ D^A_{\eps\mid I}&=\frac{2\pi^4}{15}x^4-\frac{8\pi^6}{21}x^6+O(x^8).
+ \label{eq:dense-known-ising}
+\end{align}
+These are the $p=1/2$ specializations of the two Ising mixture
+expressions in the supplied source~\cite{theoryLarge}. No missing
+subleading coefficient is derived or assumed. The unknown analytical
+cells remain blank.
+
+\subsection{What is resolved by the dense scan}
+\input{tables/dense_findings}
+The chosen windows were explored with these deterministic data, so
+their agreement with theory is an exploratory comparison rather than
+a blind prediction. Omitted-size refits test sensitivity to individual
+chain sizes; they do not remove the effect of selecting a window.
+The fitted $c_1$ should be interpreted as a coefficient of the specified
+two-term truncation unless it remains stable as the window changes.
+The separate-$\ell$ comparison uses exactly the same $F_2$ model on
+$W_x=(0,0.006]$ for each of the five lengths. It estimates both
+coefficients independently for each length and adds no new power.
+Different finite-$\ell$ leading amplitudes can influence a pooled
+second coefficient when their relative sampling changes across the
+window. The separate-length results expose this directly; they are
+not an extrapolation to $\ell\to\infty$.
+
+We also propagate the recorded entropy variation under the support-cutoff
+checks to the two fitted coefficients. For the design matrix
+$X_{ij}=x_i^{r_j}$, let $P=(X^TX)^{-1}X^T$ and let $s_i$ be the
+observed span of entropy values when the numerical support cutoff is
+varied. The resulting sensitivity bound is
+\begin{equation}
+ b_j=\sum_i |P_{ji}|s_i.
+ \label{eq:dense-cutoff-bound}
+\end{equation}
+This bounds coefficient changes if each data perturbation is no larger
+than its recorded span. It is an empirical cutoff-sensitivity check,
+not an error bound for the continuum approximation or for all
+floating-point operations. The implementation uses scaled columns
+and a pseudoinverse, avoiding the large dynamic range of the powers.
+
+To expose the second term directly, plot
+\begin{equation}
+ U(z)=\frac{q(z)}{z^{r_0}},\qquad t=z^{r_1-r_0}.
+ \label{eq:dense-normalized-curve}
+\end{equation}
+The plotted $F_2$ curve is then a straight line $U=c_0+c_1t$.
+The fit is still performed in $q$, not in $U$; the transformation is
+only a visualization. Separate symbols retain the subsystem length,
+so disagreement between lengths is visible without introducing an
+extra lattice-correction ansatz. At fixed $\ell$, increasing $N$
+reduces $z$ but does not take a continuum limit with $\ell\to\infty$.
+Consequently, denser sampling alone cannot guarantee exact recovery
+of the continuum coefficients.
+
+\input{sections/16_dense_figures}
+\subsection{Matched-window results and reproduction}
+The source \path{src/conformal_blocks/dense_windows.py} regenerates
+the scan and matched-window comparisons from completed CSVs.
+The portable \path{fitting_datas} notebook includes per-model window
+controls and the complete scan, selected comparisons, and omitted-size
+records. Its defaults keep all models and directions in each CFT and
+interval group on the same window. Separate-length and shared-window
+figures are explicitly identified diagnostics.
+\begingroup\footnotesize
+\input{tables/dense_small_ising}
+\input{tables/dense_small_ising_second}
+\input{tables/dense_small_boson}
+\input{tables/dense_small_boson_second}
+\input{tables/dense_large_ising}
+\input{tables/dense_large_ising_second}
+\input{tables/dense_large_boson}
+\input{tables/dense_large_boson_second}
+\input{tables/dense_subsystem}
+\endgroup
+
+\input{sections/17_common_window_results}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "step": 4,
+  "congruence": 0,
+  "lengths": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "maximum_N": {
+    "ising": 8192,
+    "boson": 16384
+  },
+  "production_caps": {
+    "small": 0.1,
+    "large": 0.05
+  },
+  "fit_caps": {
+    "small": 0.02,
+    "large": 0.005
+  },
+  "y_count": 40,
+  "y_numerator_start": 78,
+  "y_denominator": 195,
+  "reference_y": 0.5,
+  "source_weight_convention": true,
+  "counts": [
+    {
+      "model": "boson",
+      "region": "large",
+      "half_records": 121710,
+      "weighted_records": 4868400
+    },
+    {
+      "model": "boson",
+      "region": "small",
+      "half_records": 122304,
+      "weighted_records": 4892160
+    },
+    {
+      "model": "ising",
+      "region": "large",
+      "half_records": 60270,
+      "weighted_records": 2410800
+    },
+    {
+      "model": "ising",
+      "region": "small",
+      "half_records": 60864,
+      "weighted_records": 2434560
+    }
+  ],
+  "expected_weighted_records": 14605920,
+  "expected_reference_records": 365148,
+  "jobs": {
+    "ising": 2034,
+    "boson": 4082
+  }
+}

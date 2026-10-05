@@ -1,0 +1,13 @@
+\begin{longtable}{lrrrr}
+\caption{Measured largest completed chains, with three diagonal states, three transitions, both directions, and every $\ell=4,\ldots,10$. Wall time includes both interval calculations and endpoint cutoff checks. Memory is the process high-water resident set (GiB), not the size of one matrix; it may include allocations retained from preceding stages. The host has 32 GiB RAM. These are validated endpoints, not absolute mathematical limits.}
+\label{tab:scaling-resources}\\\toprule
+CFT & Largest $N$ & Seconds & Peak GiB & Minimum retained fraction\\\midrule
+\endfirsthead
+\toprule
+CFT & Largest $N$ & Seconds & Peak GiB & Minimum retained fraction\\\midrule
+\endhead
+\bottomrule\endfoot
+ising & 8192 & 93.46 & 9.0882 & $7.324\!\times\!10^{-4}$\\
+boson & 16384 & 506.34 & 0.73204 & $3.662\!\times\!10^{-4}$\\
+\end{longtable}
+For Ising, doubling the largest tested $N$ would multiply the dominant stored matrix sizes by four, giving an estimated 36.4 GiB with the present allocation pattern, above this host\textquotesingle s RAM. The dense LU arithmetic would grow by about eight. For the boson, sparse index scans still permit further growth but become costly: doubling $N$ can quadruple that bookkeeping. Such extrapolations are estimates, not executed benchmarks. No larger size is claimed as validated.

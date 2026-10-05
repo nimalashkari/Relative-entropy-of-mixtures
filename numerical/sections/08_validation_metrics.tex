@@ -1,0 +1,12 @@
+\subsection{Definitions of the state-quality diagnostics}
+\label{sec:validation-metrics}
+To judge the quality of a normalized candidate $\ket{\psi}$, we compute
+its mean energy $E_\psi=\bra{\psi}H\ket{\psi}$ and eigenstate residual
+\begin{equation}
+ \eta_\psi=\|(H-E_\psi)\ket{\psi}\|_2
+ =\sqrt{\bra{\psi}H^2\ket{\psi}-E_\psi^2}.
+ \label{eq:eigenresidual}
+\end{equation}
+The residual vanishes for an exact eigenstate. We also check symmetry and energy
+ordering, because a small residual alone does not identify the desired
+primary. The vector norm is $\|v\|_2=(\sum_i|v_i|^2)^{1/2}$.

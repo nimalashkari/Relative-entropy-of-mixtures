@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,mathtools,bm,array,booktabs,longtable,graphicx,microtype}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{Relative entropy of mixtures}\fancyhead[R]{\thepage}
+\setlength{\headheight}{14pt}
+\setcounter{totalnumber}{6}
+\setcounter{tocdepth}{2}
+\makeatletter
+\setlength{\@fpsep}{6pt}
+\makeatother
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\Dab}{D_{a\mid b}}
+\newcommand{\id}{\mathbb I}
+\title{Relative entropy of mixtures - Numerics}
+\author{Yuntai Song}
+\date{\today}
+\begin{document}
+\maketitle
+\tableofcontents
+\input{sections/01_construction}
+\input{sections/02_coefficients}
+\input{sections/05_small_x_extension}
+\input{sections/14_scaling_fits}
+\input{sections/11_complement}
+\input{sections/15_window_selection}
+\appendix
+\input{sections/14_appendix_small}
+\input{sections/14_window_checks}
+\input{sections/07_method_references_checks}
+\input{sections/09_primary_relative_entropy}
+\input{sections/15_window_appendix}
+\input{sections/16_dense_second_order}
+\begin{thebibliography}{99}
+\raggedright
+\small
+\bibitem{GolubPereyra} G. H. Golub and V. Pereyra,
+\emph{The differentiation of pseudo-inverses and nonlinear least
+squares problems whose variables separate}, SIAM J. Numer. Anal.
+\textbf{10}(2), 413--432 (1973),
+\href{https://doi.org/10.1137/0710036}{doi:10.1137/0710036}.
+\bibitem{theoryLarge} N. Lashkari and J. Mohanty,
+\emph{Relative entropy of mixtures of excited states in CFT},
+supplied working manuscript \texttt{manuscript\_theory/main3.tex}.
+The large-interval two-point result and the subsections on Ising and
+non-chiral compact-boson examples are used here. The accompanying
+\texttt{main.pdf} is an older version and does not contain those examples.
+\bibitem{Bravyi} S. Bravyi,
+\emph{Lagrangian representation for fermionic linear optics},
+Quantum Inf. Comput. \textbf{5}, 216--238 (2005),
+\href{https://arxiv.org/abs/quant-ph/0404180}{arXiv:quant-ph/0404180}.
+\bibitem{Surace} J. Surace and L. Tagliacozzo,
+\emph{Fermionic Gaussian states: an introduction to numerical approaches},
+\href{https://arxiv.org/abs/2111.08343}{arXiv:2111.08343}.
+\bibitem{theory} Supplied manuscript, \emph{Relative entropy of mixtures},
+PDF and source archive in \texttt{Theory\_paper/}; matching discussion
+in \texttt{main3.tex}, Sec.~4.2, Eqs.~(4.13)--(4.18). The six boson pairs
+are specified explicitly in the user's request; table numbering differs
+between manuscript versions.
+\bibitem{Herwerth} B. Herwerth, G. Sierra, H.-H. Tu, and A. E. B. Nielsen,
+\emph{Excited states in spin chains from conformal blocks},
+Phys. Rev. B \textbf{91}, 235121 (2015),
+\href{https://arxiv.org/abs/1501.07557}{arXiv:1501.07557}.
+\bibitem{Montes2016} S. Montes, J. Rodr\'{i}guez-Laguna, H.-H. Tu, and G. Sierra,
+\emph{Many-body lattice wavefunctions from conformal blocks},
+Phys. Rev. B \textbf{95}, 085146 (2017),
+\href{https://arxiv.org/abs/1609.05217}{arXiv:1609.05217}.
+\bibitem{Liu} T. Liu, Y.-H. Wu, H.-H. Tu, and T. Xiang,
+\emph{Bridging conformal field theory and parton approaches to
+$\mathrm{SU}(n)_k$ chiral spin liquids}, Phys. Rev. B \textbf{111}, 205137 (2025),
+\href{https://arxiv.org/abs/2501.09567}{arXiv:2501.09567}.
+\bibitem{Montes2017} S. Montes, J. Rodr\'{i}guez-Laguna, and G. Sierra,
+\emph{BCS wave function, matrix product states, and the Ising conformal field theory},
+Phys. Rev. B \textbf{96}, 195152 (2017),
+\href{https://arxiv.org/abs/1709.01979}{arXiv:1709.01979}.
+\bibitem{Nakagawa} Y. O. Nakagawa and T. Ugajin,
+\emph{Numerical calculations on the relative entanglement entropy in critical spin chains},
+J. Stat. Mech. (2017) 093104,
+\href{https://arxiv.org/abs/1705.07899}{arXiv:1705.07899}.
+\bibitem{Sarosi} G. S\'{a}rosi and T. Ugajin,
+\emph{Relative entropy of excited states in two dimensional conformal field theories},
+JHEP \textbf{07} (2016) 114,
+\href{https://arxiv.org/abs/1603.03057}{arXiv:1603.03057}.
+\bibitem{SarosiHigher} G. S\'{a}rosi and T. Ugajin,
+\emph{Relative entropy of excited states in conformal field theories of
+arbitrary dimensions} (2016),
+\href{https://arxiv.org/abs/1611.02959}{arXiv:1611.02959}; supplied version v1.
+\bibitem{ScipyEigsh} SciPy 1.17 documentation,
+\emph{scipy.sparse.linalg.eigsh}, implicitly restarted Lanczos
+and solver parameter definitions,
+\href{https://docs.scipy.org/doc/scipy-1.17.0/reference/generated/scipy.sparse.linalg.eigsh.html}{official API reference}.
+\bibitem{Stephan} J.-M. St\'{e}phan and F. Pollmann,
+\emph{Full counting statistics in the Haldane--Shastry chain},
+Phys. Rev. B \textbf{95}, 035119 (2017),
+\href{https://arxiv.org/abs/1608.06856}{arXiv:1608.06856}.
+\bibitem{PeschelEisler} I. Peschel and V. Eisler,
+\emph{Reduced density matrices and entanglement entropy in free lattice models},
+J. Phys. A: Math. Theor. \textbf{42}, 504003 (2009),
+\href{https://doi.org/10.1088/1751-8113/42/50/504003}{doi:10.1088/1751-8113/42/50/504003},
+\href{https://arxiv.org/abs/0906.1663}{arXiv:0906.1663}.
+\bibitem{Wimmer} M. Wimmer,
+\emph{Algorithm 923: Efficient numerical computation of the Pfaffian
+for dense and banded skew-symmetric matrices},
+ACM Trans. Math. Softw. \textbf{38}(4), Article 30 (2012),
+\href{https://doi.org/10.1145/2331130.2331138}{doi:10.1145/2331130.2331138},
+\href{https://arxiv.org/abs/1102.3440}{arXiv:1102.3440}.
+\bibitem{ARPACK} R. B. Lehoucq, D. C. Sorensen, and C. Yang,
+\emph{ARPACK Users' Guide: Solution of Large-Scale Eigenvalue Problems
+with Implicitly Restarted Arnoldi Methods}, SIAM, Philadelphia (1998),
+\href{https://doi.org/10.1137/1.9780898719628}{doi:10.1137/1.9780898719628}.
+\bibitem{Higham} N. J. Higham, \emph{Functions of Matrices: Theory and Computation}, SIAM (2008),
+\href{https://doi.org/10.1137/1.9780898717778}{doi:10.1137/1.9780898717778}.
+\end{thebibliography}
+\end{document}

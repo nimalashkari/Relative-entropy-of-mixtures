@@ -1,0 +1,149 @@
+\subsection{Step 8: extend the chain while retaining numerical precision}
+\label{sec:extended-production}
+\input{tables/extended_grid_definition}
+The earlier grid in Eq.~\eqref{eq:large-grid} remains a reference subset.
+The active mixture fits use Eq.~\eqref{eq:extended-grid}; no intervals
+longer than ten sites are added. The primary-to-primary sanity check
+in Appendix~\ref{sec:primary-relative-entropy} retains its original
+$N\leq256$ grid. The methods below change how the same finite-chain
+states and entropies are evaluated, not their definitions.
+
+\subsubsection{Fourier construction and local Ising transition solves}
+At criticality the Majorana matrix is uniform apart from its boundary
+twist, so its eigenmodes are known Fourier waves. Let $L=2N$ count
+Majoranas, with indices $j=0,\ldots,L-1$, and set
+$k_m=2\pi(m+t)/L$. The twist is $t=1/2$ for $I,\eps$ and $t=0$
+for $\sigma$. Define $w_m=-\operatorname{sgn}(\sin k_m)$.
+For the energy state reverse $w_m$ at $m=0,N-1,N,L-1$.
+For the spin state set the two zero-mode weights $w_0,w_N$ to zero
+and supply their parity explicitly. Then
+\begin{equation}
+ (\Gamma_a)_{ij}=\frac{i}{L}\sum_{m=0}^{L-1}w_m
+ e^{ik_m(i-j)}+\begin{cases}
+ [(-1)^i-(-1)^j]/L,&a=\sigma,\\0,&a=I,\eps.
+ \end{cases}
+ \label{eq:fourier-covariance}
+\end{equation}
+The imaginary notation in the Fourier sum yields a real antisymmetric
+matrix. The last term is $vu^T-uv^T$, with $u_j=L^{-1/2}$ and
+$v_j=(-1)^jL^{-1/2}$; it selects the same odd Ramond state as
+Sec.~\ref{sec:large-ising}. This is an exact finite-chain construction,
+using the free-fermion mode description of Refs.~\cite{Montes2017,PeschelEisler}.
+Its energies are
+\begin{equation}
+ E_I=-2\csc\frac{\pi}{2N},\quad
+ E_\sigma=-2\cot\frac{\pi}{2N},\quad
+ E_\eps=E_I+8\sin\frac{\pi}{2N}.
+ \label{eq:fourier-energies}
+\end{equation}
+A fast Fourier transform applies $\Gamma_a$ to a vector in
+$O(N\log N)$ work. Thus the Hamiltonian eigensolve is unnecessary.
+
+For the anchored transition in Sec.~\ref{sec:complement-ising}, let
+$\Gamma'_b$ be the covariance after applying the local anchor.
+Form $K=\id-\Gamma_a\Gamma'_b$ by applying the Fourier transform to
+batches of columns. Factor the real matrix $K$ once with pivoted LU
+(lower and upper triangular factors). Let $E_A$ be the first $2\ell$
+columns of the identity. Solve only
+\begin{equation}
+ KZ=(\id-i\Gamma_a)E_A,\qquad
+ \Gamma_{ab,A}=i\{E_A^T(\id-i\Gamma'_b)Z-\id_{2\ell}\}.
+ \label{eq:local-transition-solve}
+\end{equation}
+The real and imaginary right-hand sides reuse the same LU factors.
+The anchor overlap is $|\det K|^{1/4}/2^{N/2}$; its logarithm is
+obtained from the LU diagonal. Reconstruct the local Gaussian operator
+and restore the anchor, exactly as in the earlier Gram calculation.
+We never construct a full complex transition covariance or its inverse.
+The remaining dense factorization costs $O(N^3)$ arithmetic and the
+stored real matrices cost $O(N^2)$ memory. The interval density matrices
+still have dimension at most $2^{10}=1024$.
+
+\subsubsection{Direct evaluation of small entropy remainders}
+\label{sec:stable-entropy}
+At very small fractions, subtracting $\log2-D^B$ or two almost equal
+entropy traces loses relative precision. Instead, evaluate their
+remainder directly with matrix-function divided differences
+\cite{Higham}. The following identity is an algebraic numerical device,
+not a CFT expansion or a new analytical entropy coefficient.
+
+Set $f(t)=t\log t$, with $f(0)=0$. In a basis where a positive reference
+matrix is $D=\operatorname{diag}(d_i)$, write
+$H=D+E=V\operatorname{diag}(\lambda_k)V^\dagger$.
+The first-order matrix derivative has diagonal $f'(d_i)E_{ii}$.
+For the remainder diagonal, use
+\begin{equation}
+ \mathcal R_i=[f(H)-f(D)]_{ii}-f'(d_i)E_{ii}
+ =\sum_k |(V^\dagger E)_{ki}|^2\,
+ \frac{\lambda_k\log(\lambda_k/d_i)-\lambda_k+d_i}
+      {(\lambda_k-d_i)^2}.
+ \label{eq:stable-remainder}
+\end{equation}
+To verify it, expand $[f(H)]_{ii}=\sum_k|V_{ik}|^2f(\lambda_k)$,
+use $\sum_k|V_{ik}|^2=1$ and
+$E_{ii}=\sum_k|V_{ik}|^2(\lambda_k-d_i)$, and factor the scalar
+Taylor remainder. Finally,
+$(\lambda_k-d_i)V_{ik}=(EV)_{ik}$ converts its squared factor to
+the numerator weight in Eq.~\eqref{eq:stable-remainder}.
+At equal arguments the quotient is $1/(2d_i)$.
+With $u=(\lambda-d)/d$, compute it as
+\begin{equation}
+ \frac1d\frac{(1+u)\log(1+u)-u}{u^2}
+ =\frac1d\sum_{n=0}^{\infty}\frac{(-u)^n}{(n+1)(n+2)}.
+ \label{eq:stable-scalar}
+\end{equation}
+The code uses ten terms only for $|u|<0.02$, where the omitted
+tail is below double-precision accuracy, and the closed expression
+otherwise. This series stabilizes a scalar matrix-function evaluation;
+it is unrelated to a small-interval power-law fit.
+
+For $D$ the eigenvalue matrix of the mixture on $A$ and $H$ the source
+state in that basis, equal unit traces give
+$S(\rho\|\mu)=\sum_i\mathcal R_i$. For the complement, first define
+the local transition $T_{ab}^A=\Tr_B\ket a\bra b$.
+The unweighted Gram matrix has blocks
+$H=\left(\begin{smallmatrix}\rho_a^A&T_{ab}^A\\
+(T_{ab}^A)^\dagger&\rho_b^A\end{smallmatrix}\right)$.
+Its relation $H=2\mathcal G^*$ to the weighted Gram matrix is derived
+in Sec.~\ref{sec:complement-gram}. Transform the two diagonal blocks
+to their separate Schmidt eigenbases and let $D$ contain their
+eigenvalues on its diagonal.
+Then $E$ contains only the off-diagonal transition blocks, so its
+first-order diagonal vanishes. If $P_a,P_b$ select the two state blocks,
+the Gram entropy identity gives the deficit
+$\delta_{a\mid b}\equiv\log2-D^B_{a\mid b}$ directly:
+\begin{equation}
+ \delta_{a\mid b}=\Tr P_a[f(H)-f(D)]
+       =\sum_{i\in a}\mathcal R_i,\qquad
+ \delta_{b\mid a}=\sum_{i\in b}\mathcal R_i.
+ \label{eq:stable-deficit}
+\end{equation}
+Complex conjugating the entire Gram matrix preserves these real block
+traces. Thus even a deficit much smaller than machine precision
+relative to $\log2$ can be stored accurately on its own.
+
+The identities are exact on a positive support. In double precision
+we retain reference eigenvalues above $\tau=10^{-15}$ in each
+symmetry sector. The discarded tails are a numerical approximation;
+they are checked by varying $\tau$ to $10^{-14}$ and $10^{-16}$ at
+every new size for $\ell=4,10$. We additionally compare with the original
+trace-log and Gram formulas and with a high-precision, noncommuting
+two-dimensional example. These checks, together with the larger-size
+state-contraction tests, are reported in Appendix~\ref{sec:scaling-checks}.
+
+\subsubsection{Boson scaling and the practical boundary}
+The boson continues to use the exact sparse moment and small Pfaffian
+reductions in Sec.~\ref{sec:boson-contraction} and
+Appendix~\ref{sec:complement-pf-details}. The dense high-precision
+minors depend on $\ell$, not on $N$. At the added sizes the moment
+algebra uses 120 decimal digits before its final conversion to double
+precision. Independent sampled entries use 160 digits and direct
+pivoted Pfaffians instead of cached recursive minors.
+Although the physical moment matrices are sparse, the current Python
+pivot searches scan remaining indices. Their bookkeeping can cost
+$O(N^2)$ time, in addition to the arithmetic and the $O(N\ell)$ stored
+right-hand sides. This becomes the main practical obstacle before the
+$2^\ell$ interval dimension changes. The measured limits and timings
+below refer to this implementation on this machine; they are not
+mathematical maximum chain lengths.
+\input{tables/scaling_resources}

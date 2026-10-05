@@ -1,0 +1,111 @@
+\label{sec:sigmamethod}
+An even-parity block cannot represent the odd-parity $\sigma$ state.
+Ref.~\cite{Montes2017}, Sec.~X, reports that the naive endpoint-spin and
+single-fermion candidates do not directly yield the desired homogeneous
+odd-sector ground state. To check the production covariance state
+independently at small sizes, we construct a full-vector representative
+of $\sigma$ by a Hamiltonian projection initialized from the block vacuum.
+This seed and projection are our combination of the published block
+vacuum and a standard eigensolver, not a formula claimed in that paper.
+Here ``block-seeded'' means seeded by a conformal block; the solver is
+single-vector Lanczos, not a multi-vector block-Lanczos algorithm.
+The steps below specify the numerical construction, including the part
+performed by the Lanczos solver~\cite{ARPACK,ScipyEigsh}.
+
+\begin{enumerate}
+\item \textbf{Prepare a seed with the required symmetry.}
+Starting from normalized $\ket{I_{\rm CB}}$, set
+\begin{equation}
+ \ket{v_\sigma}=\sum_{j=0}^{N-1}X_j\ket{I_{\rm CB}},\qquad
+ \ket{q_1}=\frac{\ket{v_\sigma}}{\|v_\sigma\|_2}.
+ \label{eq:sigmaseed}
+\end{equation}
+Since $PX_j=-X_jP$, the seed is odd. The sum is invariant under
+translation, so the seed has zero momentum. It generally contains
+higher-energy odd states as well as $\sigma$; applying the summed spin
+operator is not itself the final projection.
+\item \textbf{Build the odd-sector Hamiltonian action.}
+Retain only bit strings $\bm m$ with $\sum_jm_j$ odd, leaving
+$2^{N-1}$ basis vectors. Let $H_-$ denote $H$ restricted to this basis.
+For a coefficient vector $f$, its action is
+\begin{equation}
+ (H_-f)_{\bm m}=
+ -\left[\sum_j(-1)^{m_j}\right]f_{\bm m}
+ -\sum_j f_{\bm m\oplus\bm e_j\oplus\bm e_{j+1}},
+ \label{eq:oddaction}
+\end{equation}
+where $\bm e_j$ has one bit at site $j$, $\oplus$ is bitwise exclusive-or,
+and site indices are periodic. The first term is diagonal; the second
+flips neighboring bits. No full $2^{N-1}$ by $2^{N-1}$ matrix is stored.
+Only parity is explicitly imposed in this basis; translation symmetry
+is inherited from the seed and preserved by the Hamiltonian.
+\item \textbf{Generate a Krylov space.}
+After $r$ basis vectors, the search space is
+\begin{equation}
+ \mathcal K_r=\operatorname{span}
+ \{q_1,H_-q_1,\ldots,H_-^{r-1}q_1\}.
+\end{equation}
+Lanczos constructs orthonormal vectors $q_j$. In exact arithmetic,
+with $q_0=0$ and $b_0=0$, the recurrence is
+\begin{align}
+ a_j&=\langle q_j|H_-|q_j\rangle,\notag\\
+ \ket{w_j}&=H_-\ket{q_j}-a_j\ket{q_j}-b_{j-1}\ket{q_{j-1}},\notag\\
+ b_j&=\|w_j\|_2,\qquad \ket{q_{j+1}}=\ket{w_j}/b_j.
+ \label{eq:lanczos}
+\end{align}
+If $b_j=0$, the generated subspace is already invariant. In floating-point
+arithmetic the solver also controls loss of orthogonality. The symbols
+$a_j,b_j$ here are Lanczos coefficients, unrelated to the boson endpoint
+labels or the leading fitting exponent $\alpha$.
+\item \textbf{Select the lowest-energy combination.}
+Form $(T_r)_{ij}=\langle q_i|H_-|q_j\rangle$. This small matrix is
+tridiagonal, with diagonal $a_j$ and neighboring entries $b_j$.
+Let $\theta_{\min}$ and $\bm y$ be its smallest eigenvalue and normalized
+eigenvector. The Rayleigh--Ritz approximation is
+\begin{equation}
+ \ket{\sigma_N^{(r)}}=\sum_{j=1}^r y_j\ket{q_j}.
+\end{equation}
+It minimizes the energy within the current search space. Increasing the
+space, or restarting while retaining the useful spectral information,
+refines the approximation.
+\item \textbf{Converge and measure the actual residual.}
+The code calls \texttt{eigsh} with \texttt{k=1}, \texttt{which="SA"},
+the seed as \texttt{v0}, and \texttt{tol=2e-12}. It uses implicitly
+restarted Lanczos~\cite{ScipyEigsh}. The requested solver tolerance is
+not an absolute bound on $\eta$: after convergence we independently
+evaluate Eq.~\eqref{eq:eigenresidual} using the original Hamiltonian.
+\item \textbf{Identify and validate the primary.}
+Normalize the vector, restore zero entries on even bit strings, and
+check $P=-1$, zero momentum, orthogonality to $I,\eps$, and the energy
+$E_\sigma=-2\cot[\pi/(2N)]$. The vanishing large-$N$ gap has scaling
+dimension $1/8$, identifying the $(1/16,1/16)$ primary.
+Our explicit construction checks use
+$e_P=\|(P+1)\sigma_N\|_2$ and
+$e_{\mathsf T}=\|(\mathsf T-1)\sigma_N\|_2$ for the two symmetry errors.
+\end{enumerate}
+
+The spectral projection underlying these steps can also be written as
+\begin{equation}
+ \ket{\sigma_N}=\lim_{\tau\to\infty}
+ \frac{e^{-\tau(H-E_*)}\ket{q_1}}
+ {\|e^{-\tau(H-E_*)}\ket{q_1}\|_2}.
+ \label{eq:projection}
+\end{equation}
+Here $\tau$ is imaginary time and $E_*$ is an arbitrary reference energy.
+The normalized seed has an expansion into odd-sector eigenstates;
+provided its $\sigma$ coefficient is nonzero, higher energies are
+suppressed relative to the lowest one. Lanczos implements the search
+without explicitly exponentiating $H$.
+The measured squared seed overlap
+$F_{\rm seed}=|\langle\sigma_N|q_1\rangle|^2$ is approximately
+$0.986,0.983,0.981,0.979,0.977$ at $N=6,8,10,12,16$.
+At $N=16$, the recorded projected-state residual is
+$2.70\times10^{-12}$.
+The complete size-by-size residual and independent-state checks appear
+in Appendix~\ref{sec:ising-spin-validation}; the largest recorded residual is
+$1.99\times10^{-11}$ at $N=12$. Thus the solver tolerance must not be
+quoted as the achieved absolute residual.
+
+This method obtains the required lattice primary using both a conformal
+block and the Hamiltonian. A pure endpoint conformal-block formula for
+the periodic $\sigma$ state remains unestablished here.

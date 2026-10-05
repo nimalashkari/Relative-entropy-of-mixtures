@@ -1,0 +1,62 @@
+\section{Sensitivity to the data window}
+\label{sec:window-comparison}
+The current grid replaces the earlier fitting selection; it does not
+discard the older observations. We retain seven stages in the CSV:
+\begin{itemize}
+\item A (\texttt{original}): $N=16,18,20,22,24$, $\ell=2,\ldots,6$,
+$m=13$ after the cutoff.
+\item B (\texttt{ell1}): those sizes with $\ell=1,\ldots,6$, $m=18$.
+\item C (\texttt{extended}): B plus $N=28,32,48,64,96,128$,
+$\ell=1,\ldots,6$, $m=53$.
+\item D (\texttt{large\_intervals}): $N=32,48,64,82,96,112,128$,
+$\ell=4,\ldots,10$, with $x\leq0.20$ and $m=44$.
+\item E (\texttt{larger\_chains\_wide}): all 15 sizes in
+Eq.~\eqref{eq:large-grid}, still using $x\leq0.20$, with $m=100$.
+\item F (\texttt{larger\_chains}): the same computed grid, with the
+previous fitting cutoff $x\leq0.12$ and $m=89$.
+\item G (\texttt{narrow\_008}): the same computed grid, with the
+current fitting cutoff $x\leq0.08$ and $m=77$.
+\end{itemize}
+All stages have $p=1/2$, the same fixed powers, and unweighted least
+squares in $D$. Stages A--E use $x\leq0.20$; F uses $x\leq0.12$;
+G uses $x\leq0.08$.
+All $F_1$--$F_4$ fit and analytical CFT series
+summaries are stored in \texttt{stage\_comparison.csv}.
+Tables~\ref{tab:ising-window-comparison} and \ref{tab:boson-window-comparison}
+highlight $F_3$ for E, F, G, comparing three cutoffs on the same
+computed grid. Their validation samples differ, so the
+errors compare sensitivity to the window, not performance on an identical
+test set. Superscripts on coefficients label the stage, not an exponent.
+
+\begin{table}[htbp]\centering\scriptsize
+\input{tables/ising_stages}
+\caption{Ising $F_3$ fits for stages E, F, G, with three free coefficients
+at powers $\alpha,\alpha+2,\alpha+4$ and fixed
+$\alpha=4$ for $I\leftrightarrow\eps$, two otherwise. The geometries,
+sample counts and stage-dependent cutoffs are defined in
+Appendix~\ref{sec:window-comparison}. States use the
+critical periodic Hamiltonian $H=-\sum XX-\sum Z$ and exact covariance
+reductions. CV RMSE is the complete-size holdout error in
+Eq.~\eqref{eq:cv}. Coefficients multiply powers of $\pi x$.}
+\label{tab:ising-window-comparison}
+\end{table}
+\begin{table}[htbp]\centering\scriptsize
+\input{tables/boson_stages}
+\caption{Boson $F_3$ fits for the same stages E, F, G and objective, with
+fixed $\alpha=2$, three free coefficients, charge codes $(0,0),(1,1),(3,1)$,
+$q=2$, $z_j=e^{2\pi i j/N}$, $w_1=0$, $W=10^8$, and normalized
+vertex/Jastrow states. All stages use $p=1/2$ and natural logarithms;
+CV RMSE has the definition in Eq.~\eqref{eq:cv}.}
+\label{tab:boson-window-comparison}
+\end{table}
+
+For Ising $\sigma\mid\eps$, $c_2$ changes from $0.021364$ (E) to
+$0.020891$ (F) and $0.020772$ (G), compared with $1/48$ from CFT.
+For the boson $ss\mid3s,s$, the values are $0.164240$, $0.164217$,
+and $0.162805$, compared with $1/6$. The tighter cutoff therefore does
+not uniformly improve agreement with the theoretical leading coefficient.
+All six boson $F_3$ fits in G have worse size-holdout errors than $F_1$;
+all six Ising directions retain a positive CV gain. Moreover,
+least squares in $D$ gives small absolute-$D$ points less influence than
+a relative-error objective would, and the fitted coefficients remain
+finite-window estimates rather than controlled continuum extrapolations.

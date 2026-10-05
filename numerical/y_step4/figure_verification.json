@@ -1,0 +1,197 @@
+{
+  "data_sha256": "34c7c8e1e1ac7d8693ac092d82086761802ce622a058c1f59ef6c3d0275e8825",
+  "groups": [
+    {
+      "model": "boson",
+      "region": "small",
+      "a": "00",
+      "b": "ss",
+      "points": 40,
+      "max_abs_eta0": 5.0233519766135215
+    },
+    {
+      "model": "boson",
+      "region": "small",
+      "a": "ss",
+      "b": "00",
+      "points": 40,
+      "max_abs_eta0": 5.023359902456759
+    },
+    {
+      "model": "boson",
+      "region": "small",
+      "a": "00",
+      "b": "3s_s",
+      "points": 40,
+      "max_abs_eta0": 3.410415859272542
+    },
+    {
+      "model": "boson",
+      "region": "small",
+      "a": "3s_s",
+      "b": "00",
+      "points": 40,
+      "max_abs_eta0": 3.410470724948278
+    },
+    {
+      "model": "boson",
+      "region": "small",
+      "a": "ss",
+      "b": "3s_s",
+      "points": 40,
+      "max_abs_eta0": 0.9903330499045904
+    },
+    {
+      "model": "boson",
+      "region": "small",
+      "a": "3s_s",
+      "b": "ss",
+      "points": 40,
+      "max_abs_eta0": 0.9903751031819064
+    },
+    {
+      "model": "boson",
+      "region": "large",
+      "a": "00",
+      "b": "ss",
+      "points": 40,
+      "max_abs_eta0": 2.410211303588272
+    },
+    {
+      "model": "boson",
+      "region": "large",
+      "a": "ss",
+      "b": "00",
+      "points": 40,
+      "max_abs_eta0": 2.4102182199924105
+    },
+    {
+      "model": "boson",
+      "region": "large",
+      "a": "00",
+      "b": "3s_s",
+      "points": 40,
+      "max_abs_eta0": 1.1121275609660808
+    },
+    {
+      "model": "boson",
+      "region": "large",
+      "a": "3s_s",
+      "b": "00",
+      "points": 40,
+      "max_abs_eta0": 1.1110034664700619
+    },
+    {
+      "model": "boson",
+      "region": "large",
+      "a": "ss",
+      "b": "3s_s",
+      "points": 40,
+      "max_abs_eta0": 1.0769546504534544
+    },
+    {
+      "model": "boson",
+      "region": "large",
+      "a": "3s_s",
+      "b": "ss",
+      "points": 40,
+      "max_abs_eta0": 1.077480598669267
+    },
+    {
+      "model": "ising",
+      "region": "small",
+      "a": "I",
+      "b": "sigma",
+      "points": 40,
+      "max_abs_eta0": 0.04186401852499522
+    },
+    {
+      "model": "ising",
+      "region": "small",
+      "a": "sigma",
+      "b": "I",
+      "points": 40,
+      "max_abs_eta0": 0.040337059468908976
+    },
+    {
+      "model": "ising",
+      "region": "small",
+      "a": "I",
+      "b": "epsilon",
+      "points": 40,
+      "max_abs_eta0": 0.8018977875123179
+    },
+    {
+      "model": "ising",
+      "region": "small",
+      "a": "epsilon",
+      "b": "I",
+      "points": 40,
+      "max_abs_eta0": 0.8101494572292589
+    },
+    {
+      "model": "ising",
+      "region": "small",
+      "a": "sigma",
+      "b": "epsilon",
+      "points": 40,
+      "max_abs_eta0": 0.02039526365811284
+    },
+    {
+      "model": "ising",
+      "region": "small",
+      "a": "epsilon",
+      "b": "sigma",
+      "points": 40,
+      "max_abs_eta0": 0.023880128155995273
+    },
+    {
+      "model": "ising",
+      "region": "large",
+      "a": "I",
+      "b": "sigma",
+      "points": 40,
+      "max_abs_eta0": 1.0660738054777408
+    },
+    {
+      "model": "ising",
+      "region": "large",
+      "a": "sigma",
+      "b": "I",
+      "points": 40,
+      "max_abs_eta0": 1.0665545365573181
+    },
+    {
+      "model": "ising",
+      "region": "large",
+      "a": "I",
+      "b": "epsilon",
+      "points": 40,
+      "max_abs_eta0": 0.42958104901694716
+    },
+    {
+      "model": "ising",
+      "region": "large",
+      "a": "epsilon",
+      "b": "I",
+      "points": 40,
+      "max_abs_eta0": 0.37506427230928896
+    },
+    {
+      "model": "ising",
+      "region": "large",
+      "a": "sigma",
+      "b": "epsilon",
+      "points": 40,
+      "max_abs_eta0": 1.661085722059319
+    },
+    {
+      "model": "ising",
+      "region": "large",
+      "a": "epsilon",
+      "b": "sigma",
+      "points": 40,
+      "max_abs_eta0": 1.518704588423181
+    }
+  ]
+}

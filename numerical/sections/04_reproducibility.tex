@@ -1,0 +1,178 @@
+\section{Complete continuum-truncation tables}
+\label{sec:allfits}
+All rows in Appendices~\ref{sec:ising-fit-tables} and
+\ref{sec:boson-fit-tables} use $m=77$ samples per direction with $x\leq0.08$ and the fixed exponents
+of Eq.~\eqref{eq:hierarchy}. The numbers $c_r$ multiply $(\pi x)^r$.
+The column $\alpha_{\rm CFT}$ gives the theoretical leading exponent,
+which is fixed in every fit: four for $I\mid\eps$ and $\eps\mid I$,
+and two for all other Ising directions and every compact-boson direction.
+For $F_K$, $k=K$, and the residual degrees of freedom are $77-K$.
+``CFT'' denotes the analytical CFT series supplied by the original paper,
+with no fitted parameters ($k=0$): through $x^6$ for $I\leftrightarrow\eps$,
+and the leading term for all other pairs.
+RMSE and CV RMSE are in nats;
+$\kappa_X$ is the condition number of the scaled design matrix and is
+undefined for the analytical CFT series. A dash indicates an absent coefficient,
+not a coefficient constrained by a fit.
+
+\subsection{Ising}
+\label{sec:ising-fit-tables}
+\begingroup\scriptsize\setlength{\tabcolsep}{3pt}
+\input{tables/ising_all_fits}
+\endgroup
+\subsection{Compact boson}
+\label{sec:boson-fit-tables}
+\begingroup\scriptsize\setlength{\tabcolsep}{3pt}
+\input{tables/boson_all_fits}
+\endgroup
+
+\input{sections/13_complement_checks}
+
+\section{Files, provenance, and reproducible commands}
+The separate implementation is in \texttt{src/conformal\_blocks/}.
+For a source-by-source reading route, function mapping, and a short
+validation command, see Appendix~\ref{sec:method-audit} and
+\texttt{METHOD\_REFERENCES.md}.
+It does not modify either original source snapshot. The independent
+boson generator is \texttt{boson.py}; Ising block, projection, and
+exact-fermion methods are in \texttt{ising.py}. The original Laughlin
+generator is imported only by \texttt{validate.py}. The Julia bridge
+\texttt{export\_pumps.jl} reads archived MPS tensors in their original
+serialization namespace, contracts left/right half chains, and exports
+normalized vectors for the overlap tests. This avoids an intermediate
+tensor of dimension $D_{\rm bond}^2 2^N$.
+
+The report's \texttt{data/} folder contains:
+\begin{itemize}
+\item \texttt{numerical\_grid.csv}: all 1872 historical and current directed observations,
+including excluded interval lengths, the historical $x\leq0.20$ flag, original values,
+and differences from the originals. Unavailable original $N=22$ Ising
+values are explicitly missing.
+\item \texttt{active\_grid.csv}: the 1260 observations on exactly the grid
+in Eq.~\eqref{eq:large-grid}, with explicit \texttt{fit\_selected} and
+\texttt{display\_selected} flags.
+\texttt{fit\_input.csv}: exactly 924 observations used for fitting
+(77 per direction, six directions in each model), after the $x\leq0.08$ cut.
+The historical grid's cutoff flag alone does not define the current fit.
+\item \texttt{display\_input.csv}: 1200 observations displayed at
+$x\leq0.20$ (100 per direction).
+\item \path{display_predictions.csv}:
+6000 predictions and signed residuals for the four fitted models and the analytical CFT series;
+\texttt{fit\_selected} identifies the 77 training points per direction.
+\item \texttt{fit\_summary.csv}: all 60 rows of fits and analytical predictions, including
+coefficient vectors, powers, parameter counts, degrees of freedom,
+descriptive standard errors, condition numbers, SSE, RMSE, maximum
+residual, relative-error indicators, gains, leave-one-size-out ranges,
+and explicit fitting/display cutoffs and design-matrix scale.
+\item \texttt{fit\_residuals.csv}: all 4620 pointwise model predictions,
+absolute signed residuals, and signed percentages.
+\item \texttt{ell1\_additions.csv} and \texttt{larger\_additions.csv}:
+the 60 one-site additions followed by the 432 larger-size observations.
+\texttt{extension\_quality.csv} contains 66 state-contraction diagnostics;
+\texttt{extension\_checks.csv} contains all 345 independent validation
+records, tolerances, and observed timings.
+\item \texttt{large\_interval\_additions.csv}: the 408 observations
+added for the earlier grid through $N=128$. The other 180 grid values already
+existed and are unchanged. \texttt{large\_interval\_quality.csv} and
+\texttt{large\_interval\_checks.csv}: 294 production diagnostics and
+119 independent tests through $\ell=10$.
+\item \texttt{larger\_size\_additions.csv}: 672 new observations at
+$N=144,160,176,192,208,224,240,256$.
+\texttt{larger\_size\_quality.csv}: 336 state/interval diagnostics;
+\texttt{larger\_size\_checks.csv}: the 70 endpoint checks at $N=256$
+described in Appendix~\ref{sec:n256-sanity}.
+\item \texttt{stage\_comparison.csv}: all 420 summaries of fits and analytical predictions for
+stages A--G defined in Appendix~\ref{sec:window-comparison}, using the
+same indicator definitions and each stage's explicitly stored cutoff.
+\path{normalized_small_x.csv} records Eq.~\eqref{eq:small-x-ratio}
+for all 1872 observations, with explicit theoretical exponents and coefficients;
+its fitting and display flags identify the separate current windows.
+\item \texttt{exact\_coefficients.csv}: coefficients available from the
+original paper, in exact rational $(\pi x)^r$ and decimal $x^r$ conventions.
+Missing higher coefficients are not assigned zero.
+\item \texttt{ising\_cb\_validation.csv},
+\texttt{boson\_cb\_validation.csv},
+\texttt{pumps\_overlap\_validation.csv}, and
+\texttt{production\_quality.csv}: whole-state and interval-state validation,
+including actual finite-size energy gaps and method labels.
+\item \texttt{boson\_canonical\_checks.csv}: direct polynomial versus
+vertex-correlator checks at $N=8,10,12$, with both strict-infinity and
+$W=10^8$ endpoints, including amplitude errors and eigenstate residuals.
+\item \texttt{ising\_construction\_checks.csv}: normalization, parity,
+translation, mutual orthogonality, energy and residual checks for
+$I,\sigma,\eps$ at $N=6,8,10,12,16$.
+\item \texttt{analytic\_checks.csv}: historical checks of the previous
+report's additional derivations. These are archived results, not validation
+of coefficients supplied by the original paper, and are not used in the
+current fits or analytical CFT comparisons.
+\end{itemize}
+CSV floating-point numbers retain full stored precision; printed tables
+round only for legibility. A missing value means that a quantity was
+not measured by that test, never a zero error.
+
+The two archived comparison tables, in the supplied manuscript's data directory, are:
+\begin{itemize}
+\item \texttt{compact\_p\_half\_full\_interval.csv};
+\item \texttt{ising\_p\_half\_clean\_grid.csv}.
+\end{itemize}
+All source-paper identifiers and input hashes are recorded in
+\texttt{data/provenance.json}. The Ising $N=22$ exact-chain generation
+is a new, separate lineage. No historical checkpoint-quality flag was
+changed. Full-chain Ising sigma projection was tested through $N=16$;
+production at the larger sizes uses the explicitly identified exact
+periodic-fermion sector. The model is integrable, so this is an exact
+finite-chain reference, not an extrapolated puMPS result.
+
+Relative-entropy evaluation diagonalizes each Hermitian interval state
+and its mixture. Eigenvalues below $10^{-15}$ are treated as numerical
+zeros; a discarded mixture-support weight above $10^{-12}$ or a
+negative eigenvalue below $-2\times10^{-12}$ raises an error.
+No Gaussian approximation is made to the mixture. Boson $W=10^8$
+is matched to the original source; it is not a fitting parameter.
+
+The user authorized CPU execution with the installed Python 3.14 and Julia.
+NumPy, SciPy, Matplotlib, mpmath, and Python's standard-library CSV and rational
+arithmetic are used; no additional package was installed. From the
+repository root, the stages are
+\begin{verbatim}
+export PYTHONPATH=src
+export OPENBLAS_NUM_THREADS=1
+PY=/Library/Frameworks/Python.framework/Versions/3.14/bin/python3
+$PY -m conformal_blocks.validate
+julia --project=sources/puMPS.jl src/conformal_blocks/export_pumps.jl
+$PY -m conformal_blocks.generate
+$PY -m conformal_blocks.extend --stage ell1
+$PY -m conformal_blocks.extension_checks
+$PY -m conformal_blocks.extend --stage larger
+$PY -m conformal_blocks.large_interval_checks
+$PY -m conformal_blocks.large_intervals --sizes 32 48 64 82 96 112 128
+$PY -m conformal_blocks.larger_size_checks
+$PY -m conformal_blocks.large_intervals \
+    --sizes 144 160 176 192 208 224 240 256 --tag larger_size
+$PY -m conformal_blocks.extension_analysis
+$PY -m conformal_blocks.construction_checks
+$PY report/plot_and_tables.py
+$PY report/construction_tables.py
+cd report
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+\end{verbatim}
+The analysis and plot stages are separate: numerical stages write CSVs
+incrementally, and the final plot stage reads those CSVs without recomputing
+states or fitting parameters. Every figure is a vector PDF with embedded
+fonts. The \texttt{README.md} gives the portable commands and explains
+which files are reference inputs and which are newly generated outputs.
+The older \texttt{analytic\_checks.py} also contains the puMPS overlap
+test used for the archived comparison CSV. It is retained for provenance
+but is not rerun in this revision, which postpones further coefficient
+derivations. In \texttt{theory.py}, only functions prefixed
+\texttt{paper\_} supply the current analytical CFT comparison; the older
+exploratory functions are explicitly labelled separately.
+
+The dedicated \texttt{overleaf\_primary\_state\_study.zip} has
+\texttt{main.tex} at its root, with every referenced section, table,
+and figure included. Upload it as a new Overleaf project and select
+pdfLaTeX; the inline bibliography requires no BibTeX step.
+The larger \texttt{short\_interval\_conformal\_block\_study.zip}
+also contains the numerical implementation and reproduction scripts.

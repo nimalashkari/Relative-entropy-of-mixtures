@@ -1,0 +1,36 @@
+{
+  "source_folder": "cluster_uniform_step4_y_dependent",
+  "source_hashes": {
+    "cluster_uniform_step4_y_dependent/analysis/fits.csv": "e13827504ac223c98e58e29a3459b5bd6efcf1cf261d451fa83718ed484eb46c",
+    "cluster_uniform_step4_y_dependent/analysis/amplitude_ratios.csv": "e8fbc7b89552d6445ec598b0105ebba7457c88b70cd86031784d89fa7c4a95f0",
+    "cluster_uniform_step4_y_dependent/completeness.json": "1383d5b4b0ac15aa17a14c93029af9785af72616278f02cb7dd3c04ae4ea906a",
+    "cluster_uniform_step4_y_dependent/analysis/summary.json": "f7dd7789f016398e5215d7d9db0d21a21f87bb3be70f119b5cccea82993e931c"
+  },
+  "raw_database": {
+    "local_database_bytes": 823037952,
+    "sqlite_header_expected_bytes": 823037952,
+    "byte_complete": true,
+    "cluster_database_sha256": "8d2d50a130962cb4b85fb34515d328e9c92fa80bd5c133215734f6b253bf8f31",
+    "local_sha256": "8d2d50a130962cb4b85fb34515d328e9c92fa80bd5c133215734f6b253bf8f31",
+    "hash_matches_cluster": true
+  },
+  "verification_scope": "All returned measurement/check checkpoints audited; full database hash, integrity, groups and grid validated; 9600 checkpoint/database values compared exactly; all2952 fits replayed from the database in addition to independent fit-table/theory/error/count checks.",
+  "half_fit_comparisons": 120,
+  "half_max_relative_difference": 2.3425705819590803e-13,
+  "baseline_source_sha256": "587a49f18e9edd763779c6945091d58aca68a467e286cba470e137653c37ee04",
+  "raw_verification": {
+    "passed": true,
+    "database_sha256": "8d2d50a130962cb4b85fb34515d328e9c92fa80bd5c133215734f6b253bf8f31",
+    "database_integrity": "ok",
+    "weighted_records": 14605920,
+    "reference_records": 365148,
+    "total_records": 14971068,
+    "passed_numerical_checks": 12142275,
+    "completed_jobs": 6116,
+    "database_groups_checked": 984,
+    "checkpoint_database_values_checked": 9600,
+    "replayed_fits": 2952,
+    "maximum_absolute_replay_difference": 2.538461441048412e-09,
+    "replay_seconds": 24.101421624887735
+  }
+}

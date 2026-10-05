@@ -1,0 +1,19 @@
+\begin{longtable}{lrr}
+\caption{Production checks at every added size in Eq.~\eqref{eq:extended-grid}. Relative cutoff sensitivity is $\max_{\tau\in\{10^{-14},10^{-16}\}}|q_\tau-q_{10^{-15}}|/q_{10^{-15}}$, shown here for retained endpoint lengths ($\ell=6,10$ for the dense scan and $\ell=10$ for the earlier extension); the $\ell=4$ checks remain in the raw archive. Trace-log and original full-Gram differences are absolute; they cannot alone certify relative accuracy of extremely small observables. LU residual is $\|KZ-(I-i\Gamma_a)E_A\|_F/\|(I-i\Gamma_a)E_A\|_F$. Positivity errors are $\max(0,-\lambda_{\min})$. All stored tolerances passed.}
+\label{tab:scaling-numerical-checks}\\\toprule
+Check & Count & Largest error\\\midrule
+\endfirsthead
+\toprule
+Check & Count & Largest error\\\midrule
+\endhead
+\bottomrule\endfoot
+trace & 6390 & $6.661\!\times\!10^{-16}$\\
+hermiticity & 6390 & $1.791\!\times\!10^{-77}$\\
+positivity & 6390 & $3.324\!\times\!10^{-16}$\\
+small\_cutoff\_relative & 4824 & $8.635\!\times\!10^{-9}$\\
+small\_trace\_log\_absolute & 4824 & $2.615\!\times\!10^{-13}$\\
+local\_LU\_residual & 945 & $1.388\!\times\!10^{-13}$\\
+Gram\_positivity & 6390 & $1.240\!\times\!10^{-16}$\\
+large\_cutoff\_relative & 4824 & $6.852\!\times\!10^{-9}$\\
+large\_full\_Gram\_absolute & 4824 & $1.638\!\times\!10^{-12}$\\
+\end{longtable}

@@ -1,0 +1,16 @@
+\begin{longtable}{lrr}
+\caption{Independent numerical checks. Tiny noncommuting Gram errors are relative to a 100-digit matrix-logarithm reference, with cross amplitudes from $10^{-2}$ through $10^{-30}$ (deficits through order $10^{-60}$). Boson diagonal errors are absolute entry differences; transition errors divide the maximum sampled entry difference by the largest reference entry. Sampled entries use 160-digit direct pivoted Pfaffians rather than the 120-digit cached-minor production calculation.}
+\label{tab:scaling-independent-checks}\\\toprule
+Check & Count & Largest error\\\midrule
+\endfirsthead
+\toprule
+Check & Count & Largest error\\\midrule
+\endhead
+\bottomrule\endfoot
+Ising\_Fourier\_purity & 3 & $5.207\!\times\!10^{-16}$\\
+Ising\_Fourier\_skew & 3 & $1.885\!\times\!10^{-18}$\\
+Ising\_local\_energy\_per\_site & 3 & $1.110\!\times\!10^{-15}$\\
+boson\_diagonal\_high\_precision & 6 & $3.499\!\times\!10^{-78}$\\
+boson\_transition\_high\_precision\_relative & 6 & 0\\
+tiny\_noncommuting\_Gram & 24 & $8.882\!\times\!10^{-16}$\\
+\end{longtable}

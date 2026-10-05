@@ -1,0 +1,120 @@
+\clearpage
+\section{Coefficients available in the manuscript}
+\label{sec:coefficients}
+We separate an explicit result in the supplied manuscript~\cite{theory}
+from a coefficient estimated by fitting finite-chain data. Throughout this
+section, $\alpha$ denotes the leading power-law exponent. Every reported
+coefficient $c_r$ multiplies $x^r$ itself and includes all powers of $\pi$.
+For example, the boson vacuum--spin coefficient is $\pi^2/12$, not
+$1/12$. The same convention applies to $y^\beta$ for large intervals.
+These expansions concern the continuum,
+small-interval limit; they are not exact formulas at fixed two-site or
+three-site intervals.
+
+The previous report added derivations of boson $x^4,x^6$ coefficients and
+Ising spin-channel $x^4$ coefficients. Those were additional calculations,
+not coefficients stated in the original paper. They are excluded from the
+current theoretical comparisons and preserved separately in the task's
+archive. No missing subleading coefficient is derived in this revision.
+
+\subsection{Ising: two explicit subleading coefficients}
+At $p=y=1/2$, Eqs.~(4.15)--(4.16) of the supplied manuscript~\cite{theory} give
+\begin{align}
+ D_{I\mid\eps}
+ &=\frac{2\pi^4}{15}x^4-\frac{8\pi^6}{45}x^6+\OO(x^8),
+ \label{eq:Ieps}\\
+ D_{\eps\mid I}
+ &=\frac{2\pi^4}{15}x^4-\frac{8\pi^6}{21}x^6+\OO(x^8).
+ \label{eq:epsI}
+\end{align}
+Here $D_{a\mid b}=S(\rho_A^a\|(\rho_A^a+\rho_A^b)/2)$, where
+$\rho_A^a$ is the reduced density matrix of state $a$ on the interval $A$.
+The substitution into the paper's general-weight expressions is
+$(8/15)(1/4)=2/15$ for the leading coefficient and
+$(32/315)(1/4)(8-15)=-8/45$ or
+$(32/315)(1/4)(8-23)=-8/21$ for the subleading coefficient.
+Thus the coefficients of $x^6$ itself are $-8\pi^6/45$ and
+$-8\pi^6/21$, respectively.
+
+For each of $I\mid\sigma$, $\sigma\mid I$, $\sigma\mid\eps$, and
+$\eps\mid\sigma$, Eqs.~(4.13), (4.14), (4.17), and (4.18)
+of the supplied manuscript~\cite{theory} give only
+\begin{equation}
+ D_{a\mid b}=\frac{\pi^2}{48}x^2+\OO(x^4).
+ \label{eq:spinleading}
+\end{equation}
+The paper explicitly leaves the fourth-order four-energy-field
+contribution unevaluated. Its discussion identifies additional sectors
+at this order, but does not give a complete $x^4$ coefficient for these
+four directions. The shared leading coefficient does not assert equality
+of the complete directed relative entropies.
+
+\begin{table}[htbp]\centering
+\begin{tabular}{lrrrl}\toprule
+Direction & $\alpha$ & $c_\alpha$ & $c_{\alpha+2}$ & Supplied equation\\\midrule
+$I\mid\sigma$ &2&$\pi^2/48$&---&(4.13)\\
+$\sigma\mid I$ &2&$\pi^2/48$&---&(4.14)\\
+$I\mid\eps$ &4&$2\pi^4/15$&$-8\pi^6/45$&(4.15)\\
+$\eps\mid I$ &4&$2\pi^4/15$&$-8\pi^6/21$&(4.16)\\
+$\sigma\mid\eps$ &2&$\pi^2/48$&---&(4.17)\\
+$\eps\mid\sigma$ &2&$\pi^2/48$&---&(4.18)\\\bottomrule
+\end{tabular}
+\caption{Complete coefficients supplied for the six Ising directions at
+$p=1/2$, in powers of $x$. A dash means that the complete coefficient
+is not supplied; it does not mean zero. Equation numbers in the last column
+refer to the supplied manuscript~\cite{theory}. Higher coefficients beyond those
+shown are not supplied for these directed mixture formulas.}
+\label{tab:isingcoeff}
+\end{table}
+
+\subsection{Compact boson: leading coefficients only}
+Write the left and right charge vector as $\boldsymbol Q_a$:
+$\boldsymbol Q_{00}=(0,0)$,
+$\boldsymbol Q_{ss}=(1/\sqrt2,1/\sqrt2)$, and
+$\boldsymbol Q_{3s,s}=(3/\sqrt2,1/\sqrt2)$.
+These are the charges denoted by $(Q_L,Q_R)$ in
+Sec.~\ref{sec:bosonconstruction}; $\alpha$ denotes the leading exponent.
+Define the squared charge separation
+$\kappa_{ab}=\|\boldsymbol Q_a-\boldsymbol Q_b\|^2$.
+Applying the paper's leading current-sector formula at $p=1/2$ gives
+\begin{equation}
+ \Dab=\frac{\kappa_{ab}\pi^2}{12}x^2+\OO(x^4).
+ \label{eq:bosonresult}
+\end{equation}
+The original manuscript does not provide complete $x^4$ or $x^6$
+coefficients for these six equal-mixture directions. General formulas
+for individual subleading sectors do not supply the sum of all
+contributions at the same order.
+
+\begin{table}[htbp]\centering
+\begin{tabular}{lrrr}\toprule
+Directions, each separately & $\kappa_{ab}$ & $\alpha$ & $c_\alpha$\\\midrule
+$00\mid ss,\quad ss\mid00$ &1&2&$\pi^2/12$\\
+$00\mid3s,s,\quad3s,s\mid00$ &5&2&$5\pi^2/12$\\
+$ss\mid3s,s,\quad3s,s\mid ss$ &2&2&$\pi^2/6$\\\bottomrule
+\end{tabular}
+\caption{Boson leading coefficients at $p=1/2$ in powers of $x$.
+Each direction has an $\OO(x^4)$ remainder whose complete coefficient
+is not supplied. Equal leading coefficients do not constrain
+finite-chain reverse directions to be equal.}
+\label{tab:bosoncoeff}
+\end{table}
+
+\subsection{Unknown coefficients in the fitting ansatz}
+To test corrections numerically without deriving their coefficients,
+we use only the leading and the next remainder power identified here:
+\begin{equation}
+ F_1(x)=c_0x^\alpha,\qquad F_2(x)=c_0x^\alpha+c_1x^{\alpha+2},
+ \qquad
+ \alpha=\begin{cases}
+ 4,&\{a,b\}=\{I,\eps\},\\
+ 2,&\text{all other requested pairs}.
+ \end{cases}
+ \label{eq:hierarchy}
+\end{equation}
+The subscripts 0 and 1 label the two coefficients, not their exponents.
+The paper fixes the leading exponent and the next remainder order for
+these cases. A remainder does not establish a nonzero coefficient, and
+we do not assume an infinite sequence of even powers. Both coefficients
+in $F_2$ are fitted. Section~\ref{sec:fits} additionally fits a single
+power with its exponent free, to test whether the data recover $\alpha$.

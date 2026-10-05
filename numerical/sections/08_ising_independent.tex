@@ -1,0 +1,96 @@
+\subsection{Independent Ising constructions used for validation}
+\label{sec:ising-independent}
+The production reduced states use the exact fermion covariance method
+of Sec.~\ref{sec:ising-production}. The full-vector constructions below
+provide independent checks of that input: conformal blocks for $I,\eps$,
+and conformal-block-seeded Lanczos projection for $\sigma$.
+
+The chiral Ising fields are $1,\chi,\sigma$ with weights $0,1/2,1/16$;
+$\chi$ is a Majorana fermion. Their fusion rules are
+\begin{equation}
+ \sigma\times\sigma=1+\chi,\qquad
+ \chi\times\chi=1,\qquad \chi\times\sigma=\sigma.
+\end{equation}
+
+\subsubsection{Vacuum block: fusion data become spin amplitudes}
+For the vacuum, the auxiliary correlator is
+$\langle0|\sigma(z_1)\cdots\sigma(z_{2N})|0\rangle_{\bm p}$.
+The subscript $\bm p$ chooses its intermediate fusion channels.
+\begin{enumerate}
+\item Use $2N$ spin fields on the circle,
+$z_r=\exp[i\theta_r]$ with $\theta_r=\pi r/N$, $r=1,\ldots,2N$.
+Pair $(z_{2j-1},z_{2j})$. Each pair fuses to identity ($m_j=0$) or
+fermion ($m_j=1$), defining a physical spin with $Z_j=(-1)^{m_j}$.
+\item Label the successive intermediate channels by bits
+$\bm p=(p_1,\ldots,p_{N-1})$, setting $p_0=p_N=0$.
+The physical bits are $m_j=p_{j-1}\mathbin{\mathrm{xor}}p_j$.
+Thus $\sum_jm_j$ is even. The construction spans the even sector of the
+physical spin parity $P=\prod_j Z_j$.
+\item Enumerate binary strings $\bm q=(q_1,\ldots,q_{N-1})$ and define
+$s_1=1$, $s_j=\prod_{k<j}(1-2q_k)$.
+Split the field coordinates into two groups
+$l_{\bm q}(j)=2j-(1+s_j)/2$ and
+$l'_{\bm q}(j)=2j-(1-s_j)/2$. Each group contains one field from each pair.
+Calculate the positive weight
+\begin{equation}
+ A_{\bm q}=\prod_{j>k}
+ \left[\sin\frac{\theta_{l_{\bm q}(j)}-\theta_{l_{\bm q}(k)}}2
+ \sin\frac{\theta_{l'_{\bm q}(j)}-\theta_{l'_{\bm q}(k)}}2\right]^{1/2}.
+\end{equation}
+\item Define $B_{\bm p}=\sum_{\bm q}(-1)^{\bm p\cdot\bm q}A_{\bm q}$,
+where the dot product is a sum of products of bits. The vacuum amplitudes
+are $\psi_I(\bm m(\bm p))\propto\sqrt{B_{\bm p}}$.
+The binary sign sum is a Walsh--Hadamard transform, evaluated with
+$O(N2^{N-1})$ butterfly operations instead of evaluating every
+$(\bm p,\bm q)$ pair separately.
+The weights themselves cost $O(N^2 2^{N-1})$ operations.
+\item Normalize by
+$\mathcal N_I=(\sum_{\bm p}B_{\bm p})^{1/2}$, so that
+$\psi_I(\bm m(\bm p))=\sqrt{B_{\bm p}}/\mathcal N_I$.
+Set all odd-parity amplitudes to zero. The output is a normalized
+$2^N$-component vector.
+\end{enumerate}
+The homogeneous choice sets the pair-displacement parameter $\delta=0$ in
+\texttt{fusion\_blocks}. Ref.~\cite{Montes2017} proves that this block
+vacuum is the finite-chain critical ground state. We additionally check
+its energy, symmetry sector, and residual numerically.
+
+\subsubsection{Energy primary: insert two Majorana endpoint fields}
+\begin{enumerate}
+\item Keep the same $2N$ spin fields, coordinates, and physical basis.
+Replace the auxiliary vacuum states by Majorana states:
+\begin{equation}
+ \Psi_\eps(\bm p)\propto
+ \langle\chi|\sigma(z_1)\cdots\sigma(z_{2N})|\chi\rangle_{\bm p}.
+\end{equation}
+Since the chiral Majorana has weight $1/2$, the insertion at infinity
+means $\chi(\infty)=\lim_{W\to\infty}W\chi(W)$.
+The two endpoints preserve even physical parity.
+\item Reuse $A_{\bm q}$ and $B_{\bm p}$ from the vacuum construction.
+The endpoint correlator introduces the real factor
+$C_{\bm q}=\cos[(\pi/2N)\sum_j s_j]$. Compute a second sign transform
+$U_{\bm p}=\sum_{\bm q}(-1)^{\bm p\cdot\bm q}A_{\bm q}C_{\bm q}$.
+The explicit result is
+\begin{equation}
+ \psi_\eps(\bm m(\bm p))\propto
+ \frac{\displaystyle\sum_{\bm q}(-1)^{\bm p\cdot\bm q}A_{\bm q}
+ \cos\left(\frac\pi{2N}\sum_{j=1}^Ns_j\right)}{\sqrt{B_{\bm p}}}.
+\label{eq:epsblock}
+\end{equation}
+\item Normalize by
+$\mathcal N_\eps=(\sum_{\bm p}|U_{\bm p}|^2/B_{\bm p})^{1/2}$
+and embed $\psi_\eps(\bm m(\bm p))=U_{\bm p}/(\sqrt{B_{\bm p}}\mathcal N_\eps)$
+in the same spin basis.
+\item Check its orthogonality to $I$, its even parity, zero momentum,
+energy, and eigenstate residual. The identification with the nonchiral
+primary $\eps$ uses these spectral and symmetry properties; the
+auxiliary chiral endpoint fields alone do not establish that identification.
+\end{enumerate}
+Equation~\eqref{eq:epsblock} is the published expression in
+Ref.~\cite{Montes2017}, Eqs.~(73)--(75), specialized to the uniform
+circle. Its equality with the desired excited eigenstate is numerically
+verified here through $N=24$; we do not replace that numerical evidence
+by an unprovided general proof for arbitrary insertions.
+
+\subsubsection{Spin primary: conformal-block-seeded Lanczos}
+\input{sections/01_ising_sigma}

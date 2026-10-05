@@ -1,0 +1,71 @@
+\subsubsection{Exact fermion construction used for the production data}
+For all three Ising states, the production interval
+matrices use the exact Jordan--Wigner solution. It is efficient
+because a fermionic Gaussian state is specified by a $2N$ by $2N$
+covariance matrix, rather than all $2^N$ amplitudes.
+For the spin-to-fermion solution see Ref.~\cite{Montes2017}, Sec.~VIII
+and Appendix C; for reduction by correlations see
+Ref.~\cite{PeschelEisler}, Sec.~3.3(II), Eqs.~(14)--(18) and the
+Majorana discussion immediately following them. The zero-mode parity
+selection below fixes the conventions of our implementation explicitly.
+\begin{enumerate}
+\item \textbf{Transform spins to Majorana fermions.}
+Define the Hermitian operators
+\begin{equation}
+ a_{2j}=\left(\prod_{k<j}Z_k\right)X_j,\qquad
+ a_{2j+1}=\left(\prod_{k<j}Z_k\right)Y_j.
+\end{equation}
+They satisfy $a_ra_s+a_sa_r=2\delta_{rs}$.
+In a fixed parity sector,
+$H=(i/4)\sum_{r,s}\mathcal A_{rs}a_ra_s$, where the real
+antisymmetric matrix has $\mathcal A_{r,r+1}=2$,
+$\mathcal A_{r+1,r}=-2$, and boundary entry
+$\mathcal A_{2N-1,0}=-2P$.
+\item \textbf{Select the correct boundary sector.}
+Even spin parity gives antiperiodic fermions, with momenta
+$k=(2m+1)\pi/N$. Odd spin parity gives periodic fermions, with
+$k=2m\pi/N$. In both cases $m=0,\ldots,N-1$, with momenta understood
+modulo $2\pi$. These are two sectors of the same periodic \emph{spin}
+Hamiltonian; we have not changed its physical boundary condition.
+\item \textbf{Choose the occupation pattern for each primary.}
+Diagonalizing the quadratic Hamiltonian defines fermion annihilation
+operators $\gamma_k$ with excitation energies
+$\omega_k=4|\sin(k/2)|$.
+The identity state is their vacuum in the antiperiodic sector:
+$\gamma_k\ket{I_N}=0$.
+The energy primary occupies the two lowest modes in that sector:
+\begin{equation}
+ \ket{\eps_N}=\gamma_{\pi/N}^\dagger\gamma_{-\pi/N}^\dagger\ket{I_N}.
+\end{equation}
+For $\sigma$, use the periodic sector, empty its nonzero-energy modes,
+and choose the zero-mode occupation that gives $P=-1$.
+The zero mode must be fixed: a covariance with an unresolved zero mode
+does not describe the required pure parity eigenstate.
+\item \textbf{Construct the covariance in the implemented basis.}
+Let $i\mathcal A=U\operatorname{diag}(\lambda_\mu)U^\dagger$.
+For the identity, assign mode signs $\nu_\mu=\operatorname{sgn}\lambda_\mu$.
+For $\eps$, reverse the signs for the two lowest positive-energy modes
+and their negative-energy partners. Then set
+\begin{equation}
+ G=\operatorname{Re}\!\left[
+ iU\operatorname{diag}(\nu_\mu)U^\dagger\right],
+ \qquad G_{rs}=\langle ia_ra_s\rangle\quad(r\ne s),\quad G_{rr}=0.
+\end{equation}
+The mode signs are bookkeeping for the covariance, not occupation
+probabilities. In the periodic sector start with $\nu_\mu=0$ on the
+zero modes, take real orthonormal null vectors $u,v$ of $\mathcal A$,
+and add either $uv^T-vu^T$ or its negative. Choose the sign such that
+$(-1)^N\operatorname{Pf}(G)=-1$. The Pfaffian is the antisymmetric-matrix
+polynomial obeying $\operatorname{Pf}(G)^2=\det G$; its sign here fixes
+the physical fermion parity.
+\item \textbf{Check purity and compute the interval matrix.}
+Verify $G^T=-G$ and $G^2=-\id$. Compare the energy
+$E=\frac14\sum_{r,s}\mathcal A_{rs}G_{rs}$ with
+Eq.~\eqref{eq:ising-energies}.
+Restrict the covariance to the interval and reconstruct its density
+matrix using Eq.~\eqref{eq:gaussian}.
+\end{enumerate}
+This calculation is performed by \texttt{majorana\_covariance} and
+\texttt{gaussian\_rdm}. The numerical purity and full-vector comparisons
+are documented in Appendices~\ref{sec:state-comparisons} and
+\ref{sec:large-sanity}.

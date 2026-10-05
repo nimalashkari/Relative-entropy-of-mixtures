@@ -1,0 +1,229 @@
+{
+  "fit_records": 2952,
+  "active_probability_count": 40,
+  "plotted_coefficients": 960,
+  "groups": [
+    {
+      "model": "ising",
+      "region": "small",
+      "n": 9744,
+      "sizes": 1974,
+      "minimum_N": 300,
+      "maximum_N": 8192,
+      "xmin": 0.000732421875,
+      "xmax": 0.02,
+      "cap": 0.02,
+      "step": 4,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "per_length": {
+        "6": {
+          "first_N": 300,
+          "last_N": 8192,
+          "sizes": 1974
+        },
+        "7": {
+          "first_N": 352,
+          "last_N": 8192,
+          "sizes": 1961
+        },
+        "8": {
+          "first_N": 400,
+          "last_N": 8192,
+          "sizes": 1949
+        },
+        "9": {
+          "first_N": 452,
+          "last_N": 8192,
+          "sizes": 1936
+        },
+        "10": {
+          "first_N": 500,
+          "last_N": 8192,
+          "sizes": 1924
+        }
+      },
+      "active_directions": 240,
+      "c0_error_min": -0.8101494572292589,
+      "c0_error_max": 0.04186401852499522,
+      "max_abs_c0_error": 0.8101494572292589,
+      "max_abs_ratio_error": 0.002044997096317669,
+      "max_abs_free_power_error": 0.937533143014524,
+      "improved_c0_cases": 240,
+      "known_c1_cases": 80,
+      "max_abs_known_c1_error": 3.4078246239934717
+    },
+    {
+      "model": "ising",
+      "region": "large",
+      "n": 8245,
+      "sizes": 1749,
+      "minimum_N": 1200,
+      "maximum_N": 8192,
+      "xmin": 0.000732421875,
+      "xmax": 0.005,
+      "cap": 0.005,
+      "step": 4,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "per_length": {
+        "6": {
+          "first_N": 1200,
+          "last_N": 8192,
+          "sizes": 1749
+        },
+        "7": {
+          "first_N": 1400,
+          "last_N": 8192,
+          "sizes": 1699
+        },
+        "8": {
+          "first_N": 1600,
+          "last_N": 8192,
+          "sizes": 1649
+        },
+        "9": {
+          "first_N": 1800,
+          "last_N": 8192,
+          "sizes": 1599
+        },
+        "10": {
+          "first_N": 2000,
+          "last_N": 8192,
+          "sizes": 1549
+        }
+      },
+      "active_directions": 240,
+      "c0_error_min": -1.518704588423181,
+      "c0_error_max": 1.661085722059319,
+      "max_abs_c0_error": 1.661085722059319,
+      "max_abs_ratio_error": 0.4111737095417567,
+      "max_abs_free_power_error": 6.92334991447241,
+      "improved_c0_cases": 201,
+      "known_c1_cases": 0,
+      "max_abs_known_c1_error": null
+    },
+    {
+      "model": "boson",
+      "region": "small",
+      "n": 19984,
+      "sizes": 4022,
+      "minimum_N": 300,
+      "maximum_N": 16384,
+      "xmin": 0.0003662109375,
+      "xmax": 0.02,
+      "cap": 0.02,
+      "step": 4,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "per_length": {
+        "6": {
+          "first_N": 300,
+          "last_N": 16384,
+          "sizes": 4022
+        },
+        "7": {
+          "first_N": 352,
+          "last_N": 16384,
+          "sizes": 4009
+        },
+        "8": {
+          "first_N": 400,
+          "last_N": 16384,
+          "sizes": 3997
+        },
+        "9": {
+          "first_N": 452,
+          "last_N": 16384,
+          "sizes": 3984
+        },
+        "10": {
+          "first_N": 500,
+          "last_N": 16384,
+          "sizes": 3972
+        }
+      },
+      "active_directions": 240,
+      "c0_error_min": -5.023359902456759,
+      "c0_error_max": -0.9902417705710764,
+      "max_abs_c0_error": 5.023359902456759,
+      "max_abs_ratio_error": 0.00028746364000298286,
+      "max_abs_free_power_error": 0.08244553472137595,
+      "improved_c0_cases": 240,
+      "known_c1_cases": 0,
+      "max_abs_known_c1_error": null
+    },
+    {
+      "model": "boson",
+      "region": "large",
+      "n": 18485,
+      "sizes": 3797,
+      "minimum_N": 1200,
+      "maximum_N": 16384,
+      "xmin": 0.0003662109375,
+      "xmax": 0.005,
+      "cap": 0.005,
+      "step": 4,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "per_length": {
+        "6": {
+          "first_N": 1200,
+          "last_N": 16384,
+          "sizes": 3797
+        },
+        "7": {
+          "first_N": 1400,
+          "last_N": 16384,
+          "sizes": 3747
+        },
+        "8": {
+          "first_N": 1600,
+          "last_N": 16384,
+          "sizes": 3697
+        },
+        "9": {
+          "first_N": 1800,
+          "last_N": 16384,
+          "sizes": 3647
+        },
+        "10": {
+          "first_N": 2000,
+          "last_N": 16384,
+          "sizes": 3597
+        }
+      },
+      "active_directions": 240,
+      "c0_error_min": -1.077480598669267,
+      "c0_error_max": 2.4102182199924105,
+      "max_abs_c0_error": 2.4102182199924105,
+      "max_abs_ratio_error": 0.14637627800599962,
+      "max_abs_free_power_error": 0.6750870224347061,
+      "improved_c0_cases": 160,
+      "known_c1_cases": 0,
+      "max_abs_known_c1_error": null
+    }
+  ],
+  "cluster_reported_weighted_records": 14605920,
+  "cluster_reported_passing_checks": 12142275
+}

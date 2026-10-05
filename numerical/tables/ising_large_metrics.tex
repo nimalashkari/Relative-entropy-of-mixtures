@@ -1,0 +1,41 @@
+\begingroup\setlength{\tabcolsep}{2pt}
+\begin{longtable}{lllrrrrrrr}
+\caption{Ising large-interval fit quality for Table~\ref{tab:ising-large-parameters}, in the same ordered-pair blocks. All fitted-row metrics use that row\textquotesingle s $W_y$ and $m$ observations; $k$ is the fitted parameter count. CFT metrics are evaluated on the same displayed window as the fitted rows, although no fitting is performed. RMSE, CV RMSE, and RMSrel follow Eqs.~\eqref{eq:metrics} and \eqref{eq:cv}. For every $F_2$ row, gains $G,G_{\rm CV}$ use $F_1$ refitted on exactly that $F_2$ window, as in Eq.~\eqref{eq:table-window-gains}; its denominator equals the displayed $F_1$ row because the windows now match. Negative gains mean worse prediction. Absolute RMSEs on different windows should not be ranked directly.}
+\label{tab:ising-large-metrics}\\\toprule
+Direction & Model & $W_y$ & $m$ & $k$ & RMSE & CV RMSE & RMSrel [\%] & $G$ [\%] & $G_{\rm CV}$ [\%]\\\midrule
+\endfirsthead
+\toprule
+Direction & Model & $W_y$ & $m$ & $k$ & RMSE & CV RMSE & RMSrel [\%] & $G$ [\%] & $G_{\rm CV}$ [\%]\\\midrule
+\endhead
+\bottomrule\endfoot
+$I\mid \sigma$ & Free & $(0,0.002]$ & 260 & 2 & $2.156\!\times\!10^{-5}$ & $2.181\!\times\!10^{-5}$ & 0.017377 & 95.561 & 95.551\\*
+$I\mid \sigma$ & $F_1$ & $(0,0.002]$ & 260 & 1 & $4.858\!\times\!10^{-4}$ & $4.902\!\times\!10^{-4}$ & 0.40158 & 0 & 0\\*
+$I\mid \sigma$ & $F_2$ & $(0,0.002]$ & 260 & 2 & $1.523\!\times\!10^{-5}$ & $1.538\!\times\!10^{-5}$ & 0.01209 & 96.864 & 96.863\\*
+$I\mid \sigma$ & CFT & --- & 260 & 0 & 0.0064347 & 0.0064347 & 5.1251 & -1224.7 & -1212.7\\
+\midrule
+$\sigma\mid I$ & Free & $(0,0.002]$ & 260 & 2 & $2.150\!\times\!10^{-5}$ & $2.175\!\times\!10^{-5}$ & 0.017332 & 95.574 & 95.564\\*
+$\sigma\mid I$ & $F_1$ & $(0,0.002]$ & 260 & 1 & $4.858\!\times\!10^{-4}$ & $4.902\!\times\!10^{-4}$ & 0.40162 & 0 & 0\\*
+$\sigma\mid I$ & $F_2$ & $(0,0.002]$ & 260 & 2 & $1.512\!\times\!10^{-5}$ & $1.526\!\times\!10^{-5}$ & 0.012002 & 96.888 & 96.886\\*
+$\sigma\mid I$ & CFT & --- & 260 & 0 & 0.006435 & 0.006435 & 5.1254 & -1224.6 & -1212.6\\
+\midrule
+$I\mid \varepsilon$ & Free & $(0,0.002]$ & 260 & 2 & $1.190\!\times\!10^{-9}$ & $1.209\!\times\!10^{-9}$ & 0.01586 & 49.301 & 48.662\\*
+$I\mid \varepsilon$ & $F_1$ & $(0,0.002]$ & 260 & 1 & $2.346\!\times\!10^{-9}$ & $2.354\!\times\!10^{-9}$ & 0.053668 & 0 & 0\\*
+$I\mid \varepsilon$ & $F_2$ & $(0,0.002]$ & 260 & 2 & $1.217\!\times\!10^{-9}$ & $1.237\!\times\!10^{-9}$ & 0.020162 & 48.143 & 47.468\\*
+$I\mid \varepsilon$ & CFT & --- & 260 & 0 & $8.406\!\times\!10^{-9}$ & $8.406\!\times\!10^{-9}$ & 0.092521 & -258.26 & -257.07\\
+\midrule
+$\varepsilon\mid I$ & Free & $(0,0.002]$ & 260 & 2 & $9.799\!\times\!10^{-10}$ & $9.938\!\times\!10^{-10}$ & 0.017599 & 51.74 & 51.561\\*
+$\varepsilon\mid I$ & $F_1$ & $(0,0.002]$ & 260 & 1 & $2.030\!\times\!10^{-9}$ & $2.052\!\times\!10^{-9}$ & 0.041144 & 0 & 0\\*
+$\varepsilon\mid I$ & $F_2$ & $(0,0.002]$ & 260 & 2 & $9.430\!\times\!10^{-10}$ & $9.591\!\times\!10^{-10}$ & 0.013062 & 53.559 & 53.25\\*
+$\varepsilon\mid I$ & CFT & --- & 260 & 0 & $1.409\!\times\!10^{-8}$ & $1.409\!\times\!10^{-8}$ & 0.17539 & -593.94 & -586.78\\
+\midrule
+$\sigma\mid \varepsilon$ & Free & $(0,0.002]$ & 260 & 2 & $5.939\!\times\!10^{-6}$ & $5.991\!\times\!10^{-6}$ & 0.020061 & 20.974 & 20.404\\*
+$\sigma\mid \varepsilon$ & $F_1$ & $(0,0.002]$ & 260 & 1 & $7.515\!\times\!10^{-6}$ & $7.527\!\times\!10^{-6}$ & 0.026612 & 0 & 0\\*
+$\sigma\mid \varepsilon$ & $F_2$ & $(0,0.002]$ & 260 & 2 & $6.027\!\times\!10^{-6}$ & $6.079\!\times\!10^{-6}$ & 0.020416 & 19.802 & 19.238\\*
+$\sigma\mid \varepsilon$ & CFT & --- & 260 & 0 & $2.658\!\times\!10^{-4}$ & $2.658\!\times\!10^{-4}$ & 0.89182 & -3436.8 & -3431.2\\
+\midrule
+$\varepsilon\mid \sigma$ & Free & $(0,0.002]$ & 260 & 2 & $4.604\!\times\!10^{-6}$ & $4.653\!\times\!10^{-6}$ & 0.01521 & 89.435 & 89.411\\*
+$\varepsilon\mid \sigma$ & $F_1$ & $(0,0.002]$ & 260 & 1 & $4.358\!\times\!10^{-5}$ & $4.394\!\times\!10^{-5}$ & 0.14923 & 0 & 0\\*
+$\varepsilon\mid \sigma$ & $F_2$ & $(0,0.002]$ & 260 & 2 & $4.134\!\times\!10^{-6}$ & $4.176\!\times\!10^{-6}$ & 0.013619 & 90.513 & 90.498\\*
+$\varepsilon\mid \sigma$ & CFT & --- & 260 & 0 & $4.215\!\times\!10^{-4}$ & $4.215\!\times\!10^{-4}$ & 1.3909 & -867.17 & -859.14\\
+\end{longtable}
+\endgroup

@@ -1,0 +1,71 @@
+\subsubsection{Numerical verification at small intervals}
+\label{sec:num-boson-small}
+The current contribution predicts $\alpha=2$ in all six directions.
+The leading amplitudes for $00\leftrightarrow ss$,
+$00\leftrightarrow3s,s$, and $ss\leftrightarrow3s,s$ are
+$\pi^2/12$, $5\pi^2/12$, and $\pi^2/6$, respectively.
+Figure~\ref{fig:num-boson-small} compares these predictions with the
+reduced-state calculation, and Table~\ref{tab:num-boson-small}
+separates the free-power estimates from the fixed-power amplitudes.
+The free exponents range from $1.9649$ to $1.9983$, supporting the
+quadratic leading behavior. The two-term fits use powers two and
+four and bring every leading amplitude closer to CFT than $F_1$.
+Their remaining discrepancies are approximately $-5.17\%$ for
+$00\leftrightarrow ss$, $-3.60\%$ for $00\leftrightarrow3s,s$, and
+$-1.05\%$ for $ss\leftrightarrow3s,s$.
+
+These amplitude offsets are visible in
+Fig.~\ref{fig:num-boson-small-residual}. Increasing $N$ makes $x$
+small while keeping the subsystem resolution fixed at six to ten
+sites; it does not by itself establish a continuum extrapolation.
+Omitting each chain size in turn, $F_2$ improves prediction over
+$F_1$ in four of the six directions. For $00\mid ss$ and
+$ss\mid00$, the prediction error instead increases by about
+$2.57\%$ and $2.58\%$. The fitted fourth-order amplitudes therefore
+describe corrections over this window; they are not independently
+verified analytical coefficients.
+\input{numerical/integration/table_boson_small}
+\input{numerical/integration/figures_boson_small}
+\clearpage
+
+\subsubsection{Numerical verification at large intervals}
+\label{sec:num-boson-large}
+The deficit resolves the approach to $D^B_{a\mid b}=\log2$.
+For the same three unordered pairs, theory predicts
+\begin{equation}
+ (\beta,c_0^{\rm CFT})=
+ (1,\pi^2/8),\quad (5,5\pi^6/64),\quad (2,\pi^2/3),
+ \label{eq:num-boson-large-leading}
+\end{equation}
+with the same leading term in both directions.
+Figure~\ref{fig:num-boson-large} and
+Table~\ref{tab:num-boson-large} show free exponents within
+$0.44\%$ of these predictions. In particular, the fifth-power
+channel gives $\widehat\beta=4.9836,4.9838$. Its two-term leading
+amplitudes, $74.307,74.252$, differ from $5\pi^6/64\simeq75.109$
+by $-1.07\%,-1.14\%$, respectively.
+
+At the adopted cutoff $\ep=0.005$, $F_2$ improves the leading
+amplitude in four of six directions and improves omitted-size
+prediction in only two. The exceptions to amplitude improvement
+are $00\leftrightarrow ss$: the $F_1$ error of about $+2.26\%$
+becomes about $+2.35\%$ with $F_2$. Prediction improves only for
+$ss\leftrightarrow3s,s$; even the fifth-power pair has a small
+negative prediction gain. Figure~\ref{fig:num-boson-large-residual}
+shows the residuals against both fitted and analytical curves.
+The second term for $ss\leftrightarrow3s,s$ tests the allowed
+$\ep^3$ sector, whose complete coefficient has not been established
+analytically. Its fitted value must not be taken as proof that this
+sector survives the full replica continuation.
+
+The amplitude comparison is sensitive to the upper endpoint.
+The supplied cutoff scan finds an all-six amplitude improvement
+only for the single data selection represented by
+$0.0046916890\leq\ep_{\max}<0.0047418335$; the weakest gain there
+is about $0.00555$ percentage points. No admissible scanned window
+improves both amplitude accuracy and omitted-size prediction in
+all six directions. We therefore report the prescribed $0.005$
+window and its exceptions explicitly.
+\input{numerical/integration/table_boson_large}
+\input{numerical/integration/figures_boson_large}
+\clearpage

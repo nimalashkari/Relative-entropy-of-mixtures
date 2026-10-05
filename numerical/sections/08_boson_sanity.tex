@@ -1,0 +1,77 @@
+\subsection{Compact-boson wavefunction and Haldane--Shastry checks}
+\label{sec:boson-sanity}
+We evaluate Eq.~\eqref{eq:bosonpolynomial} independently of the
+logarithmic correlator implementation and compare normalized vectors.
+For each fixed $N$, charge pair $(a,b)$, and endpoint $W$, let $\psi$
+be the normalized vector obtained by directly evaluating the
+Laughlin/Jastrow polynomial in Eq.~\eqref{eq:bosonpolynomial}
+(\texttt{polynomial\_state} in the code). Let $\phi$ be the normalized
+conformal-block vector obtained by exponentiating the logarithmic
+amplitudes in Eq.~\eqref{eq:logblock} (\texttt{vertex\_state}). Both
+vectors represent the same chosen primary, with identical coordinates,
+endpoint and occupation basis. Define their phase-aligned amplitude error
+\begin{equation}
+ e_{\rm amp}(\psi,\phi)=
+ \max_O\left|\psi(O)e^{-i\arg\langle\phi|\psi\rangle}-\phi(O)\right|.
+ \label{eq:amplitudeerror}
+\end{equation}
+The argument $\arg$ is the phase of the complex overlap. This comparison
+checks that two implementations produce the same wavefunction, including
+its phases and normalization. To test an independent spectral property
+of that wavefunction, we also examine its eigenstate residual.
+
+\paragraph{Why use the Haldane--Shastry Hamiltonian?}
+The choice is specific to the exponent-two Jastrow states on the uniform
+circle used here. Their half-filled vacuum is exactly the ground state
+of the Haldane--Shastry (HS) spin chain, whose continuum description is
+the compact boson at the $SU(2)_1$ radius. The conformal-block vacuum
+and its relation to HS are given in Ref.~\cite{Herwerth}, Sec.~II A,
+Eq.~(10), and Sec.~III A, Eq.~(37). This makes HS a natural additional
+benchmark for our three explicit lattice states. In our energy convention,
+the Hamiltonian is
+\begin{equation}
+ H_{\rm HS}=\left(\frac{\pi}{N}\right)^2
+ \sum_{j<k}\frac{\bm S_j\cdot\bm S_k}{\sin^2[\pi(j-k)/N]},
+ \qquad \bm S_j=(X_j,Y_j,Z_j)/2.
+ \label{eq:HHS}
+\end{equation}
+Here $X,Y,Z$ are Pauli matrices, so each site is a spin one-half.
+For each normalized state we compute
+\begin{equation}
+ E_{\rm HS}=\langle\psi|H_{\rm HS}|\psi\rangle,\qquad
+ \eta_{\rm HS}=\|(H_{\rm HS}-E_{\rm HS})\ket{\psi}\|_2.
+\end{equation}
+This is Eq.~\eqref{eq:eigenresidual} with the Hamiltonian specified.
+A small $\eta_{\rm HS}$ tests stationarity under HS; it does not by
+itself identify the CFT primary or establish its conformal weights.
+For the three states at $N=8,10,12$, the largest residual at strict
+infinity is $6.21\times10^{-15}$. The excited-state residuals at
+$W=10^8$ range from $4.60\times10^{-9}$ to $6.30\times10^{-9}$,
+showing the small departure from an HS eigenstate introduced by retaining
+the original finite endpoint.
+
+All three boson vectors are constructed directly from the conformal-block
+or polynomial amplitudes before applying this test. The HS Hamiltonian
+is used only as a diagnostic: it neither generates these vectors nor
+enters the relative entropy, which is calculated from their reduced
+density matrices. Its use here is not a requirement of the continuum
+relative-entropy theory and does not extend automatically to other
+compactification radii or lattice geometries.
+
+\begin{table}[htbp]\centering\small
+\input{tables/boson_canonical}
+\caption{Direct polynomial versus logarithmic conformal-block evaluation
+for the three canonical boson states. Here $\psi$ is the normalized
+direct Laughlin/Jastrow polynomial vector of Eq.~\eqref{eq:bosonpolynomial},
+and $\phi$ is the normalized conformal-block vector obtained by
+exponentiating Eq.~\eqref{eq:logblock}. Each comparison uses the same
+$N$, primary and endpoint $W$ for both vectors. The two amplitude-error
+columns give $e_{\rm amp}(\psi,\phi)$ from Eq.~\eqref{eq:amplitudeerror};
+the two residual columns apply Eqs.~\eqref{eq:eigenresidual} and
+\eqref{eq:HHS} to $\psi$.
+All vectors are normalized, $z_j=e^{2\pi i j/N}$, and the endpoint is
+either strict infinity or $10^8$. The finite-endpoint residuals quantify
+the perturbation retained to match the original Laughlin implementation.
+No interval length or mixing probability enters these whole-state tests.}
+\label{tab:bosoncanonical}
+\end{table}

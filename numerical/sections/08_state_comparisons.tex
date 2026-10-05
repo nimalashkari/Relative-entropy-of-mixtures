@@ -1,0 +1,71 @@
+\subsection{Comparisons with the original lattice implementations}
+\label{sec:state-comparisons}
+We define squared fidelity $F=|\langle\psi|\phi\rangle|^2$ for normalized
+vectors, infidelity $1-F$, and matrix error
+$\|M\|_F=(\Tr M^\dagger M)^{1/2}$. The most useful energy ratio uses
+\emph{excitation gaps}, since ratios of extensive total energies are
+insensitive to the excitation:
+\begin{equation}
+ E_I=-2\csc\frac\pi{2N},\quad E_\sigma=-2\cot\frac\pi{2N},\quad
+ E_\eps=E_I+8\sin\frac\pi{2N},\quad
+ R_E=\frac{E_\eps-E_I}{E_\sigma-E_I}=8\cos^2\frac\pi{4N}.
+ \label{eq:gaps}
+\end{equation}
+The continuum limit is $R_E\to8$, from dimensions $1$ and $1/8$.
+With the velocity $v=2$ of Eq.~\eqref{eq:Hising}, the relation
+$E_a-E_I\sim(2\pi v/N)(h_a+\bar h_a)$ identifies
+the $\eps$ and $\sigma$ dimensions as $1$ and $1/8$, respectively.
+
+\begin{table}[htbp]\centering\small
+\input{tables/pumps_validation}
+\caption{Fresh full-vector comparisons with archived puMPS checkpoints.
+$D_{\rm bond}$ is the MPS bond dimension, distinct from relative entropy.
+The seed is $1234+N$ in the archived optimization. $I$ and $\eps$ use pure
+CB vectors, while $\sigma$ uses Eq.~\eqref{eq:projection}. All vectors
+are normalized, all energies use Eq.~\eqref{eq:Hising}, and the interval
+matrix comparison has $\ell=4$. Every reported infidelity is below
+$4.0\times10^{-7}$. No puMPS reoptimization is claimed.}
+\label{tab:pumps}
+\end{table}
+
+For the Laughlin comparison, the new code places site zero in the least
+significant bit, whereas the original dense constructor uses the most
+significant bit. We reverse bit order before comparing the vectors;
+the comparison then tests branches, phases and normalization in the
+same physical basis.
+Fresh Laughlin-vector comparisons at $N=8,10,12$, for all three boson
+states and $W=10^8$, give $|1-F|\leq1.8\times10^{-15}$ and maximum
+phase-aligned amplitude error $4.1\times10^{-15}$.
+For the Haldane--Shastry convention in Eq.~\eqref{eq:HHS}, the measured
+gap ratios $(E_{3s,s}-E_{00})/(E_{ss}-E_{00})$ are
+$4,4.2,13/3$ at $N=8,10,12$, approaching the CFT value five.
+At finite $W$, excited-state eigen residuals are below $6.3\times10^{-9}$.
+
+Ising blocks were tested against independent exact diagonalization through
+$N=12$, and against exact-fermion interval matrices for every requested
+$N\leq24$. The full $I$ and $\eps$ CB vectors were evaluated even at
+$N=24$. Exact-fermion production for $\sigma$ is cross-checked against the
+projected vectors through $N=16$. Numerical CSVs retain every test value.
+For the covariance calculation, the code also enforces
+$\max_{r,s}|(G^2+\id)_{rs}|<2\times10^{-12}$.
+The baseline 150 boson values agree with the original 150 values
+within $1.16\times10^{-11}$. Ising differences from the available puMPS
+grid are at most $4.15\times10^{-7}$ across $\ell=2,\ldots,6$.
+Historical $N=22$ puMPS states were excluded because their mutual overlaps
+failed a quality criterion. Our $N=22$ data are newly generated exact-chain
+data, explicitly marked as such; we have not repaired or silently
+reinstated those puMPS checkpoints.
+
+\input{sections/01_method_choice}
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{../figs/state_validation.pdf}
+\caption{State validation at critical coupling and periodic spin boundaries.
+(a) Squared-overlap infidelities against archived puMPS at
+$(N,D_{\rm bond})=(10,8),(16,14)$, seeds $1244,1250$; $\sigma$ uses the
+CB-seeded projection with solver tolerance $2\times10^{-12}$.
+(b) Exact finite-chain gap ratios at $N=16,18,20,22,24$ and
+Eq.~\eqref{eq:gaps}; the dashed line is the continuum value eight.
+No interval length or mixture probability enters these whole-state tests.}
+\label{fig:validation}
+\end{figure}

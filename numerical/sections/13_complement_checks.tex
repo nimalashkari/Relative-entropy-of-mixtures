@@ -1,0 +1,232 @@
+\clearpage
+\section{Large-interval fit summaries and sanity checks}
+\label{sec:complement-checks}
+
+\subsection{Separate free, one-term, and two-term fits}
+\label{sec:complement-fit-tables}
+Every coefficient multiplies $y^r$ itself. Free fits determine amplitude
+and exponent; $F_1$ fixes the analytical leading exponent and fits one
+amplitude; $F_2$ fixes the leading and next powers in
+Table~\ref{tab:complement-theory} and fits both amplitudes.
+The CFT leading rows adjust no parameter. Free, $F_1$, and $F_2$ share
+the CFT-wide window in Eq.~\eqref{eq:common-fit-windows} for all
+six directions. The boson window is provisional; see
+Appendix~\ref{sec:common-window-results}. All fits use $\ell=6,\ldots,10$,
+the grid in Eq.~\eqref{eq:extended-grid}, and the
+objective and diagnostics in Sec.~\ref{sec:fits}. The parameter tables
+repeat the analytical leading coefficient $c_0^{\rm CFT}$ beside each
+model amplitude. Their $c_1^{\rm CFT}$ column contains dashes because
+the manuscript supplies no next-order coefficient for these large-interval
+pairs. The next powers used in $F_2$ remain those in
+Table~\ref{tab:complement-theory}, including its qualification that
+the boson $ss\leftrightarrow(3s,s)$ power three is an allowed sector.
+The quality-table gains use the matching-window $F_1$ reference in
+Eq.~\eqref{eq:table-window-gains}; CFT metrics are evaluated on
+the same CFT-wide window. The per-pair figures in Sec.~\ref{sec:window-selection}
+show the corresponding curves and fitting intervals.
+\begingroup\footnotesize\setlength{\tabcolsep}{3pt}
+\input{tables/ising_large_parameters}
+\input{tables/ising_large_metrics}
+\clearpage
+\input{tables/boson_large_parameters}
+\input{tables/boson_large_metrics}
+\endgroup
+
+\subsection{Sparse cross moments, borders, and cached minors}
+\label{sec:complement-pf-details}
+This subsection specifies the algebra used to evaluate
+Eq.~\eqref{eq:complement-bordered-pf} efficiently, including the
+singular cross-sector cases. All indices of the moment matrix start
+at zero. Define the full-circle matrix $D$ by replacing $B$ with
+all $N$ sites in Eq.~\eqref{eq:complement-cross-moment}.
+Because $b_1,b_2\in\{0,1\}$,
+\begin{equation}
+ g_1(z)\overline{g_2(z)}
+ =c_{-1}z^{-1}+c_0+c_1z,\quad
+ (c_{-1},c_0,c_1)=
+ \left(-\frac{b_2}{W},1+\frac{b_1b_2}{W^2},-\frac{b_1}{W}\right).
+ \label{eq:complement-laurent}
+\end{equation}
+The root-of-unity sum $\sum_jz_j^t=N$ for $t=0\bmod N$ and zero
+otherwise gives the sparse moments
+\begin{equation}
+ D_{rs}=N(s-r)\sum_{h=-1}^{1}
+          c_h\,\mathbf1_{r+s-1+\kappa+h=0\ {\rm mod}\ N}.
+ \label{eq:complement-sparse-moments}
+\end{equation}
+The norms $\mathcal Z_i$ are the Pfaffians of the corresponding
+diagonal-charge moment matrices of dimension $2M_i$.
+
+For the pairs in this study the full cross matrix can be singular.
+Use the following regular matrices $R$; $e_j$ denotes the unit column
+at moment index $j$:
+\begin{equation}
+ R=\begin{cases}
+ \begin{pmatrix}D&e_{(d-1)/2}\\-e_{(d-1)/2}^T&0\end{pmatrix},
+       &(00,ss),\quad d=N-1,\\[2mm]
+ D+e_0e_{d/2}^T-e_{d/2}e_0^T,
+       &(00,3s,s),\quad d=N-2,\\[1mm]
+ \begin{pmatrix}D&e_0\\-e_0^T&0\end{pmatrix},
+       &(ss,3s,s),\quad d=N-3 .
+ \end{cases}
+ \label{eq:complement-regularizer}
+\end{equation}
+These are exact auxiliary matrices. For odd $d$, retain the border
+while removing the physical $A$ sites, and pad every physical column
+$f,f'$ by a zero. For even $d$, remove the artificial rank-two
+coupling together with the $A$ contributions. To do both cases at once,
+collect the physical columns $f(z_j),f'(z_j)$ for $j\in A$ in a matrix
+$V$; in the even case append $e_0,e_{d/2}$. Define
+$J=\left(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\right)$ and
+$S=\operatorname{diag}(w(z_0)J,\ldots,w(z_{\ell-1})J)$,
+appending one $J$ block in the even case.
+The environment matrix (bordered when $d$ is odd) is
+$\widetilde D_B=R-VSV^T$.
+
+Set $K_V=V^TR^{-1}V$ and $H=S^{-1}-K_V$. The matrix inverse and
+Pfaffian update identities then read
+\begin{align}
+ \widetilde D_B^{-1}
+ &=R^{-1}+R^{-1}VH^{-1}V^TR^{-1},\nonumber\\
+ \operatorname{Pf}(\widetilde D_B)
+ &=\operatorname{Pf}(R)(-1)^r
+       \left(\prod_{j=1}^r w_j\right)\operatorname{Pf}(H).
+ \label{eq:complement-pf-update}
+\end{align}
+Here $r$ is the number of column pairs in $V$ and $w_j$ their weights;
+the artificial pair has $w_j=1$.
+All needed products with $R^{-1}$ are obtained by one sparse solve
+with multiple right-hand sides. Only $H$, of dimension $2\ell$ or
+$2\ell+2$, is inverted with high-precision dense arithmetic.
+
+For even $d$, choose the external columns $E_{UV}$ of
+Eq.~\eqref{eq:complement-bordered-pf} and evaluate
+\begin{equation}
+ \operatorname{Pf}
+ \begin{pmatrix}D_B&E_{UV}\\-E_{UV}^T&0\end{pmatrix}
+ =\operatorname{Pf}(D_B)
+  \operatorname{Pf}(E_{UV}^TD_B^{-1}E_{UV}).
+ \label{eq:complement-even-reduction}
+\end{equation}
+For odd $d$, pad these columns by zero and append the unit column
+$e_d$ on the retained border, obtaining $E'_{UV}$. Then
+\begin{equation}
+ \operatorname{Pf}
+ \begin{pmatrix}D_B&E_{UV}\\-E_{UV}^T&0\end{pmatrix}
+ =-\operatorname{Pf}(\widetilde D_B)
+  \operatorname{Pf}((E'_{UV})^T\widetilde D_B^{-1}E'_{UV}).
+ \label{eq:complement-odd-reduction}
+\end{equation}
+The minus sign results from expanding the added border pair in the
+full antisymmetric matrix. The appended $e_d$ enforces removal of
+that auxiliary pair; ignoring it would compute a different contraction.
+For odd $d$, $q$ is odd, so $q+1$ is even as a Pfaffian requires.
+All external minors come from a common matrix of dimension at most
+$2\ell+1$. They depend only on $U\cup V$ and $U\cap V$ and are cached.
+Principal minors are evaluated by the Pfaffian Laplace expansion
+\cite{Wimmer}. The sparse solve, border choices, and cross-charge
+contraction are implemented in \texttt{boson\_transition.py}.
+
+\subsection{Independent validation and numerical precision}
+The new checks use explicit full wavefunctions at $N=8,10,12$ and
+$\ell=3,4$. Ising vectors come from the independent conformal-block
+vacuum/energy construction and block-seeded Lanczos spin state.
+Boson vectors are directly enumerated from the vertex blocks.
+For every unordered pair, form the coefficient matrices explicitly
+and compare $X_a^TX_b^*$ with the new transition on $A$,
+allowing one global phase. The complex alignment factor is denoted $c$;
+we also check that it has unit modulus.
+Both directed entropies are then computed from explicit matrices on
+$B$ and compared with Eq.~\eqref{eq:complement-entropy}.
+An independent phase rotation of the transition tests the invariance
+of the Gram result.
+
+The boson checks additionally use $W=\infty$ and $W=4$ at $N=10$,
+$\ell=4$. The latter gives substantial nonconstant Laurent terms in
+Eq.~\eqref{eq:complement-laurent}, testing the finite-endpoint formula
+away from its production value.
+At $N=256,\ell=10$, all three boson transitions are recomputed at
+130 decimal digits and compared with 100 digits.
+Ising anchored overlaps evaluated by singular values are compared
+with the earlier determinant evaluation.
+
+In production, eigenvalues below $\tau=10^{-15}$ are omitted from
+$t\log t$ sums. This is a numerical threshold, not an added positive
+floor in the density matrix. We check $\tau=10^{-14}$ and $10^{-16}$
+at $N=32,256$, $\ell=4,10$, for all six pairs.
+Define the support-weight defect and Holevo identity defect by
+\begin{align}
+ e_w&=\max_{c=a,b}\left|
+       2\sum_{\lambda_k>\tau}\lambda_k v_k^\dagger P_c v_k-1
+       \right|,\nonumber\\
+ e_H&=\left|\frac{D^B_{a\mid b}+D^B_{b\mid a}}2
+       -S(\bar\rho_{ab}^B)+
+         \frac{S(\rho_a^A)+S(\rho_b^A)}2\right|,
+ \label{eq:complement-precision-metrics}
+\end{align}
+where $S(\rho)=-\Tr\rho\log\rho$ is von Neumann entropy.
+Every production record includes the minimum Gram eigenvalue,
+$|\Tr\mathcal G-1|$, $e_w$, and $e_H$. These are algebraic consistency
+checks; agreement with CFT is a separate test.
+\input{tables/complement_checks}
+
+\subsection{Extension to \texorpdfstring{$\ell=11,12$}{ell=11,12}}
+\label{sec:complement-extension-checks}
+Increasing $\ell$ enlarges both the local matrices and the Gram blocks.
+We therefore construct the common-$B$ symmetry blocks directly and use
+Eq.~\eqref{eq:complement-support} for the new production points.
+The Schmidt cutoff is $\tau_s=10^{-16}$; the entropy cutoff remains
+$\tau=10^{-15}$. The independent $N=256$ reference retains the full
+Gram blocks for all six unordered pairs at both new lengths.
+For each pair and length we compare the supported result with this
+reference, vary $\tau_s$ to $10^{-17}$ and $10^{-15}$, and measure
+$e_s=\max_{c=a,b}|1-\sum_{j:\,\lambda_{cj}>\tau_s}\lambda_{cj}|$,
+where $\lambda_{cj}$ are the eigenvalues of $\rho_c^A$.
+This checks the numerical support approximation; it does not assume
+that the discarded spectrum is exactly zero.
+
+For every size and state, the partial trace of the new $\ell=12$
+diagonal matrix must reproduce the original $\ell=10$ cache.
+The same test applies to each transition, allowing one constant phase
+and separately checking its unit modulus. At $N=256$, sampled entries
+of all three boson diagonal matrices and all three transitions are
+recomputed at 130 decimal digits by a direct pivoted Pfaffian, independently
+of the cached principal-minor recursion used in production. The samples
+cover every allowed local occupation count, edge configurations, and
+fixed-seed random configurations. This is an entrywise sample test,
+not a full 130-digit recomputation of the $4096\times4096$ matrices.
+
+The boson implementation also avoids repeated products over site pairs.
+For a site set $C$, define
+$V(C)=\prod_{i<j,\,i,j\in C}(z_j-z_i)$ and
+$P_j(C)=\prod_{i\in C\setminus\{j\}}
+(z_{\max(i,j)}-z_{\min(i,j)})$.
+With $C=U\cup V$, $J=U\cap V$, and multiplicity
+$m_i=\mathbf1_{i\in U}+\mathbf1_{i\in V}$, the denominator is
+\begin{equation}
+ \prod_{i<j}(z_j-z_i)^{m_i m_j}
+ =V(C)V(J)\prod_{j\in J}P_j(C).
+ \label{eq:complement-product-cache}
+\end{equation}
+For a pair of sites in $C$, the right-hand exponent is
+$1+\mathbf1_{i\in J}+\mathbf1_{j\in J}
++\mathbf1_{i,j\in J}=m_i m_j$, which proves the identity.
+The factors are cached recursively over subsets. The same principal-minor
+recursion is evaluated with Julia \texttt{BigFloat} at the precision of
+100 decimal digits; only the final rescaled matrix entries are converted
+to double precision. This changes the execution speed, not the contraction
+formula. The source pair \texttt{boson\_julia.py} and
+\texttt{boson\_reconstruct.jl} supplies the bridge and the complete recursion;
+the Python implementation remains available for comparison.
+
+Before the extension, 21 checks compare the revised Gram construction
+with its original implementation, the supported and full Gram results,
+Ising Wick and Schur diagonal reconstruction, and sampled versus complete
+boson calculations at smaller $\ell$. The additional 324 extension
+checks are summarized in Table~\ref{tab:complement-extension-checks}.
+\input{tables/complement_extension_checks}
+
+The historical checks above document the original production through
+$N=256$, including the archived $\ell=11,12$ extension. The active
+larger-chain checks use the same state definitions and are given next.
+\input{sections/14_scaling_checks}

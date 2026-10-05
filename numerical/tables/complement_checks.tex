@@ -1,0 +1,12 @@
+\begin{center}\begin{minipage}{\linewidth}\centering\small\captionsetup{hypcap=false}\begin{tabular}{lrrr}\toprule
+Check & Count & Maximum error & Tolerance\\\midrule
+Transition versus explicit vectors & 18 & $4.491\!\times\!10^{-14}$ & $2.000\!\times\!10^{-11}$\\
+Transition phase modulus & 18 & $2.709\!\times\!10^{-14}$ & $2.000\!\times\!10^{-11}$\\
+Gram versus explicit large matrices & 18 & $2.354\!\times\!10^{-14}$ & $2.000\!\times\!10^{-11}$\\
+Independent phase rotation & 18 & $5.662\!\times\!10^{-15}$ & $2.000\!\times\!10^{-12}$\\
+Entropy cutoff $10^{-15}$ versus $10^{-14}$ & 12 & $1.019\!\times\!10^{-11}$ & $2.000\!\times\!10^{-11}$\\
+Entropy cutoff $10^{-15}$ versus $10^{-16}$ & 12 & $1.314\!\times\!10^{-12}$ & $2.000\!\times\!10^{-11}$\\
+Ising overlap evaluation & 3 & $5.503\!\times\!10^{-15}$ & $2.000\!\times\!10^{-11}$\\
+Entropy under transition precision change & 6 & $1.248\!\times\!10^{-13}$ & $2.000\!\times\!10^{-11}$\\
+Boson transition: 100 versus 130 digits & 3 & 0 & $2.000\!\times\!10^{-11}$\\
+\bottomrule\end{tabular}\captionof{table}{All 108 displayed complementary-interval implementation checks pass; checks at $\ell=4,5$ remain archived and are excluded from this table. Transition errors are maximum absolute entry differences after one constant phase alignment; phase error is $||c|-1|$. Entropy errors are the largest absolute difference between the two directions. A zero precision difference means identical matrices after conversion to double precision. The construction and precision settings are specified in Sec.~\ref{sec:complement-checks}.}\label{tab:complement-checks}\end{minipage}\end{center}

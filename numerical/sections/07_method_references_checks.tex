@@ -1,0 +1,263 @@
+\clearpage
+\section{Method references, implementation map, and sanity checks}
+\label{sec:method-audit}
+The main text presents the methods used to generate the relative-entropy
+data and the reasons for choosing them. Here we collect the independent
+constructions and numerical evidence supporting that choice.
+This appendix separates the published ingredients from their assembly
+in this project. Equation numbers in the reading guide refer to the
+linked arXiv versions. The companion \texttt{METHOD\_REFERENCES.md}
+gives the same reading route, source paths, and executable commands.
+The full reproducibility archive contains the Python implementation;
+the Overleaf archive contains the report and validation records.
+
+\input{sections/08_validation_metrics}
+\input{sections/08_boson_sanity}
+\clearpage
+\input{sections/08_ising_independent}
+\input{sections/08_state_comparisons}
+\clearpage
+
+\subsection{What was checked for the projected spin state}
+\label{sec:ising-spin-validation}
+For normalized vectors, define the energy error, eigenstate residual,
+and squared overlap by
+\begin{equation}
+ \delta E=|\langle H\rangle-E_\sigma^{\rm exact}|,\qquad
+ \eta=\|(H-\langle H\rangle)\ket{\sigma_N}\|_2,\qquad
+ F=|\langle\sigma_{\rm ref}|\sigma_N\rangle|^2.
+\end{equation}
+The residual equals the square root of the energy variance. It tests
+closeness to an eigenstate, but does not identify which eigenstate;
+parity, translation and the exact lowest odd-sector energy supply that
+identification. The interval comparison is
+\begin{equation}
+ e_\rho=\max_{1\leq\ell\leq\min(5,N/2)}
+ \left\|\rho^{\rm Lanczos}_{\sigma,\ell}
+       -\rho^{\rm covariance}_{\sigma,\ell}\right\|_F,
+ \qquad \|B\|_F=\sqrt{\sum_{u,v}|B_{uv}|^2}.
+\end{equation}
+The following are the archived results in
+\texttt{ising\_cb\_validation.csv}, rounded only for display.
+That file evaluates the exact reference energy through the covariance;
+using the equivalent trigonometric formula can change the last
+roundoff digits of $\delta E$.
+\begin{center}\small
+\begin{tabular}{rrrrrr}\toprule
+$N$ & $F_{\rm seed}$ & $\eta$ & $\delta E$ & $e_\rho$ & $|1-F|$\\\midrule
+6 & .985928 & $1.54\,10^{-15}$ & $1.78\,10^{-15}$ & $1.82\,10^{-15}$ & $1.33\,10^{-15}$\\
+8 & .982894 & $6.11\,10^{-15}$ & $5.33\,10^{-15}$ & $1.61\,10^{-15}$ & $2.22\,10^{-15}$\\
+10 & .980864 & $2.22\,10^{-13}$ & $0$ & $2.76\,10^{-15}$ & $0$\\
+12 & .979404 & $1.99\,10^{-11}$ & $2.49\,10^{-14}$ & $2.47\,10^{-13}$ & $1.78\,10^{-15}$\\
+16 & .977431 & $2.70\,10^{-12}$ & $4.26\,10^{-14}$ & $4.02\,10^{-14}$ & ---\\\bottomrule
+\end{tabular}
+\end{center}
+Here $F_{\rm seed}=|\langle\sigma_N|q_1\rangle|^2$ measures how much
+of the target was already in the seed. For $N\leq12$, $F$ compares
+against the lowest three eigenpairs from a separate full-spin-space
+Hamiltonian action with a random starting vector. That reference also
+uses \texttt{eigsh}; it is a different state construction, not an
+independent eigensolver implementation. No full-space overlap was
+recorded at $N=16$, hence the dash. Values of $F$ exceeding one by
+roundoff are reported as $|1-F|$, not negative infidelities; zero entries
+are floating-point results, not proofs of exact arithmetic equality.
+
+The separate \texttt{ising\_construction\_checks.csv} run tests
+$|\langle\sigma|\sigma\rangle-1|$,
+$\|(P+1)\sigma\|_2$, $\|(\mathsf T-1)\sigma\|_2$, and
+$\max_{a=I,\eps}|\langle a|\sigma\rangle|$ on the same five sizes.
+Their maxima are $9.99\times10^{-16}$, $0$,
+$7.20\times10^{-13}$, and $0$, respectively. Parity and mutual
+orthogonality are enforced by disjoint basis sectors, so those zeros
+alone do not establish state accuracy.
+
+For context, the archived puMPS $\sigma$ residuals are
+$2.65\times10^{-3}$ at $(N,D_{\rm bond})=(10,8)$ and
+$3.10\times10^{-3}$ at $(16,14)$. Their squared overlaps with the
+reference are $0.9999999603$ and $0.9999999366$.
+These comparisons favor the exact reference for this integrable model
+and these supplied checkpoints. They do not bound the accuracy of
+puMPS after further optimization or at a larger bond dimension.
+
+\subsection{Large-chain contraction and entropy checks}
+\label{sec:large-sanity}
+\input{sections/05_large_validation}
+
+Table~\ref{tab:large-validation} lists all eight families of the 119 checks, including
+their sizes, norms, and errors. In particular, the $N=20$,
+$\ell=10$ boson comparison tests every matrix element of all three
+states against full wavefunction enumeration, with maximum error
+$3.22\times10^{-15}$. This tests off-diagonal phases as well as
+normalization. At $N=128$, where full enumeration is impractical,
+increased working precision and agreement between direct and cached
+contractions test numerical stability. They share the same algebraic
+formula and therefore do not constitute an independent large-$N$
+wavefunction proof. The algebra is derived in Sec.~\ref{sec:boson-contraction} and independently
+tested at the sizes where enumeration is possible.
+
+For Ising, finite-chain energies, covariance purity, zero-mode parity,
+and agreement with smaller full vectors test distinct parts of the
+construction. A partial trace of a ten-site matrix is also compared
+with reconstruction from the directly restricted covariance. Entropy
+checks then compare full-matrix and symmetry-block calculations, and
+vary the eigenvalue threshold. Trace, Hermiticity and positivity are
+necessary checks; agreement with an independently constructed state
+is the stronger check. These tests certify the finite-lattice
+calculation at the stated precision, not the absence of continuum
+cutoff effects or unknown small-interval corrections.
+
+\subsubsection{Endpoint checks for the extension through \texorpdfstring{$N=256$}{N=256}}
+\label{sec:n256-sanity}
+Before generating the new sizes, we tested all three states of each CFT
+at $N=256$ and $\ell=10$. The 70 records in
+\texttt{larger\_size\_checks.csv} test the same contraction in the new
+size range. In addition to the matrix and entropy differences defined
+in Table~\ref{tab:large-validation}, define
+\begin{equation}
+ e_G=\max_{r,s}|(G^2+\id)_{rs}|,\qquad
+ e_P=|(-1)^N\operatorname{Pf}(G)-P|,\qquad
+ e_+=\max(0,-\lambda_{\min}(\rho_A)).
+ \label{eq:n256-diagnostics}
+\end{equation}
+Here $e_G$ tests purity of the full-chain Ising covariance, $e_P$ tests
+its parity, and $e_+$ measures a negative eigenvalue caused by numerical
+error. The remaining matrix-quality errors are $|\Tr\rho_A-1|$ and
+$\max_{u,v}|(\rho_A-\rho_A^\dagger)_{uv}|$.
+\begin{center}
+\begin{minipage}{\linewidth}\small
+\captionsetup{type=table}
+\begin{tabular}{p{.61\linewidth}rr}\toprule
+Check at $N=256$ & Count & Largest error\\\midrule
+Ising exact finite-chain energies &3&$5.69\times10^{-14}$\\
+Ising full covariance purity $e_G$ &3&$3.11\times10^{-15}$\\
+Ising full-state parity $e_P$ &3&$5.96\times10^{-14}$\\
+Ising partial traces versus direct covariance, $\ell=4,6$ &6&$5.42\times10^{-16}$\\
+Boson 100 versus 130 digits, $\ell=10$ &3&$<2\times10^{-14}$\\
+Boson partial traces versus direct Pfaffians, $\ell=4,6$ &6&$1.39\times10^{-16}$\\
+Trace, Hermiticity and $e_+$, both CFTs, $\ell=10$ &18&$2.19\times10^{-16}$\\
+Entropy cutoff $10^{-15}$ versus $10^{-16}$, $\ell=4,10$ &24&$7.93\times10^{-14}$\\
+Symmetry-block versus full-matrix entropy, $\ell=4,10$ &4&$1.67\times10^{-14}$\\\bottomrule
+\end{tabular}
+\caption{All 70 endpoint checks for the extension to $N=256$. State
+checks cover all three primaries per model; entropy-threshold checks
+cover all six directions. Full-matrix comparisons use Ising
+$\sigma\mid\eps$ and boson $ss\mid3s,s$. Errors use
+Eq.~\eqref{eq:n256-diagnostics} and the entrywise/scalar conventions of
+Table~\ref{tab:large-validation}. The precision row gives the validation
+tolerance for final complex double-precision matrices, not a claim of
+100-digit precision in the returned matrix.}
+\label{tab:n256-validation}
+\end{minipage}
+\end{center}
+All checks passed. The additional production run records trace,
+Hermiticity and minimum eigenvalue for all $8\times3\times7\times2=336$
+new state/interval combinations in \texttt{larger\_size\_quality.csv}.
+It appends 672 directed relative entropies while preserving all 1200
+earlier observations. The high-precision comparison shares the same
+algebra and tests numerical stability; it is not an independent
+full-wavefunction check at $N=256$.
+
+\subsection{Reading route and attribution}
+\begin{enumerate}
+\item \textbf{Ising block states and the spin-primary limitation.}
+Read Montes et al.~\cite{Montes2017}, Sec.~VIII, Eqs.~(55)--(62),
+for the homogeneous even-sector block and its fermion ground state;
+Appendix C, Eqs.~(133)--(137), supplies spin/fermion conventions.
+Sec.~X, Eqs.~(73)--(75), constructs the energy-primary endpoint block.
+The discussion after Eq.~(79) explains the difficulty with proposed
+odd-sector endpoint states. Our summed-spin seed and odd-sector
+projection, Eqs.~\eqref{eq:sigmaseed}--\eqref{eq:projection}, are a
+project adaptation. They are not a published closed block formula for
+$\sigma$.
+\item \textbf{Lanczos projection.}
+The algorithmic reference is the ARPACK guide~\cite{ARPACK}; the
+direct implementation contract is \texttt{eigsh}~\cite{ScipyEigsh}.
+The three-term recurrence and Rayleigh--Ritz selection are written out
+in Appendix~\ref{sec:sigmamethod}. Our call uses \texttt{k=1},
+\texttt{which="SA"}, \texttt{v0=seed}, and \texttt{tol=2e-12}.
+It leaves \texttt{ncv} and \texttt{maxiter} at their defaults: for the
+tested odd-sector dimension $d=2^{N-1}$, these are $20$ and $10d$.
+No shift-invert transformation is requested. The API parameter
+\texttt{sigma} denotes a spectral shift and is unrelated to our
+primary-state name. The recorded environment uses SciPy 1.17.1;
+the linked 1.17-series API describes these parameters.
+\item \textbf{Large Ising chains.}
+Read Peschel and Eisler~\cite{PeschelEisler}, Sec.~3.3(II),
+Eqs.~(14)--(18), including the following Majorana paragraph.
+It explains why a subsystem of a quadratic-fermion eigenstate is
+determined by restricted correlations. Our explicit parity and zero-mode
+selection precedes that reduction. Match the Majorana basis before
+matching signs: we use
+$\langle a_ra_s\rangle=\delta_{rs}-iG_{rs}$, whereas the review writes
+$\delta_{rs}+i\Gamma_{rs}$ and chooses a different sign for one Majorana
+per site. After aligning the basis, $G=-\Gamma$.
+The Gaussian statement applies to each Ising primary; the mixture in
+Eq.~\eqref{eq:large-target} is evaluated as a full matrix.
+\item \textbf{Large compact-boson chains.}
+Read St\'{e}phan and Pollmann~\cite{Stephan}, Appendix A.1,
+Eqs.~(A5)--(A11), for the confluent Vandermonde determinant and
+discrete Pfaffian normalization. Appendix A.2, Eqs.~(A14)--(A15),
+introduces site weights for diagonal observables. Their site count $L$
+and particle count $N$ are our $N$ and $M$. Their diagonal calculation
+can discard amplitude phases. Our off-diagonal interval matrix cannot:
+Eq.~\eqref{eq:pf-rdm} retains the bra and ket factors explicitly.
+The finite-$W$ extension, bordered contraction, tridiagonal solve,
+and reuse of repeated minors are developed in Sec.~\ref{sec:boson-contraction}, and are
+checked against explicit vertex-state sums.
+\item \textbf{Pfaffian signs and numerical evaluation.}
+Wimmer~\cite{Wimmer}, Eqs.~(4) and (5), gives the first-row expansion
+and congruence identity. These justify the cached recursion and block
+elimination used here. Sec.~II A, Eqs.~(15)--(18), explains pivoted
+antisymmetric elimination, the basis of our scalar Pfaffian helpers.
+Our code implements those elementary updates using NumPy or mpmath;
+it does not call the paper's software package. Caching the minors and
+sharing multiplicity factors are implementation choices in this project.
+\end{enumerate}
+
+\subsection{From a formula to its source function}
+All Python paths in this table are relative to
+\texttt{src/conformal\_blocks/}; the method functions have source
+references in their docstrings. A reduced density matrix is abbreviated
+RDM in function and data-file names.
+\begin{center}\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{.35\linewidth}>{\raggedright\arraybackslash}p{.57\linewidth}}\toprule
+Operation & File and functions\\\midrule
+Block vacuum and projected $\sigma$
+&\path{ising.py}: \path{fusion_blocks}, \path{sigma_from_cb},
+\path{hamiltonian_action}, \path{energy_diagnostics}\\
+Quadratic sectors, zero modes and Eq.~\eqref{eq:large-ising-rdm}
+&\path{ising.py}: \path{majorana_covariance}, \path{pfaffian},
+\path{gaussian_rdm}; direct comparison: \path{dense_rdm}\\
+Explicit compact-boson amplitudes
+&\path{boson.py}: \path{vertex_state}, \path{sector_rdm}\\
+Eqs.~\eqref{eq:pf-small} and \eqref{eq:pf-rdm}
+&\path{boson_pfaffian.py}: \path{jastrow_rdm},
+\path{_tridiagonal_solve}, \path{pfaffian_mp}, \path{_cached_density}\\
+Shorter intervals and exact mixture entropy
+&\path{boson_pfaffian.py}: \path{block_rdms};
+\path{symmetry_entropy.py}: \path{sectors}, \path{directed_entropies}\\
+Validation and current-grid generation
+&\path{method_sanity.py}, \path{extension_checks.py},
+\path{large_interval_checks.py}, \path{large_intervals.py}\\\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{A short reproduction run}
+From the root of the full reproducibility project, using a Python
+environment containing NumPy, SciPy and mpmath, run
+\begin{verbatim}
+export PYTHONPATH=src
+export OPENBLAS_NUM_THREADS=1
+python -m conformal_blocks.method_sanity \
+  --output method_sanity.json
+\end{verbatim}
+This script constructs $\sigma$ at $N=12$, checks its energy, residual,
+symmetries and four-site reduction, and tests all three primaries at
+$N=12,128$ for both CFTs with $\ell=4$. The boson checks compare the
+cached 100-digit calculation with direct 130-digit Pfaffians, and at
+$N=12$ with explicit vertex amplitudes. It also compares both entropy
+implementations. Every check writes its error, tolerance, parameters
+and pass flag. The executed result is archived as
+\texttt{data/method\_sanity.json}; all 55 checks passed. This compact
+reproduction supplements the archived 345 earlier checks and 119
+ten-site checks, without replacing them or rerunning any fits.

@@ -1,0 +1,41 @@
+\begingroup\setlength{\tabcolsep}{2pt}
+\begin{longtable}{lllrrrrrrr}
+\caption{Ising small-interval fit quality for Table~\ref{tab:ising-small-parameters}, in the same ordered-pair blocks. All fitted-row metrics use that row\textquotesingle s $W_x$ and $m$ observations; $k$ is the fitted parameter count. CFT metrics are evaluated on the same displayed window as the fitted rows, although no fitting is performed. RMSE, CV RMSE, and RMSrel follow Eqs.~\eqref{eq:metrics} and \eqref{eq:cv}. For every $F_2$ row, gains $G,G_{\rm CV}$ use $F_1$ refitted on exactly that $F_2$ window, as in Eq.~\eqref{eq:table-window-gains}; its denominator equals the displayed $F_1$ row because the windows now match. Negative gains mean worse prediction. Absolute RMSEs on different windows should not be ranked directly.}
+\label{tab:ising-small-metrics}\\\toprule
+Direction & Model & $W_x$ & $m$ & $k$ & RMSE & CV RMSE & RMSrel [\%] & $G$ [\%] & $G_{\rm CV}$ [\%]\\\midrule
+\endfirsthead
+\toprule
+Direction & Model & $W_x$ & $m$ & $k$ & RMSE & CV RMSE & RMSrel [\%] & $G$ [\%] & $G_{\rm CV}$ [\%]\\\midrule
+\endhead
+\bottomrule\endfoot
+$I\mid \sigma$ & Free & $(0,0.02]$ & 1255 & 2 & $5.158\!\times\!10^{-9}$ & $5.190\!\times\!10^{-9}$ & 0.02149 & 1.7481 & 1.5281\\*
+$I\mid \sigma$ & $F_1$ & $(0,0.02]$ & 1255 & 1 & $5.249\!\times\!10^{-9}$ & $5.271\!\times\!10^{-9}$ & 0.017876 & 0 & 0\\*
+$I\mid \sigma$ & $F_2$ & $(0,0.02]$ & 1255 & 2 & $5.124\!\times\!10^{-9}$ & $5.161\!\times\!10^{-9}$ & 0.016955 & 2.3911 & 2.077\\*
+$I\mid \sigma$ & CFT & --- & 1255 & 0 & $1.719\!\times\!10^{-8}$ & $1.719\!\times\!10^{-8}$ & 0.053178 & -227.43 & -226.11\\
+\midrule
+$\sigma\mid I$ & Free & $(0,0.02]$ & 1255 & 2 & $4.526\!\times\!10^{-9}$ & $4.554\!\times\!10^{-9}$ & 0.01948 & 1.4739 & 1.2593\\*
+$\sigma\mid I$ & $F_1$ & $(0,0.02]$ & 1255 & 1 & $4.594\!\times\!10^{-9}$ & $4.612\!\times\!10^{-9}$ & 0.016173 & 0 & 0\\*
+$\sigma\mid I$ & $F_2$ & $(0,0.02]$ & 1255 & 2 & $4.497\!\times\!10^{-9}$ & $4.528\!\times\!10^{-9}$ & 0.01584 & 2.1181 & 1.8149\\*
+$\sigma\mid I$ & CFT & --- & 1255 & 0 & $1.594\!\times\!10^{-8}$ & $1.594\!\times\!10^{-8}$ & 0.050669 & -246.9 & -245.54\\
+\midrule
+$I\mid \varepsilon$ & Free & $(0,0.02]$ & 1255 & 2 & $1.566\!\times\!10^{-9}$ & $1.585\!\times\!10^{-9}$ & 0.81516 & 3.9757 & 3.6364\\*
+$I\mid \varepsilon$ & $F_1$ & $(0,0.02]$ & 1255 & 1 & $1.631\!\times\!10^{-9}$ & $1.645\!\times\!10^{-9}$ & 0.38995 & 0 & 0\\*
+$I\mid \varepsilon$ & $F_2$ & $(0,0.02]$ & 1255 & 2 & $1.561\!\times\!10^{-9}$ & $1.582\!\times\!10^{-9}$ & 0.33241 & 4.2923 & 3.8386\\*
+$I\mid \varepsilon$ & CFT & --- & 1255 & 0 & $4.411\!\times\!10^{-9}$ & $4.411\!\times\!10^{-9}$ & 0.94868 & -170.42 & -168.19\\
+\midrule
+$\varepsilon\mid I$ & Free & $(0,0.02]$ & 1255 & 2 & $1.565\!\times\!10^{-9}$ & $1.583\!\times\!10^{-9}$ & 1.544 & 14.705 & 14.389\\*
+$\varepsilon\mid I$ & $F_1$ & $(0,0.02]$ & 1255 & 1 & $1.834\!\times\!10^{-9}$ & $1.849\!\times\!10^{-9}$ & 0.65255 & 0 & 0\\*
+$\varepsilon\mid I$ & $F_2$ & $(0,0.02]$ & 1255 & 2 & $1.548\!\times\!10^{-9}$ & $1.568\!\times\!10^{-9}$ & 0.33073 & 15.616 & 15.195\\*
+$\varepsilon\mid I$ & CFT & --- & 1255 & 0 & $4.320\!\times\!10^{-9}$ & $4.320\!\times\!10^{-9}$ & 0.94559 & -135.49 & -133.62\\
+\midrule
+$\sigma\mid \varepsilon$ & Free & $(0,0.02]$ & 1255 & 2 & $4.655\!\times\!10^{-8}$ & $4.675\!\times\!10^{-8}$ & 2.1632 & 72.895 & 72.862\\*
+$\sigma\mid \varepsilon$ & $F_1$ & $(0,0.02]$ & 1255 & 1 & $1.717\!\times\!10^{-7}$ & $1.723\!\times\!10^{-7}$ & 1.1334 & 0 & 0\\*
+$\sigma\mid \varepsilon$ & $F_2$ & $(0,0.02]$ & 1255 & 2 & $7.741\!\times\!10^{-9}$ & $7.820\!\times\!10^{-9}$ & 0.018834 & 95.492 & 95.461\\*
+$\sigma\mid \varepsilon$ & CFT & --- & 1255 & 0 & $5.026\!\times\!10^{-7}$ & $5.026\!\times\!10^{-7}$ & 0.88172 & -192.67 & -191.78\\
+\midrule
+$\varepsilon\mid \sigma$ & Free & $(0,0.02]$ & 1255 & 2 & $3.468\!\times\!10^{-8}$ & $3.483\!\times\!10^{-8}$ & 1.6121 & 72.684 & 72.651\\*
+$\varepsilon\mid \sigma$ & $F_1$ & $(0,0.02]$ & 1255 & 1 & $1.270\!\times\!10^{-7}$ & $1.274\!\times\!10^{-7}$ & 0.83808 & 0 & 0\\*
+$\varepsilon\mid \sigma$ & $F_2$ & $(0,0.02]$ & 1255 & 2 & $7.163\!\times\!10^{-9}$ & $7.236\!\times\!10^{-9}$ & 0.016596 & 94.359 & 94.318\\*
+$\varepsilon\mid \sigma$ & CFT & --- & 1255 & 0 & $3.741\!\times\!10^{-7}$ & $3.741\!\times\!10^{-7}$ & 0.66099 & -194.64 & -193.74\\
+\end{longtable}
+\endgroup

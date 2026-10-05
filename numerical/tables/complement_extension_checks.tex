@@ -1,0 +1,18 @@
+\begin{center}\begin{minipage}{\linewidth}\centering\small\captionsetup{hypcap=false}\begin{tabular}{lrrr}\toprule
+Check & Count & Maximum error & Tolerance\\\midrule
+Direct sectors versus original Gram & 6 & $6.66\!\times\!10^{-15}$ & $2.00\!\times\!10^{-11}$\\
+Schmidt support versus original Gram & 6 & $1.22\!\times\!10^{-13}$ & $2.00\!\times\!10^{-11}$\\
+Ising Wick versus Schur diagonal & 3 & $7.77\!\times\!10^{-16}$ & $2.00\!\times\!10^{-11}$\\
+Sampled direct Pfaffian: diagonal & 3 & $3.13\!\times\!10^{-85}$ & $2.00\!\times\!10^{-11}$\\
+Sampled direct Pfaffian: transition & 3 & 0 & $2.00\!\times\!10^{-11}$\\
+\midrule
+Diagonal $\ell=10$ partial trace & 90 & $1.67\!\times\!10^{-15}$ & $2.00\!\times\!10^{-11}$\\
+Transition $\ell=10$ partial trace & 90 & $1.32\!\times\!10^{-16}$ & $2.00\!\times\!10^{-11}$\\
+Partial-trace phase modulus & 90 & $1.15\!\times\!10^{-13}$ & $2.00\!\times\!10^{-11}$\\
+Schmidt support versus full Gram, $N=256$ & 12 & $1.37\!\times\!10^{-13}$ & $2.00\!\times\!10^{-11}$\\
+Schmidt cutoff $10^{-17}$ versus $10^{-16}$ & 12 & $1.61\!\times\!10^{-13}$ & $2.00\!\times\!10^{-11}$\\
+Schmidt cutoff $10^{-15}$ versus $10^{-16}$ & 12 & $4.12\!\times\!10^{-13}$ & $2.00\!\times\!10^{-11}$\\
+Discarded Schmidt trace & 12 & $6.99\!\times\!10^{-15}$ & $2.00\!\times\!10^{-13}$\\
+130-digit sampled diagonal entries & 3 & $1.08\!\times\!10^{-40}$ & $2.00\!\times\!10^{-11}$\\
+130-digit sampled transition entries & 3 & $1.18\!\times\!10^{-43}$ & $2.00\!\times\!10^{-11}$\\
+\bottomrule\end{tabular}\captionof{table}{All 21 preliminary implementation checks and 324 extension checks pass. The first group tests revised code against the original construction; the second tests the new $\ell=12$ matrices at all fifteen sizes, full versus supported Gram results at $N=256$, $\ell=11,12$, support-cutoff stability, and independent 130-digit sampled Pfaffians. Matrix errors are maximum absolute entry differences, with one constant phase allowed for transitions; phase-modulus and discarded-trace errors are defined in Sec.~\ref{sec:complement-extension-checks}. Gram and cutoff comparisons use the largest absolute entropy difference over the two directions.}\label{tab:complement-extension-checks}\end{minipage}\end{center}

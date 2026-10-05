@@ -1,0 +1,342 @@
+\clearpage
+\section{Relative entropy between primaries}
+\label{sec:primary-relative-entropy}
+This appendix retains the historical $N\leq256$ sanity-check data,
+with fit and display cutoffs $0.08$ and $0.20$, respectively. Its
+smallest fraction is $4/256=0.015625$, so it has no observations in
+the current mixture display window $x\leq0.01$. Its figures and fits
+remain separate from the active mixture analysis in Secs.~\ref{sec:fits}
+and \ref{sec:complement}.
+
+This appendix tests the primary interval matrices against a second
+observable whose leading coefficient is known analytically. For the same
+normalized lattice states used in the mixture study, define
+\begin{equation}
+ S_{a\Vert b}(N,\ell)
+ =S(\rho_A^a\Vert\rho_A^b)
+ =\Tr\rho_A^a\log\rho_A^a-\Tr\rho_A^a\log\rho_A^b,
+ \qquad x=\ell/N.
+ \label{eq:primary-entropy-definition}
+\end{equation}
+Here $A$ is the interval of $\ell$ sites, and the double bar separates the
+first and second density matrices. Both arguments are reductions of
+individual primaries; no mixing probability enters this observable.
+The global primary vectors may be orthogonal, but the comparison in
+Eq.~\eqref{eq:primary-entropy-definition} concerns their local reductions.
+Every pair in the main report is tested in both directions. The mixture
+data, fitted coefficients, and fitting figures are unchanged.
+
+\subsection{Leading predictions from the supplied literature}
+\label{sec:primary-analytic}
+The sources are the two S\'{a}rosi--Ugajin papers supplied as
+\path{Theory_paper/1603.03057v2.pdf} and
+\path{Theory_paper/1611.02959v1.pdf}.
+Equations (50) and (53) of the first paper~\cite{Sarosi} give the
+leading operator-product-expansion result; its Eq.~(61) gives the stress
+tensor contribution, and Eq.~(63) treats free-boson vertex operators.
+Equation (1.3) and Secs.~3.1--3.3 of the second
+paper~\cite{SarosiHigher} give the corresponding scalar, stress tensor,
+and current results. These equation and subsection numbers belong to
+the cited source versions. The formulas below specialize those published
+results to the states of this report; no unknown subleading coefficient
+is derived.
+
+Let $O_j$ be an orthonormal set of the lightest local operators whose
+diagonal matrix elements differ in states $a$ and $b$. Their common
+scaling dimension is $\Delta$, and
+$C_{O_j a^\dagger a}=\langle a|O_j|a\rangle$ denotes the normalized
+plane three-point coefficient. The index $j$ labels operators and is
+unrelated to the leading exponent $\alpha$. The published result is
+\begin{equation}
+ S_{a\Vert b}(x)=K(\Delta)
+ \sum_j\bigl(C_{O_j a^\dagger a}-C_{O_j b^\dagger b}\bigr)^2
+ (\pi x)^{2\Delta}+o(x^{2\Delta}),\qquad
+ K(\Delta)=\frac{\Gamma(3/2)\Gamma(\Delta+1)}
+ {2\Gamma(\Delta+3/2)}.
+ \label{eq:primary-ope}
+\end{equation}
+The symbol $\Gamma$ denotes Euler's gamma function; $o(x^r)$ means terms
+whose ratio to $x^r$ vanishes as $x\to0$ in the continuum theory.
+Thus $\alpha=2\Delta$, and $K(1)=1/3$. This leading term is symmetric
+under $a\leftrightarrow b$, although the full relative entropy need not
+be symmetric. For unequal conformal weights, an operator with
+$\Delta<2$ still dominates the stress tensor, as explained immediately
+before Eq.~(63) of Ref.~\cite{Sarosi}.
+
+\subsubsection{Ising: identify the first nonzero diagonal difference}
+The conformal weights are
+$(h_I,\bar h_I)=(0,0)$,
+$(h_\sigma,\bar h_\sigma)=(1/16,1/16)$, and
+$(h_\eps,\bar h_\eps)=(1/2,1/2)$, with central charge $c=1/2$.
+The energy primary $\eps$ has total scaling dimension one; it is the
+nonchiral energy field in the periodic spin chain. The Ising fusion
+rules $\sigma\times\sigma=I+\eps$ and $\eps\times\eps=I$ imply
+that only $\sigma$ has a nonzero diagonal energy-field coefficient.
+Using the normalization in Sec.~5 of Ref.~\cite{Sarosi}, the data are
+\begin{equation}
+ C_{\eps II}=0,\qquad C_{\eps\sigma\sigma}=\tfrac12,
+ \qquad C_{\eps\eps\eps}=0.
+ \label{eq:primary-ising-ope-data}
+\end{equation}
+The spin field itself has zero diagonal coefficient
+in each of these parity eigenstates, so its smaller scaling dimension
+does not produce an $x^{1/4}$ term. Inserting the difference $1/2$
+and $K(1)=1/3$ into Eq.~\eqref{eq:primary-ope} gives
+\begin{equation}
+ S_{I\Vert\sigma}=S_{\sigma\Vert I}
+ =S_{\sigma\Vert\eps}=S_{\eps\Vert\sigma}
+ =\frac{\pi^2}{12}x^2+o(x^2)
+ \quad\text{at leading order}.
+ \label{eq:primary-ising-spin}
+\end{equation}
+The equalities here refer only to the displayed leading term.
+
+For $I\leftrightarrow\eps$, the energy-field diagonal difference
+vanishes. The stress tensors $T,\bar T$, of scaling dimension two,
+then give the first contribution. Equation (61) of Ref.~\cite{Sarosi}
+includes both chiralities for $h=\bar h$:
+\begin{equation}
+ S_{a\Vert b}(x)=\frac{16}{15c}(h_a-h_b)^2(\pi x)^4+o(x^4).
+ \label{eq:primary-stress}
+\end{equation}
+With $c=1/2$ and $|h_I-h_\eps|=1/2$, this becomes
+\begin{equation}
+ S_{I\Vert\eps}=S_{\eps\Vert I}
+ =\frac{8\pi^4}{15}x^4+o(x^4)
+ \quad\text{at leading order}.
+ \label{eq:primary-ising-energy}
+\end{equation}
+
+\subsubsection{Nonchiral compact boson: add the two current contributions}
+Write $\boldsymbol Q_a=(Q_{L,a},Q_{R,a})$ for the left and right
+charges, with $h_a=Q_{L,a}^2/2$ and $\bar h_a=Q_{R,a}^2/2$.
+The charge convention of Sec.~\ref{sec:bosonconstruction} is
+\begin{equation}
+ \boldsymbol Q_{00}=(0,0),\qquad
+ \boldsymbol Q_{ss}=(s,s),\qquad
+ \boldsymbol Q_{3s,s}=(3s,s),\qquad s=1/\sqrt2.
+ \label{eq:primary-boson-charges}
+\end{equation}
+Equation (63) of Ref.~\cite{Sarosi} states the chiral vertex result
+$S=(Q_{L,a}-Q_{L,b})^2[1-\pi x\cot(\pi x)]$.
+For the leading nonchiral result, use Eq.~\eqref{eq:primary-ope} with
+the two orthogonal, dimension-one currents $J_L=i\partial\phi_L$ and
+$J_R=i\bar\partial\phi_R$. Their normalized diagonal coefficients
+are the corresponding charges, up to the common sign convention
+discussed below that source equation. Their squared differences add;
+there is no mixed-current contribution because the two currents have
+zero two-point overlap. Therefore
+\begin{equation}
+ S_{a\Vert b}(x)=\frac{\kappa_{ab}\pi^2}{3}x^2+o(x^2),
+ \qquad \kappa_{ab}=(Q_{L,a}-Q_{L,b})^2+(Q_{R,a}-Q_{R,b})^2.
+ \label{eq:primary-boson-leading}
+\end{equation}
+The three squared separations are $1$, $5$, and $2$ for
+$00\leftrightarrow ss$, $00\leftrightarrow3s,s$, and
+$ss\leftrightarrow3s,s$, respectively. The corresponding coefficients
+are $\pi^2/3$, $5\pi^2/3$, and $2\pi^2/3$, with $\alpha=2$ in every direction.
+This use of both currents also covers the nonzero conformal spin of
+$\ket{3s,s}$. It does not apply the spinless stress-tensor formula to
+that state.
+
+All coefficients in Eqs.~\eqref{eq:primary-ising-spin},
+\eqref{eq:primary-ising-energy}, and \eqref{eq:primary-boson-leading}
+are four times the corresponding equal-mixture leading coefficients in
+Sec.~\ref{sec:coefficients}. This agreement follows by comparing the
+published leading formulas. The numerical values below are computed
+directly from Eq.~\eqref{eq:primary-entropy-definition}, rather than
+obtained by multiplying the mixture data by four.
+
+\subsection{Direct numerical procedure and checks}
+\label{sec:primary-numerics}
+The calculation uses every geometry displayed in the main report:
+the 15 sizes in Eq.~\eqref{eq:large-grid}, $\ell=6,\ldots,10$, and
+$x\leq0.20$. This gives 70 observations for each of 12 directions,
+or 840 displayed direct primary relative entropies. The 51 points per direction
+with $x\leq0.08$ define the analytical CFT comparison window.
+Section~\ref{sec:primary-fits} subsequently fits the same numerical
+data; those fits do not enter this leading-theory comparison.
+\begin{enumerate}
+\item Load the existing $\ell=10$ primary density matrices and obtain
+shorter intervals by the partial trace of Sec.~\ref{sec:extension}.
+Ising uses exact Jordan--Wigner states for all three primaries. The
+boson uses the same normalized finite-$W$ vertex/Jastrow states with
+$q=2$, unit-circle sites, $w_1=0$, $W=10^8$, and 100 decimal working
+digits in their Pfaffian construction. No new primary optimization is
+performed.
+\item Diagonalize each local parity block (Ising) or occupation block
+(boson), retaining its original trace. Denote target eigenvectors by
+$|v_{bj}\rangle$, target eigenvalues by $\lambda_{bj}$, and the
+first state's weights in that basis by
+$w_{aj}^{(b)}=\langle v_{bj}|\rho_A^a|v_{bj}\rangle$.
+The index $j$ runs over eigenvectors in all blocks. The matrices need
+not commute; their eigenvectors are essential in this cross term.
+\item Evaluate the spectral trace with natural logarithms:
+\begin{equation}
+ S^{(\tau)}_{a\Vert b}
+ =\sum_{\lambda_{aj}>0}\lambda_{aj}\log\lambda_{aj}
+ -\sum_j w_{aj}^{(b)}\log\!\bigl[\max(\lambda_{bj},\tau)\bigr],
+ \qquad \tau=10^{-15}.
+ \label{eq:primary-numerical-trace}
+\end{equation}
+The small eigenvalue floor $\tau$ only regularizes the target logarithm;
+it does not renormalize or flatten a symmetry block. Negative
+eigenvalues at roundoff scale are omitted from the self-entropy sum;
+an eigenvalue below $-2\times10^{-12}$ aborts the calculation.
+\item Check the regularization by repeating the logarithms at
+$\tau=10^{-14}$ and $10^{-16}$. Record both the span of the three
+entropy values and the first-state weight on target modes below the
+production floor,
+\begin{equation}
+ t_{a\Vert b}=\sum_{\lambda_{bj}<10^{-15}}
+ \max(w_{aj}^{(b)},0).
+ \label{eq:primary-tail}
+\end{equation}
+An exact target null space with nonzero first-state weight would make
+the unregularized relative entropy infinite. The floor is consequently
+audited, rather than used to conceal a support mismatch. Cutoff
+sensitivity is a numerical stability test, not a rigorous bound on
+unresolved eigenvalues.
+\end{enumerate}
+
+There are 4824 passing numerical checks. The maximum entropy span over
+the three floors is $1.66\times10^{-10}$, below the
+$2\times10^{-10}$ tolerance; the maximum $t_{a\Vert b}$ is
+$1.50\times10^{-11}$, below $2\times10^{-11}$.
+All directed values are nonnegative, and self-comparisons
+$S^{(\tau)}_{a\Vert a}$ have maximum absolute magnitude
+$3.23\times10^{-13}$ over all three floors.
+At $N=256$, $\ell=4,6$, direct diagonalization of the full interval
+matrix agrees with the symmetry-block calculation for all pairs to
+$4.67\times10^{-15}$.
+
+For every Ising geometry we also check a formula that operates on the
+$2\ell\times2\ell$ one-particle matrices instead of the
+$2^\ell\times2^\ell$ many-body matrices. Define
+$C_a=(\mathbb I+i\Gamma_{a,A})/2$, where $\Gamma_{a,A}$ is the
+restricted Majorana covariance defined in Sec.~\ref{sec:large-ising}.
+Gaussian mode decomposition~\cite{PeschelEisler} gives
+\begin{equation}
+ S_{a\Vert b}=\operatorname{tr}_{2\ell}
+ \bigl[C_a(\log C_a-\log C_b)\bigr].
+ \label{eq:primary-gaussian-check}
+\end{equation}
+In this doubled Majorana representation, the eigenvalues occur as
+$n_j,1-n_j$; both occupations of each fermionic mode are already counted,
+so no extra factor of $1/2$ is inserted. In the eigenbasis of $C_b$,
+the quadratic target logarithm is averaged using the diagonal weights
+of $C_a$, which yields the cross term in
+Eq.~\eqref{eq:primary-gaussian-check}. This independent evaluation
+agrees with the many-body trace to $2.35\times10^{-12}$ across all
+600 Ising directed comparisons. These checks validate the entropy
+evaluation; they do not remove the physical finite-interval corrections.
+
+\subsection{Comparison with the analytical CFT leading term}
+\label{sec:primary-results}
+Let $B_{ab}$ denote the analytical coefficient obtained above, and define
+\begin{align}
+ S^{\rm LO}_{a\Vert b}(x)&=B_{ab}x^\alpha,
+ &R_{a\Vert b}&=\frac{S_{a\Vert b}}{S^{\rm LO}_{a\Vert b}},\notag\\
+ \delta_{a\Vert b}[\%]&=100(R_{a\Vert b}-1),
+ &E_m[\%]&=\sqrt{\frac1m\sum_{i:x_i\leq0.08}\delta_i^2}.
+ \label{eq:primary-comparison-metrics}
+\end{align}
+LO means leading order. The denominator in the percentage is the
+analytical prediction. The index $i$ runs over the $m=51$ geometries for
+one direction. Neither $B_{ab}$ nor $\alpha$ is fitted.
+Tables~\ref{tab:ising-primary-entropy} and
+\ref{tab:boson-primary-entropy} show every directed pair, while
+Fig.~\ref{fig:primary-entropy-leading} shows the interval dependence.
+
+\begin{table}[htbp]\centering\scriptsize
+\input{tables/ising_primary_entropy}
+\caption{Ising primary relative entropy sanity check for all six
+directions under the critical periodic Hamiltonian
+$H=-\sum XX-\sum Z$. The theoretical coefficient $B_{ab}$ multiplies
+$x^\alpha$, including its power of $\pi$. Here $S_{10}$ and $S_{10}^{\rm LO}$ are respectively
+the direct numerical entropy and its analytical CFT leading-order prediction at
+$N=256$, $\ell=10$, $x=5/128$; both use natural logarithms.
+$\delta_6$ and $\delta_{10}$ are signed deviations at $N=256$ for
+$\ell=6$ and ten, respectively. $E_m$ uses all $m=51$ geometries with
+$x\leq0.08$ and is defined by Eq.~\eqref{eq:primary-comparison-metrics}.
+All primaries and spectral checks are specified in
+Sec.~\ref{sec:primary-numerics}; every coefficient is fixed analytically.}
+\label{tab:ising-primary-entropy}
+\end{table}
+\begin{table}[htbp]\centering\scriptsize
+\input{tables/boson_primary_entropy}
+\caption{Compact-boson primary relative entropy for all six directions,
+with the same geometry and indicator definitions as
+Table~\ref{tab:ising-primary-entropy}. The normalized vertex/Jastrow
+states have charges in Eq.~\eqref{eq:primary-boson-charges}, $q=2$,
+$z_j=e^{2\pi i j/N}$, $w_1=0$, $W=10^8$, and no orthogonalization.
+All rows have fixed $\alpha=2$; $B_{ab}=\kappa_{ab}\pi^2/3$ follows from
+Eq.~\eqref{eq:primary-boson-leading}. The data use the primary target
+$\rho_A^b$, with no mixture.}
+\label{tab:boson-primary-entropy}
+\end{table}
+
+At $N=256$, $\ell=10$, the Ising $I\leftrightarrow\sigma$ deviations
+are about $+0.13\%$. The $I\Vert\eps$ and $\eps\Vert I$ deviations
+are $-4.44\%$ and $-2.39\%$, whereas
+$\sigma\Vert\eps$ and $\eps\Vert\sigma$ give $+6.93\%$ and
+$+9.47\%$. Reducing $x$ to $3/128$ with $\ell=6$ reduces the latter
+two deviations to $+2.437\%$ and $+3.313\%$, while also changing the
+lattice resolution. In the boson, the largest absolute deviation at
+$N=256$, $\ell=10$ is $3.86\%$, and the
+$ss\leftrightarrow3s,s$ deviations are about $-0.5\%$.
+
+The leading predictions thus reproduce the scales and small-$x$
+behavior across the pairs, with the residual deviations explicitly
+resolved. The $\sigma\leftrightarrow\eps$ channels are particularly
+sensitive to retaining only their leading term: over the entire
+$x\leq0.08$ window their maximum signed deviations reach $24.9\%$
+and $36.1\%$. Smaller $x$ at fixed $\ell$ and larger $\ell$ in lattice
+units address different limits, as discussed in
+Sec.~\ref{sec:large-scales}. This sanity check is not a controlled
+continuum extrapolation or an assertion that a leading-only expression
+is exact on the finite-chain grid.
+
+The implementation is \path{src/conformal_blocks/primary_relative_entropy.py}.
+The raw \path{primary_relative_entropy.csv} retains all 1200 observations, including excluded lengths. The selection module rebuilds
+\path{primary_entropy_summary.csv} (12 directional summaries),
+\path{primary_entropy_checks.csv} (4824 numerical checks), and
+\path{primary_entropy_validation.json} in the report's data directory.
+The independent renderer \path{report/primary_entropy_artifacts.py}
+reads these CSVs. From the project root, the reproducible commands are
+\begin{verbatim}
+PYTHONPATH=src $PY -m conformal_blocks.primary_selection
+MPLCONFIGDIR=/tmp/relative_entropy_mpl $PY report/primary_entropy_artifacts.py
+\end{verbatim}
+Here \texttt{\$PY} is the approved Python interpreter specified in the
+reproduction instructions, with one BLAS thread. Existing cached density
+matrices are reused; if absent, the same production formulas recompute them.
+
+\begin{figure}[p]\centering
+\includegraphics[width=.95\linewidth]{../figs/primary_entropy_leading.pdf}
+\caption{Historical parameter-free leading-order check of primary relative entropy.
+Each panel compares the two directions between the states $a,b$ named
+in its title; the left column is Ising and the right column the compact
+boson. The ordinate is $R=S_{a\Vert b}/[B_{ab}x^\alpha]$,
+defined by Eq.~\eqref{eq:primary-comparison-metrics}; the dotted line
+at one is the analytical CFT leading-order prediction. Colors identify
+$\ell=6,\ldots,10$. Solid lines with filled circles denote $a\Vert b$,
+and dashed lines with open triangles denote $b\Vert a$; segments only
+connect computed sizes. Each direction has 70 points from the 15 sizes
+through $N=256$ in Eq.~\eqref{eq:large-grid}, displayed for
+$x\leq0.20$. The vertical line at $x=0.08$ marks the 51-point summary
+window; shaded points are outside that window. There are no fitted
+curves or optimized parameters. Ising uses exact Jordan--Wigner
+primaries of $H=-\sum XX-\sum Z$ with periodic spins; the boson uses
+the charges and $q=2$, $W=10^8$ construction in
+Table~\ref{tab:boson-primary-entropy}. All logarithms are natural,
+and the audited target-logarithm floor is $10^{-15}$.
+$\alpha=4$, $B=8\pi^4/15$ for Ising $I\leftrightarrow\eps$;
+$\alpha=2$, $B=\pi^2/12$ for the other Ising panels;
+$\alpha=2$, $B=\pi^2/3,5\pi^2/3,2\pi^2/3$ for the boson panels from top to bottom.
+Differences between reverse directions and departures from one remain
+visible; the analytical equality is a leading-order statement.}
+\label{fig:primary-entropy-leading}
+\end{figure}
+\clearpage
+\input{sections/10_primary_fits}

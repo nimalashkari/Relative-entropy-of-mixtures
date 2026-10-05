@@ -1,0 +1,82 @@
+\clearpage
+\subsubsection{Numerical verification at small intervals}
+\label{sec:num-ising-small}
+At $y=1/2$, the analytical results above predict
+$\alpha=2$ and $c_0^{\rm CFT}=\pi^2/48$ for the four directions
+involving $\sigma$, and $\alpha=4$ and
+$c_0^{\rm CFT}=2\pi^4/15$ for $I\leftrightarrow\varepsilon$.
+Figure~\ref{fig:num-ising-small} and
+Table~\ref{tab:num-ising-small} test these two distinct powers.
+On $x\leq0.02$, the free exponents are about $2.0001$ for
+$I\leftrightarrow\sigma$, $3.9934,3.9861$ for
+$I\leftrightarrow\varepsilon$, and $2.0238,2.0176$ for
+$\sigma\leftrightarrow\varepsilon$. A separate narrower-window
+check at $x\leq0.001$ gives $1.999324,1.999296$ for the latter
+two directions, without imposing the predicted exponent. This
+illustrates why a finite-window effective power need not equal
+its asymptotic value.
+
+The two-term model uses the powers $\alpha,\alpha+2$.
+It improves both leading-amplitude accuracy and omitted-size
+prediction in all six directions. Its leading-amplitude errors
+are below $0.82\%$ for $I\leftrightarrow\varepsilon$ and below
+$0.045\%$ for the remaining directions. The two complete supplied
+sixth-order coefficients provide a more stringent test:
+\begin{align}
+ c_1^{\rm CFT}(I\mid\varepsilon)&=-8\pi^6/45,
+ &\widehat c_1&=-170.71,\nonumber\\
+ c_1^{\rm CFT}(\varepsilon\mid I)&=-8\pi^6/21,
+ &\widehat c_1&=-355.38.
+ \label{eq:num-ising-second}
+\end{align}
+The signed discrepancies are approximately $-0.122\%$ and
+$-2.966\%$. Thus the data test the directional asymmetry of the
+sixth-order term as well as the common leading power, while
+retaining a measurable discrepancy in the reverse direction.
+Figure~\ref{fig:num-ising-small-residual} shows the residuals;
+the other fitted next coefficients have no complete analytical
+value for comparison.
+\input{numerical/integration/table_ising_small}
+\input{numerical/integration/figures_ising_small}
+\clearpage
+
+\subsubsection{Numerical verification at large intervals}
+\label{sec:num-ising-large}
+The different mixing OPEs predict deficit powers
+$\beta=1/4,2,1/4$ for $I\leftrightarrow\sigma$,
+$I\leftrightarrow\varepsilon$, and
+$\sigma\leftrightarrow\varepsilon$, respectively.
+Their leading amplitudes are
+\begin{equation}
+ B_\sigma=\frac{\pi^{3/4}\Gamma(9/8)}{4\Gamma(13/8)}
+ \simeq0.61965,\qquad \frac{\pi^2}{3},\qquad
+ \frac{B_\sigma}{4}.
+ \label{eq:num-ising-large-leading}
+\end{equation}
+The factor of four between the spin channels tests the squared
+mixing OPE coefficient. Figure~\ref{fig:num-ising-large} and
+Table~\ref{tab:num-ising-large} compare these predictions with
+the independently evaluated deficits.
+
+On $\ep\leq0.002$, $I\leftrightarrow\sigma$ has an effective
+free power of about $0.26465$, approximately $5.86\%$ above $1/4$.
+Including the allowed $\ep^{1/2}$ term reduces the leading-amplitude
+error from $+5.44\%$ in $F_1$ to about $-0.81\%$ in $F_2$.
+For $\sigma\mid\varepsilon$ and $\varepsilon\mid\sigma$, the
+free powers are $0.25058$ and $0.25544$ and the $F_2$
+leading-amplitude errors are $+0.67\%$ and $-0.81\%$.
+For $I\leftrightarrow\varepsilon$, the free powers
+$1.9985,2.0013$ are close to two, and the $F_2$ amplitudes differ
+from $\pi^2/3$ by $-0.025\%,+0.118\%$.
+
+All six directions improve in both leading-amplitude accuracy
+and omitted-size prediction with $F_2$.
+Figure~\ref{fig:num-ising-large-residual} makes the remaining
+deviations visible. These fits support the leading fractional
+powers and OPE amplitudes, but the fixed powers of $F_2$ are inputs
+to that fit, and its next coefficients are numerical estimates.
+The finite-window free exponent in the vacuum--spin channel
+remains distinguishable from $1/4$.
+\input{numerical/integration/table_ising_large}
+\input{numerical/integration/figures_ising_large}
+\clearpage

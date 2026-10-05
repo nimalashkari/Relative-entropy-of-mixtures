@@ -1,0 +1,32 @@
+We test the following examples using both directions of each pair of
+primaries at equal mixing probability, $p\equiv y=1/2$. For a short
+interval $A$ of $\ell$ sites on a periodic chain of $N$ sites, and its
+large complement $B$, we write
+\begin{align}
+ D^A_{a\mid b}(x)&=S\!\left(\rho_a^A\Big\|
+                    \frac{\rho_a^A+\rho_b^A}{2}\right),
+       &x&=\ell/N,\nonumber\\
+ \delta_{a\mid b}(\ep)&=\log2-D^B_{a\mid b},
+       &\ep&=1-x_B=\ell/N.
+ \label{eq:num-observables}
+\end{align}
+The order $a\mid b$ specifies the first argument of the relative
+entropy; the mixture is the same in both directions. All logarithms
+are natural. The large-interval figures retain the label $y=\ell/N$
+from the numerical study; this is $\ep$ in the present manuscript,
+not the mixing probability.
+
+The calculations use $\ell=6,\ldots,10$, with chains through $N=8192$
+for Ising and $N=16384$ for the compact boson. We compare a free
+power law, a one-term fit $F_1$ with the theoretical leading power,
+and a two-term fit $F_2$ with fixed leading and next powers. The CFT
+curves have no fitted parameters. Small-interval fits use $x\leq0.02$
+for Ising and $x\leq0.1$ for the boson; deficit fits use
+$\ep\leq0.002$ and $\ep\leq0.005$, respectively. Each window is
+shared by all six directions and all three fits within its group.
+The leading exponents are denoted $\alpha$ for $D^A$ and $\beta$
+for $\delta$. All reported amplitudes multiply $x^r$ or $\ep^r$
+itself and include the associated powers of $\pi$.
+Appendix~\ref{app:num-methods} gives the state constructions,
+entropy algorithms, sampling grid, fitting procedure, and numerical
+precision checks.

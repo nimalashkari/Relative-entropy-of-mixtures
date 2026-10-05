@@ -1,0 +1,103 @@
+\subsubsection{Deriving the Laughlin/Jastrow form}
+The following reduction makes the boson construction a directly
+reproducible example of the conformal-block method. Let
+$O=\{i_1<\cdots<i_M\}$ be the occupied sites and write $d_{ij}=z_i-z_j$
+for $i<j$.
+\begin{enumerate}
+\item Expand the site-charge exponent:
+\begin{equation}
+ \frac{s_i s_j}{2}=2n_i n_j-n_i-n_j+\frac12.
+\end{equation}
+The last term contributes the same factor to every configuration and
+can be absorbed into normalization. The first term produces
+$\prod_{\mu<\nu}(z_{i_\mu}-z_{i_\nu})^2$.
+\item Collect the two terms linear in occupation into one factor per
+occupied site. Define
+\begin{equation}
+ D_i=\prod_{j<i}(z_j-z_i)\prod_{j>i}(z_i-z_j).
+\end{equation}
+Then the configuration-dependent pair product is
+$\prod_{\mu<\nu}(z_{i_\mu}-z_{i_\nu})^2\prod_{i\in O}D_i^{-1}$.
+The endpoint factors similarly reduce to
+$\prod_{i\in O}(-z_i)^a(1-z_i/W)^b$.
+\item Use the fact that the $z_j$ are the roots of $z^N-1$:
+\begin{equation}
+ \prod_{j\ne i}(z_i-z_j)=Nz_i^{N-1},\qquad
+ D_i=(-1)^iNz_i^{N-1}.
+\end{equation}
+The factors $(-1)^i$ cancel the Marshall signs. Since $z_i^N=1$,
+$z_i^{-(N-1)}=z_i$. For integer $a$, the remaining
+$(-1)^{aM}$ is a configuration-independent phase.
+\item The explicit polynomial amplitude is therefore
+\begin{align}
+ \psi_{a,b}(O)&=\frac{\mathcal P_{a,b}(O;W)}{\sqrt{\mathcal Z_{a,b}(W)}},
+ \notag\\
+ \mathcal P_{a,b}(O;W)&=
+ \prod_{\mu<\nu}(z_{i_\mu}-z_{i_\nu})^2
+ \prod_{\mu=1}^{M}z_{i_\mu}^{a+1}(1-z_{i_\mu}/W)^b ,
+ \label{eq:bosonpolynomial}
+\end{align}
+where $\mathcal Z_{a,b}(W)=\sum_{|O|=M}|\mathcal P_{a,b}(O;W)|^2$.
+An overall phase is immaterial. Equation~\eqref{eq:bosonpolynomial}
+is the exponent-two Laughlin/Jastrow form used by the original method.
+At strict infinity, set every $(1-z_i/W)^b$ to one.
+\end{enumerate}
+Although $b$ disappears from the explicit position factors at infinity,
+it still fixes $M=(N-a-b)/2$. Thus changing $b$ changes the state.
+The block and polynomial formulas give the same normalized vector,
+up to one overall phase; taking an absolute square would destroy this
+equivalence.
+
+\subsubsection{Three canonical nonchiral examples}
+For each example, the displayed polynomial and its normalization
+$\mathcal Z$ specify the amplitudes in the common $2^N$-dimensional spin
+basis. The production Pfaffian contraction uses this definition without
+storing the full vector. The expressions below are at strict infinity.
+\begin{enumerate}
+\item \textbf{Vacuum $\ket{00}$.}
+Choose $(a,b)=(0,0)$, or momentum/winding $(m,w)=(0,0)$.
+The continuum vertex is the identity, with $(h,\bar h)=(0,0)$.
+Neutrality requires $M=N/2$, and
+\begin{equation}
+ \mathcal P_{0,0}(O;\infty)=
+ \prod_{\mu<\nu}(z_{i_\mu}-z_{i_\nu})^2\prod_{\mu=1}^{N/2}z_{i_\mu}.
+\end{equation}
+This is the half-filled Haldane--Shastry ground-state amplitude.
+\item \textbf{Vertex primary $\ket{ss}$.}
+Choose $(a,b)=(1,1)$, or $(m,w)=(1,0)$. The continuum field is
+$\mathopen{:}\exp[i(\phi_L+\phi_R)/\sqrt2]\mathclose{:}$, with
+$(h,\bar h)=(1/4,1/4)$, dimension $1/2$, and conformal spin zero.
+Neutrality requires $M=N/2-1$, and
+\begin{equation}
+ \mathcal P_{1,1}(O;\infty)=
+ \prod_{\mu<\nu}(z_{i_\mu}-z_{i_\nu})^2
+ \prod_{\mu=1}^{N/2-1}z_{i_\mu}^{2}.
+\end{equation}
+\item \textbf{Vertex primary $\ket{3s,s}$.}
+Choose $(a,b)=(3,1)$, or $(m,w)=(2,1)$. The continuum field is
+$\mathopen{:}\exp[i(3\phi_L+\phi_R)/\sqrt2]\mathclose{:}$, with
+$(h,\bar h)=(9/4,1/4)$, dimension $5/2$, and conformal spin two.
+Neutrality requires $M=N/2-2$, and
+\begin{equation}
+ \mathcal P_{3,1}(O;\infty)=
+ \prod_{\mu<\nu}(z_{i_\mu}-z_{i_\nu})^2
+ \prod_{\mu=1}^{N/2-2}z_{i_\mu}^{4}.
+\end{equation}
+Its status as a Virasoro primary follows from the vertex-field
+stress-tensor product in Sec.~\ref{sec:bosonconstruction}. Calling it a descendant of the extended
+$SU(2)_1$ current algebra refers to a different symmetry algebra.
+\end{enumerate}
+For the original data convention, multiply the last two polynomials by
+$\prod_{\mu}(1-z_{i_\mu}/10^8)$ before normalization; the vacuum is
+unchanged. The three vectors have different occupation numbers and
+are exactly orthogonal without a Gram--Schmidt procedure. The total
+spin component in the convention $S_j^z=s_j/2$ is
+$S^z_{\rm tot}=M-N/2=-(a+b)/2$.
+
+The production data use these same normalized vertex/Jastrow states,
+with $W=10^8$ fixed to match the original implementation. For larger
+chains, their interval matrices are obtained by the exact Pfaffian
+contraction in Sec.~\ref{sec:extension}; this preserves the amplitudes
+while avoiding full-chain enumeration. The independent polynomial/block
+comparison and the Haldane--Shastry sanity check are given in
+Appendix~\ref{sec:boson-sanity}.

@@ -1,0 +1,1878 @@
+{
+  "source_sha256": "32c3a3d54eee116a7d5e17d48d6074fa92c41d6bcf7e59dbb6eb889412ead5e9",
+  "fits_sha256": "1468a8849f0a2a2ac7bca936075db338ed2ce93722fed8cab938d729715afbe6",
+  "panels": [
+    {
+      "region": "small",
+      "model": "ising",
+      "a": "I",
+      "b": "sigma",
+      "kind": "value",
+      "observations": 9744,
+      "sizes": 1974,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.018899205877566907,
+          0.059651454191092135
+        ],
+        "M1": [
+          -0.02862502266000155,
+          0.04185605364645997
+        ],
+        "M2": [
+          -0.018121769493328933,
+          0.03385677055662105
+        ],
+        "CFT": [
+          0.025116725400739514,
+          0.09555993478415223
+        ]
+      },
+      "plot_data_sha256": "467c801225799a37a6f120e9d9e6e29b1931441300f60d1a43847dd6ad0ddd67"
+    },
+    {
+      "region": "small",
+      "model": "ising",
+      "a": "sigma",
+      "b": "I",
+      "kind": "value",
+      "observations": 9744,
+      "sizes": 1974,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.01711385283564943,
+          0.05508673373247425
+        ],
+        "M1": [
+          -0.02524196946465744,
+          0.035459547589417176
+        ],
+        "M2": [
+          -0.015411342424352043,
+          0.02878188052347957
+        ],
+        "CFT": [
+          0.02497595528636875,
+          0.08564699699086865
+        ]
+      },
+      "plot_data_sha256": "3fb4734cc691d090a950d8d6a77a49fe05dec5daeab07fd8c340e7e8cba90a40"
+    },
+    {
+      "region": "small",
+      "model": "ising",
+      "a": "I",
+      "b": "epsilon",
+      "kind": "value",
+      "observations": 9744,
+      "sizes": 1974,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": true,
+      "residual_range_percent": {
+        "free": [
+          -2.2396123088440185,
+          0.32944813535479806
+        ],
+        "M1": [
+          -0.6984221401225601,
+          0.7129571271329304
+        ],
+        "M2": [
+          -0.594602534368611,
+          0.31170575565076963
+        ],
+        "CFT": [
+          -1.4065777391669732,
+          -0.49526738644461843
+        ]
+      },
+      "plot_data_sha256": "9008857ecef6702e9b03e2d9fbac3eabb63c63e3b84fcd78d8e9a2231045cdde"
+    },
+    {
+      "region": "small",
+      "model": "ising",
+      "a": "epsilon",
+      "b": "I",
+      "kind": "value",
+      "observations": 9744,
+      "sizes": 1974,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": true,
+      "residual_range_percent": {
+        "free": [
+          -4.071342304152078,
+          0.35243012826498094
+        ],
+        "M1": [
+          -0.8223448187192681,
+          1.1658108830646374
+        ],
+        "M2": [
+          -0.5890310137604243,
+          0.3110546538354481
+        ],
+        "CFT": [
+          -1.4065674848951373,
+          -0.4752980795906045
+        ]
+      },
+      "plot_data_sha256": "057a273bc2ce67387957a942fb3139b6d931dcdc51b2bb1d457587abb22dd5d0"
+    },
+    {
+      "region": "small",
+      "model": "ising",
+      "a": "sigma",
+      "b": "epsilon",
+      "kind": "value",
+      "observations": 9744,
+      "sizes": 1974,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.29875047782389225,
+          3.799785338542417
+        ],
+        "M1": [
+          -1.4657304629154881,
+          0.9811058479478837
+        ],
+        "M2": [
+          -0.06957976962143592,
+          0.043287677281292104
+        ],
+        "CFT": [
+          0.032073109470278326,
+          2.4427900315436073
+        ]
+      },
+      "plot_data_sha256": "df74eaeac3b50f56d77dd96cbeaaa0c9259533ee2495978f99dccc61af87de0e"
+    },
+    {
+      "region": "small",
+      "model": "ising",
+      "a": "epsilon",
+      "b": "sigma",
+      "kind": "value",
+      "observations": 9744,
+      "sizes": 1974,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.2266639298764223,
+          2.833829428514814
+        ],
+        "M1": [
+          -1.086513521841951,
+          0.7352110637830931
+        ],
+        "M2": [
+          -0.06701659664060898,
+          0.03964826365248954
+        ],
+        "CFT": [
+          0.029866888689483995,
+          1.8314726912056838
+        ]
+      },
+      "plot_data_sha256": "5f4dc6792971052390fd4545d39baeccec2b5df2dbfd0d99511ca74976a5d753"
+    },
+    {
+      "region": "small",
+      "model": "ising",
+      "a": "I",
+      "b": "sigma",
+      "kind": "residual",
+      "observations": 9744,
+      "sizes": 1974,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.018899205877566907,
+          0.059651454191092135
+        ],
+        "M1": [
+          -0.02862502266000155,
+          0.04185605364645997
+        ],
+        "M2": [
+          -0.018121769493328933,
+          0.03385677055662105
+        ],
+        "CFT": [
+          0.025116725400739514,
+          0.09555993478415223
+        ]
+      },
+      "plot_data_sha256": "467c801225799a37a6f120e9d9e6e29b1931441300f60d1a43847dd6ad0ddd67"
+    },
+    {
+      "region": "small",
+      "model": "ising",
+      "a": "sigma",
+      "b": "I",
+      "kind": "residual",
+      "observations": 9744,
+      "sizes": 1974,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.01711385283564943,
+          0.05508673373247425
+        ],
+        "M1": [
+          -0.02524196946465744,
+          0.035459547589417176
+        ],
+        "M2": [
+          -0.015411342424352043,
+          0.02878188052347957
+        ],
+        "CFT": [
+          0.02497595528636875,
+          0.08564699699086865
+        ]
+      },
+      "plot_data_sha256": "3fb4734cc691d090a950d8d6a77a49fe05dec5daeab07fd8c340e7e8cba90a40"
+    },
+    {
+      "region": "small",
+      "model": "ising",
+      "a": "I",
+      "b": "epsilon",
+      "kind": "residual",
+      "observations": 9744,
+      "sizes": 1974,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": true,
+      "residual_range_percent": {
+        "free": [
+          -2.2396123088440185,
+          0.32944813535479806
+        ],
+        "M1": [
+          -0.6984221401225601,
+          0.7129571271329304
+        ],
+        "M2": [
+          -0.594602534368611,
+          0.31170575565076963
+        ],
+        "CFT": [
+          -1.4065777391669732,
+          -0.49526738644461843
+        ]
+      },
+      "plot_data_sha256": "9008857ecef6702e9b03e2d9fbac3eabb63c63e3b84fcd78d8e9a2231045cdde"
+    },
+    {
+      "region": "small",
+      "model": "ising",
+      "a": "epsilon",
+      "b": "I",
+      "kind": "residual",
+      "observations": 9744,
+      "sizes": 1974,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": true,
+      "residual_range_percent": {
+        "free": [
+          -4.071342304152078,
+          0.35243012826498094
+        ],
+        "M1": [
+          -0.8223448187192681,
+          1.1658108830646374
+        ],
+        "M2": [
+          -0.5890310137604243,
+          0.3110546538354481
+        ],
+        "CFT": [
+          -1.4065674848951373,
+          -0.4752980795906045
+        ]
+      },
+      "plot_data_sha256": "057a273bc2ce67387957a942fb3139b6d931dcdc51b2bb1d457587abb22dd5d0"
+    },
+    {
+      "region": "small",
+      "model": "ising",
+      "a": "sigma",
+      "b": "epsilon",
+      "kind": "residual",
+      "observations": 9744,
+      "sizes": 1974,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.29875047782389225,
+          3.799785338542417
+        ],
+        "M1": [
+          -1.4657304629154881,
+          0.9811058479478837
+        ],
+        "M2": [
+          -0.06957976962143592,
+          0.043287677281292104
+        ],
+        "CFT": [
+          0.032073109470278326,
+          2.4427900315436073
+        ]
+      },
+      "plot_data_sha256": "df74eaeac3b50f56d77dd96cbeaaa0c9259533ee2495978f99dccc61af87de0e"
+    },
+    {
+      "region": "small",
+      "model": "ising",
+      "a": "epsilon",
+      "b": "sigma",
+      "kind": "residual",
+      "observations": 9744,
+      "sizes": 1974,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.2266639298764223,
+          2.833829428514814
+        ],
+        "M1": [
+          -1.086513521841951,
+          0.7352110637830931
+        ],
+        "M2": [
+          -0.06701659664060898,
+          0.03964826365248954
+        ],
+        "CFT": [
+          0.029866888689483995,
+          1.8314726912056838
+        ]
+      },
+      "plot_data_sha256": "5f4dc6792971052390fd4545d39baeccec2b5df2dbfd0d99511ca74976a5d753"
+    },
+    {
+      "region": "small",
+      "model": "boson",
+      "a": "00",
+      "b": "ss",
+      "kind": "value",
+      "observations": 19984,
+      "sizes": 4022,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -2.018777650369548,
+          1.1224305812174735
+        ],
+        "M1": [
+          -1.9710783764570692,
+          1.1290012844596222
+        ],
+        "M2": [
+          -1.9738277052778956,
+          1.1265132153402555
+        ],
+        "CFT": [
+          -7.381730324464499,
+          -4.117158414143597
+        ]
+      },
+      "plot_data_sha256": "db3dc225b7b04cec874f1f2305856d49798a5ecdc0428145d663ede296c9288f"
+    },
+    {
+      "region": "small",
+      "model": "boson",
+      "a": "ss",
+      "b": "00",
+      "kind": "value",
+      "observations": 19984,
+      "sizes": 4022,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -2.0182874604947485,
+          1.1223500447801869
+        ],
+        "M1": [
+          -1.970821647330356,
+          1.128876112858402
+        ],
+        "M2": [
+          -1.97381375811641,
+          1.1264041787850334
+        ],
+        "CFT": [
+          -7.381323973241147,
+          -4.1171583616593255
+        ]
+      },
+      "plot_data_sha256": "0b54a0b119ceee4ceab04c7dff6cc7d028334e402d9fdd66606ec46794be04d5"
+    },
+    {
+      "region": "small",
+      "model": "boson",
+      "a": "00",
+      "b": "3s_s",
+      "kind": "value",
+      "observations": 19984,
+      "sizes": 4022,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -1.8416437349759183,
+          0.8418300139062864
+        ],
+        "M1": [
+          -1.5369657015320357,
+          0.9248104375325986
+        ],
+        "M2": [
+          -1.4761413873816434,
+          0.8276565533773459
+        ],
+        "CFT": [
+          -5.235349693059522,
+          -2.683905782257418
+        ]
+      },
+      "plot_data_sha256": "e1625f9e439da764f5d27d603a22367d9e3afd73b06d246d7d0146c367fe9360"
+    },
+    {
+      "region": "small",
+      "model": "boson",
+      "a": "3s_s",
+      "b": "00",
+      "kind": "value",
+      "observations": 19984,
+      "sizes": 4022,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -1.8309755620772572,
+          0.8404696870223402
+        ],
+        "M1": [
+          -1.5306438508110218,
+          0.9218600059574139
+        ],
+        "M2": [
+          -1.47604812182995,
+          0.8255138674615217
+        ],
+        "CFT": [
+          -5.225661553358589,
+          -2.6839034101735257
+        ]
+      },
+      "plot_data_sha256": "41dbf0fe11bef10d7db3e6517fc51cd2900e642e80d4335b44ac8a9bb29cf80a"
+    },
+    {
+      "region": "small",
+      "model": "boson",
+      "a": "ss",
+      "b": "3s_s",
+      "kind": "value",
+      "observations": 19984,
+      "sizes": 4022,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.8875232814853682,
+          0.399400713469263
+        ],
+        "M1": [
+          -0.7879932382470902,
+          0.4258340788208963
+        ],
+        "M2": [
+          -0.7688258411042432,
+          0.3964305421179106
+        ],
+        "CFT": [
+          -1.8326014678536193,
+          -0.6061935450607703
+        ]
+      },
+      "plot_data_sha256": "94f6b4757f43a4a5b3cdee2ec8093ae13fe104d8a47428c5664ccb6bafd703b0"
+    },
+    {
+      "region": "small",
+      "model": "boson",
+      "a": "3s_s",
+      "b": "ss",
+      "kind": "value",
+      "observations": 19984,
+      "sizes": 4022,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.8710927414364089,
+          0.39725939505664914
+        ],
+        "M1": [
+          -0.7781551983372766,
+          0.4211493719542734
+        ],
+        "M2": [
+          -0.7687545302604842,
+          0.3931141374581683
+        ],
+        "CFT": [
+          -1.8178671075038677,
+          -0.6061895061521968
+        ]
+      },
+      "plot_data_sha256": "793e3dedb9bc0bba41f8c23b65f0c3d24fd3508252922a727e9873e8a844475e"
+    },
+    {
+      "region": "small",
+      "model": "boson",
+      "a": "00",
+      "b": "ss",
+      "kind": "residual",
+      "observations": 19984,
+      "sizes": 4022,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -2.018777650369548,
+          1.1224305812174735
+        ],
+        "M1": [
+          -1.9710783764570692,
+          1.1290012844596222
+        ],
+        "M2": [
+          -1.9738277052778956,
+          1.1265132153402555
+        ],
+        "CFT": [
+          -7.381730324464499,
+          -4.117158414143597
+        ]
+      },
+      "plot_data_sha256": "db3dc225b7b04cec874f1f2305856d49798a5ecdc0428145d663ede296c9288f"
+    },
+    {
+      "region": "small",
+      "model": "boson",
+      "a": "ss",
+      "b": "00",
+      "kind": "residual",
+      "observations": 19984,
+      "sizes": 4022,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -2.0182874604947485,
+          1.1223500447801869
+        ],
+        "M1": [
+          -1.970821647330356,
+          1.128876112858402
+        ],
+        "M2": [
+          -1.97381375811641,
+          1.1264041787850334
+        ],
+        "CFT": [
+          -7.381323973241147,
+          -4.1171583616593255
+        ]
+      },
+      "plot_data_sha256": "0b54a0b119ceee4ceab04c7dff6cc7d028334e402d9fdd66606ec46794be04d5"
+    },
+    {
+      "region": "small",
+      "model": "boson",
+      "a": "00",
+      "b": "3s_s",
+      "kind": "residual",
+      "observations": 19984,
+      "sizes": 4022,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -1.8416437349759183,
+          0.8418300139062864
+        ],
+        "M1": [
+          -1.5369657015320357,
+          0.9248104375325986
+        ],
+        "M2": [
+          -1.4761413873816434,
+          0.8276565533773459
+        ],
+        "CFT": [
+          -5.235349693059522,
+          -2.683905782257418
+        ]
+      },
+      "plot_data_sha256": "e1625f9e439da764f5d27d603a22367d9e3afd73b06d246d7d0146c367fe9360"
+    },
+    {
+      "region": "small",
+      "model": "boson",
+      "a": "3s_s",
+      "b": "00",
+      "kind": "residual",
+      "observations": 19984,
+      "sizes": 4022,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -1.8309755620772572,
+          0.8404696870223402
+        ],
+        "M1": [
+          -1.5306438508110218,
+          0.9218600059574139
+        ],
+        "M2": [
+          -1.47604812182995,
+          0.8255138674615217
+        ],
+        "CFT": [
+          -5.225661553358589,
+          -2.6839034101735257
+        ]
+      },
+      "plot_data_sha256": "41dbf0fe11bef10d7db3e6517fc51cd2900e642e80d4335b44ac8a9bb29cf80a"
+    },
+    {
+      "region": "small",
+      "model": "boson",
+      "a": "ss",
+      "b": "3s_s",
+      "kind": "residual",
+      "observations": 19984,
+      "sizes": 4022,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.8875232814853682,
+          0.399400713469263
+        ],
+        "M1": [
+          -0.7879932382470902,
+          0.4258340788208963
+        ],
+        "M2": [
+          -0.7688258411042432,
+          0.3964305421179106
+        ],
+        "CFT": [
+          -1.8326014678536193,
+          -0.6061935450607703
+        ]
+      },
+      "plot_data_sha256": "94f6b4757f43a4a5b3cdee2ec8093ae13fe104d8a47428c5664ccb6bafd703b0"
+    },
+    {
+      "region": "small",
+      "model": "boson",
+      "a": "3s_s",
+      "b": "ss",
+      "kind": "residual",
+      "observations": 19984,
+      "sizes": 4022,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.02,
+      "upper_cutoff": 0.02,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.8710927414364089,
+          0.39725939505664914
+        ],
+        "M1": [
+          -0.7781551983372766,
+          0.4211493719542734
+        ],
+        "M2": [
+          -0.7687545302604842,
+          0.3931141374581683
+        ],
+        "CFT": [
+          -1.8178671075038677,
+          -0.6061895061521968
+        ]
+      },
+      "plot_data_sha256": "793e3dedb9bc0bba41f8c23b65f0c3d24fd3508252922a727e9873e8a844475e"
+    },
+    {
+      "region": "large",
+      "model": "ising",
+      "a": "I",
+      "b": "sigma",
+      "kind": "value",
+      "observations": 8245,
+      "sizes": 1749,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.08044997326704918,
+          0.16832281096226395
+        ],
+        "M1": [
+          -1.502261906860612,
+          1.711178655224359
+        ],
+        "M2": [
+          -0.034632835263753034,
+          0.03962166567772909
+        ],
+        "CFT": [
+          4.361006001547523,
+          7.388822494086741
+        ]
+      },
+      "plot_data_sha256": "2f6324d7baf9f1be438077c9cb16843354e74ece3d8b33dc299e4c6abee02ced"
+    },
+    {
+      "region": "large",
+      "model": "ising",
+      "a": "sigma",
+      "b": "I",
+      "kind": "value",
+      "observations": 8245,
+      "sizes": 1749,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.0802313803340581,
+          0.16847232695871137
+        ],
+        "M1": [
+          -1.502409254745113,
+          1.7112602284249858
+        ],
+        "M2": [
+          -0.03438860094003283,
+          0.03940405020987954
+        ],
+        "CFT": [
+          4.36121703766543,
+          7.389238150368367
+        ]
+      },
+      "plot_data_sha256": "b185510988a3c9a6c67dfa97642a0cafcbe0ead8f3a56b7c147d99660880f870"
+    },
+    {
+      "region": "large",
+      "model": "ising",
+      "a": "I",
+      "b": "epsilon",
+      "kind": "value",
+      "observations": 8245,
+      "sizes": 1749,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.14919465034882584,
+          0.053282410682340325
+        ],
+        "M1": [
+          -0.13815055411587288,
+          0.32320044472407483
+        ],
+        "M2": [
+          -0.03243079367391259,
+          0.12234379240591929
+        ],
+        "CFT": [
+          -0.46333019559386124,
+          -0.0004810469321896526
+        ]
+      },
+      "plot_data_sha256": "ad70be532f0991decd823a9245dafa372746cd73feba23c7ae1c3a9ccd0b9704"
+    },
+    {
+      "region": "large",
+      "model": "ising",
+      "a": "epsilon",
+      "b": "I",
+      "kind": "value",
+      "observations": 8245,
+      "sizes": 1749,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.02869437791006352,
+          0.19023555535303452
+        ],
+        "M1": [
+          -0.26141739635605604,
+          0.12797729380711378
+        ],
+        "M2": [
+          -0.0760637266511499,
+          0.034578350959156644
+        ],
+        "CFT": [
+          0.13189598723193402,
+          0.5197631292403251
+        ]
+      },
+      "plot_data_sha256": "603e4d7a5bb979aba5e047e61e3b88bc616ce43a7143d0f23c1ae555825bba18"
+    },
+    {
+      "region": "large",
+      "model": "ising",
+      "a": "sigma",
+      "b": "epsilon",
+      "kind": "value",
+      "observations": 8245,
+      "sizes": 1749,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.16190321746652497,
+          0.05942680707256333
+        ],
+        "M1": [
+          -0.24472768807992873,
+          0.06387748217045414
+        ],
+        "M2": [
+          -0.15010857741791184,
+          0.057237458530096125
+        ],
+        "CFT": [
+          0.6201166239239843,
+          0.926059355637199
+        ]
+      },
+      "plot_data_sha256": "59119352858bf12efbdcae2428a7c1fe8b7b11c31f0f12b3f8e4a8212abfee7c"
+    },
+    {
+      "region": "large",
+      "model": "ising",
+      "a": "epsilon",
+      "b": "sigma",
+      "kind": "value",
+      "observations": 8245,
+      "sizes": 1749,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.08074220746933809,
+          0.17015376615912234
+        ],
+        "M1": [
+          -0.5889387146026651,
+          0.8525703789607089
+        ],
+        "M2": [
+          -0.06069938055541275,
+          0.11290671245923069
+        ],
+        "CFT": [
+          1.0993399119645042,
+          2.516654804617078
+        ]
+      },
+      "plot_data_sha256": "23ee5bbe7111cd8da5c6bae404c66a63682480b18efb357fd41f51994f02227b"
+    },
+    {
+      "region": "large",
+      "model": "ising",
+      "a": "I",
+      "b": "sigma",
+      "kind": "residual",
+      "observations": 8245,
+      "sizes": 1749,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.08044997326704918,
+          0.16832281096226395
+        ],
+        "M1": [
+          -1.502261906860612,
+          1.711178655224359
+        ],
+        "M2": [
+          -0.034632835263753034,
+          0.03962166567772909
+        ],
+        "CFT": [
+          4.361006001547523,
+          7.388822494086741
+        ]
+      },
+      "plot_data_sha256": "2f6324d7baf9f1be438077c9cb16843354e74ece3d8b33dc299e4c6abee02ced"
+    },
+    {
+      "region": "large",
+      "model": "ising",
+      "a": "sigma",
+      "b": "I",
+      "kind": "residual",
+      "observations": 8245,
+      "sizes": 1749,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.0802313803340581,
+          0.16847232695871137
+        ],
+        "M1": [
+          -1.502409254745113,
+          1.7112602284249858
+        ],
+        "M2": [
+          -0.03438860094003283,
+          0.03940405020987954
+        ],
+        "CFT": [
+          4.36121703766543,
+          7.389238150368367
+        ]
+      },
+      "plot_data_sha256": "b185510988a3c9a6c67dfa97642a0cafcbe0ead8f3a56b7c147d99660880f870"
+    },
+    {
+      "region": "large",
+      "model": "ising",
+      "a": "I",
+      "b": "epsilon",
+      "kind": "residual",
+      "observations": 8245,
+      "sizes": 1749,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.14919465034882584,
+          0.053282410682340325
+        ],
+        "M1": [
+          -0.13815055411587288,
+          0.32320044472407483
+        ],
+        "M2": [
+          -0.03243079367391259,
+          0.12234379240591929
+        ],
+        "CFT": [
+          -0.46333019559386124,
+          -0.0004810469321896526
+        ]
+      },
+      "plot_data_sha256": "ad70be532f0991decd823a9245dafa372746cd73feba23c7ae1c3a9ccd0b9704"
+    },
+    {
+      "region": "large",
+      "model": "ising",
+      "a": "epsilon",
+      "b": "I",
+      "kind": "residual",
+      "observations": 8245,
+      "sizes": 1749,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.02869437791006352,
+          0.19023555535303452
+        ],
+        "M1": [
+          -0.26141739635605604,
+          0.12797729380711378
+        ],
+        "M2": [
+          -0.0760637266511499,
+          0.034578350959156644
+        ],
+        "CFT": [
+          0.13189598723193402,
+          0.5197631292403251
+        ]
+      },
+      "plot_data_sha256": "603e4d7a5bb979aba5e047e61e3b88bc616ce43a7143d0f23c1ae555825bba18"
+    },
+    {
+      "region": "large",
+      "model": "ising",
+      "a": "sigma",
+      "b": "epsilon",
+      "kind": "residual",
+      "observations": 8245,
+      "sizes": 1749,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.16190321746652497,
+          0.05942680707256333
+        ],
+        "M1": [
+          -0.24472768807992873,
+          0.06387748217045414
+        ],
+        "M2": [
+          -0.15010857741791184,
+          0.057237458530096125
+        ],
+        "CFT": [
+          0.6201166239239843,
+          0.926059355637199
+        ]
+      },
+      "plot_data_sha256": "59119352858bf12efbdcae2428a7c1fe8b7b11c31f0f12b3f8e4a8212abfee7c"
+    },
+    {
+      "region": "large",
+      "model": "ising",
+      "a": "epsilon",
+      "b": "sigma",
+      "kind": "residual",
+      "observations": 8245,
+      "sizes": 1749,
+      "minimum_fraction": 0.000732421875,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.08074220746933809,
+          0.17015376615912234
+        ],
+        "M1": [
+          -0.5889387146026651,
+          0.8525703789607089
+        ],
+        "M2": [
+          -0.06069938055541275,
+          0.11290671245923069
+        ],
+        "CFT": [
+          1.0993399119645042,
+          2.516654804617078
+        ]
+      },
+      "plot_data_sha256": "23ee5bbe7111cd8da5c6bae404c66a63682480b18efb357fd41f51994f02227b"
+    },
+    {
+      "region": "large",
+      "model": "boson",
+      "a": "00",
+      "b": "ss",
+      "kind": "value",
+      "observations": 18485,
+      "sizes": 3797,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.5882032477523071,
+          0.6053886718999677
+        ],
+        "M1": [
+          -0.6006464345470223,
+          0.6652541069507161
+        ],
+        "M2": [
+          -0.5410387318241314,
+          0.6122149023588079
+        ],
+        "CFT": [
+          1.5968870720947863,
+          2.835135118756669
+        ]
+      },
+      "plot_data_sha256": "0f5e32171a1307916250aaa7f38bcd4a34b267371e0090135f20902054069dfc"
+    },
+    {
+      "region": "large",
+      "model": "boson",
+      "a": "ss",
+      "b": "00",
+      "kind": "value",
+      "observations": 18485,
+      "sizes": 3797,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.587399035838603,
+          0.5937472965216796
+        ],
+        "M1": [
+          -0.5933631324078993,
+          0.6639897341587943
+        ],
+        "M2": [
+          -0.5400920363956562,
+          0.5923904163644865
+        ],
+        "CFT": [
+          1.6034951667081152,
+          2.8333887060009313
+        ]
+      },
+      "plot_data_sha256": "b073f5640792bb9fe1c00bcbaa0f7ea790d0f0910218a91b4518bfa4957fe8cd"
+    },
+    {
+      "region": "large",
+      "model": "boson",
+      "a": "00",
+      "b": "3s_s",
+      "kind": "value",
+      "observations": 18485,
+      "sizes": 3797,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": true,
+      "residual_range_percent": {
+        "free": [
+          -7.145408224790916,
+          0.8996004043374702
+        ],
+        "M1": [
+          -2.267510426141823,
+          4.009487168380755
+        ],
+        "M2": [
+          -1.971723153383722,
+          0.9437859722388829
+        ],
+        "CFT": [
+          -1.0631689745527209,
+          1.8952176048548979
+        ]
+      },
+      "plot_data_sha256": "131d708f1b9e128be9bd19f00be5f14b5f2ebb3ae758e5dee267b222d690b819"
+    },
+    {
+      "region": "large",
+      "model": "boson",
+      "a": "3s_s",
+      "b": "00",
+      "kind": "value",
+      "observations": 18485,
+      "sizes": 3797,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": true,
+      "residual_range_percent": {
+        "free": [
+          -7.2213396155351655,
+          0.9148959240201431
+        ],
+        "M1": [
+          -2.3476342775972903,
+          4.05248007391081
+        ],
+        "M2": [
+          -1.9811199214197353,
+          0.9470443306748159
+        ],
+        "CFT": [
+          -1.1921355082343388,
+          1.8908842923562827
+        ]
+      },
+      "plot_data_sha256": "2842075ad73b6a6e8ab92dd1359e73189354d9989a856976a5f34bd11d1461fd"
+    },
+    {
+      "region": "large",
+      "model": "boson",
+      "a": "ss",
+      "b": "3s_s",
+      "kind": "value",
+      "observations": 18485,
+      "sizes": 3797,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": true,
+      "residual_range_percent": {
+        "free": [
+          -1.6753246272495577,
+          0.4524985960991038
+        ],
+        "M1": [
+          -1.0949015479097157,
+          1.2903834262623028
+        ],
+        "M2": [
+          -0.753158470953833,
+          0.4015073886192414
+        ],
+        "CFT": [
+          -1.771780305400367,
+          -0.5473061103522223
+        ]
+      },
+      "plot_data_sha256": "6522c546601bf619fd942301a7563f0bfe162251b64f9c2460a8d4a5cfd9a293"
+    },
+    {
+      "region": "large",
+      "model": "boson",
+      "a": "3s_s",
+      "b": "ss",
+      "kind": "value",
+      "observations": 18485,
+      "sizes": 3797,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": true,
+      "residual_range_percent": {
+        "free": [
+          -1.7009307144884909,
+          0.46279941537061825
+        ],
+        "M1": [
+          -1.1341644628078267,
+          1.3149297572930188
+        ],
+        "M2": [
+          -0.7686590203103254,
+          0.4036275483342842
+        ],
+        "CFT": [
+          -1.7768021215711707,
+          -0.5689336151784865
+        ]
+      },
+      "plot_data_sha256": "1c1e9d941d4070ca2773990be436fde29f164e7205cb5aceeaa430de2c313442"
+    },
+    {
+      "region": "large",
+      "model": "boson",
+      "a": "00",
+      "b": "ss",
+      "kind": "residual",
+      "observations": 18485,
+      "sizes": 3797,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.5882032477523071,
+          0.6053886718999677
+        ],
+        "M1": [
+          -0.6006464345470223,
+          0.6652541069507161
+        ],
+        "M2": [
+          -0.5410387318241314,
+          0.6122149023588079
+        ],
+        "CFT": [
+          1.5968870720947863,
+          2.835135118756669
+        ]
+      },
+      "plot_data_sha256": "0f5e32171a1307916250aaa7f38bcd4a34b267371e0090135f20902054069dfc"
+    },
+    {
+      "region": "large",
+      "model": "boson",
+      "a": "ss",
+      "b": "00",
+      "kind": "residual",
+      "observations": 18485,
+      "sizes": 3797,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": false,
+      "residual_range_percent": {
+        "free": [
+          -0.587399035838603,
+          0.5937472965216796
+        ],
+        "M1": [
+          -0.5933631324078993,
+          0.6639897341587943
+        ],
+        "M2": [
+          -0.5400920363956562,
+          0.5923904163644865
+        ],
+        "CFT": [
+          1.6034951667081152,
+          2.8333887060009313
+        ]
+      },
+      "plot_data_sha256": "b073f5640792bb9fe1c00bcbaa0f7ea790d0f0910218a91b4518bfa4957fe8cd"
+    },
+    {
+      "region": "large",
+      "model": "boson",
+      "a": "00",
+      "b": "3s_s",
+      "kind": "residual",
+      "observations": 18485,
+      "sizes": 3797,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": true,
+      "residual_range_percent": {
+        "free": [
+          -7.145408224790916,
+          0.8996004043374702
+        ],
+        "M1": [
+          -2.267510426141823,
+          4.009487168380755
+        ],
+        "M2": [
+          -1.971723153383722,
+          0.9437859722388829
+        ],
+        "CFT": [
+          -1.0631689745527209,
+          1.8952176048548979
+        ]
+      },
+      "plot_data_sha256": "131d708f1b9e128be9bd19f00be5f14b5f2ebb3ae758e5dee267b222d690b819"
+    },
+    {
+      "region": "large",
+      "model": "boson",
+      "a": "3s_s",
+      "b": "00",
+      "kind": "residual",
+      "observations": 18485,
+      "sizes": 3797,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": true,
+      "residual_range_percent": {
+        "free": [
+          -7.2213396155351655,
+          0.9148959240201431
+        ],
+        "M1": [
+          -2.3476342775972903,
+          4.05248007391081
+        ],
+        "M2": [
+          -1.9811199214197353,
+          0.9470443306748159
+        ],
+        "CFT": [
+          -1.1921355082343388,
+          1.8908842923562827
+        ]
+      },
+      "plot_data_sha256": "2842075ad73b6a6e8ab92dd1359e73189354d9989a856976a5f34bd11d1461fd"
+    },
+    {
+      "region": "large",
+      "model": "boson",
+      "a": "ss",
+      "b": "3s_s",
+      "kind": "residual",
+      "observations": 18485,
+      "sizes": 3797,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": true,
+      "residual_range_percent": {
+        "free": [
+          -1.6753246272495577,
+          0.4524985960991038
+        ],
+        "M1": [
+          -1.0949015479097157,
+          1.2903834262623028
+        ],
+        "M2": [
+          -0.753158470953833,
+          0.4015073886192414
+        ],
+        "CFT": [
+          -1.771780305400367,
+          -0.5473061103522223
+        ]
+      },
+      "plot_data_sha256": "6522c546601bf619fd942301a7563f0bfe162251b64f9c2460a8d4a5cfd9a293"
+    },
+    {
+      "region": "large",
+      "model": "boson",
+      "a": "3s_s",
+      "b": "ss",
+      "kind": "residual",
+      "observations": 18485,
+      "sizes": 3797,
+      "minimum_fraction": 0.0003662109375,
+      "maximum_fraction": 0.005,
+      "upper_cutoff": 0.005,
+      "lengths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cft_has_next_term": true,
+      "residual_range_percent": {
+        "free": [
+          -1.7009307144884909,
+          0.46279941537061825
+        ],
+        "M1": [
+          -1.1341644628078267,
+          1.3149297572930188
+        ],
+        "M2": [
+          -0.7686590203103254,
+          0.4036275483342842
+        ],
+        "CFT": [
+          -1.7768021215711707,
+          -0.5689336151784865
+        ]
+      },
+      "plot_data_sha256": "1c1e9d941d4070ca2773990be436fde29f164e7205cb5aceeaa430de2c313442"
+    }
+  ]
+}

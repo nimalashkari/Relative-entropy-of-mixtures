@@ -1,0 +1,87 @@
+\clearpage
+\section{Parameters and numerical errors for the visual comparisons}
+\label{sec:window-appendix}
+These tables supplement Sec.~\ref{sec:window-selection}. Models are
+grouped by ordered pair, and every fitted row gives its actual interval.
+They correspond to both columns of the per-pair figures and the
+principal tables in Appendices~\ref{sec:allfits} and
+\ref{sec:complement-checks}. The same CFT-wide windows are used throughout.
+The coefficient convention and indices follow
+Eq.~\eqref{eq:window-models}. Unknown analytical next coefficients
+are left blank throughout. Agreement is assessed through the displayed
+numerical parameters and curves, without interval-selection labels.
+
+\subsection{Small intervals: Ising}
+\input{tables/window_small_ising_leading}
+\input{tables/window_small_ising_second}
+\input{tables/window_small_ising_quality}
+\clearpage
+\subsection{Small intervals: compact boson}
+\input{tables/window_small_boson_leading}
+\input{tables/window_small_boson_second}
+\input{tables/window_small_boson_quality}
+\clearpage
+\subsection{Large intervals: Ising}
+\input{tables/window_large_ising_leading}
+\input{tables/window_large_ising_second}
+\input{tables/window_large_ising_quality}
+\clearpage
+\subsection{Large intervals: compact boson}
+\input{tables/window_large_boson_leading}
+\input{tables/window_large_boson_second}
+\input{tables/window_large_boson_quality}
+
+\clearpage
+\subsection{Sanity checks and reproducibility}
+\label{sec:window-reproduction}
+For each retained window, the two-term residual is checked against
+the matching one-term residual, since that model is nested in the
+two-term family. Fixed coefficients are independently checked by
+column-normalized normal equations.
+Original entropy values are checked against the pre-revision snapshot;
+the added system sizes extend those raw records. The $\ell=4,5$ values
+remain archived and enter neither the fitted nor displayed data.
+The principal fitted rows in Appendices~\ref{sec:allfits} and
+\ref{sec:complement-checks} adopt the common CFT-wide windows
+in Eq.~\eqref{eq:common-fit-windows}. Their coefficients and omitted-size errors are refitted
+independently from the entropy CSV; every fit and training fold has at
+least forty observations. All three fitted models share an interval
+across all six directions of each CFT and interval type. CFT coefficients remain analytical
+inputs, while its residual metrics use the common-window data mask.
+The dense-scan window choices are recorded explicitly.
+
+The numerical record contains the following files:
+\begin{itemize}
+\item \path{window_scan.csv}: the historical window-scan record.
+\item \path{window_selected.csv}: selected windows, complete parameters,
+and observation counts; the report reads only Free 1, $F_1$, and $F_2$.
+\item \path{window_retained_cv.csv}: omitted-size refits for the current
+companion visualization records (the same common-window fits).
+\item \path{retained_window_specifications.json}: current explicit window
+endpoints, checked against every current principal and varied fit.
+\item \path{selection_raw_preservation.json} and
+\path{selection_audit.json}: raw-data preservation and current audits.
+\item \path{f2_summary_fits.csv}: revised principal tables, with
+CFT-wide windows for all three models and matched-window gains.
+\item \path{f2_summary_cv.csv}: all principal models and reference $F_1$
+omitted-size refits; \path{f2_summary_comparison.csv} records common-window
+and companion $F_2$ coefficients, which now coincide.
+\end{itemize}
+Conditional least-squares
+standard errors in the CSVs are descriptive local-curvature measures,
+not statistical confidence intervals for these deterministic data.
+
+The complete numerical implementation is
+\texttt{src/conformal\_blocks/retained\_window\_fits.py}; plotting and TeX
+generation are in \texttt{report/pair\_fit\_artifacts.py}.
+Using the already approved interpreter and threading settings in
+\texttt{SCALING\_README.md}, run
+\begin{verbatim}
+python report/rebuild_report.py
+python report/selection_audit.py
+\end{verbatim}
+Then compile \texttt{main.tex} three times and package with the
+existing report audit. The visualization reads the supplied entropy and fit
+CSVs directly and does not require the wavefunction caches. The
+manuscript is identified by source hash and citation, not redistributed
+in the Overleaf archive.

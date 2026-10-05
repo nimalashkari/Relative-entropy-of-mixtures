@@ -1,0 +1,49 @@
+\clearpage
+\subsection{Zero-anchored common windows on the denser data}
+\label{sec:common-window-results}
+The small-Ising and small-boson windows remain $(0,0.02]$ and
+$(0,0.1]$. The large-interval comparison adopts $(0,0.002]$ for Ising
+and the prescribed $(0,0.005]$ for the compact boson. These are the
+four windows of Eq.~\eqref{eq:common-fit-windows}; every model and
+all six directions within each group use identical observations.
+The preceding data refinement added 48 even system sizes for each CFT, with all five
+lengths $\ell=6,7,8,9,10$ at each size. The largest sizes remain
+$8192$ and $16384$. Every added geometry enters the corresponding
+small-interval window; only those satisfying the separate large-interval
+cutoff enter its fits. Both observables are computed and preserved.
+The data refinement initially kept all four windows fixed. A subsequent
+zero-anchored search selected the historical large-boson cutoff $0.0047$.
+The current revision changes that cutoff to the prescribed $0.005$,
+on exactly the same raw data. All theoretical powers are unchanged.
+At the current cutoff, $F_2$ improves four of the six large-boson
+leading coefficients; the all-six target is not met.
+
+The new sizes are chosen using geometry alone. For each CFT, seed
+the even sizes at which each length first enters its large-interval
+window. Repeatedly bisect the largest gap in $\log N$, choosing the
+nearest unused even size to the geometric midpoint. Add 32 sizes
+in $3000\leq N\leq8192$ for Ising or $3750\leq N\leq16384$ for
+the boson. Add 16 further sizes in $500\leq N\leq3000$ or
+$100\leq N\leq3750$, respectively. Existing sizes are never
+recomputed or replaced. The exact executed lists are included in
+Eq.~\eqref{eq:extended-grid} and the data manifest below.
+
+\input{tables/density_overview}
+\begingroup\footnotesize
+\input{tables/common_window_counts}
+\endgroup
+
+\input{tables/density_ising}
+\begingroup\footnotesize
+\input{tables/common_large_ising_comparison}
+\endgroup
+
+\input{tables/density_boson}
+\begingroup\footnotesize
+\input{tables/common_large_boson_comparison}
+\clearpage
+\input{tables/common_window_neighbors}
+\endgroup
+
+\input{tables/density_conclusions}
+\input{sections/17_zero_anchored_figures}

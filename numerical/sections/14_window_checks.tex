@@ -1,0 +1,69 @@
+\clearpage
+\section{Fitting-window and sample-count checks}
+\label{sec:window-comparison}
+The four active mixture windows are Eq.~\eqref{eq:common-fit-windows}.
+They retain, per ordered pair, 1255 small-Ising, 598 small-boson,
+260 large-Ising, and 317 large-boson observations. The corresponding
+minimum training counts after omitting one chain size are 1250, 593,
+255, and 312. Every active fit therefore exceeds forty observations,
+including every omitted-size training set. All fitting and display
+masks exclude $\ell=4,5$, while the raw files preserve those values.
+Table~\ref{tab:scaling-sampling} gives exact sampled endpoints and
+distinct-size counts. All five retained subsystem lengths occur in
+each of the four active groups.
+
+As a separate check closer to zero, we retain the earlier free-power
+fits on $(0,0.001]$. Additional sizes within the validated maxima
+restored their sample counts after excluding $\ell=4,5$; the later
+dense scan added one further observation at $N=6000$, $\ell=6$.
+After the fixed-window refinement, these diagnostic fits contain
+57 Ising and 116 boson geometries per direction. They are not
+the fits used in the active mixture figures or principal tables.
+
+The count can be reconstructed without examining any entropy values.
+For cutoff $t$ and the chain-size set $\mathcal N_{\rm CFT}$ of the
+chosen CFT in Eq.~\eqref{eq:extended-grid}, define
+\begin{equation}
+ n_N(t)=\max\{0,\min[10,\lfloor tN\rfloor]-5\},\qquad
+ m(t)=\sum_{N\in\mathcal N_{\rm CFT}}n_N(t).
+ \label{eq:fit-sample-count}
+\end{equation}
+Here $\lfloor u\rfloor$ is the greatest integer no larger than $u$;
+$n_N$ counts the admitted lengths starting at six. A size-holdout
+training set contains $m(t)-n_N(t)$ points. Both $m(t)$ at each adopted cutoff and every
+such training count are checked against the minimum of forty.
+
+For Ising, $N\leq8192$ means that only $\ell=6,7,8$ can enter
+the separate $0.001$ diagnostic fit: $\ell=9,10$ would require $N\geq9000,10000$. Their computed
+values remain in the figures. For the boson, every subsystem size
+$\ell=6,\ldots,10$ occurs among the selected points, with
+$N\leq16384$. Adding sizes increases the sampling density within
+these limits; it does not lower the smallest accessible fraction.
+Points sharing a chain or subsystem size are deterministic samples,
+not forty statistically independent measurements.
+Different $(N,\ell)$ can have the same fraction; they remain distinct
+lattice observations and receive equal weight in Eq.~\eqref{eq:objective}.
+
+The denser boson data also support the trial cutoff $0.00075$, with
+69 points and at least 64 after omitting one size. The boson cutoff
+$0.000625$ contains 41 points but can leave only 36 in a training
+fold, so it is excluded. The remaining smaller trial windows fail
+the same forty-point requirement. The free-fit tables below give
+the qualifying smaller-window diagnostics in a compact form.
+Each row estimates $Cz^r$ with both parameters free using
+Eq.~\eqref{eq:objective}; theory enters only the subsequent comparison.
+
+The coefficient and exponent are correlated, so a small exponent change
+can produce a larger coefficient change when extrapolated to unit
+fraction. Furthermore, a fixed range $\ell=6,\ldots,10$ keeps the
+lattice resolution fixed as $N$ increases. Stable exponent recovery
+does not require that every finite-$\ell$ amplitude equal its continuum
+value. These are direct fits and comparisons; no extra lattice-effect
+power law is assumed.
+\begingroup\footnotesize\setlength{\tabcolsep}{4pt}
+\input{tables/scaling_sampling}
+\input{tables/ising_small_windows}
+\input{tables/boson_small_windows}
+\input{tables/ising_large_windows}
+\input{tables/boson_large_windows}
+\endgroup

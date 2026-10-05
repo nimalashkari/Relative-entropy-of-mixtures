@@ -1,0 +1,142 @@
+\clearpage
+\section{Visual comparison of fits for each ordered pair}
+\label{sec:window-selection}
+\subsection{Question, data, and models}
+For each ordered pair we display the fitting models, their actual
+intervals, their residuals, and the supplied analytical curve together.
+Each figure compares the principal summary-table fits in its left column
+with the varying-window fits in its right column. We compare Free 1,
+$F_1$, and $F_2$. Each column uses one common interval for all three
+models, so adding the second term can be assessed on identical observations.
+
+We use every previously computed mixture geometry in
+Eq.~\eqref{eq:extended-grid}, with $p=1/2$ and $\ell=6,\ldots,10$.
+The raw $\ell=4,5$ observations remain archived but enter neither estimation nor display.
+This restores the five-length analysis on its original chain grid;
+the subsequent $\ell=11,12$ extension and complete-seven-length-block
+study remain separate archived comparisons. In the current analysis,
+each observation with $\ell\in\{6,7,8,9,10\}$ is selected individually
+using its fraction $\ell/N$ and the group's fitting window; a size need
+not contribute every length inside that window.
+The dense scan adds 235 Ising and 47 boson sizes, all below the previously validated maxima; see Appendix~\ref{sec:dense-second-order}. Write $z=x=\ell/N$
+and $q=D^A$ for small intervals; write $z=y=\ell/N$ and
+$q=\delta=\log2-D^B$ for large complementary intervals. Thus $\alpha$
+always denotes a small-interval leading power and $\beta$ a
+large-interval leading power. All active models use the four common windows in
+Eq.~\eqref{eq:common-fit-windows}; the small-interval choices are
+frozen and the large-boson upper cutoff is prescribed as $0.005$.
+The same fits appear in the overview figures and the principal
+tables in Appendices~\ref{sec:allfits} and \ref{sec:complement-checks}.
+The earlier $(0,0.001]$ free-power fits remain a separate diagnostic.
+
+For a window $W=[u,v]$, we compare
+\begin{align}
+ F_1(z)&=c_1z^{r_0},&
+ F_{\mathrm{free},1}(z)&=c_1z^{r^{(1)}},\nonumber\\
+ F_2(z)&=c_1z^{r_0}+c_2z^{r_{\rm next}}.
+ \label{eq:window-models}
+\end{align}
+Here $r_0,r_{\rm next}$ are the pair-specific manuscript powers;
+$F_2$ fixes both, since a general separation between freely estimated
+leading and next powers is not established. Free 1 estimates only the
+leading power. In this section $c_1$ is the leading amplitude and $c_2$ the
+next amplitude, corresponding to $c_0,c_1$ in
+Eq.~\eqref{eq:fit}. They multiply $z^r$ itself and include all powers
+of $\pi$. There are one, two, and two fitted parameters in
+$F_1$, Free 1, and $F_2$, respectively. The objective is always
+\begin{equation}
+ \mathrm{SSE}_W=\sum_{i:z_i\in W}[q_i-M(z_i)]^2.
+ \label{eq:window-objective}
+\end{equation}
+All geometries receive equal weight, including distinct $(N,\ell)$
+that have the same fraction. No logarithmic residual objective or
+extra lattice-correction term is fitted.
+
+The theory comparison uses the source
+\texttt{manuscript\_theory/main3.tex}~\cite{theoryLarge}, especially its
+non-chiral compact-boson and Ising examples. The small-interval powers
+and complete supplied coefficients are in
+Tables~\ref{tab:isingcoeff} and \ref{tab:bosoncoeff}:
+$r_{\rm next}=\alpha+2$. Only $I\mid\eps$ and $\eps\mid I$ have
+complete supplied next coefficients. Large intervals use
+Table~\ref{tab:complement-theory}; no common increment is assumed.
+For large boson $ss\leftrightarrow3s,s$, power three is an allowed
+sector, not a proved nonzero coefficient. An empty analytical cell
+in the new tables means that the complete coefficient is unavailable.
+
+\subsection{Fitting formulas and plotted quantities}
+For fixed powers, the coefficients follow from linear least squares.
+Use $t_i=\log(z_i/v)$ and $A_j=c_jv^{r_j}$. Define
+\begin{equation}
+ X_{ij}=\exp(r_jt_i),\qquad
+ \widehat{\boldsymbol A}=X^+\boldsymbol q,\qquad
+ c_j=\widehat A_j/v^{r_j}.
+ \label{eq:window-profile}
+\end{equation}
+$X^+$ is the Moore--Penrose pseudoinverse, computed by singular-value
+decomposition. For $F_1$ the design matrix has one column with power
+$r_0$; for $F_2$ it has two columns with powers $r_0,r_{\rm next}$.
+Free 1 uses one column and minimizes the residual over its single
+trial power. Eliminating the linear coefficient before this search
+is variable projection~\cite{GolubPereyra}. Dividing all $q_i$ by their
+root-mean-square value improves numerical scaling and does not change
+the least-squares optimum.
+
+In the figures, the upper panels show $q$ and the fitted curves.
+Solid colored segments lie inside the corresponding interval $W$;
+thin dotted segments show extrapolation. The lower residual panels
+show only the observations used by each fit, with
+$R_i=100[q_i-M(z_i)]/q_i$ on a linear ordinate. The interval bars and
+parameter block specify $W$ separately for every model. A zero lower
+endpoint is open; it includes the smallest positive observation.
+The left column shows all available data through $z=0.20$; the
+right column zooms into the common fitting window using the same
+curves. Both residual columns show the same fitted observations on
+linear ordinates. The shared parameter block lists each fit once.
+
+For the numerical-error tables, define
+\begin{equation}
+ E_{\rm fit}=100\sqrt{\frac{\sum_{i\in W}[q_i-M(z_i)]^2}
+                              {\sum_{i\in W}q_i^2}},\qquad
+ E_{\rm CV}=100\sqrt{\frac{\sum_{i\in W}[q_i-M^{(-N_i)}(z_i)]^2}
+                             {\sum_{i\in W}q_i^2}}.
+ \label{eq:pair-errors}
+\end{equation}
+Here $M^{(-N_i)}$ is refitted after omitting all observations at chain
+size $N_i$, as in Eq.~\eqref{eq:cv}. These aggregate percentages differ
+from the pointwise percentages in the residual panels. Every displayed
+fit and omitted-size training set contains at least forty observations.
+Different fitting intervals contain different observations, so their
+absolute RMSEs should not be ranked directly.
+
+\subsection{Comparison with theory and results}
+Compare the fitted parameters with the manuscript using
+\begin{equation}
+ \eta_{c,j}=100\left(\frac{c_j}{c_j^{\rm CFT}}-1\right),\qquad
+ \eta_{r,j}=100\left(\frac{r^{(j)}}{r_j^{\rm CFT}}-1\right),
+ \qquad j=1,2.
+ \label{eq:window-discrepancies}
+\end{equation}
+An unknown analytical coefficient leaves both its comparison cell
+and its percentage discrepancy empty. Fixed exponents are identified
+as imposed rather than estimated. All models and all six directions within one CFT and interval type
+use the same window. Both columns show the same fitted models. The current omitted-size
+controls are in \path{data/f2_summary_cv.csv}; the principal-table gains
+use Eq.~\eqref{eq:table-window-gains}.
+\input{tables/window_findings}
+\input{tables/window_small_ising_ranges}
+\input{tables/window_small_boson_ranges}
+\input{tables/window_large_ising_ranges}
+\input{tables/window_large_boson_ranges}
+The full amplitudes, powers, and theoretical comparisons are in
+Appendix~\ref{sec:window-appendix}. Each figure below treats one
+ordered pair. Its parameter block lists every displayed fit and the common window
+used in both columns. Window sensitivity is examined separately in
+Appendix~\ref{sec:dense-second-order}.
+The analytical curve has no fitted
+parameters. All retained-model results remain visible without window
+classifications or acceptance labels.
+\input{sections/15_window_small_ising_figures}
+\input{sections/15_window_small_boson_figures}
+\input{sections/15_window_large_ising_figures}
+\input{sections/15_window_large_boson_figures}

@@ -1,0 +1,455 @@
+\section{Numerical methods and validation}
+\label{app:num-methods}
+This appendix specifies the numerical calculations used in
+Sec.~\ref{sec:num-examples} and in the primary-state check of
+Table~\ref{tab:num-primary}. The calculations evaluate finite-chain
+reduced states directly; the analytical CFT predictions enter only
+the subsequent comparisons and the fixed-power fitting models.
+
+\subsection{States, subsystems, and sampling}
+\label{app:num-sampling}
+We use periodic chains with unit lattice spacing and contiguous
+subsystems $A=\{0,\ldots,\ell-1\}$, $B=A^c$. All active mixture
+fits and figures use $\ell=6,7,8,9,10$. The Ising states are
+$I$, $\sigma$, and $\varepsilon$; the boson states are
+$00$, $ss$, and $3s,s$, with $s=1/\sqrt2$. Each of the three
+unordered pairs is evaluated in both directions. We use natural
+logarithms and the incoherent mixture
+$\mu_{ab}^C=(\rho_a^C+\rho_b^C)/2$, for $C=A,B$.
+
+The reference chain-size set is
+\begin{equation}
+ \mathcal N=\{32,48,64,82,96,112,128,144,160,176,192,208,224,240,256\}.
+ \label{eq:num-reference-grid}
+\end{equation}
+The primary-to-primary check retains this reference set, giving
+51 geometries per direction at $x\leq0.08$. The mixture study
+uses the denser sets below, which reach $N=8192$ and $16384$.
+The rounding in $\mathcal D$ is to the nearest integer; the
+prefactor two makes every chain size even. Unions remove duplicate
+sizes. No additional selection is made by the observed entropy.
+\input{numerical/integration/grid}
+
+For each group, observations are selected individually by their
+fraction $\ell/N$: a chain need not contribute all five lengths
+inside the fitting window. Repeated fractions arising from
+different $(N,\ell)$ remain distinct observations.
+Table~\ref{tab:num-windows} gives the windows and counts.
+The figures show only fitted observations. All lengths share circular
+markers and colors; residual colors identify models.
+Previously computed lengths
+$4,5,11,12$ are excluded from these fits and figures.
+\begin{table}[htbp]\centering\small
+\begin{tabular}{llrrrr}\toprule
+Observable & CFT & Upper cutoff & Points & Sizes & Min. training\\\midrule
+$D^A$ & Ising & $0.02$ & 1255 & 278 & 1250\\
+$D^A$ & Boson & $0.1$ & 598 & 124 & 593\\
+$\delta$ & Ising & $0.002$ & 260 & 67 & 255\\
+$\delta$ & Boson & $0.005$ & 317 & 68 & 312\\\bottomrule
+\end{tabular}
+\caption{Sampling per ordered pair for all three fitted models.
+The lower endpoint is zero and is open. ``Min. training'' is the
+smallest number of observations left after omitting a complete
+chain size. These are deterministic lattice data, not independent
+random samples.}
+\label{tab:num-windows}
+\end{table}
+
+\subsection{Exact Ising primary states and interval matrices}
+\label{app:num-ising}
+We use the critical periodic spin Hamiltonian
+\begin{equation}
+ H=-\sum_{j=0}^{N-1}X_jX_{j+1}-\sum_{j=0}^{N-1}Z_j,
+ \qquad X_N=X_0,\qquad P=\prod_j Z_j.
+ \label{eq:num-ising-H}
+\end{equation}
+The Jordan--Wigner Majoranas
+$\gamma_{2j}=(\prod_{k<j}Z_k)X_j$ and
+$\gamma_{2j+1}=(\prod_{k<j}Z_k)Y_j$ reduce this Hamiltonian
+to a quadratic form~\cite{numMontes2017,numPeschelEisler}.
+Even spin parity gives antiperiodic fermions. Their vacuum
+represents $I$, and occupying the two modes at momenta
+$\pm\pi/N$ represents $\varepsilon$. Odd spin parity gives
+periodic fermions; their lowest state with the zero-mode
+occupation fixed to $P=-1$ represents $\sigma$. All three
+states have zero spin momentum. Their exact energies are
+\begin{equation}
+ E_I=-2\csc\frac{\pi}{2N},\qquad
+ E_\sigma=-2\cot\frac{\pi}{2N},\qquad
+ E_\varepsilon=E_I+8\sin\frac{\pi}{2N}.
+ \label{eq:num-ising-energies}
+\end{equation}
+With velocity two, these gaps approach the scaling dimensions
+$0,1/8,1$, respectively.
+
+For reproducibility, the real antisymmetric covariance is
+$G_{rs}=\langle i\gamma_r\gamma_s\rangle$ for $r\ne s$ and
+$G_{rr}=0$. Set $L_M=2N$, $k_m=2\pi(m+t)/L_M$, and
+$w_m=-\operatorname{sgn}(\sin k_m)$. The twist is $t=1/2$
+for $I,\varepsilon$ and $t=0$ for $\sigma$. Reverse $w_m$
+at $m=0,N-1,N,L_M-1$ for $\varepsilon$. For $\sigma$, set
+$w_0=w_N=0$ and include the parity-fixing term in
+\begin{equation}
+ (G_a)_{rs}=\frac{i}{L_M}\sum_{m=0}^{L_M-1}w_m e^{ik_m(r-s)}
+ +\begin{cases}[(-1)^r-(-1)^s]/L_M,&a=\sigma,\\0,&a=I,\varepsilon.
+ \end{cases}
+ \label{eq:num-covariance}
+\end{equation}
+This exact Fourier construction avoids a full Hamiltonian
+eigensolve. We check antisymmetry, purity $G_a^2=-\mathbb I$,
+and the energies in Eq.~\eqref{eq:num-ising-energies}.
+
+Restrict $G_a$ to the first $2\ell$ Majoranas. If an orthogonal
+change of basis gives blocks
+$\left(\begin{smallmatrix}0&g_j\\-g_j&0\end{smallmatrix}\right)$,
+and $b_r$ are the correspondingly rotated Majoranas, then
+\begin{equation}
+ \rho_a^A=2^{-\ell}\prod_{j=0}^{\ell-1}
+       (\mathbb I+g_j i b_{2j}b_{2j+1}).
+ \label{eq:num-ising-rdm}
+\end{equation}
+All Jordan--Wigner strings lie inside this interval, so this is
+also its spin density matrix. We form the $2^\ell$-dimensional
+component matrices and then their mixture. Although each
+component is Gaussian, the mixture generally is not; its
+entropy is evaluated from the actual matrix, not an averaged
+covariance.
+
+\subsection{Compact-boson states and exact environment contraction}
+\label{app:num-boson}
+The boson uses radius $R=\sqrt2$, charges
+$(Q_L,Q_R)=(a,b)/\sqrt2$, and weights
+$(h,\bar h)=(a^2,b^2)/4$. The charge codes
+$(a,b)=(0,0),(1,1),(3,1)$ label the three states. On sites
+$z_j=e^{2\pi i j/N}$, the auxiliary vertex-block construction
+with charges at zero and $W$ gives a Jastrow polynomial
+\cite{numHerwerth}. For an occupied set $O$ its normalized
+amplitude is
+\begin{equation}
+ \Psi_{a,b}(O)=\frac{1}{\sqrt{\mathcal Z_{a,b}}}
+ \prod_{j\in O}z_j^{a+1}(1-z_j/W)^b
+ \prod_{i<j\in O}(z_j-z_i)^2,
+ \quad |O|=\frac{N-a-b}{2},\quad W=10^8.
+ \label{eq:num-boson-wavefunction}
+\end{equation}
+$\mathcal Z_{a,b}$ is the sum of squared amplitudes before
+normalization. The three states have occupations $N/2,N/2-1,N/2-2$
+and are exactly orthogonal. No orthogonalization is performed.
+The complex phase of this amplitude is retained in every
+off-diagonal matrix element. The finite endpoint $W$ is part
+of the supplied lattice-state convention; it approximates the
+strict insertion at infinity.
+
+To compute both density matrices and cross-state transitions,
+let $U,V\subset A$ be occupied sets and let $Y\subset B$ be
+their common environment. For states $i=1,2$, with occupations
+$M_i$ and unnormalized polynomials $P_i$, we need
+\begin{equation}
+ (T_{12}^A)_{UV}=\frac{1}{\sqrt{\mathcal Z_1\mathcal Z_2}}
+ \sum_{\substack{Y\subset B\\|Y|=M_1-|U|=M_2-|V|}}
+       P_1(U\cup Y)P_2(V\cup Y)^*.
+ \label{eq:num-boson-transition}
+\end{equation}
+It vanishes if the two required environment occupations differ.
+Setting the states equal gives $\rho_a^A$.
+
+We contract this sum through confluent Vandermonde identities
+and Pfaffians, building on the moment method for the
+Haldane--Shastry state~\cite{numStephan}. Explicitly, set
+$m=M_1-|U|=M_2-|V|$, $\nu_j=\mathbf1_{j\in U}+\mathbf1_{j\in V}$,
+$d=M_1+M_2$, $g_i(z)=(1-z/W)^{b_i}$, and
+\begin{align}
+ L_i(U)&=\prod_{j\in U}z_j^{a_i+1}g_i(z_j)
+                  \prod_{j<k\in U}(z_j-z_k)^2,\nonumber\\
+ w(z)&=z^{a_1-a_2-2M_2+2}g_1(z)\overline{g_2(z)},\nonumber\\
+ \mathcal E_{UV}&=\sum_{\substack{Y\subset B\\|Y|=m}}
+       \prod_{i<j\in Y}(z_i-z_j)^4
+       \prod_{i\in Y}\left[w(z_i)\prod_{j\in A}(z_j-z_i)^{2\nu_j}\right],
+ \label{eq:num-environment}
+\end{align}
+so that $(T_{12}^A)_{UV}=L_1(U)\overline{L_2(V)}
+\prod_{j\in V}z_j^{-2m}\mathcal E_{UV}/\sqrt{\mathcal Z_1\mathcal Z_2}$.
+Let $f(z)=(1,z,\ldots,z^{d-1})^T$ and define
+\begin{equation}
+ \mathsf M_B=\sum_{j\in B}w(z_j)
+ [f(z_j)f'(z_j)^T-f'(z_j)f(z_j)^T].
+ \label{eq:num-moment}
+\end{equation}
+At each site of $A$, a matrix $E_{UV}$ contains no column if
+$\nu_j=0$, $f(z_j)$ if $\nu_j=1$, and $f(z_j),f'(z_j)$ if
+$\nu_j=2$, in site order. With $q=\sum_j\nu_j$ and
+$\Delta_{\rm ext}=\prod_{i<j\in A}(z_j-z_i)^{\nu_i\nu_j}$,
+\begin{equation}
+ \mathcal E_{UV}=\frac{(-1)^{q(q-1)/2}}{\Delta_{\rm ext}}
+   \operatorname{Pf}\begin{pmatrix}\mathsf M_B&E_{UV}\\-E_{UV}^T&0\end{pmatrix}.
+ \label{eq:num-bordered-pf}
+\end{equation}
+Here $d+q$ is even, including for transitions with odd $d$.
+The formula defines the contraction without requiring an
+inverse of a possibly singular cross-moment matrix. Production
+evaluation uses sparse full-circle moments, a rank-$2\ell$
+subtraction of the interval sites, and cached small Pfaffian
+minors, with exact borders or regularizers for singular moments.
+This extends the norm contraction to off-diagonal reduced
+matrices and transitions; it is a numerical construction, not
+a new CFT entropy formula.
+
+Cancellation in the moment algebra requires 100 decimal digits
+through $N=256$ and 120 digits at the added sizes. Sampled
+entries are independently checked at 160 digits using direct
+pivoted Pfaffians. Only the final reduced matrices are converted
+to double precision. The exponentially large global vector is
+never formed in production.
+
+\subsection{Large intervals from a small Gram matrix}
+\label{app:num-gram}
+A global pure state has Schmidt rank at most $2^\ell$ across
+the cut, even though $B$ has $N-\ell$ sites. The mixture on $B$
+therefore has rank at most $2^{\ell+1}$. Its calculation needs
+the transition $T_{ab}^A=\tr_B\ket a\bra b$, as well as
+$\rho_a^A,\rho_b^A$; the individual reduced states alone do
+not specify their Schmidt-support overlap on $B$.
+
+Writing $\ket a=\sum_{u,v}X_a(v,u)\ket u_A\ket v_B$ and
+$Z=(X_a,X_b)/\sqrt2$ gives $ZZ^\dagger=\mu_{ab}^B$ and
+\begin{equation}
+ \mathcal G=Z^\dagger Z=\frac12
+ \begin{pmatrix}(\rho_a^A)^T&(T_{ab}^A)^*\\
+ (T_{ab}^A)^T&(\rho_b^A)^T\end{pmatrix}.
+ \label{eq:num-gram}
+\end{equation}
+The nonzero eigenvalues $\lambda_k$ of $\mathcal G$ equal
+those of $\mu_{ab}^B$. For its normalized eigenvectors $v_k$
+and the first-block projector $P_a$, the directed entropy is
+\begin{equation}
+ D^B_{a\mid b}=\tr(\rho_a^A\log\rho_a^A)
+ -2\sum_{\lambda_k>0}\lambda_k(v_k^\dagger P_av_k)\log\lambda_k.
+ \label{eq:num-gram-entropy}
+\end{equation}
+Purity supplies the first term, and the second follows from
+$X_a=\sqrt2ZE_a$, where $E_a$ embeds the first block.
+The reversed direction uses $P_b$ and $\rho_b^A$.
+We diagonalize common parity sectors on $B$ for Ising and
+common occupation sectors for the boson. The full Gram
+dimension is at most $2048$ for the retained lengths.
+A constant phase on $T_{ab}^A$ is immaterial, but its
+configuration-dependent phases must be retained.
+
+For Ising, direct Gaussian transition formulas between the
+orthogonal primaries would divide by zero overlap. We instead
+choose a local Hermitian unitary $U_A=\gamma_0=X_0$ for pairs
+containing $\sigma$, or $U_A=i\gamma_0\gamma_1=-Z_0$ for
+$I,\varepsilon$, and set $\ket{b'}=U_A\ket b$.
+This gives a nonzero anchor overlap on the sampled grid.
+Gaussian product identities~\cite{numBravyi,numSurace} give
+\begin{align}
+ K&=\mathbb I-G_aG_{b'},&
+ o&=2^{-N/2}|\det K|^{1/4},\nonumber\\
+ KZ_A&=(\mathbb I-iG_a)E_A,&
+ G_{*,A}&=i\left[E_A^T(\mathbb I-iG_{b'})Z_A-\mathbb I_{2\ell}\right],
+ \label{eq:num-anchor-solve}
+\end{align}
+where $E_A$ selects the first $2\ell$ coordinates. Fourier
+application of $G_a$ and a pivoted real LU factorization of
+$K$ avoid forming a full complex inverse; its log determinant
+also gives $\log o$. For a complex antisymmetric $H$ on the
+interval modes, Wick reconstruction is
+\begin{equation}
+ \mathcal R(H)=2^{-\ell}
+ \sum_{\substack{S\subset\{0,\ldots,2\ell-1\}\\|S|\ {
+m even}}}
+ i^{|S|/2}\operatorname{Pf}(H_S)
+       \prod_{r\in S}^{\longrightarrow}\gamma_r.
+ \label{eq:num-wick}
+\end{equation}
+The product is ordered by increasing index and the empty
+Pfaffian is one. Restoring the anchor yields
+$T_{ab}^A=o\mathcal R(G_{*,A})U_A$, up to a single irrelevant
+phase. Independent small-chain wavefunction checks validate
+this use of the Gaussian identities. The boson transitions
+are obtained directly from Eq.~\eqref{eq:num-boson-transition}.
+
+\subsection{Entropy evaluation and control of cancellation}
+\label{app:num-precision}
+For ordinary fractions, diagonalizing the component and mixture
+matrices gives $S(\rho\|\mu)=\tr\rho\log\rho-\tr\rho\log\mu$.
+The cross trace uses the weights of $\rho$ in the eigenbasis
+of $\mu$; the matrices need not commute. The primary check
+uses the same spectral trace with $\mu$ replaced by $\rho_b^A$
+and a target-logarithm floor of $10^{-15}$.
+
+At very small fractions, subtracting nearly equal entropy traces,
+or subtracting $D^B$ from $\log2$, loses relative precision.
+We evaluate the remainder directly using matrix-function
+divided differences~\cite{numHigham}. Let $f(t)=t\log t$,
+$D=\operatorname{diag}(d_i)>0$, and
+$H=D+E=V\operatorname{diag}(\lambda_k)V^\dagger$. Then
+\begin{align}
+ \mathcal R_i&=[f(H)-f(D)]_{ii}-f'(d_i)E_{ii}\nonumber\\
+ &=\sum_k|(V^\dagger E)_{ki}|^2
+ \frac{\lambda_k\log(\lambda_k/d_i)-\lambda_k+d_i}
+      {(\lambda_k-d_i)^2}.
+ \label{eq:num-stable-remainder}
+\end{align}
+The identity follows by expanding in the eigenvectors of $H$
+and using $(\lambda_k-d_i)V_{ik}=(EV)_{ik}$.
+At $\lambda=d$ the quotient is $1/(2d)$. With
+$u=(\lambda-d)/d$, its stable form is
+\begin{equation}
+ \frac1d\frac{(1+u)\log(1+u)-u}{u^2}
+ =\frac1d\sum_{n=0}^{\infty}\frac{(-u)^n}{(n+1)(n+2)}.
+ \label{eq:num-scalar-remainder}
+\end{equation}
+Ten terms are used for $|u|<0.02$, where the omitted tail is
+below double-precision accuracy; otherwise the closed expression
+is used. This is a numerical matrix-function identity and
+does not impose an interval expansion on the entropy.
+
+For a small interval, take $D$ to be the diagonalized mixture
+and $H$ the source density matrix in that basis. Equal traces
+give $D^A_{a\mid b}=\sum_i\mathcal R_i$. For the complement,
+take the unweighted Gram matrix
+\begin{equation}
+ H=\begin{pmatrix}\rho_a^A&T_{ab}^A\\
+ (T_{ab}^A)^\dagger&\rho_b^A\end{pmatrix}=2\mathcal G^*.
+ \label{eq:num-unweighted-gram}
+\end{equation}
+Diagonalize its two diagonal blocks separately and let $D$
+contain their eigenvalues. The perturbation $E$ then has only
+off-diagonal blocks. Equation~\eqref{eq:num-gram-entropy} gives
+\begin{equation}
+ \delta_{a\mid b}=\tr P_a[f(H)-f(D)]
+                 =\sum_{i\in a}\mathcal R_i,
+ \qquad \delta_{b\mid a}=\sum_{i\in b}\mathcal R_i.
+ \label{eq:num-stable-deficit}
+\end{equation}
+This permits a deficit much smaller than machine precision
+relative to $\log2$ to be resolved on its own scale.
+
+The identities are exact on positive support. In the
+double-precision implementation, reference eigenvalues below
+$\tau=10^{-15}$ are discarded within each symmetry sector.
+This is a numerical approximation, checked against
+$\tau=10^{-14},10^{-16}$ at sampled endpoint lengths, the
+ordinary spectral trace, and the full Gram calculation.
+Table~\ref{tab:num-checks} records the supplied production
+diagnostics; its cutoff sensitivities refer to retained endpoint
+lengths $6,10$ for the dense scan and $10$ for the earlier
+extension. Absolute trace-log agreement alone cannot certify
+the relative accuracy of an extremely small deficit.
+\begin{table}[htbp]\centering\small
+\begin{tabular}{lrr}\toprule
+Check & Count & Largest error\\\midrule
+Unit trace & 6390 & $6.661\times10^{-16}$\\
+Hermiticity & 6390 & $1.791\times10^{-77}$\\
+Negative eigenvalue magnitude & 6390 & $3.324\times10^{-16}$\\
+Small-interval relative cutoff sensitivity & 4824 & $8.635\times10^{-9}$\\
+Small-interval trace-log difference (absolute) & 4824 & $2.615\times10^{-13}$\\
+Relative local LU residual & 945 & $1.388\times10^{-13}$\\
+Gram negative eigenvalue magnitude & 6390 & $1.240\times10^{-16}$\\
+Deficit relative cutoff sensitivity & 4824 & $6.852\times10^{-9}$\\
+Full-Gram difference (absolute) & 4824 & $1.638\times10^{-12}$\\\bottomrule
+\end{tabular}
+\caption{Recorded numerical checks on the supplied extended data.
+Relative cutoff sensitivity is $\max_\tau|q_\tau-q_{10^{-15}}|/q_{10^{-15}}$.
+The LU residual is the Frobenius norm of the residual in
+Eq.~\eqref{eq:num-anchor-solve} divided by that of its right-hand side.
+Positivity errors are $\max(0,-\lambda_{\min})$. These are numerical
+precision checks, not estimates of the lattice-to-CFT error.}
+\label{tab:num-checks}
+\end{table}
+
+\subsection{Fitting models, residuals, and window dependence}
+\label{app:num-fitting}
+Write $z=x$, $q=D^A$ for a small interval, and
+$z=\ep$, $q=\delta$ for a large interval. For each ordered pair,
+we compare
+\begin{equation}
+ F_{\rm free}(z)=Cz^r,\qquad
+ F_1(z)=c_0z^{r_0},\qquad
+ F_2(z)=c_0z^{r_0}+c_1z^{r_1}.
+ \label{eq:num-fits}
+\end{equation}
+The free fit estimates $C>0$ and $r$ without theoretical
+constraints. $F_1$ and $F_2$ impose the powers in
+Table~\ref{tab:num-powers} and fit one and two amplitudes,
+respectively; the $F_2$ amplitudes have no sign constraints.
+No constant term or extra lattice-correction model is fitted.
+The CFT curve uses the analytical leading coefficient, plus
+the complete sixth-order term for the small-interval
+$I\leftrightarrow\varepsilon$ pair; no parameter is adjusted.
+\begin{table}[htbp]\centering\small
+\begin{tabular}{llrrrr}\toprule
+ & & \multicolumn{2}{c}{Small interval} & \multicolumn{2}{c}{Large interval}\\
+CFT & Pair (both directions) & $r_0=\alpha$ & $r_1$ & $r_0=\beta$ & $r_1$\\\midrule
+Ising & $I,\sigma$ & 2 & 4 & $1/4$ & $1/2$\\
+Ising & $I,\varepsilon$ & 4 & 6 & 2 & 4\\
+Ising & $\sigma,\varepsilon$ & 2 & 4 & $1/4$ & $1/2$\\
+Boson & $00,ss$ & 2 & 4 & 1 & 2\\
+Boson & $00,3s,s$ & 2 & 4 & 5 & 6\\
+Boson & $ss,3s,s$ & 2 & 4 & 2 & $3^{*}$\\\bottomrule
+\end{tabular}
+\caption{Powers used in $F_1,F_2$. The asterisk denotes an
+allowed three-point sector whose nonzero total coefficient
+has not been established. Except for the two small-interval
+Ising sixth-order coefficients, complete next coefficients
+are not supplied by the analytical calculation.}
+\label{tab:num-powers}
+\end{table}
+
+Every fit minimizes unweighted squared residuals in the
+observable, $\sum_{i:z_i\in W}[q_i-M(z_i)]^2$, on the window
+in Table~\ref{tab:num-windows}. Logarithmic figure axes do not
+change this objective. For fixed powers, scale the columns as
+$X_{ij}=(z_i/z_\star)^{r_j}$, where $z_\star$ is the upper
+cutoff, solve by singular-value decomposition, and convert
+the fitted amplitudes back by dividing by $z_\star^{r_j}$.
+For a trial free exponent the optimal scaled amplitude is
+\begin{equation}
+ A(r)=\frac{\sum_i q_i(z_i/z_\star)^r}
+                  {\sum_i(z_i/z_\star)^{2r}},\qquad C=A(r)z_\star^{-r}.
+ \label{eq:num-profile}
+\end{equation}
+A scalar search of the profiled objective provides an
+independent check on the two-parameter optimization
+\cite{numGolubPereyra}. If an amplitude was originally reported
+against $(\pi z)^r$, conversion to the present convention uses
+$C=\pi^r\widetilde C$ with the fitted exponent, not the
+theoretical exponent.
+
+The signed pointwise residual and leading-amplitude discrepancy are
+\begin{equation}
+ R_i[\%]=100\frac{q_i-M(z_i)}{q_i},\qquad
+ \eta_0[\%]=100\left(\frac{c_0}{c_0^{\rm CFT}}-1\right).
+ \label{eq:num-residuals}
+\end{equation}
+Residual ordinates are linear. To test prediction, omit all
+observations at one chain size, refit, and predict those
+observations. With $M^{(-N_i)}$ denoting the resulting fit,
+\begin{align}
+ {\rm CVRMSE}_M&=\left\{\frac1m\sum_i
+ [q_i-M^{(-N_i)}(z_i)]^2\right\}^{1/2},\nonumber\\
+ G_{\rm CV}[\%]&=100\left(1-
+          \frac{{\rm CVRMSE}_{F_2}}{{\rm CVRMSE}_{F_1}}\right).
+ \label{eq:num-cv}
+\end{align}
+Positive $G_{\rm CV}$ means improvement. This comparison is
+needed because $F_1$ is nested in $F_2$, so training-error
+reduction alone is not evidence of better prediction.
+The numerical summaries retain the different signs of
+coefficient and prediction gains. Parameter fluctuations
+under these omissions are sensitivity diagnostics, not
+statistical confidence intervals for deterministic data.
+
+The supplied window scan enumerates distinct selections
+$0<z\leq v$ through $v=0.20$, requiring at least forty
+training observations after every omitted-size refit. For
+large intervals there are 1361 admissible Ising selections
+and 532 boson selections. The boson endpoint dependence is
+reported in Sec.~\ref{sec:num-boson-large}; the adopted
+windows are shared across directions rather than chosen
+separately for each fit. Finally, $\ell/N\ll1$ and
+$\ell\gg1$ are separate continuum requirements. Exact
+finite-chain evaluation and numerical precision checks do
+not remove finite-$\ell$ errors, and increasing $N$ alone
+does not establish convergence of a fitted amplitude to CFT.

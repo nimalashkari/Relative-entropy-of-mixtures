@@ -1,0 +1,32 @@
+\begin{longtable}{llrrrrrrrr}
+\caption{Ising complementary-interval comparison at $p=1/2$, $y=\ell/N$, $\ell=4,\ldots,12$, and the sizes through $N=256$ in Eq.~\eqref{eq:large-grid}. Each direction uses the same 39 geometries at $y\leq0.04$. Free: optimize $C,\beta$ in $M(y)=C(\pi y)^\beta$ (two parameters, 37 residual degrees of freedom). Fixed $\beta$: set $\beta=\beta_{\rm CFT}$ and optimize only $C$ by Eq.~\eqref{eq:complement-fixed-fit} (one parameter, 38 degrees of freedom). CFT (analytical leading-order prediction): set both $C=B_{ab}$ and $\beta=\beta_{\rm CFT}$, with no fitting. Columns $C,\beta$ give the values used in each row. Signed parameter deviations $\eta_C,\eta_\beta$ (percent), deficit RMSE, and leave-one-size-out CV RMSE are defined in Eqs.~\eqref{eq:complement-fit-metrics} and \eqref{eq:complement-cv}. A dash marks an imposed parameter, whose agreement is not tested. The CFT CV entry equals its RMSE because nothing is refitted. The figures retain the Free and CFT curves and show data to $y=0.20$. For $I$ - $\sigma$, we should try higher order $\epsilon^{1/2}$.}
+\label{tab:ising-complement-fits}\\\toprule
+Direction & Model & $\beta_{\rm CFT}$ & $\beta$ & $B_{ab}$ & $C$ & $\eta_C$ & $\eta_\beta$ & RMSE & CV RMSE\\\midrule\endfirsthead
+\toprule
+Direction & Model & $\beta_{\rm CFT}$ & $\beta$ & $B_{ab}$ & $C$ & $\eta_C$ & $\eta_\beta$ & RMSE & CV RMSE\\\midrule\endhead
+\bottomrule\endfoot
+$I\mid \sigma$ & Free & 0.25 & 0.28534 & 0.46544 & 0.57468 & 23.47 & 14.135 & $9.37\!\times\!10^{-5}$ & $1.02\!\times\!10^{-4}$\\*
+ & Fixed $\beta$ & 0.25 & 0.25 & 0.46544 & 0.5281 & 13.464 & -- & 0.0024812 & 0.0025066\\*
+ & CFT & 0.25 & 0.25 & 0.46544 & 0.46544 & -- & -- & 0.034413 & 0.034413\\
+\addlinespace[3pt]
+$\sigma\mid I$ & Free & 0.25 & 0.28529 & 0.46544 & 0.57465 & 23.464 & 14.116 & $8.65\!\times\!10^{-5}$ & $9.44\!\times\!10^{-5}$\\*
+ & Fixed $\beta$ & 0.25 & 0.25 & 0.46544 & 0.52814 & 13.472 & -- & 0.0024778 & 0.0025036\\*
+ & CFT & 0.25 & 0.25 & 0.46544 & 0.46544 & -- & -- & 0.034433 & 0.034433\\
+\addlinespace[3pt]
+$I\mid \varepsilon$ & Free & 2 & 1.9691 & 0.33333 & 0.30146 & -9.5634 & -1.5432 & $3.72\!\times\!10^{-6}$ & $4.06\!\times\!10^{-6}$\\*
+ & Fixed $\beta$ & 2 & 2 & 0.33333 & 0.32311 & -3.0666 & -- & $1.61\!\times\!10^{-5}$ & $1.62\!\times\!10^{-5}$\\*
+ & CFT & 2 & 2 & 0.33333 & 0.33333 & -- & -- & $9.95\!\times\!10^{-5}$ & $9.95\!\times\!10^{-5}$\\
+\addlinespace[3pt]
+$\varepsilon\mid I$ & Free & 2 & 2.014 & 0.33333 & 0.35208 & 5.6244 & 0.70013 & $1.20\!\times\!10^{-6}$ & $1.33\!\times\!10^{-6}$\\*
+ & Fixed $\beta$ & 2 & 2 & 0.33333 & 0.34118 & 2.3526 & -- & $7.56\!\times\!10^{-6}$ & $7.60\!\times\!10^{-6}$\\*
+ & CFT & 2 & 2 & 0.33333 & 0.33333 & -- & -- & $7.57\!\times\!10^{-5}$ & $7.57\!\times\!10^{-5}$\\
+\addlinespace[3pt]
+$\sigma\mid \varepsilon$ & Free & 0.25 & 0.23758 & 0.11636 & 0.11105 & -4.5628 & -4.9661 & $7.12\!\times\!10^{-5}$ & $7.75\!\times\!10^{-5}$\\*
+ & Fixed $\beta$ & 0.25 & 0.25 & 0.11636 & 0.1144 & -1.6847 & -- & $2.02\!\times\!10^{-4}$ & $2.10\!\times\!10^{-4}$\\*
+ & CFT & 0.25 & 0.25 & 0.11636 & 0.11636 & -- & -- & 0.0010926 & 0.0010926\\
+\addlinespace[3pt]
+$\varepsilon\mid \sigma$ & Free & 0.25 & 0.32979 & 0.11636 & 0.15465 & 32.903 & 31.916 & $2.00\!\times\!10^{-4}$ & $2.10\!\times\!10^{-4}$\\*
+ & Fixed $\beta$ & 0.25 & 0.25 & 0.11636 & 0.12779 & 9.8261 & -- & 0.0013623 & 0.0013795\\*
+ & CFT & 0.25 & 0.25 & 0.11636 & 0.11636 & -- & -- & 0.0064089 & 0.0064089\\
+\addlinespace[3pt]
+\end{longtable}
